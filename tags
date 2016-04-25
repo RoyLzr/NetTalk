@@ -1,0 +1,217 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AUDIO	interface/cmdWrap.h	/^            AUDIO,$/;"	e	enum:CMD::__anon3
+AutoLock	common/lock.h	/^        inline AutoLock(Lock &l) : _lock(l) $/;"	f	class:AutoLock
+AutoLock	common/lock.h	/^class AutoLock$/;"	c
+BUILD	interface/cmdWrap.h	/^            BUILD,$/;"	e	enum:CMD::__anon4
+BYE	interface/cmdWrap.h	/^            BYE,$/;"	e	enum:CMD::__anon4
+CMD	interface/cmdWrap.h	/^class CMD$/;"	c
+COUNT	interface/cmdWrap.h	/^            COUNT$/;"	e	enum:CMD::__anon4
+COUNT	interface/cmdWrap.h	/^            COUNT,$/;"	e	enum:CMD::__anon3
+ClientSvr	client/ClientSvr.h	/^        ClientSvr(): _listenUserThread(NULL),$/;"	f	class:ClientSvr
+ClientSvr	client/ClientSvr.h	/^class ClientSvr$/;"	c
+ConfigParser	common/configParser.h	/^        ConfigParser(){}$/;"	f	class:ConfigParser
+ConfigParser	common/configParser.h	/^class ConfigParser$/;"	c
+DEBUG	common/asynLog.cpp	/^Log :: DEBUG(const char * fmt, ...)$/;"	f	class:Log
+DataParser	interface/dataParse.h	/^class DataParser$/;"	c
+ERROR	common/asynLog.cpp	/^Log :: ERROR(const char * fmt, ...)$/;"	f	class:Log
+Execute	client/workThread.cpp	/^void ReadLineUserInput::Execute()$/;"	f	class:ReadLineUserInput
+GetStatus	interface/thread.h	/^        int GetStatus()$/;"	f	class:WorkerThread
+GetThreadId	interface/thread.h	/^        int GetThreadId()$/;"	f	class:WorkerThread
+GetWorkerBuff	interface/thread.h	/^        void * GetWorkerBuff()$/;"	f	class:WorkerThread
+GetWorkerLen	interface/thread.h	/^        int GetWorkerLen()$/;"	f	class:WorkerThread
+INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon5
+IReactor	interface/ireactor.h	/^        IReactor() {};$/;"	f	class:IReactor
+IReactor	interface/ireactor.h	/^class IReactor $/;"	c
+LEVEL	common/asynLog.cpp	/^int Log :: LEVEL = LOG_DEBUG;$/;"	m	class:Log	file:
+LEVEL	common/asynLog.h	/^    static int LEVEL;$/;"	m	class:Log
+LOG_DEBUG	common/asynLog.h	/^    LOG_DEBUG,$/;"	e	enum:__anon1
+LOG_ERROR	common/asynLog.h	/^    LOG_ERROR,$/;"	e	enum:__anon1
+LOG_INIT	common/asynLog.h	/^    LOG_INIT,$/;"	e	enum:__anon2
+LOG_MAXLINE	common/asynLog.h	/^    LOG_MAXLINE = 1024$/;"	e	enum:__anon1
+LOG_NOTICE	common/asynLog.h	/^    LOG_NOTICE,$/;"	e	enum:__anon1
+LOG_RUN	common/asynLog.h	/^    LOG_RUN,$/;"	e	enum:__anon2
+LOG_STOP	common/asynLog.h	/^    LOG_STOP$/;"	e	enum:__anon2
+LOG_WARN	common/asynLog.h	/^    LOG_WARN, $/;"	e	enum:__anon1
+LineTalkReactor	client/LineTalkReactor.h	/^        LineTalkReactor(DataParser * svr, $/;"	f	class:LineTalkReactor
+LineTalkReactor	client/LineTalkReactor.h	/^class LineTalkReactor : public IReactor$/;"	c
+Lock	common/singleton.h	/^        static MutexLock Lock;$/;"	m	class:Singleton
+Lock	common/singleton.h	/^MutexLock Singleton<T>::Lock;$/;"	m	class:Singleton
+Log	common/asynLog.h	/^class Log$/;"	c
+MCondition	common/lock.h	/^        MCondition(MLock &l) : _lock(l._lock), _waits(0) $/;"	f	class:MCondition
+MCondition	common/lock.h	/^        MCondition(pthread_mutex_t &l) : _lock(l), _waits(0) $/;"	f	class:MCondition
+MCondition	common/lock.h	/^class MCondition$/;"	c
+MLock	common/lock.h	/^        inline MLock() $/;"	f	class:MLock
+MLock	common/lock.h	/^class MLock$/;"	c
+MutexLock	common/singleton.h	/^        MutexLock()$/;"	f	class:MutexLock
+MutexLock	common/singleton.h	/^class MutexLock$/;"	c
+NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon5
+NOTICE	common/asynLog.cpp	/^Log :: NOTICE(const char * fmt, ...)$/;"	f	class:Log
+PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon5
+RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon4
+RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon5
+ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput():buffSize(0),$/;"	f	class:ReadLineUserInput
+ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput(ClientSvr * cli, int size):WorkerThread(),$/;"	f	class:ReadLineUserInput
+ReadLineUserInput	client/workThread.h	/^class ReadLineUserInput : public WorkerThread$/;"	c
+SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon4
+STATUS	common/asynLog.cpp	/^int Log :: STATUS = LOG_INIT;$/;"	m	class:Log	file:
+STATUS	common/asynLog.h	/^    static int STATUS;   $/;"	m	class:Log
+STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon5
+Section	common/configParser.h	/^class Section$/;"	c
+SetBuff	interface/thread.h	/^        int SetBuff(int size)$/;"	f	class:WorkerThread
+Singleton	common/singleton.h	/^class Singleton$/;"	c
+SpinLock	common/lock.h	/^        inline SpinLock() $/;"	f	class:SpinLock
+SpinLock	common/lock.h	/^class SpinLock$/;"	c
+Start	client/workThread.cpp	/^void ReadLineUserInput::Start()$/;"	f	class:ReadLineUserInput
+StartRoutine	interface/thread.cpp	/^void* WorkerThread::StartRoutine(void* arg)$/;"	f	class:WorkerThread
+Stop	interface/thread.h	/^        int Stop()$/;"	f	class:WorkerThread
+TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon3
+THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon6
+THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon6
+THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon6
+THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon6
+Trans	interface/trans.h	/^class Trans$/;"	c
+VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon3
+WARN	common/asynLog.cpp	/^Log :: WARN(const char * fmt, ...)$/;"	f	class:Log
+WorkerThread	interface/thread.h	/^	    WorkerThread() : m_work_buff(NULL),$/;"	f	class:WorkerThread
+WorkerThread	interface/thread.h	/^class WorkerThread $/;"	c
+_ASYN_LOG_	common/asynLog.h	13;"	d
+_CLIENT_H	client/ClientSvr.h	2;"	d
+_CONFIG_PARSER_H	common/configParser.h	14;"	d
+_IREACTOR_H_	interface/ireactor.h	2;"	d
+_THREAD_H_	interface/thread.h	2;"	d
+_WORK_THREAD_H_	client/workThread.h	2;"	d
+__CMD_H_	interface/cmdWrap.h	2;"	d
+__DATA_PARSE_H_	interface/dataParse.h	2;"	d
+__LINE_TALK_REACTOR_H_	client/LineTalkReactor.h	2;"	d
+__LOCK_H_	common/lock.h	2;"	d
+__NET_H__	common/net.h	12;"	d
+__TRANS_H_	interface/trans.h	2;"	d
+_client	client/LineTalkReactor.h	/^        ClientSvr  * _client;$/;"	m	class:LineTalkReactor
+_conIP	client/LineTalkReactor.h	/^        string  _conIP;$/;"	m	class:LineTalkReactor
+_conPort	client/LineTalkReactor.h	/^        int  _conPort;$/;"	m	class:LineTalkReactor
+_conTo	client/LineTalkReactor.h	/^        int  _conTo;$/;"	m	class:LineTalkReactor
+_cond	common/lock.h	/^        pthread_cond_t _cond;$/;"	m	class:MCondition
+_coreAct	client/ClientSvr.h	/^        IReactor     * _coreAct; $/;"	m	class:ClientSvr
+_extQueue	client/LineTalkReactor.h	/^        std::queue<CMD *> _extQueue;$/;"	m	class:LineTalkReactor
+_fd	client/LineTalkReactor.h	/^        int  _fd;$/;"	m	class:LineTalkReactor
+_initialized	common/singleton.h	/^        static bool _initialized;$/;"	m	class:Singleton
+_initialized	common/singleton.h	/^bool Singleton<T>::_initialized = false;$/;"	m	class:Singleton
+_instance	common/singleton.h	/^        static T * _instance;$/;"	m	class:Singleton
+_instance	common/singleton.h	/^T * Singleton<T>::_instance = NULL;$/;"	m	class:Singleton
+_listenUserThread	client/ClientSvr.h	/^        WorkerThread * _listenUserThread;$/;"	m	class:ClientSvr
+_lock	client/LineTalkReactor.h	/^        Mlock _lock;$/;"	m	class:LineTalkReactor
+_lock	common/lock.h	/^        Lock & _lock;$/;"	m	class:AutoLock
+_lock	common/lock.h	/^        pthread_mutex_t & _lock;$/;"	m	class:MCondition
+_lock	common/lock.h	/^        pthread_mutex_t _lock;$/;"	m	class:MLock
+_lock	common/lock.h	/^        pthread_spinlock_t _lock;$/;"	m	class:SpinLock
+_pipe	client/LineTalkReactor.h	/^        int  _pipe[2];$/;"	m	class:LineTalkReactor
+_q_lock	client/LineTalkReactor.h	/^        MLock _q_lock;$/;"	m	class:LineTalkReactor
+_singleton_h	common/singleton.h	13;"	d
+_status	client/LineTalkReactor.h	/^        int  _status;$/;"	m	class:LineTalkReactor
+_svrdata	client/LineTalkReactor.h	/^        DataParser * _svrdata;$/;"	m	class:LineTalkReactor
+_trans	client/LineTalkReactor.h	/^        Trans * _trans;$/;"	m	class:LineTalkReactor
+_transPort	client/LineTalkReactor.h	/^        int     _transPort;$/;"	m	class:LineTalkReactor
+_waits	common/lock.h	/^        size_t _waits;$/;"	m	class:MCondition
+add_prefix	common/asynLog.cpp	/^add_prefix(char * dest, const string &add)$/;"	f
+buffSize	client/workThread.h	/^        int buffSize;$/;"	m	class:ReadLineUserInput
+buffer	common/asynLog.cpp	/^char Log :: buffer[LOG_MAXLINE];$/;"	m	class:Log	file:
+buffer	common/asynLog.h	/^    static char buffer[LOG_MAXLINE];$/;"	m	class:Log
+client	client/workThread.h	/^        ClientSvr * client;$/;"	m	class:ReadLineUserInput
+ctime	common/asynLog.cpp	/^ctime(char * t_time, size_t n)$/;"	f
+default_hand	common/net.cpp	/^default_hand(int sig)$/;"	f
+destroy	client/ClientSvr.cpp	/^int ClientSvr::destroy()$/;"	f	class:ClientSvr
+destroy	common/singleton.h	/^        static void destroy()$/;"	f	class:Singleton
+empty_Sec	common/configParser.cpp	/^static const Section empty_Sec = Section();$/;"	v	file:
+empty_str	common/configParser.cpp	/^static const std::string empty_str = "";$/;"	v	file:
+extUserInput	client/ClientSvr.cpp	/^int ClientSvr::extUserInput(void * data, int len)$/;"	f	class:ClientSvr
+find_line	common/net.cpp	/^find_line(char * req, int end, char label)$/;"	f
+fp	common/asynLog.cpp	/^FILE * Log :: fp; $/;"	m	class:Log	file:
+fp	common/asynLog.h	/^    static FILE * fp; $/;"	m	class:Log
+get	common/configParser.cpp	/^ConfigParser :: get(const std::string sectionName, const std::string keyName) const$/;"	f	class:ConfigParser
+get	common/configParser.cpp	/^ConfigParser::get(const std::string sectionName) const$/;"	f	class:ConfigParser
+get	common/configParser.cpp	/^Section :: get(const std::string key) const$/;"	f	class:Section
+get_file	common/asynLog.h	/^    static FILE * get_file()$/;"	f	class:Log
+get_tcp_sockaddr	common/net.cpp	/^get_tcp_sockaddr(char * addr, int * port, $/;"	f
+init	client/ClientSvr.cpp	/^int ClientSvr::init(IReactor * ir, WorkerThread * wh)$/;"	f	class:ClientSvr
+init	common/asynLog.cpp	/^Log :: init(const char * name)$/;"	f	class:Log
+instance	common/singleton.h	/^        static T * instance()$/;"	f	class:Singleton
+isStop	interface/thread.h	/^        bool isStop()$/;"	f	class:WorkerThread
+items	common/configParser.h	/^        std::map<std::string, std::string> items;$/;"	m	class:Section
+lock	common/lock.h	/^        inline int lock() $/;"	f	class:MLock
+lock	common/lock.h	/^        inline int lock() $/;"	f	class:SpinLock
+lock	common/singleton.h	/^        void lock()$/;"	f	class:MutexLock
+log_buffer	common/asynLog.cpp	/^queue<string> Log :: log_buffer;$/;"	m	class:Log	file:
+log_buffer	common/asynLog.h	/^    static queue<string> log_buffer;   $/;"	m	class:Log
+log_cond	common/asynLog.cpp	/^pthread_cond_t Log:: log_cond;$/;"	m	class:Log	file:
+log_cond	common/asynLog.h	/^    static pthread_cond_t  log_cond;$/;"	m	class:Log
+log_mutex	common/asynLog.cpp	/^pthread_mutex_t Log :: log_mutex;$/;"	m	class:Log	file:
+log_mutex	common/asynLog.h	/^    static pthread_mutex_t log_mutex;$/;"	m	class:Log
+mSections	common/configParser.h	/^    std::map<std::string, Section> mSections;$/;"	m	class:ConfigParser
+m_lock	interface/thread.h	/^        MLock           m_lock;$/;"	m	class:WorkerThread
+m_status	interface/thread.h	/^        int             m_status;$/;"	m	class:WorkerThread
+m_thread_id	interface/thread.h	/^	    pthread_t		m_thread_id;$/;"	m	class:WorkerThread
+m_work_buff	interface/thread.h	/^        void *          m_work_buff;$/;"	m	class:WorkerThread
+m_work_len	interface/thread.h	/^        int             m_work_len;$/;"	m	class:WorkerThread
+main	testUnit/main.cpp	/^int main()$/;"	f
+move_forward	common/net.cpp	/^move_forward(char * req, int start, int end)$/;"	f
+mutex	common/singleton.h	/^        pthread_mutex_t mutex;$/;"	m	class:MutexLock
+net_accept	common/net.cpp	/^net_accept(int sockfd, struct sockaddr *sa, socklen_t * addrlen)$/;"	f
+net_connect_to_ms	common/net.cpp	/^net_connect_to_ms(int sockfd, struct sockaddr *sa, $/;"	f
+net_connect_to_tv	common/net.cpp	/^net_connect_to_tv(int fd, struct sockaddr * sa, $/;"	f
+net_ep_add	common/net.cpp	/^net_ep_add(int epfd, $/;"	f
+net_ep_add_in	common/net.cpp	/^net_ep_add_in(int epfd, int fd)$/;"	f
+net_ep_add_in1	common/net.cpp	/^net_ep_add_in1(int epfd, int fd)$/;"	f
+net_ep_create	common/net.cpp	/^net_ep_create(int size)$/;"	f
+net_ep_del	common/net.cpp	/^net_ep_del(int epfd, int fd)$/;"	f
+net_tcplisten	common/net.cpp	/^net_tcplisten(int port, int queue)$/;"	f
+parser_file	common/configParser.cpp	/^ConfigParser :: parser_file(const std::string &file)$/;"	f	class:ConfigParser
+produce_log	common/asynLog.cpp	/^Log :: produce_log(int event, const char * fmt, va_list args)$/;"	f	class:Log
+readLineOnce	client/workThread.cpp	/^int ReadLineUserInput::readLineOnce()$/;"	f	class:ReadLineUserInput
+readn	common/net.cpp	/^readn(int fd, void *usrbuf, size_t n)$/;"	f
+readn_to_ms	common/net.cpp	/^readn_to_ms(int fd, void *ptr, size_t nbytes, int msecs)$/;"	f
+run	client/ClientSvr.cpp	/^int ClientSvr::run()$/;"	f	class:ClientSvr
+scan	common/configParser.cpp	/^ConfigParser :: scan() const$/;"	f	class:ConfigParser
+scan	common/configParser.cpp	/^Section :: scan() const$/;"	f	class:Section
+sendn	common/net.cpp	/^sendn(int fd, void *usrbuf, size_t n)$/;"	f
+sendn_to_ms	common/net.cpp	/^sendn_to_ms(int fd, const void *ptr, size_t nbytes, int msecs)$/;"	f
+set	common/configParser.h	/^        inline void set(const std::string &key, const std::string &val)$/;"	f	class:Section
+set	common/configParser.h	/^    inline void set(const std::string &sectionName, const std::string &keyName, $/;"	f	class:ConfigParser
+setBuffSize	client/workThread.h	/^        void setBuffSize(int size)$/;"	f	class:ReadLineUserInput
+setClient	client/workThread.h	/^        void setClient(ClientSvr * cli)$/;"	f	class:ReadLineUserInput
+set_clc_fd	common/net.cpp	/^set_clc_fd(int fd, int flags)$/;"	f
+set_fd	common/net.cpp	/^set_fd(int fd, int flags)$/;"	f
+set_fd_block	common/net.cpp	/^set_fd_block(int fd)$/;"	f
+set_fd_noblock	common/net.cpp	/^set_fd_noblock(int fd)$/;"	f
+set_file	common/asynLog.h	/^    static void set_file(FILE * file)$/;"	f	class:Log
+set_level	common/asynLog.h	/^    static void set_level(int level)$/;"	f	class:Log
+set_linger	common/net.cpp	/^set_linger(int fd, int val)$/;"	f
+set_status	common/asynLog.h	/^    static void set_status(int status)$/;"	f	class:Log
+set_tcp_sockaddr	common/net.cpp	/^set_tcp_sockaddr(char * addr, int port, $/;"	f
+signal	common/lock.h	/^        inline void signal() $/;"	f	class:MCondition
+signalAll	common/lock.h	/^        inline void signalAll() $/;"	f	class:MCondition
+stop	client/ClientSvr.cpp	/^int ClientSvr::stop()$/;"	f	class:ClientSvr
+stop	common/asynLog.h	/^    static void stop()$/;"	f	class:Log
+str_prefix	common/asynLog.cpp	/^const string Log :: str_prefix[4] = {"[DEBUG]   ", $/;"	m	class:Log	file:
+str_prefix	common/asynLog.h	/^    static const string str_prefix[4];$/;"	m	class:Log
+trylock	common/lock.h	/^        inline int trylock() $/;"	f	class:MLock
+trylock	common/lock.h	/^        inline int trylock() $/;"	f	class:SpinLock
+unlock	common/lock.h	/^        inline int unlock() $/;"	f	class:MLock
+unlock	common/lock.h	/^        inline int unlock() $/;"	f	class:SpinLock
+unlock	common/singleton.h	/^        void unlock()$/;"	f	class:MutexLock
+wait	common/lock.h	/^        inline int wait(const timeval *tv) $/;"	f	class:MCondition
+waits	common/lock.h	/^        inline size_t waits() { return _waits; }$/;"	f	class:MCondition
+write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
+~AutoLock	common/lock.h	/^        inline ~AutoLock() $/;"	f	class:AutoLock
+~ClientSvr	client/ClientSvr.cpp	/^ClientSvr::~ClientSvr()$/;"	f	class:ClientSvr
+~ConfigParser	common/configParser.h	/^        virtual ~ConfigParser(){}$/;"	f	class:ConfigParser
+~IReactor	interface/ireactor.h	/^        virtual ~IReactor() {};$/;"	f	class:IReactor
+~MCondition	common/lock.h	/^        ~MCondition() $/;"	f	class:MCondition
+~MLock	common/lock.h	/^        inline ~MLock() $/;"	f	class:MLock
+~MutexLock	common/singleton.h	/^        ~MutexLock()$/;"	f	class:MutexLock
+~SpinLock	common/lock.h	/^        inline ~SpinLock() $/;"	f	class:SpinLock
+~WorkerThread	interface/thread.cpp	/^WorkerThread::~WorkerThread()$/;"	f	class:WorkerThread
