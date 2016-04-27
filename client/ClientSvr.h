@@ -3,6 +3,7 @@
 
 #include "../interface/thread.h"
 #include "../interface/ireactor.h"
+#include "../common/asynLog.h"
 
 class ClientSvr
 {
@@ -15,6 +16,8 @@ class ClientSvr
         virtual ~ClientSvr();
     
         virtual int init(IReactor *, WorkerThread *);
+        
+        virtual int openLog(const Section &);
 
         virtual int run();
 
@@ -23,6 +26,7 @@ class ClientSvr
         virtual int destroy();
 
         virtual int extUserInput(void * data, int len);
+        
 
     protected:
         WorkerThread * _listenUserThread;

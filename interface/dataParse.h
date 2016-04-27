@@ -1,15 +1,17 @@
-#ifdef   __DATA_PARSE_H_
-#define  __DATA_PARSE_H_
+#ifndef   __DATA_PARSE_H_
+#define   __DATA_PARSE_H_
+
+#include "cmdWrap.h"
 
 class DataParser
 {
     public:
-        DataParser();
-        virtual ~DataParser();
+        DataParser() {};
+        virtual ~DataParser() {};
 
-        virtual void * Build(void * data, int len);
+        virtual void * Build(CMD * cmd, int * len) = 0;
 
-        virtual void * Parser(void * data, int len);
+        virtual CMD * Parser(void * data, int len) = 0;
 
 };
 

@@ -24,7 +24,7 @@ GetStatus	interface/thread.h	/^        int GetStatus()$/;"	f	class:WorkerThread
 GetThreadId	interface/thread.h	/^        int GetThreadId()$/;"	f	class:WorkerThread
 GetWorkerBuff	interface/thread.h	/^        void * GetWorkerBuff()$/;"	f	class:WorkerThread
 GetWorkerLen	interface/thread.h	/^        int GetWorkerLen()$/;"	f	class:WorkerThread
-INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon5
+INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon6
 IReactor	interface/ireactor.h	/^        IReactor() {};$/;"	f	class:IReactor
 IReactor	interface/ireactor.h	/^class IReactor $/;"	c
 LEVEL	common/asynLog.cpp	/^int Log :: LEVEL = LOG_DEBUG;$/;"	m	class:Log	file:
@@ -49,18 +49,18 @@ MLock	common/lock.h	/^        inline MLock() $/;"	f	class:MLock
 MLock	common/lock.h	/^class MLock$/;"	c
 MutexLock	common/singleton.h	/^        MutexLock()$/;"	f	class:MutexLock
 MutexLock	common/singleton.h	/^class MutexLock$/;"	c
-NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon5
+NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon6
 NOTICE	common/asynLog.cpp	/^Log :: NOTICE(const char * fmt, ...)$/;"	f	class:Log
-PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon5
+PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon6
 RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon4
-RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon5
+RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon6
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput():buffSize(0),$/;"	f	class:ReadLineUserInput
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput(ClientSvr * cli, int size):WorkerThread(),$/;"	f	class:ReadLineUserInput
 ReadLineUserInput	client/workThread.h	/^class ReadLineUserInput : public WorkerThread$/;"	c
 SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon4
 STATUS	common/asynLog.cpp	/^int Log :: STATUS = LOG_INIT;$/;"	m	class:Log	file:
 STATUS	common/asynLog.h	/^    static int STATUS;   $/;"	m	class:Log
-STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon5
+STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon6
 Section	common/configParser.h	/^class Section$/;"	c
 SetBuff	interface/thread.h	/^        int SetBuff(int size)$/;"	f	class:WorkerThread
 Singleton	common/singleton.h	/^class Singleton$/;"	c
@@ -70,10 +70,10 @@ Start	client/workThread.cpp	/^void ReadLineUserInput::Start()$/;"	f	class:ReadLi
 StartRoutine	interface/thread.cpp	/^void* WorkerThread::StartRoutine(void* arg)$/;"	f	class:WorkerThread
 Stop	interface/thread.h	/^        int Stop()$/;"	f	class:WorkerThread
 TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon3
-THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon6
-THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon6
-THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon6
-THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon6
+THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon5
+THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon5
+THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon5
+THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon5
 Trans	interface/trans.h	/^class Trans$/;"	c
 VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon3
 WARN	common/asynLog.cpp	/^Log :: WARN(const char * fmt, ...)$/;"	f	class:Log
@@ -172,8 +172,10 @@ net_tcplisten	common/net.cpp	/^net_tcplisten(int port, int queue)$/;"	f
 parser_file	common/configParser.cpp	/^ConfigParser :: parser_file(const std::string &file)$/;"	f	class:ConfigParser
 produce_log	common/asynLog.cpp	/^Log :: produce_log(int event, const char * fmt, va_list args)$/;"	f	class:Log
 readLineOnce	client/workThread.cpp	/^int ReadLineUserInput::readLineOnce()$/;"	f	class:ReadLineUserInput
+read_to_ms	common/net.cpp	/^read_to_ms(int fd, void * ptr, size_t nbytes, int msec)$/;"	f
+readable_to	common/net.cpp	/^readable_to(int fd, int msec)$/;"	f
 readn	common/net.cpp	/^readn(int fd, void *usrbuf, size_t n)$/;"	f
-readn_to_ms	common/net.cpp	/^readn_to_ms(int fd, void *ptr, size_t nbytes, int msecs)$/;"	f
+recvn_to_ms	common/net.cpp	/^recvn_to_ms(int fd, void *ptr, size_t nbytes, int msecs)$/;"	f
 run	client/ClientSvr.cpp	/^int ClientSvr::run()$/;"	f	class:ClientSvr
 scan	common/configParser.cpp	/^ConfigParser :: scan() const$/;"	f	class:ConfigParser
 scan	common/configParser.cpp	/^Section :: scan() const$/;"	f	class:Section

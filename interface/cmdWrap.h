@@ -1,5 +1,5 @@
-#ifdef   __CMD_H_
-#define  __CMD_H_
+#ifndef   __CMD_H_
+#define   __CMD_H_
 
 #include <stdio.h>
 
@@ -7,14 +7,15 @@
 class CMD
 {
     public:
-        CMD();
-        virtual ~CMD();
+        CMD() {};
+        virtual ~CMD() {};
         enum
         {
             VIDEO,
             TEXT,
             AUDIO,
-            COUNT,
+            OWNUSER,
+            CLASSCOUNT,
         };
 
         enum
@@ -23,15 +24,13 @@ class CMD
             SEND,
             RECV,
             BYE,
-            COUNT
+            SHOW,
+            OPCOUNT
         };
 
         virtual int GetObject() = 0;
         
         virtual int GetOperate() = 0;
-
-        virtual int ParseCMD() = 0;
-
 };
 
 

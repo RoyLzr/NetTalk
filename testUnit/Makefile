@@ -1,5 +1,5 @@
-test: configParser.o net.o asynLog.o thread.o ClientSvr.o workThread.o main.o
-	g++ -o test configParser.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o -lpthread
+test: configParser.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o main.o
+	g++ -o test configParser.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o -lpthread
 
 net.o: ../common/net.cpp
 	g++ -std=c++11 -g -c ../common/net.cpp
@@ -21,6 +21,9 @@ ClientSvr.o: ../client/ClientSvr.cpp
 
 workThread.o: ../client/workThread.cpp
 	g++  -std=c++11 -g -c ../client/workThread.cpp
+
+LineTalkReactor.o: ../client/LineTalkReactor.cpp
+	g++  -std=c++11 -g -c ../client/LineTalkReactor.cpp
 
 clean:
 	rm -rf *.o

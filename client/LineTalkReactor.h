@@ -3,14 +3,14 @@
 
 #include "../common/net.h"
 #include "../interface/ireactor.h"
-#include <atomic>
-#include <vector>
-#include <queue>
 #include "../common/lock.h"
 #include "../interface/trans.h"
 #include "../interface/dataParse.h"
 #include "../interface/cmdWrap.h"
 #include "../interface/thread.h"
+#include <atomic>
+#include <vector>
+#include <queue>
 
 
 
@@ -18,16 +18,18 @@ class ClientSvr;
 class LineTalkReactor : public IReactor
 {
     public:
-        LineTalkReactor(DataParser * svr, 
+        LineTalkReactor(DataParser * svr,
+                        DataParser * user, 
                         const Section &sec):  _fd(-1),
                                               _status(NONE),
                                               _conPort(-1),
                                               _conTo(-1),
                                               _trans(NULL),
-                                              _svrdata(svr)
-        {  load(sec); };
+                                              _svrdata(svr),
+                                              _userdata(user),
+                                              _client(NULL)
+        {  load(sec); }
                                              
-
         virtual ~LineTalkReactor();
 
         virtual int load(const Section &);
@@ -35,7 +37,7 @@ class LineTalkReactor : public IReactor
     public:
         virtual int init();
 
-        virtual int stop();
+        virtual int Stop();
 		
         virtual int run();
 
@@ -43,36 +45,39 @@ class LineTalkReactor : public IReactor
 
         virtual int extCmd(const string &);
         
+        virtual bool isStop();
+        
         virtual int setClient(ClientSvr *);
 
     protected:
 
-        virtual int OnRead();
+        virtual int OnRead() {}; 
 
-        virtual int OnWrite();
+        virtual int OnWrite() {};
 
-        virtual int OnWork();
+        virtual int OnWork() {};
 
-        virtual int ReadData();
+        virtual int ReadData() {};
 
-        virtual int SendData();
+        virtual int SendData() {};
         
-        virtual int GetTrans(int );
+        virtual int GetTrans(int ) {};
         
     protected:
         int  _fd;
-        int  _status;
+        size_t  _status;
         string  _conIP;
-        int  _conPort;
-        int  _conTo;
+        size_t  _conPort;
+        size_t  _conTo;
         int  _pipe[2];
         MLock _q_lock;
         std::queue<CMD *> _extQueue;
 
         Trans * _trans;
-        int     _transPort;
-        Mlock _lock;
+        size_t     _transPort;
+        MLock _lock;
         DataParser * _svrdata;
+        DataParser * _userdata;
         ClientSvr  * _client;
 };
 

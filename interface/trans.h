@@ -1,5 +1,5 @@
-#ifdef   __TRANS_H_
-#define  __TRANS_H_
+#ifndef   __TRANS_H_
+#define   __TRANS_H_
 
 class Trans
 {

@@ -2,6 +2,7 @@
 #define  _IREACTOR_H_
 
 #include "../common/configParser.h"
+#include "../interface/cmdWrap.h"
 
 class IReactor 
 {
@@ -21,13 +22,15 @@ class IReactor
     
     public:
 
-        virtual int extCmd(const string &) = 0;
+        virtual int extCmd(const std::string &) = 0;
 
-        virtual int init(); 
+        virtual int init() = 0; 
         
         virtual int run() = 0;
         
-        virtual int stop() = 0;
+        virtual int Stop() = 0;
+        
+        virtual bool isStop() = 0;
         
         virtual int status() = 0;
 
