@@ -1,0 +1,1563 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APP	jrtplib/rtcppacket.h	/^			APP,	\/**< An RTCP packet containing application specific data. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+AcceptAll	jrtplib/rtptransmitter.h	/^		AcceptAll, \/**< All incoming data is accepted, no matter where it originated from. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
+AcceptOwnPackets	jrtplib/rtpsessionparams.h	/^	bool AcceptOwnPackets() const						{ return acceptown; }$/;"	f	class:jrtplib::RTPSessionParams
+AcceptSome	jrtplib/rtptransmitter.h	/^		AcceptSome, \/**< Only data coming from specific sources will be accepted. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
+AddElement	jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::AddElement(const Element &elem)$/;"	f	class:jrtplib::RTPHashTable
+AddElement	jrtplib/rtpkeyhashtable.h	/^inline int RTPKeyHashTable<Key,Element,GetIndex,hashsize>::AddElement(const Key &k,const Element &elem)$/;"	f	class:jrtplib::RTPKeyHashTable
+AddItem	jrtplib/rtcpcompoundpacketbuilder.h	/^		int AddItem(uint8_t *buf,size_t len)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+AddItem	jrtplib/rtcpcompoundpacketbuilder.h	/^		void AddItem(uint8_t *buf,size_t len)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+AddSSRC	jrtplib/rtcpcompoundpacketbuilder.h	/^		int AddSSRC(uint32_t ssrc)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+AddressAndTime	jrtplib/rtpcollisionlist.h	/^		AddressAndTime(RTPAddress *a,const RTPTime &t) : addr(a),recvtime(t) { }$/;"	f	class:jrtplib::RTPCollisionList::AddressAndTime
+AddressAndTime	jrtplib/rtpcollisionlist.h	/^	class AddressAndTime$/;"	c	class:jrtplib::RTPCollisionList
+AddressType	jrtplib/rtpaddress.h	/^	enum AddressType $/;"	g	class:jrtplib::RTPAddress
+AdjustSSRC	jrtplib/rtppacketbuilder.h	/^	void AdjustSSRC(uint32_t s)					{ ssrc = s; }$/;"	f	class:jrtplib::RTPPacketBuilder
+AudioSession	testlib/rtpAudio.cpp	/^        AudioSession(int Port1, string ip, int Port2) : DesP$/;"	f	class:AudioSession
+AudioSession	testlib/rtpAudio.cpp	/^class AudioSession :RTPSession$/;"	c	file:
+BYE	jrtplib/rtcppacket.h	/^			BYE,	\/**< An RTCP bye packet. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+Buffer	jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer():packetdata(0),packetlength(0) { }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
+Buffer	jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer(uint8_t *data,size_t len):packetdata(data),packetlength(len) { }			$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
+Buffer	jrtplib/rtcpcompoundpacketbuilder.h	/^	class Buffer$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+ByteAddress	jrtplib/rtpaddress.h	/^		ByteAddress, \/**< A very general type of address, consisting of a port number and a number of bytes representing the host address. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
+CNAME	jrtplib/rtcpsdespacket.h	/^		CNAME,	\/**< Used for a CNAME (canonical name) item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+CalculateMicroseconds	jrtplib/rtptimeutilities.h	/^inline unsigned __int64 RTPTime::CalculateMicroseconds(unsigned __int64 performancecount,unsigned __int64 performancefrequency)$/;"	f	class:jrtplib::RTPTime
+Clear	jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+Clear	jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+Clear	jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::Clear()$/;"	f	class:jrtplib::RTPHashTable
+Clear	jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::Clear()$/;"	f	class:jrtplib::RTPKeyHashTable
+ClearFlags	jrtplib/rtcppacketbuilder.h	/^		void ClearFlags()			{ pname = false; pemail = false; plocation = false; pphone = false; ptool = false; pnote = false; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ClearLocalIPList	jrtplib/rtpudpv4transmitter.h	/^	void ClearLocalIPList()										{ localIPs.clear(); }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+ClearLocalIPList	jrtplib/rtpudpv6transmitter.h	/^	void ClearLocalIPList()												{ localIPs.clear(); }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+ClearNote	jrtplib/rtpinternalsourcedata.h	/^	void ClearNote()										{ SDESinf.SetNote(0,0); }$/;"	f	class:jrtplib::RTPInternalSourceData
+ClearOwnCollisionFlag	jrtplib/rtpsessionsources.h	/^	void ClearOwnCollisionFlag()									{ owncollision = false; }$/;"	f	class:jrtplib::RTPSessionSources
+ClearSenderFlag	jrtplib/rtpinternalsourcedata.h	/^	void ClearSenderFlag()										{ issender = false; }$/;"	f	class:jrtplib::RTPInternalSourceData
+CurrentTime	jrtplib/rtptimeutilities.h	/^inline RTPTime RTPTime::CurrentTime()$/;"	f	class:jrtplib::RTPTime
+DeleteCurrentElement	jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::DeleteCurrentElement()$/;"	f	class:jrtplib::RTPHashTable
+DeleteCurrentElement	jrtplib/rtpkeyhashtable.h	/^inline int RTPKeyHashTable<Key,Element,GetIndex,hashsize>::DeleteCurrentElement()$/;"	f	class:jrtplib::RTPKeyHashTable
+DeleteElement	jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::DeleteElement(const Element &elem)$/;"	f	class:jrtplib::RTPHashTable
+DeleteElement	jrtplib/rtpkeyhashtable.h	/^inline int RTPKeyHashTable<Key,Element,GetIndex,hashsize>::DeleteElement(const Key &k)$/;"	f	class:jrtplib::RTPKeyHashTable
+DesPort	testlib/rtpAudio.cpp	/^        int DesPort;$/;"	m	class:AudioSession	file:
+Desip	testlib/rtpAudio.cpp	/^        string Desip;$/;"	m	class:AudioSession	file:
+DetectedOwnCollision	jrtplib/rtpsessionsources.h	/^	bool DetectedOwnCollision() const								{ return owncollision; }$/;"	f	class:jrtplib::RTPSessionSources
+Dummy	jrtplib/rtptimeutilities.h	/^	void Dummy() { dummy++; }$/;"	f	class:jrtplib::RTPTimeInitializer
+Dump	jrtplib/rtphashtable.h	/^		void Dump()							{ std::cout << "\\tHash index " << hashindex << " | Element " << element << std::endl; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
+Dump	jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::Dump()$/;"	f	class:jrtplib::RTPHashTable
+Dump	jrtplib/rtpkeyhashtable.h	/^		void Dump()							{ std::cout << "\\tHash index " << hashindex << " | Key " << key << " | Element " << element << std::endl; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+Dump	jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::Dump()$/;"	f	class:jrtplib::RTPKeyHashTable
+EMAIL	jrtplib/rtcpsdespacket.h	/^		EMAIL,	\/**< Used for an EMAIL item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+ERR_RTP_COLLISIONLIST_BADADDRESS	jrtplib/rtperrors.h	54;"	d
+ERR_RTP_EXTERNALTRANS_ALREADYCREATED	jrtplib/rtperrors.h	215;"	d
+ERR_RTP_EXTERNALTRANS_ALREADYINIT	jrtplib/rtperrors.h	216;"	d
+ERR_RTP_EXTERNALTRANS_ALREADYWAITING	jrtplib/rtperrors.h	217;"	d
+ERR_RTP_EXTERNALTRANS_BADRECEIVEMODE	jrtplib/rtperrors.h	218;"	d
+ERR_RTP_EXTERNALTRANS_CANTCREATEABORTDESCRIPTORS	jrtplib/rtperrors.h	219;"	d
+ERR_RTP_EXTERNALTRANS_CANTCREATEPIPE	jrtplib/rtperrors.h	220;"	d
+ERR_RTP_EXTERNALTRANS_CANTINITMUTEX	jrtplib/rtperrors.h	221;"	d
+ERR_RTP_EXTERNALTRANS_ERRORINSELECT	jrtplib/rtperrors.h	222;"	d
+ERR_RTP_EXTERNALTRANS_ILLEGALPARAMETERS	jrtplib/rtperrors.h	223;"	d
+ERR_RTP_EXTERNALTRANS_NOACCEPTLIST	jrtplib/rtperrors.h	224;"	d
+ERR_RTP_EXTERNALTRANS_NODESTINATIONSSUPPORTED	jrtplib/rtperrors.h	225;"	d
+ERR_RTP_EXTERNALTRANS_NOIGNORELIST	jrtplib/rtperrors.h	226;"	d
+ERR_RTP_EXTERNALTRANS_NOMULTICASTSUPPORT	jrtplib/rtperrors.h	227;"	d
+ERR_RTP_EXTERNALTRANS_NOSENDER	jrtplib/rtperrors.h	228;"	d
+ERR_RTP_EXTERNALTRANS_NOTCREATED	jrtplib/rtperrors.h	229;"	d
+ERR_RTP_EXTERNALTRANS_NOTINIT	jrtplib/rtperrors.h	230;"	d
+ERR_RTP_EXTERNALTRANS_NOTWAITING	jrtplib/rtperrors.h	231;"	d
+ERR_RTP_EXTERNALTRANS_SENDERROR	jrtplib/rtperrors.h	232;"	d
+ERR_RTP_EXTERNALTRANS_SPECIFIEDSIZETOOBIG	jrtplib/rtperrors.h	233;"	d
+ERR_RTP_FAKETRANS_ALREADYCREATED	jrtplib/rtperrors.h	179;"	d
+ERR_RTP_FAKETRANS_ALREADYINIT	jrtplib/rtperrors.h	180;"	d
+ERR_RTP_FAKETRANS_ALREADYWAITING	jrtplib/rtperrors.h	181;"	d
+ERR_RTP_FAKETRANS_CANTBINDRTCPSOCKET	jrtplib/rtperrors.h	182;"	d
+ERR_RTP_FAKETRANS_CANTBINDRTPSOCKET	jrtplib/rtperrors.h	183;"	d
+ERR_RTP_FAKETRANS_CANTCALCULATELOCALIP	jrtplib/rtperrors.h	184;"	d
+ERR_RTP_FAKETRANS_CANTCREATEABORTDESCRIPTORS	jrtplib/rtperrors.h	185;"	d
+ERR_RTP_FAKETRANS_CANTCREATEPIPE	jrtplib/rtperrors.h	186;"	d
+ERR_RTP_FAKETRANS_CANTCREATESOCKET	jrtplib/rtperrors.h	187;"	d
+ERR_RTP_FAKETRANS_CANTINITMUTEX	jrtplib/rtperrors.h	188;"	d
+ERR_RTP_FAKETRANS_CANTSETRTCPRECEIVEBUF	jrtplib/rtperrors.h	189;"	d
+ERR_RTP_FAKETRANS_CANTSETRTCPTRANSMITBUF	jrtplib/rtperrors.h	190;"	d
+ERR_RTP_FAKETRANS_CANTSETRTPRECEIVEBUF	jrtplib/rtperrors.h	191;"	d
+ERR_RTP_FAKETRANS_CANTSETRTPTRANSMITBUF	jrtplib/rtperrors.h	192;"	d
+ERR_RTP_FAKETRANS_COULDNTJOINMULTICASTGROUP	jrtplib/rtperrors.h	193;"	d
+ERR_RTP_FAKETRANS_DIFFERENTRECEIVEMODE	jrtplib/rtperrors.h	194;"	d
+ERR_RTP_FAKETRANS_ERRORINSELECT	jrtplib/rtperrors.h	195;"	d
+ERR_RTP_FAKETRANS_ILLEGALPARAMETERS	jrtplib/rtperrors.h	196;"	d
+ERR_RTP_FAKETRANS_INVALIDADDRESSTYPE	jrtplib/rtperrors.h	197;"	d
+ERR_RTP_FAKETRANS_INVALIDEVENT	jrtplib/rtperrors.h	207;"	d
+ERR_RTP_FAKETRANS_NOLOCALIPS	jrtplib/rtperrors.h	198;"	d
+ERR_RTP_FAKETRANS_NOMULTICASTSUPPORT	jrtplib/rtperrors.h	199;"	d
+ERR_RTP_FAKETRANS_NOSUCHENTRY	jrtplib/rtperrors.h	200;"	d
+ERR_RTP_FAKETRANS_NOTAMULTICASTADDRESS	jrtplib/rtperrors.h	201;"	d
+ERR_RTP_FAKETRANS_NOTCREATED	jrtplib/rtperrors.h	202;"	d
+ERR_RTP_FAKETRANS_NOTINIT	jrtplib/rtperrors.h	203;"	d
+ERR_RTP_FAKETRANS_NOTNETBUFFER	jrtplib/rtperrors.h	209;"	d
+ERR_RTP_FAKETRANS_NOTWAITING	jrtplib/rtperrors.h	204;"	d
+ERR_RTP_FAKETRANS_PORTBASENOTEVEN	jrtplib/rtperrors.h	205;"	d
+ERR_RTP_FAKETRANS_SPECIFIEDSIZETOOBIG	jrtplib/rtperrors.h	206;"	d
+ERR_RTP_FAKETRANS_SRCADDRNOTSET	jrtplib/rtperrors.h	208;"	d
+ERR_RTP_FAKETRANS_WAITNOTIMPLEMENTED	jrtplib/rtperrors.h	210;"	d
+ERR_RTP_HASHTABLE_ELEMENTALREADYEXISTS	jrtplib/rtperrors.h	55;"	d
+ERR_RTP_HASHTABLE_ELEMENTNOTFOUND	jrtplib/rtperrors.h	56;"	d
+ERR_RTP_HASHTABLE_FUNCTIONRETURNEDINVALIDHASHINDEX	jrtplib/rtperrors.h	57;"	d
+ERR_RTP_HASHTABLE_NOCURRENTELEMENT	jrtplib/rtperrors.h	58;"	d
+ERR_RTP_INTERNALSOURCEDATA_INVALIDPROBATIONTYPE	jrtplib/rtperrors.h	177;"	d
+ERR_RTP_KEYHASHTABLE_FUNCTIONRETURNEDINVALIDHASHINDEX	jrtplib/rtperrors.h	59;"	d
+ERR_RTP_KEYHASHTABLE_KEYALREADYEXISTS	jrtplib/rtperrors.h	60;"	d
+ERR_RTP_KEYHASHTABLE_KEYNOTFOUND	jrtplib/rtperrors.h	61;"	d
+ERR_RTP_KEYHASHTABLE_NOCURRENTELEMENT	jrtplib/rtperrors.h	62;"	d
+ERR_RTP_NOTHREADSUPPORT	jrtplib/rtperrors.h	53;"	d
+ERR_RTP_OUTOFMEM	jrtplib/rtperrors.h	52;"	d
+ERR_RTP_PACKBUILD_ALREADYINIT	jrtplib/rtperrors.h	63;"	d
+ERR_RTP_PACKBUILD_CSRCALREADYINLIST	jrtplib/rtperrors.h	64;"	d
+ERR_RTP_PACKBUILD_CSRCLISTFULL	jrtplib/rtperrors.h	65;"	d
+ERR_RTP_PACKBUILD_CSRCNOTINLIST	jrtplib/rtperrors.h	66;"	d
+ERR_RTP_PACKBUILD_DEFAULTMARKNOTSET	jrtplib/rtperrors.h	67;"	d
+ERR_RTP_PACKBUILD_DEFAULTPAYLOADTYPENOTSET	jrtplib/rtperrors.h	68;"	d
+ERR_RTP_PACKBUILD_DEFAULTTSINCNOTSET	jrtplib/rtperrors.h	69;"	d
+ERR_RTP_PACKBUILD_INVALIDMAXPACKETSIZE	jrtplib/rtperrors.h	70;"	d
+ERR_RTP_PACKBUILD_NOTINIT	jrtplib/rtperrors.h	71;"	d
+ERR_RTP_PACKET_BADPAYLOADTYPE	jrtplib/rtperrors.h	72;"	d
+ERR_RTP_PACKET_DATAEXCEEDSMAXSIZE	jrtplib/rtperrors.h	73;"	d
+ERR_RTP_PACKET_EXTERNALBUFFERNULL	jrtplib/rtperrors.h	74;"	d
+ERR_RTP_PACKET_ILLEGALBUFFERSIZE	jrtplib/rtperrors.h	75;"	d
+ERR_RTP_PACKET_INVALIDPACKET	jrtplib/rtperrors.h	76;"	d
+ERR_RTP_PACKET_TOOMANYCSRCS	jrtplib/rtperrors.h	77;"	d
+ERR_RTP_POLLTHREAD_ALREADYRUNNING	jrtplib/rtperrors.h	78;"	d
+ERR_RTP_POLLTHREAD_CANTINITMUTEX	jrtplib/rtperrors.h	79;"	d
+ERR_RTP_POLLTHREAD_CANTSTARTTHREAD	jrtplib/rtperrors.h	80;"	d
+ERR_RTP_RTCPCOMPOUND_INVALIDPACKET	jrtplib/rtperrors.h	81;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_ALREADYBUILDING	jrtplib/rtperrors.h	82;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_ALREADYBUILT	jrtplib/rtperrors.h	83;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_ALREADYGOTREPORT	jrtplib/rtperrors.h	84;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_APPDATALENTOOBIG	jrtplib/rtperrors.h	85;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_BUFFERSIZETOOSMALL	jrtplib/rtperrors.h	86;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_ILLEGALAPPDATALENGTH	jrtplib/rtperrors.h	87;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_ILLEGALSUBTYPE	jrtplib/rtperrors.h	88;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_INVALIDITEMTYPE	jrtplib/rtperrors.h	89;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_MAXPACKETSIZETOOSMALL	jrtplib/rtperrors.h	90;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_NOCURRENTSOURCE	jrtplib/rtperrors.h	91;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_NOREPORTPRESENT	jrtplib/rtperrors.h	92;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_NOTBUILDING	jrtplib/rtperrors.h	93;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_NOTENOUGHBYTESLEFT	jrtplib/rtperrors.h	94;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_REPORTNOTSTARTED	jrtplib/rtperrors.h	95;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_TOOMANYSSRCS	jrtplib/rtperrors.h	96;"	d
+ERR_RTP_RTCPCOMPPACKBUILDER_TOTALITEMLENGTHTOOBIG	jrtplib/rtperrors.h	97;"	d
+ERR_RTP_RTCPPACKETBUILDER_ALREADYINIT	jrtplib/rtperrors.h	98;"	d
+ERR_RTP_RTCPPACKETBUILDER_ILLEGALMAXPACKSIZE	jrtplib/rtperrors.h	99;"	d
+ERR_RTP_RTCPPACKETBUILDER_ILLEGALTIMESTAMPUNIT	jrtplib/rtperrors.h	100;"	d
+ERR_RTP_RTCPPACKETBUILDER_NOTINIT	jrtplib/rtperrors.h	101;"	d
+ERR_RTP_RTCPPACKETBUILDER_PACKETFILLEDTOOSOON	jrtplib/rtperrors.h	102;"	d
+ERR_RTP_RTPRANDOMRANDS_NOTSUPPORTED	jrtplib/rtperrors.h	213;"	d
+ERR_RTP_RTPRANDOMURANDOM_ALREADYOPEN	jrtplib/rtperrors.h	212;"	d
+ERR_RTP_RTPRANDOMURANDOM_CANTOPEN	jrtplib/rtperrors.h	211;"	d
+ERR_RTP_SCHEDPARAMS_BADFRACTION	jrtplib/rtperrors.h	103;"	d
+ERR_RTP_SCHEDPARAMS_BADMINIMUMINTERVAL	jrtplib/rtperrors.h	104;"	d
+ERR_RTP_SCHEDPARAMS_INVALIDBANDWIDTH	jrtplib/rtperrors.h	105;"	d
+ERR_RTP_SDES_LENGTHTOOBIG	jrtplib/rtperrors.h	106;"	d
+ERR_RTP_SDES_MAXPRIVITEMS	jrtplib/rtperrors.h	107;"	d
+ERR_RTP_SDES_PREFIXNOTFOUND	jrtplib/rtperrors.h	108;"	d
+ERR_RTP_SESSION_ALREADYCREATED	jrtplib/rtperrors.h	109;"	d
+ERR_RTP_SESSION_CANTGETLOGINNAME	jrtplib/rtperrors.h	110;"	d
+ERR_RTP_SESSION_CANTINITMUTEX	jrtplib/rtperrors.h	111;"	d
+ERR_RTP_SESSION_MAXPACKETSIZETOOSMALL	jrtplib/rtperrors.h	112;"	d
+ERR_RTP_SESSION_NOTCREATED	jrtplib/rtperrors.h	113;"	d
+ERR_RTP_SESSION_UNSUPPORTEDTRANSMISSIONPROTOCOL	jrtplib/rtperrors.h	114;"	d
+ERR_RTP_SESSION_USERDEFINEDTRANSMITTERNULL	jrtplib/rtperrors.h	178;"	d
+ERR_RTP_SESSION_USINGPOLLTHREAD	jrtplib/rtperrors.h	115;"	d
+ERR_RTP_SOURCES_ALREADYHAVEOWNSSRC	jrtplib/rtperrors.h	116;"	d
+ERR_RTP_SOURCES_DONTHAVEOWNSSRC	jrtplib/rtperrors.h	117;"	d
+ERR_RTP_SOURCES_ILLEGALSDESTYPE	jrtplib/rtperrors.h	118;"	d
+ERR_RTP_SOURCES_SSRCEXISTS	jrtplib/rtperrors.h	119;"	d
+ERR_RTP_TRANS_BUFFERLENGTHTOOSMALL	jrtplib/rtperrors.h	120;"	d
+ERR_RTP_UDPV4TRANS_ALREADYCREATED	jrtplib/rtperrors.h	121;"	d
+ERR_RTP_UDPV4TRANS_ALREADYINIT	jrtplib/rtperrors.h	122;"	d
+ERR_RTP_UDPV4TRANS_ALREADYWAITING	jrtplib/rtperrors.h	123;"	d
+ERR_RTP_UDPV4TRANS_CANTBINDRTCPSOCKET	jrtplib/rtperrors.h	124;"	d
+ERR_RTP_UDPV4TRANS_CANTBINDRTPSOCKET	jrtplib/rtperrors.h	125;"	d
+ERR_RTP_UDPV4TRANS_CANTCALCULATELOCALIP	jrtplib/rtperrors.h	126;"	d
+ERR_RTP_UDPV4TRANS_CANTCREATEABORTDESCRIPTORS	jrtplib/rtperrors.h	127;"	d
+ERR_RTP_UDPV4TRANS_CANTCREATEPIPE	jrtplib/rtperrors.h	128;"	d
+ERR_RTP_UDPV4TRANS_CANTCREATESOCKET	jrtplib/rtperrors.h	129;"	d
+ERR_RTP_UDPV4TRANS_CANTINITMUTEX	jrtplib/rtperrors.h	130;"	d
+ERR_RTP_UDPV4TRANS_CANTSETRTCPRECEIVEBUF	jrtplib/rtperrors.h	131;"	d
+ERR_RTP_UDPV4TRANS_CANTSETRTCPTRANSMITBUF	jrtplib/rtperrors.h	132;"	d
+ERR_RTP_UDPV4TRANS_CANTSETRTPRECEIVEBUF	jrtplib/rtperrors.h	133;"	d
+ERR_RTP_UDPV4TRANS_CANTSETRTPTRANSMITBUF	jrtplib/rtperrors.h	134;"	d
+ERR_RTP_UDPV4TRANS_COULDNTJOINMULTICASTGROUP	jrtplib/rtperrors.h	135;"	d
+ERR_RTP_UDPV4TRANS_DIFFERENTRECEIVEMODE	jrtplib/rtperrors.h	136;"	d
+ERR_RTP_UDPV4TRANS_ERRORINSELECT	jrtplib/rtperrors.h	137;"	d
+ERR_RTP_UDPV4TRANS_ILLEGALPARAMETERS	jrtplib/rtperrors.h	138;"	d
+ERR_RTP_UDPV4TRANS_INVALIDADDRESSTYPE	jrtplib/rtperrors.h	139;"	d
+ERR_RTP_UDPV4TRANS_NOLOCALIPS	jrtplib/rtperrors.h	140;"	d
+ERR_RTP_UDPV4TRANS_NOMULTICASTSUPPORT	jrtplib/rtperrors.h	141;"	d
+ERR_RTP_UDPV4TRANS_NOSUCHENTRY	jrtplib/rtperrors.h	142;"	d
+ERR_RTP_UDPV4TRANS_NOTAMULTICASTADDRESS	jrtplib/rtperrors.h	143;"	d
+ERR_RTP_UDPV4TRANS_NOTCREATED	jrtplib/rtperrors.h	144;"	d
+ERR_RTP_UDPV4TRANS_NOTINIT	jrtplib/rtperrors.h	145;"	d
+ERR_RTP_UDPV4TRANS_NOTWAITING	jrtplib/rtperrors.h	146;"	d
+ERR_RTP_UDPV4TRANS_PORTBASENOTEVEN	jrtplib/rtperrors.h	147;"	d
+ERR_RTP_UDPV4TRANS_SPECIFIEDSIZETOOBIG	jrtplib/rtperrors.h	148;"	d
+ERR_RTP_UDPV6TRANS_ALREADYCREATED	jrtplib/rtperrors.h	149;"	d
+ERR_RTP_UDPV6TRANS_ALREADYINIT	jrtplib/rtperrors.h	150;"	d
+ERR_RTP_UDPV6TRANS_ALREADYWAITING	jrtplib/rtperrors.h	151;"	d
+ERR_RTP_UDPV6TRANS_CANTBINDRTCPSOCKET	jrtplib/rtperrors.h	152;"	d
+ERR_RTP_UDPV6TRANS_CANTBINDRTPSOCKET	jrtplib/rtperrors.h	153;"	d
+ERR_RTP_UDPV6TRANS_CANTCALCULATELOCALIP	jrtplib/rtperrors.h	154;"	d
+ERR_RTP_UDPV6TRANS_CANTCREATEABORTDESCRIPTORS	jrtplib/rtperrors.h	155;"	d
+ERR_RTP_UDPV6TRANS_CANTCREATEPIPE	jrtplib/rtperrors.h	156;"	d
+ERR_RTP_UDPV6TRANS_CANTCREATESOCKET	jrtplib/rtperrors.h	157;"	d
+ERR_RTP_UDPV6TRANS_CANTINITMUTEX	jrtplib/rtperrors.h	158;"	d
+ERR_RTP_UDPV6TRANS_CANTSETRTCPRECEIVEBUF	jrtplib/rtperrors.h	159;"	d
+ERR_RTP_UDPV6TRANS_CANTSETRTCPTRANSMITBUF	jrtplib/rtperrors.h	160;"	d
+ERR_RTP_UDPV6TRANS_CANTSETRTPRECEIVEBUF	jrtplib/rtperrors.h	161;"	d
+ERR_RTP_UDPV6TRANS_CANTSETRTPTRANSMITBUF	jrtplib/rtperrors.h	162;"	d
+ERR_RTP_UDPV6TRANS_COULDNTJOINMULTICASTGROUP	jrtplib/rtperrors.h	163;"	d
+ERR_RTP_UDPV6TRANS_DIFFERENTRECEIVEMODE	jrtplib/rtperrors.h	164;"	d
+ERR_RTP_UDPV6TRANS_ERRORINSELECT	jrtplib/rtperrors.h	165;"	d
+ERR_RTP_UDPV6TRANS_ILLEGALPARAMETERS	jrtplib/rtperrors.h	166;"	d
+ERR_RTP_UDPV6TRANS_INVALIDADDRESSTYPE	jrtplib/rtperrors.h	167;"	d
+ERR_RTP_UDPV6TRANS_NOLOCALIPS	jrtplib/rtperrors.h	168;"	d
+ERR_RTP_UDPV6TRANS_NOMULTICASTSUPPORT	jrtplib/rtperrors.h	169;"	d
+ERR_RTP_UDPV6TRANS_NOSUCHENTRY	jrtplib/rtperrors.h	170;"	d
+ERR_RTP_UDPV6TRANS_NOTAMULTICASTADDRESS	jrtplib/rtperrors.h	171;"	d
+ERR_RTP_UDPV6TRANS_NOTCREATED	jrtplib/rtperrors.h	172;"	d
+ERR_RTP_UDPV6TRANS_NOTINIT	jrtplib/rtperrors.h	173;"	d
+ERR_RTP_UDPV6TRANS_NOTWAITING	jrtplib/rtperrors.h	174;"	d
+ERR_RTP_UDPV6TRANS_PORTBASENOTEVEN	jrtplib/rtperrors.h	175;"	d
+ERR_RTP_UDPV6TRANS_SPECIFIEDSIZETOOBIG	jrtplib/rtperrors.h	176;"	d
+ExternalProto	jrtplib/rtptransmitter.h	/^		ExternalProto, \/**< Specifies the transmitter which can send packets using an external mechanism, and which can have received packets injected into it - see RTPExternalTransmitter for additional information. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
+FlushPackets	jrtplib/rtpsourcedata.h	/^inline void RTPSourceData::FlushPackets()$/;"	f	class:jrtplib::RTPSourceData
+GetAPPData	jrtplib/rtcpapppacket.h	/^inline uint8_t *RTCPAPPPacket::GetAPPData()$/;"	f	class:jrtplib::RTCPAPPPacket
+GetAPPDataLength	jrtplib/rtcpapppacket.h	/^inline size_t RTCPAPPPacket::GetAPPDataLength() const$/;"	f	class:jrtplib::RTCPAPPPacket
+GetActiveMemberCount	jrtplib/rtpsources.h	/^	int GetActiveMemberCount() const								{ return activecount; } $/;"	f	class:jrtplib::RTPSources
+GetAdditionalHeaderSize	jrtplib/rtpexternaltransmitter.h	/^	int GetAdditionalHeaderSize() const								{ return headersize; }$/;"	f	class:jrtplib::RTPExternalTransmissionParams
+GetAddressType	jrtplib/rtpaddress.h	/^	AddressType GetAddressType() const				{ return addresstype; }$/;"	f	class:jrtplib::RTPAddress
+GetBYEReason	jrtplib/rtpsourcedata.h	/^	uint8_t *GetBYEReason(size_t *len) const				{ *len = byereasonlen; return byereason; }$/;"	f	class:jrtplib::RTPSourceData
+GetBYETime	jrtplib/rtpsourcedata.h	/^	RTPTime GetBYETime() const						{ return byetime; }$/;"	f	class:jrtplib::RTPSourceData
+GetBYETimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	double GetBYETimeoutMultiplier() const					{ return byetimeoutmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetBaseSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t GetBaseSequenceNumber() const					{ return baseseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
+GetBindIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t GetBindIP() const									{ return bindIP; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetBindIP	jrtplib/rtpudpv6transmitter.h	/^	in6_addr GetBindIP() const											{ return bindIP; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetByteCount	jrtplib/rtpsourcedata.h	/^	uint32_t GetByteCount() const						{ return bytecount; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+GetCNAME	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetCNAME(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_CNAME-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetCNAME	jrtplib/rtpsessionparams.h	/^	std::string GetCNAME() const						{ return cname; }$/;"	f	class:jrtplib::RTPSessionParams
+GetCSRCCount	jrtplib/rtppacket.h	/^	int GetCSRCCount() const															{ return numcsrcs; }$/;"	f	class:jrtplib::RTPPacket
+GetChunkCount	jrtplib/rtcpsdespacket.h	/^inline int RTCPSDESPacket::GetChunkCount() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetChunkSSRC	jrtplib/rtcpsdespacket.h	/^inline uint32_t RTCPSDESPacket::GetChunkSSRC() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetCollisionTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	double GetCollisionTimeoutMultiplier() const				{ return collisionmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetCompoundPacketData	jrtplib/rtcpcompoundpacket.h	/^	uint8_t *GetCompoundPacketData()						{ return compoundpacket; }$/;"	f	class:jrtplib::RTCPCompoundPacket
+GetCompoundPacketLength	jrtplib/rtcpcompoundpacket.h	/^	size_t GetCompoundPacketLength()						{ return compoundpacketlength; }$/;"	f	class:jrtplib::RTCPCompoundPacket
+GetControlTrafficFraction	jrtplib/rtpsessionparams.h	/^	double GetControlTrafficFraction() const				{ return controlfrac; }$/;"	f	class:jrtplib::RTPSessionParams
+GetCreationError	jrtplib/rtcpcompoundpacket.h	/^	int GetCreationError()									{ return error; }$/;"	f	class:jrtplib::RTCPCompoundPacket
+GetCreationError	jrtplib/rtppacket.h	/^	int GetCreationError() const														{ return error; }$/;"	f	class:jrtplib::RTPPacket
+GetCurrentElement	jrtplib/rtphashtable.h	/^	Element &GetCurrentElement()				{ return curhashelem->GetElement(); }$/;"	f	class:jrtplib::RTPHashTable
+GetCurrentElement	jrtplib/rtpkeyhashtable.h	/^	Element &GetCurrentElement()				{ return curhashelem->GetElement(); }$/;"	f	class:jrtplib::RTPKeyHashTable
+GetCurrentKey	jrtplib/rtpkeyhashtable.h	/^	Key &GetCurrentKey()					{ return curhashelem->GetKey(); }$/;"	f	class:jrtplib::RTPKeyHashTable
+GetDLSR	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetDLSR(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetDLSR	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetDLSR(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetData	jrtplib/rtprawpacket.h	/^	uint8_t *GetData()														{ return packetdata; }$/;"	f	class:jrtplib::RTPRawPacket
+GetDataLength	jrtplib/rtprawpacket.h	/^	size_t GetDataLength() const											{ return packetdatalength; }$/;"	f	class:jrtplib::RTPRawPacket
+GetDebugNumber	jrtplib/rtplibraryversion.h	/^	int GetDebugNumber() const						{ return debugnr; }$/;"	f	class:jrtplib::RTPLibraryVersion
+GetDelaySinceLastSR	jrtplib/rtpsourcedata.h	/^	uint32_t GetDelaySinceLastSR() const					{ return dlsr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetDestinationString	jrtplib/rtpipv4destination.h	/^inline std::string RTPIPv4Destination::GetDestinationString() const$/;"	f	class:jrtplib::RTPIPv4Destination
+GetDestinationString	jrtplib/rtpipv6destination.h	/^inline std::string RTPIPv6Destination::GetDestinationString() const$/;"	f	class:jrtplib::RTPIPv6Destination
+GetDouble	jrtplib/rtptimeutilities.h	/^	double GetDouble() const 										{ return (((double)sec)+(((double)microsec)\/1000000.0)); }$/;"	f	class:jrtplib::RTPTime
+GetEMail	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetEMail(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_EMAIL-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetElement	jrtplib/rtphashtable.h	/^		Element &GetElement()						{ return element; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
+GetElement	jrtplib/rtpkeyhashtable.h	/^		Element &GetElement()						{ return element; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+GetExtendedHighestSequenceNumber	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetExtendedHighestSequenceNumber(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetExtendedHighestSequenceNumber	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetExtendedHighestSequenceNumber(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetExtendedHighestSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t GetExtendedHighestSequenceNumber() const			{ return exthighseqnr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetExtendedHighestSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t GetExtendedHighestSequenceNumber() const			{ return exthighseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
+GetExtendedSequenceNumber	jrtplib/rtppacket.h	/^	uint32_t GetExtendedSequenceNumber() const											{ return extseqnr; }$/;"	f	class:jrtplib::RTPPacket
+GetExtensionData	jrtplib/rtppacket.h	/^	uint8_t *GetExtensionData() const													{ return extension; }$/;"	f	class:jrtplib::RTPPacket
+GetExtensionID	jrtplib/rtppacket.h	/^	uint16_t GetExtensionID() const														{ return extid; }$/;"	f	class:jrtplib::RTPPacket
+GetExtensionLength	jrtplib/rtppacket.h	/^	size_t GetExtensionLength() const													{ return extensionlength; }$/;"	f	class:jrtplib::RTPPacket
+GetFractionLost	jrtplib/rtcprrpacket.h	/^inline uint8_t RTCPRRPacket::GetFractionLost(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetFractionLost	jrtplib/rtcpsrpacket.h	/^inline uint8_t RTCPSRPacket::GetFractionLost(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetFractionLost	jrtplib/rtpsourcedata.h	/^	double GetFractionLost() const						{ return fractionlost; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetHashIndex	jrtplib/rtphashtable.h	/^		int GetHashIndex() 						{ return hashindex; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
+GetHashIndex	jrtplib/rtpkeyhashtable.h	/^		int GetHashIndex() 						{ return hashindex; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+GetHeaderOverhead	jrtplib/rtcpscheduler.h	/^	size_t GetHeaderOverhead() const								{ return headeroverhead; }$/;"	f	class:jrtplib::RTCPScheduler
+GetHeaderOverhead	jrtplib/rtpexternaltransmitter.h	/^	size_t GetHeaderOverhead()									{ return headersize; }$/;"	f	class:jrtplib::RTPExternalTransmitter
+GetHeaderOverhead	jrtplib/rtpudpv4transmitter.h	/^	size_t GetHeaderOverhead()							{ return RTPUDPV4TRANS_HEADERSIZE; }$/;"	f	class:jrtplib::RTPUDPv4Transmitter
+GetHeaderOverhead	jrtplib/rtpudpv6transmitter.h	/^	size_t GetHeaderOverhead()								{ return RTPUDPV6TRANS_HEADERSIZE; }$/;"	f	class:jrtplib::RTPUDPv6Transmitter
+GetHostAddress	jrtplib/rtpbyteaddress.h	/^	const uint8_t *GetHostAddress() const												{ return hostaddress; }$/;"	f	class:jrtplib::RTPByteAddress
+GetHostAddressLength	jrtplib/rtpbyteaddress.h	/^	size_t GetHostAddressLength() const												{ return addresslength; }$/;"	f	class:jrtplib::RTPByteAddress
+GetIP	jrtplib/rtpipv4address.h	/^	uint32_t GetIP() const																			{ return ip; }$/;"	f	class:jrtplib::RTPIPv4Address
+GetIP	jrtplib/rtpipv4destination.h	/^	uint32_t GetIP() const									{ return ip; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetIP	jrtplib/rtpipv6address.h	/^	in6_addr GetIP() const																					{ return ip; }$/;"	f	class:jrtplib::RTPIPv6Address
+GetIP	jrtplib/rtpipv6address.h	/^	void GetIP(uint8_t ip[16]) const																		{ for (int i = 0 ; i < 16 ; i++) ip[i] = RTPIPv6Address::ip.s6_addr[i]; }$/;"	f	class:jrtplib::RTPIPv6Address
+GetIP	jrtplib/rtpipv6destination.h	/^	in6_addr GetIP() const								{ return rtpaddr.sin6_addr; }$/;"	f	class:jrtplib::RTPIPv6Destination
+GetIP_NBO	jrtplib/rtpipv4destination.h	/^	uint32_t GetIP_NBO() const								{ return rtpaddr.sin_addr.s_addr; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetIndex	jrtplib/rtpsources.h	/^	static int GetIndex(const uint32_t &ssrc)				{ return ssrc%RTPSOURCES_HASHSIZE; }$/;"	f	class:jrtplib::RTPSources_GetHashIndex
+GetIndex	jrtplib/rtpudpv4transmitter.h	/^	static int GetIndex(const RTPIPv4Destination &d)							{ return d.GetIP()%RTPUDPV4TRANS_HASHSIZE; }$/;"	f	class:jrtplib::RTPUDPv4Trans_GetHashIndex_IPv4Dest
+GetIndex	jrtplib/rtpudpv4transmitter.h	/^	static int GetIndex(const uint32_t &k)									{ return k%RTPUDPV4TRANS_HASHSIZE; }$/;"	f	class:jrtplib::RTPUDPv4Trans_GetHashIndex_uint32_t
+GetIndex	jrtplib/rtpudpv6transmitter.h	/^	static int GetIndex(const RTPIPv6Destination &d)					{ in6_addr ip = d.GetIP(); return ((((uint32_t)ip.s6_addr[12])<<24)|(((uint32_t)ip.s6_addr[13])<<16)|(((uint32_t)ip.s6_addr[14])<<8)|((uint32_t)ip.s6_addr[15]))%RTPUDPV6TRANS_HASHSIZE; }$/;"	f	class:jrtplib::RTPUDPv6Trans_GetHashIndex_IPv6Dest
+GetIndex	jrtplib/rtpudpv6transmitter.h	/^	static int GetIndex(const in6_addr &ip)							{ return ((((uint32_t)ip.s6_addr[12])<<24)|(((uint32_t)ip.s6_addr[13])<<16)|(((uint32_t)ip.s6_addr[14])<<8)|((uint32_t)ip.s6_addr[15]))%RTPUDPV6TRANS_HASHSIZE; }$/;"	f	class:jrtplib::RTPUDPv6Trans_GetHashIndex_in6_addr
+GetInfo	jrtplib/rtcpsdesinfo.h	/^		uint8_t *GetInfo(size_t *len) const				{ *len = length; return str; }$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+GetItemData	jrtplib/rtcpsdespacket.h	/^inline uint8_t *RTCPSDESPacket::GetItemData()$/;"	f	class:jrtplib::RTCPSDESPacket
+GetItemLength	jrtplib/rtcpsdespacket.h	/^inline size_t RTCPSDESPacket::GetItemLength() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetItemType	jrtplib/rtcpsdespacket.h	/^inline RTCPSDESPacket::ItemType RTCPSDESPacket::GetItemType() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetJitter	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetJitter(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetJitter	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetJitter(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetJitter	jrtplib/rtpsourcedata.h	/^	uint32_t GetJitter() const						{ return jitter; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetJitter	jrtplib/rtpsourcedata.h	/^	uint32_t GetJitter() const						{ return jitter; }$/;"	f	class:jrtplib::RTPSourceStats
+GetKey	jrtplib/rtpkeyhashtable.h	/^		Key &GetKey()							{ return key; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+GetLSR	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetLSR(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetLSR	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetLSR(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetLSW	jrtplib/rtptimeutilities.h	/^	uint32_t GetLSW() const								{ return lsw; }$/;"	f	class:jrtplib::RTPNTPTime
+GetLastMessageTime	jrtplib/rtpsourcedata.h	/^	RTPTime GetLastMessageTime() const					{ return lastmsgtime; }$/;"	f	class:jrtplib::RTPSourceStats
+GetLastNoteTime	jrtplib/rtpsourcedata.h	/^	RTPTime GetLastNoteTime() const						{ return lastnotetime; }$/;"	f	class:jrtplib::RTPSourceStats
+GetLastRTPPacketTime	jrtplib/rtpsourcedata.h	/^	RTPTime GetLastRTPPacketTime() const					{ return lastrtptime; }$/;"	f	class:jrtplib::RTPSourceStats
+GetLastSRTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t GetLastSRTimestamp() const					{ return lsr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetLocalCNAME	jrtplib/rtcppacketbuilder.h	/^	uint8_t *GetLocalCNAME(size_t *len) const					{ if (!init) return 0; return ownsdesinfo.GetCNAME(len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+GetLocalIPList	jrtplib/rtpudpv4transmitter.h	/^	const std::list<uint32_t> &GetLocalIPList() const			{ return localIPs; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetLocalIPList	jrtplib/rtpudpv4transmitter.h	/^	std::list<uint32_t> GetLocalIPList() const				{ return localIPlist; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+GetLocalIPList	jrtplib/rtpudpv6transmitter.h	/^	const std::list<in6_addr> &GetLocalIPList() const					{ return localIPs; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetLocalIPList	jrtplib/rtpudpv6transmitter.h	/^	std::list<in6_addr> GetLocalIPList() const				{ return localIPlist; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+GetLocation	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetLocation(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_LOCATION-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetLostPacketCount	jrtplib/rtcprrpacket.h	/^inline int32_t RTCPRRPacket::GetLostPacketCount(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetLostPacketCount	jrtplib/rtcpsrpacket.h	/^inline int32_t RTCPSRPacket::GetLostPacketCount(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetMSW	jrtplib/rtptimeutilities.h	/^	uint32_t GetMSW() const								{ return msw; }$/;"	f	class:jrtplib::RTPNTPTime
+GetMajorNumber	jrtplib/rtplibraryversion.h	/^	int GetMajorNumber() const						{ return majornr; }$/;"	f	class:jrtplib::RTPLibraryVersion
+GetMaximumPacketSize	jrtplib/rtpsessionparams.h	/^	size_t GetMaximumPacketSize() const					{ return maxpacksize; }$/;"	f	class:jrtplib::RTPSessionParams
+GetMemoryManager	jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *GetMemoryManager() const						{ return 0; }$/;"	f	class:jrtplib::RTPMemoryObject
+GetMemoryManager	jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *GetMemoryManager() const						{ return mgr; }$/;"	f	class:jrtplib::RTPMemoryObject
+GetMicroSeconds	jrtplib/rtptimeutilities.h	/^	uint32_t GetMicroSeconds() const								{ return microsec; }$/;"	f	class:jrtplib::RTPTime
+GetMinimumRTCPTransmissionInterval	jrtplib/rtpsessionparams.h	/^	RTPTime GetMinimumRTCPTransmissionInterval() const			{ return mininterval; }$/;"	f	class:jrtplib::RTPSessionParams
+GetMinimumTransmissionInterval	jrtplib/rtcpscheduler.h	/^	RTPTime GetMinimumTransmissionInterval() const					{ return mininterval; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+GetMinorNumber	jrtplib/rtplibraryversion.h	/^	int GetMinorNumber() const						{ return minornr; }$/;"	f	class:jrtplib::RTPLibraryVersion
+GetMulticastInterfaceIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t GetMulticastInterfaceIP() const					{ return mcastifaceIP; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetMulticastInterfaceIndex	jrtplib/rtpudpv6transmitter.h	/^	unsigned int GetMulticastInterfaceIndex() const						{ return mcastifidx; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetMulticastTTL	jrtplib/rtpudpv4transmitter.h	/^	uint8_t GetMulticastTTL() const								{ return multicastTTL; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetMulticastTTL	jrtplib/rtpudpv6transmitter.h	/^	uint8_t GetMulticastTTL() const										{ return multicastTTL; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetNTPTime	jrtplib/rtptimeutilities.h	/^inline RTPNTPTime RTPTime::GetNTPTime() const$/;"	f	class:jrtplib::RTPTime
+GetNTPTimestamp	jrtplib/rtcpsrpacket.h	/^inline RTPNTPTime RTCPSRPacket::GetNTPTimestamp() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetNTPTimestamp	jrtplib/rtpsourcedata.h	/^	RTPNTPTime GetNTPTimestamp() const					{ return ntptimestamp; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+GetName	jrtplib/rtcpapppacket.h	/^inline uint8_t *RTCPAPPPacket::GetName()$/;"	f	class:jrtplib::RTCPAPPPacket
+GetName	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetName(size_t *len) const						{ return GetNonPrivateItem(RTCP_SDES_ID_NAME-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetNextPacket	jrtplib/rtcpcompoundpacket.h	/^	RTCPPacket *GetNextPacket()								{ if (rtcppackit == rtcppacklist.end()) return 0; RTCPPacket *p = *rtcppackit; rtcppackit++; return p; }$/;"	f	class:jrtplib::RTCPCompoundPacket
+GetNextPacket	jrtplib/rtpsourcedata.h	/^inline RTPPacket *RTPSourceData::GetNextPacket()$/;"	f	class:jrtplib::RTPSourceData
+GetNonPrivateItem	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetNonPrivateItem(int itemno,size_t *len) const		{ return nonprivateitems[itemno].GetInfo(len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetNote	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetNote(size_t *len) const 					{ return GetNonPrivateItem(RTCP_SDES_ID_NOTE-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetNoteTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	double GetNoteTimeoutMultiplier() const					{ return notemultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetNumPacketsReceived	jrtplib/rtpsourcedata.h	/^	uint32_t GetNumPacketsReceived() const					{ return packetsreceived; }$/;"	f	class:jrtplib::RTPSourceStats
+GetNumPacketsReceivedInInterval	jrtplib/rtpsourcedata.h	/^	int32_t GetNumPacketsReceivedInInterval() const				{ return numnewpackets; }$/;"	f	class:jrtplib::RTPSourceStats
+GetOwnSourceInfo	jrtplib/rtpsources.h	/^	RTPSourceData *GetOwnSourceInfo()								{ return (RTPSourceData *)owndata; }$/;"	f	class:jrtplib::RTPSources
+GetOwnTimestampUnit	jrtplib/rtpsessionparams.h	/^	double GetOwnTimestampUnit() const					{ return owntsunit; }$/;"	f	class:jrtplib::RTPSessionParams
+GetPRIVPrefixData	jrtplib/rtcpsdespacket.h	/^inline uint8_t *RTCPSDESPacket::GetPRIVPrefixData()$/;"	f	class:jrtplib::RTCPSDESPacket
+GetPRIVPrefixLength	jrtplib/rtcpsdespacket.h	/^inline size_t RTCPSDESPacket::GetPRIVPrefixLength() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetPRIVValueData	jrtplib/rtcpsdespacket.h	/^inline uint8_t *RTCPSDESPacket::GetPRIVValueData()$/;"	f	class:jrtplib::RTCPSDESPacket
+GetPRIVValueLength	jrtplib/rtcpsdespacket.h	/^inline size_t RTCPSDESPacket::GetPRIVValueLength() const$/;"	f	class:jrtplib::RTCPSDESPacket
+GetPacket	jrtplib/rtppacketbuilder.h	/^	uint8_t *GetPacket()						{ if (!init) return 0; return buffer; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPacketCount	jrtplib/rtppacketbuilder.h	/^	uint32_t GetPacketCount()					{ if (!init) return 0; return numpackets; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPacketCount	jrtplib/rtpsourcedata.h	/^	uint32_t GetPacketCount() const						{ return packetcount; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+GetPacketData	jrtplib/rtcppacket.h	/^	uint8_t *GetPacketData()							{ return data; }$/;"	f	class:jrtplib::RTCPPacket
+GetPacketData	jrtplib/rtppacket.h	/^	uint8_t *GetPacketData() const														{ return packet; }$/;"	f	class:jrtplib::RTPPacket
+GetPacketInjector	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalPacketInjecter *GetPacketInjector() const						{ return packetinjector; }$/;"	f	class:jrtplib::RTPExternalTransmissionInfo
+GetPacketLength	jrtplib/rtcppacket.h	/^	size_t GetPacketLength() const						{ return datalen; }$/;"	f	class:jrtplib::RTCPPacket
+GetPacketLength	jrtplib/rtppacket.h	/^	size_t GetPacketLength() const														{ return packetlength; }$/;"	f	class:jrtplib::RTPPacket
+GetPacketLength	jrtplib/rtppacketbuilder.h	/^	size_t GetPacketLength()					{ if (!init) return 0; return packetlength; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPacketTime	jrtplib/rtppacketbuilder.h	/^	RTPTime GetPacketTime() const					{ if (!init) return RTPTime(0,0); return lastwallclocktime; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPacketTimestamp	jrtplib/rtppacketbuilder.h	/^	uint32_t GetPacketTimestamp() const				{ if (!init) return 0; return lastrtptimestamp; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPacketType	jrtplib/rtcppacket.h	/^	PacketType GetPacketType() const					{ return packettype; }$/;"	f	class:jrtplib::RTCPPacket
+GetPacketsLost	jrtplib/rtpsourcedata.h	/^	int32_t	GetPacketsLost() const						{ return packetslost; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetParameters	jrtplib/rtcpscheduler.h	/^	RTCPSchedulerParams GetParameters() const							{ return schedparams; }$/;"	f	class:jrtplib::RTCPScheduler
+GetPayloadData	jrtplib/rtppacket.h	/^	uint8_t *GetPayloadData() const														{ return payload; }$/;"	f	class:jrtplib::RTPPacket
+GetPayloadLength	jrtplib/rtppacket.h	/^	size_t GetPayloadLength() const														{ return payloadlength; }$/;"	f	class:jrtplib::RTPPacket
+GetPayloadOctetCount	jrtplib/rtppacketbuilder.h	/^	uint32_t GetPayloadOctetCount()				{ if (!init) return 0; return numpayloadbytes; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetPayloadType	jrtplib/rtppacket.h	/^	uint8_t GetPayloadType() const														{ return payloadtype; }$/;"	f	class:jrtplib::RTPPacket
+GetPhone	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetPhone(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_PHONE-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetPort	jrtplib/rtpbyteaddress.h	/^	uint16_t GetPort() const													{ return port; }$/;"	f	class:jrtplib::RTPByteAddress
+GetPort	jrtplib/rtpipv4address.h	/^	uint16_t GetPort() const																		{ return port; }$/;"	f	class:jrtplib::RTPIPv4Address
+GetPort	jrtplib/rtpipv6address.h	/^	uint16_t GetPort() const																				{ return port; }$/;"	f	class:jrtplib::RTPIPv6Address
+GetPortbase	jrtplib/rtpudpv4transmitter.h	/^	uint16_t GetPortbase() const								{ return portbase; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetPortbase	jrtplib/rtpudpv6transmitter.h	/^	uint16_t GetPortbase() const										{ return portbase; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetPredefinedSSRC	jrtplib/rtpsessionparams.h	/^	uint32_t GetPredefinedSSRC() const					{ return predefinedssrc; }$/;"	f	class:jrtplib::RTPSessionParams
+GetPrefix	jrtplib/rtcpsdesinfo.h	/^		uint8_t *GetPrefix(size_t *len) const				{ *len = prefixlen; return prefix; }$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+GetProbationType	jrtplib/rtpsessionparams.h	/^	RTPSources::ProbationType GetProbationType() const			{ return probationtype; }$/;"	f	class:jrtplib::RTPSessionParams
+GetRTCPBandwidth	jrtplib/rtcpscheduler.h	/^	double GetRTCPBandwidth() const							{ return bandwidth; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+GetRTCPDataAddress	jrtplib/rtpsourcedata.h	/^	const RTPAddress *GetRTCPDataAddress() const				{ return rtcpaddr; }$/;"	f	class:jrtplib::RTPSourceData
+GetRTCPPort_NBO	jrtplib/rtpipv4destination.h	/^	uint16_t GetRTCPPort_NBO() const							{ return rtcpaddr.sin_port; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetRTCPReceiveBuffer	jrtplib/rtpudpv4transmitter.h	/^	int GetRTCPReceiveBuffer() const							{ return rtcprecvbuf; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetRTCPReceiveBuffer	jrtplib/rtpudpv6transmitter.h	/^	int GetRTCPReceiveBuffer() const							{ return rtcprecvbuf; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetRTCPSendBuffer	jrtplib/rtpudpv4transmitter.h	/^	int GetRTCPSendBuffer() const								{ return rtcpsendbuf; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetRTCPSendBuffer	jrtplib/rtpudpv6transmitter.h	/^	int GetRTCPSendBuffer() const								{ return rtcpsendbuf; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetRTCPSockAddr	jrtplib/rtpipv4destination.h	/^	const struct sockaddr_in *GetRTCPSockAddr() const					{ return &rtcpaddr; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetRTCPSockAddr	jrtplib/rtpipv6destination.h	/^	const struct sockaddr_in6 *GetRTCPSockAddr() const				{ return &rtcpaddr; }$/;"	f	class:jrtplib::RTPIPv6Destination
+GetRTCPSocket	jrtplib/rtpudpv4transmitter.h	/^	SOCKET GetRTCPSocket() const							{ return rtcpsocket; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+GetRTCPSocket	jrtplib/rtpudpv4transmitter.h	/^	int GetRTCPSocket() const								{ return rtcpsocket; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+GetRTCPSocket	jrtplib/rtpudpv6transmitter.h	/^	SOCKET GetRTCPSocket() const							{ return rtcpsocket; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+GetRTCPSocket	jrtplib/rtpudpv6transmitter.h	/^	int GetRTCPSocket() const								{ return rtcpsocket; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+GetRTPDataAddress	jrtplib/rtpsourcedata.h	/^	const RTPAddress *GetRTPDataAddress() const				{ return rtpaddr; }$/;"	f	class:jrtplib::RTPSourceData
+GetRTPPort_NBO	jrtplib/rtpipv4destination.h	/^	uint16_t GetRTPPort_NBO() const								{ return rtpaddr.sin_port; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetRTPReceiveBuffer	jrtplib/rtpudpv4transmitter.h	/^	int GetRTPReceiveBuffer() const								{ return rtprecvbuf; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetRTPReceiveBuffer	jrtplib/rtpudpv6transmitter.h	/^	int GetRTPReceiveBuffer() const								{ return rtprecvbuf; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetRTPSendBuffer	jrtplib/rtpudpv4transmitter.h	/^	int GetRTPSendBuffer() const								{ return rtpsendbuf; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+GetRTPSendBuffer	jrtplib/rtpudpv6transmitter.h	/^	int GetRTPSendBuffer() const								{ return rtpsendbuf; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetRTPSockAddr	jrtplib/rtpipv4destination.h	/^	const struct sockaddr_in *GetRTPSockAddr() const					{ return &rtpaddr; }$/;"	f	class:jrtplib::RTPIPv4Destination
+GetRTPSockAddr	jrtplib/rtpipv6destination.h	/^	const struct sockaddr_in6 *GetRTPSockAddr() const				{ return &rtpaddr; }$/;"	f	class:jrtplib::RTPIPv6Destination
+GetRTPSocket	jrtplib/rtpudpv4transmitter.h	/^	SOCKET GetRTPSocket() const								{ return rtpsocket; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+GetRTPSocket	jrtplib/rtpudpv4transmitter.h	/^	int GetRTPSocket() const								{ return rtpsocket; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+GetRTPSocket	jrtplib/rtpudpv6transmitter.h	/^	SOCKET GetRTPSocket() const								{ return rtpsocket; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+GetRTPSocket	jrtplib/rtpudpv6transmitter.h	/^	int GetRTPSocket() const								{ return rtpsocket; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+GetRTPTimestamp	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetRTPTimestamp() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetRTPTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t GetRTPTimestamp() const					{ return rtptimestamp; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+GetReasonData	jrtplib/rtcpbyepacket.h	/^inline uint8_t *RTCPBYEPacket::GetReasonData()$/;"	f	class:jrtplib::RTCPBYEPacket
+GetReasonLength	jrtplib/rtcpbyepacket.h	/^inline size_t RTCPBYEPacket::GetReasonLength() const$/;"	f	class:jrtplib::RTCPBYEPacket
+GetReceiveMode	jrtplib/rtpsessionparams.h	/^	RTPTransmitter::ReceiveMode GetReceiveMode() const			{ return receivemode; }$/;"	f	class:jrtplib::RTPSessionParams
+GetReceiveTime	jrtplib/rtppacket.h	/^	RTPTime GetReceiveTime() const														{ return receivetime; }$/;"	f	class:jrtplib::RTPPacket
+GetReceiveTime	jrtplib/rtprawpacket.h	/^	RTPTime GetReceiveTime() const											{ return receivetime; }$/;"	f	class:jrtplib::RTPRawPacket
+GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime GetReceiveTime() const						{ return receivetime; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime GetReceiveTime() const						{ return receivetime; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+GetReceptionReportCount	jrtplib/rtcprrpacket.h	/^inline int RTCPRRPacket::GetReceptionReportCount() const$/;"	f	class:jrtplib::RTCPRRPacket
+GetReceptionReportCount	jrtplib/rtcpsrpacket.h	/^inline int RTCPSRPacket::GetReceptionReportCount() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetRequestImmediateBYE	jrtplib/rtcpscheduler.h	/^	bool GetRequestImmediateBYE() const						{ return immediatebye; }	$/;"	f	class:jrtplib::RTCPSchedulerParams
+GetRequestImmediateBYE	jrtplib/rtpsessionparams.h	/^	bool GetRequestImmediateBYE() const					{ return immediatebye; }$/;"	f	class:jrtplib::RTPSessionParams
+GetResolveLocalHostname	jrtplib/rtpsessionparams.h	/^	bool GetResolveLocalHostname() const					{ return resolvehostname; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSSRC	jrtplib/rtcpapppacket.h	/^inline uint32_t RTCPAPPPacket::GetSSRC() const$/;"	f	class:jrtplib::RTCPAPPPacket
+GetSSRC	jrtplib/rtcpbyepacket.h	/^inline uint32_t RTCPBYEPacket::GetSSRC(int index) const$/;"	f	class:jrtplib::RTCPBYEPacket
+GetSSRC	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetSSRC(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GetSSRC	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetSSRC(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+GetSSRC	jrtplib/rtppacket.h	/^	uint32_t GetSSRC() const															{ return ssrc; }$/;"	f	class:jrtplib::RTPPacket
+GetSSRC	jrtplib/rtppacketbuilder.h	/^	uint32_t GetSSRC() const					{ if (!init) return 0; return ssrc; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetSSRC	jrtplib/rtpsourcedata.h	/^	uint32_t GetSSRC() const						{ return ssrc; }$/;"	f	class:jrtplib::RTPSourceData
+GetSSRCCount	jrtplib/rtcpbyepacket.h	/^inline int RTCPBYEPacket::GetSSRCCount() const$/;"	f	class:jrtplib::RTCPBYEPacket
+GetSavedExtendedSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t GetSavedExtendedSequenceNumber() const			{ return savedextseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
+GetSeconds	jrtplib/rtptimeutilities.h	/^	uint32_t GetSeconds() const										{ return sec; }$/;"	f	class:jrtplib::RTPTime
+GetSender	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalSender *GetSender() const								{ return sender; }$/;"	f	class:jrtplib::RTPExternalTransmissionParams
+GetSenderAddress	jrtplib/rtprawpacket.h	/^	const RTPAddress *GetSenderAddress() const								{ return senderaddress; }$/;"	f	class:jrtplib::RTPRawPacket
+GetSenderBandwidthFraction	jrtplib/rtcpscheduler.h	/^	double GetSenderBandwidthFraction() const					{ return senderfraction; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+GetSenderControlBandwidthFraction	jrtplib/rtpsessionparams.h	/^	double GetSenderControlBandwidthFraction() const			{ return senderfrac; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSenderCount	jrtplib/rtpsources.h	/^	int GetSenderCount() const										{ return sendercount; }$/;"	f	class:jrtplib::RTPSources
+GetSenderOctetCount	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetSenderOctetCount() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetSenderPacketCount	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetSenderPacketCount() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetSenderReportForBYE	jrtplib/rtpsessionparams.h	/^	bool GetSenderReportForBYE() const					{ return SR_BYE; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSenderSSRC	jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetSenderSSRC() const$/;"	f	class:jrtplib::RTCPRRPacket
+GetSenderSSRC	jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetSenderSSRC() const$/;"	f	class:jrtplib::RTCPSRPacket
+GetSenderTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	double GetSenderTimeoutMultiplier() const				{ return sendermultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSequenceNumber	jrtplib/rtppacket.h	/^	uint16_t GetSequenceNumber() const													{ return (uint16_t)(extseqnr&0x0000FFFF); }$/;"	f	class:jrtplib::RTPPacket
+GetSequenceNumber	jrtplib/rtppacketbuilder.h	/^	uint16_t GetSequenceNumber() const				{ if (!init) return 0; return seqnr; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetSessionBandwidth	jrtplib/rtpsessionparams.h	/^	double GetSessionBandwidth() const					{ return sessionbandwidth; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSourceTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	double GetSourceTimeoutMultiplier() const				{ return generaltimeoutmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetSubType	jrtplib/rtcpapppacket.h	/^inline uint8_t RTCPAPPPacket::GetSubType() const$/;"	f	class:jrtplib::RTCPAPPPacket
+GetTimestamp	jrtplib/rtppacket.h	/^	uint32_t GetTimestamp() const														{ return timestamp; }$/;"	f	class:jrtplib::RTPPacket
+GetTimestamp	jrtplib/rtppacketbuilder.h	/^	uint32_t GetTimestamp() const					{ if (!init) return 0; return timestamp; }$/;"	f	class:jrtplib::RTPPacketBuilder
+GetTimestampUnit	jrtplib/rtpsourcedata.h	/^	double GetTimestampUnit() const						{ return timestampunit; }$/;"	f	class:jrtplib::RTPSourceData
+GetTool	jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetTool(size_t *len) const						{ return GetNonPrivateItem(RTCP_SDES_ID_TOOL-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
+GetTotalCount	jrtplib/rtpsources.h	/^	int GetTotalCount() const										{ return totalcount; }$/;"	f	class:jrtplib::RTPSources
+GetTransmissionProtocol	jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol GetTransmissionProtocol() const			{ return protocol; }$/;"	f	class:jrtplib::RTPTransmissionInfo
+GetTransmissionProtocol	jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol GetTransmissionProtocol() const			{ return protocol; }$/;"	f	class:jrtplib::RTPTransmissionParams
+GetUseHalfAtStartup	jrtplib/rtcpscheduler.h	/^	bool GetUseHalfAtStartup() const						{ return usehalfatstartup; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+GetUseHalfRTCPIntervalAtStartup	jrtplib/rtpsessionparams.h	/^	bool GetUseHalfRTCPIntervalAtStartup() const				{ return usehalfatstartup; }$/;"	f	class:jrtplib::RTPSessionParams
+GetUsePredefinedSSRC	jrtplib/rtpsessionparams.h	/^	bool GetUsePredefinedSSRC() const					{ return usepredefinedssrc; }$/;"	f	class:jrtplib::RTPSessionParams
+GotoElement	jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::GotoElement(const Element &e)$/;"	f	class:jrtplib::RTPHashTable
+GotoElement	jrtplib/rtpkeyhashtable.h	/^inline int RTPKeyHashTable<Key,Element,GetIndex,hashsize>::GotoElement(const Key &k)$/;"	f	class:jrtplib::RTPKeyHashTable
+GotoFirstChunk	jrtplib/rtcpsdespacket.h	/^inline bool RTCPSDESPacket::GotoFirstChunk()$/;"	f	class:jrtplib::RTCPSDESPacket
+GotoFirstElement	jrtplib/rtphashtable.h	/^	void GotoFirstElement()					{ curhashelem = firsthashelem; }$/;"	f	class:jrtplib::RTPHashTable
+GotoFirstElement	jrtplib/rtpkeyhashtable.h	/^	void GotoFirstElement()					{ curhashelem = firsthashelem; }$/;"	f	class:jrtplib::RTPKeyHashTable
+GotoFirstItem	jrtplib/rtcpsdespacket.h	/^inline bool RTCPSDESPacket::GotoFirstItem()$/;"	f	class:jrtplib::RTCPSDESPacket
+GotoFirstPacket	jrtplib/rtcpcompoundpacket.h	/^	void GotoFirstPacket()									{ rtcppackit = rtcppacklist.begin(); }$/;"	f	class:jrtplib::RTCPCompoundPacket
+GotoLastElement	jrtplib/rtphashtable.h	/^	void GotoLastElement()					{ curhashelem = lasthashelem; }$/;"	f	class:jrtplib::RTPHashTable
+GotoLastElement	jrtplib/rtpkeyhashtable.h	/^	void GotoLastElement()					{ curhashelem = lasthashelem; }$/;"	f	class:jrtplib::RTPKeyHashTable
+GotoNextChunk	jrtplib/rtcpsdespacket.h	/^inline bool RTCPSDESPacket::GotoNextChunk()$/;"	f	class:jrtplib::RTCPSDESPacket
+GotoNextElement	jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::GotoNextElement()$/;"	f	class:jrtplib::RTPHashTable
+GotoNextElement	jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::GotoNextElement()$/;"	f	class:jrtplib::RTPKeyHashTable
+GotoNextItem	jrtplib/rtcpsdespacket.h	/^inline bool RTCPSDESPacket::GotoNextItem()$/;"	f	class:jrtplib::RTCPSDESPacket
+GotoPreviousElement	jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::GotoPreviousElement()$/;"	f	class:jrtplib::RTPHashTable
+GotoPreviousElement	jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::GotoPreviousElement()$/;"	f	class:jrtplib::RTPKeyHashTable
+GotoReport	jrtplib/rtcprrpacket.h	/^inline RTCPReceiverReport *RTCPRRPacket::GotoReport(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
+GotoReport	jrtplib/rtcpsrpacket.h	/^inline RTCPReceiverReport *RTCPSRPacket::GotoReport(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+HasCurrentElement	jrtplib/rtphashtable.h	/^	bool HasCurrentElement()				{ return (curhashelem == 0)?false:true; }$/;"	f	class:jrtplib::RTPHashTable
+HasCurrentElement	jrtplib/rtpkeyhashtable.h	/^	bool HasCurrentElement()				{ return (curhashelem == 0)?false:true; }$/;"	f	class:jrtplib::RTPKeyHashTable
+HasData	jrtplib/rtpsourcedata.h	/^	bool HasData() const							{ if (!validated) return false; return packetlist.empty()?false:true; }$/;"	f	class:jrtplib::RTPSourceData
+HasElement	jrtplib/rtphashtable.h	/^inline bool RTPHashTable<Element,GetIndex,hashsize>::HasElement(const Element &e)$/;"	f	class:jrtplib::RTPHashTable
+HasElement	jrtplib/rtpkeyhashtable.h	/^inline bool RTPKeyHashTable<Key,Element,GetIndex,hashsize>::HasElement(const Key &k)$/;"	f	class:jrtplib::RTPKeyHashTable
+HasExtension	jrtplib/rtppacket.h	/^	bool HasExtension() const															{ return hasextension; }$/;"	f	class:jrtplib::RTPPacket
+HasInfo	jrtplib/rtpsourcedata.h	/^	bool HasInfo() const							{ return hasinfo; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+HasInfo	jrtplib/rtpsourcedata.h	/^	bool HasInfo() const							{ return hasinfo; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+HasMarker	jrtplib/rtppacket.h	/^	bool HasMarker() const																{ return hasmarker; }$/;"	f	class:jrtplib::RTPPacket
+HasReasonForLeaving	jrtplib/rtcpbyepacket.h	/^inline bool RTCPBYEPacket::HasReasonForLeaving() const$/;"	f	class:jrtplib::RTCPBYEPacket
+HasSentData	jrtplib/rtpsourcedata.h	/^	bool HasSentData() const						{ return sentdata; }$/;"	f	class:jrtplib::RTPSourceStats
+HashElement	jrtplib/rtphashtable.h	/^		HashElement(const Element &e,int index):element(e) { hashprev = 0; hashnext = 0; listnext = 0; listprev = 0; hashindex = index; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
+HashElement	jrtplib/rtphashtable.h	/^	class HashElement$/;"	c	class:jrtplib::RTPHashTable
+HashElement	jrtplib/rtpkeyhashtable.h	/^		HashElement(const Key &k,const Element &e,int index):key(k),element(e) { hashprev = 0; hashnext = 0; listnext = 0; listprev = 0; hashindex = index; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+HashElement	jrtplib/rtpkeyhashtable.h	/^	class HashElement$/;"	c	class:jrtplib::RTPKeyHashTable
+INF_GetBaseSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetBaseSequenceNumber() const				{ return stats.GetBaseSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetExtendedHighestSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetExtendedHighestSequenceNumber() const			{ return stats.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetJitter	jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetJitter() const						{ return stats.GetJitter(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetLastMessageTime	jrtplib/rtpsourcedata.h	/^	RTPTime INF_GetLastMessageTime() const					{ return stats.GetLastMessageTime(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetLastRTPPacketTime	jrtplib/rtpsourcedata.h	/^	RTPTime INF_GetLastRTPPacketTime() const				{ return stats.GetLastRTPPacketTime(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetLastSDESNoteTime	jrtplib/rtpsourcedata.h	/^	RTPTime INF_GetLastSDESNoteTime() const					{ return stats.GetLastNoteTime(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetNumPacketsReceived	jrtplib/rtpsourcedata.h	/^	int32_t INF_GetNumPacketsReceived() const				{ return stats.GetNumPacketsReceived(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetNumPacketsReceivedInInterval	jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetNumPacketsReceivedInInterval() const			{ return stats.GetNumPacketsReceivedInInterval(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_GetSavedExtendedSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetSavedExtendedSequenceNumber() const			{ return stats.GetSavedExtendedSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_HasSentData	jrtplib/rtpsourcedata.h	/^	bool INF_HasSentData() const						{ return stats.HasSentData(); }$/;"	f	class:jrtplib::RTPSourceData
+INF_StartNewInterval	jrtplib/rtpsourcedata.h	/^	void INF_StartNewInterval()						{ stats.StartNewInterval(); }$/;"	f	class:jrtplib::RTPSourceData
+INTTYPES_DEFINED	jrtplib/rtptypes_win.h	39;"	d
+IPv4Address	jrtplib/rtpaddress.h	/^		IPv4Address, \/**< Used by the UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
+IPv4UDPProto	jrtplib/rtptransmitter.h	/^		IPv4UDPProto, \/**< Specifies the internal UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
+IPv6Address	jrtplib/rtpaddress.h	/^		IPv6Address, \/**< Used by the UDP over IPv6 transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
+IPv6UDPProto	jrtplib/rtptransmitter.h	/^		IPv6UDPProto, \/**< Specifies the internal UDP over IPv6 transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
+IgnoreSome	jrtplib/rtptransmitter.h	/^		IgnoreSome \/**< All incoming data is accepted, except for data coming from a specific set of sources. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
+IncrementTimestamp	jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestamp(uint32_t inc)$/;"	f	class:jrtplib::RTPPacketBuilder
+IncrementTimestampDefault	jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestampDefault()$/;"	f	class:jrtplib::RTPPacketBuilder
+InjectRTCP	jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+InjectRTP	jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+InjectRTPorRTCP	jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTPorRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+IsActive	jrtplib/rtpsourcedata.h	/^	bool IsActive() const							{ if (!validated) return false; if (receivedbye) return false; return true; }$/;"	f	class:jrtplib::RTPSourceData
+IsCSRC	jrtplib/rtpsourcedata.h	/^	bool IsCSRC() const							{ return iscsrc; }$/;"	f	class:jrtplib::RTPSourceData
+IsKnownFormat	jrtplib/rtcppacket.h	/^	bool IsKnownFormat() const							{ return knownformat; }$/;"	f	class:jrtplib::RTCPPacket
+IsOwnSSRC	jrtplib/rtpsourcedata.h	/^	bool IsOwnSSRC() const							{ return ownssrc; }$/;"	f	class:jrtplib::RTPSourceData
+IsProcessedInRTCP	jrtplib/rtpsourcedata.h	/^	bool IsProcessedInRTCP() const						{ return processedinrtcp; }$/;"	f	class:jrtplib::RTPSourceData
+IsRTCPAddressSet	jrtplib/rtpsourcedata.h	/^	bool IsRTCPAddressSet() const						{ return isrtcpaddrset; }$/;"	f	class:jrtplib::RTPSourceData
+IsRTP	jrtplib/rtprawpacket.h	/^	bool IsRTP() const														{ return isrtp; }$/;"	f	class:jrtplib::RTPRawPacket
+IsRTPAddressSet	jrtplib/rtpsourcedata.h	/^	bool IsRTPAddressSet() const						{ return isrtpaddrset; }$/;"	f	class:jrtplib::RTPSourceData
+IsSender	jrtplib/rtpsourcedata.h	/^	bool IsSender() const							{ return issender; }$/;"	f	class:jrtplib::RTPSourceData
+IsUsingPollThread	jrtplib/rtpsessionparams.h	/^	bool IsUsingPollThread() const						{ return usepollthread; }$/;"	f	class:jrtplib::RTPSessionParams
+IsValidated	jrtplib/rtpsourcedata.h	/^	bool IsValidated() const						{ return validated; }$/;"	f	class:jrtplib::RTPSourceData
+ItemType	jrtplib/rtcpsdespacket.h	/^	enum ItemType $/;"	g	class:jrtplib::RTCPSDESPacket
+JRTPLIB_EXPORT	jrtplib/rtpconfig.h	38;"	d
+JRTPLIB_IMPORT	jrtplib/rtpconfig.h	37;"	d
+JRTPLIB_IMPORTEXPORT	jrtplib/rtpconfig.h	40;"	d
+JRTPLIB_IMPORTEXPORT	jrtplib/rtpconfig.h	42;"	d
+LOC	jrtplib/rtcpsdespacket.h	/^		LOC,	\/**< Used for a LOC (location) item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+NAME	jrtplib/rtcpsdespacket.h	/^		NAME,	\/**< Used for a NAME item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+NOTE	jrtplib/rtcpsdespacket.h	/^		NOTE,	\/**< Used for a NOTE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+NeededBytes	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytes() $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+NeededBytes	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytes()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+NeededBytes	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytes()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+NeededBytesWithExtraItem	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraItem(uint8_t itemdatalength)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+NeededBytesWithExtraItem	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraItem(uint8_t itemdatalength)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+NeededBytesWithExtraReportBlock	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraReportBlock()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+NeededBytesWithExtraSource	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraSource()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+NewUserDefinedTransmitter	jrtplib/rtpsession.h	/^	virtual RTPTransmitter *NewUserDefinedTransmitter()						{ return 0; }$/;"	f	class:jrtplib::RTPSession
+NoProbation	jrtplib/rtpsources.h	/^			NoProbation, 		\/**< Don't use the probation algorithm; accept RTP packets immediately. *\/$/;"	e	enum:jrtplib::RTPSources::ProbationType
+None	jrtplib/rtcpsdespacket.h	/^		None,	\/**< Used when the iteration over the items has finished. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+OnAPPPacket	jrtplib/rtpsession.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
+OnAPPPacket	jrtplib/rtpsources.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
+OnBYEPacket	jrtplib/rtpsession.h	/^	virtual void OnBYEPacket(RTPSourceData *srcdat)							{ }$/;"	f	class:jrtplib::RTPSession
+OnBYEPacket	jrtplib/rtpsources.h	/^	virtual void OnBYEPacket(RTPSourceData *srcdat)																{ }$/;"	f	class:jrtplib::RTPSources
+OnBYETimeout	jrtplib/rtpsession.h	/^	virtual void OnBYETimeout(RTPSourceData *srcdat)						{ }$/;"	f	class:jrtplib::RTPSession
+OnBYETimeout	jrtplib/rtpsources.h	/^	virtual void OnBYETimeout(RTPSourceData *srcdat)															{ }$/;"	f	class:jrtplib::RTPSources
+OnCNAMECollision	jrtplib/rtpsession.h	/^	virtual void OnCNAMECollision(RTPSourceData *srcdat,const RTPAddress *senderaddress,$/;"	f	class:jrtplib::RTPSession
+OnCNAMECollision	jrtplib/rtpsources.h	/^	virtual void OnCNAMECollision(RTPSourceData *srcdat,const RTPAddress *senderaddress,$/;"	f	class:jrtplib::RTPSources
+OnNewSource	jrtplib/rtpsession.h	/^	virtual void OnNewSource(RTPSourceData *srcdat)			 				{ }$/;"	f	class:jrtplib::RTPSession
+OnNewSource	jrtplib/rtpsources.h	/^	virtual void OnNewSource(RTPSourceData *srcdat)			 													{ }$/;"	f	class:jrtplib::RTPSources
+OnNoteTimeout	jrtplib/rtpsession.h	/^	virtual void OnNoteTimeout(RTPSourceData *srcdat)						{ }$/;"	f	class:jrtplib::RTPSession
+OnNoteTimeout	jrtplib/rtpsources.h	/^	virtual void OnNoteTimeout(RTPSourceData *srcdat)															{ }$/;"	f	class:jrtplib::RTPSources
+OnPollThreadError	jrtplib/rtpsession.h	/^	virtual void OnPollThreadError(int errcode)							{ }$/;"	f	class:jrtplib::RTPSession
+OnPollThreadStart	jrtplib/rtpsession.h	/^	virtual void OnPollThreadStart(bool &stop)							{ }$/;"	f	class:jrtplib::RTPSession
+OnPollThreadStep	jrtplib/rtpsession.h	/^	virtual void OnPollThreadStep()									{ }$/;"	f	class:jrtplib::RTPSession
+OnPollThreadStop	jrtplib/rtpsession.h	/^	virtual void OnPollThreadStop()									{ }$/;"	f	class:jrtplib::RTPSession
+OnRTCPCompoundPacket	jrtplib/rtpsession.h	/^	virtual void OnRTCPCompoundPacket(RTCPCompoundPacket *pack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
+OnRTCPCompoundPacket	jrtplib/rtpsources.h	/^	virtual void OnRTCPCompoundPacket(RTCPCompoundPacket *pack,const RTPTime &receivetime, $/;"	f	class:jrtplib::RTPSources
+OnRTPPacket	jrtplib/rtpsession.h	/^	virtual void OnRTPPacket(RTPPacket *pack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
+OnRTPPacket	jrtplib/rtpsources.h	/^	virtual void OnRTPPacket(RTPPacket *pack,const RTPTime &receivetime, const RTPAddress *senderaddress) 		{ }$/;"	f	class:jrtplib::RTPSources
+OnRemoveSource	jrtplib/rtpsession.h	/^	virtual void OnRemoveSource(RTPSourceData *srcdat)						{ }$/;"	f	class:jrtplib::RTPSession
+OnRemoveSource	jrtplib/rtpsources.h	/^	virtual void OnRemoveSource(RTPSourceData *srcdat)															{ }$/;"	f	class:jrtplib::RTPSources
+OnSSRCCollision	jrtplib/rtpsession.h	/^	virtual void OnSSRCCollision(RTPSourceData *srcdat,const RTPAddress *senderaddress,bool isrtp)	{ }$/;"	f	class:jrtplib::RTPSession
+OnSSRCCollision	jrtplib/rtpsources.h	/^	virtual void OnSSRCCollision(RTPSourceData *srcdat,const RTPAddress *senderaddress,bool isrtp)  			{ }$/;"	f	class:jrtplib::RTPSources
+OnSendRTCPCompoundPacket	jrtplib/rtpsession.h	/^	virtual void OnSendRTCPCompoundPacket(RTCPCompoundPacket *pack)					{ }$/;"	f	class:jrtplib::RTPSession
+OnTimeout	jrtplib/rtpsession.h	/^	virtual void OnTimeout(RTPSourceData *srcdat)							{ }$/;"	f	class:jrtplib::RTPSession
+OnTimeout	jrtplib/rtpsources.h	/^	virtual void OnTimeout(RTPSourceData *srcdat)																{ }$/;"	f	class:jrtplib::RTPSources
+OnUnknownPacketFormat	jrtplib/rtpsession.h	/^	virtual void OnUnknownPacketFormat(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
+OnUnknownPacketFormat	jrtplib/rtpsources.h	/^	virtual void OnUnknownPacketFormat(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
+OnUnknownPacketType	jrtplib/rtpsession.h	/^	virtual void OnUnknownPacketType(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
+OnUnknownPacketType	jrtplib/rtpsources.h	/^	virtual void OnUnknownPacketType(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
+PHONE	jrtplib/rtcpsdespacket.h	/^		PHONE,	\/**< Used for a PHONE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+PRIV	jrtplib/rtcpsdespacket.h	/^		PRIV,	\/**< Used for a PRIV item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+PacketType	jrtplib/rtcppacket.h	/^	enum PacketType $/;"	g	class:jrtplib::RTCPPacket
+PortInfo	jrtplib/rtpudpv4transmitter.h	/^		PortInfo() { all = false; }$/;"	f	class:jrtplib::RTPUDPv4Transmitter::PortInfo
+PortInfo	jrtplib/rtpudpv4transmitter.h	/^	class PortInfo$/;"	c	class:jrtplib::RTPUDPv4Transmitter
+PortInfo	jrtplib/rtpudpv6transmitter.h	/^		PortInfo() { all = false; }$/;"	f	class:jrtplib::RTPUDPv6Transmitter::PortInfo
+PortInfo	jrtplib/rtpudpv6transmitter.h	/^	class PortInfo$/;"	c	class:jrtplib::RTPUDPv6Transmitter
+ProbationDiscard	jrtplib/rtpsources.h	/^			ProbationDiscard, 	\/**< Discard incoming RTP packets originating from a source that's on probation. *\/$/;"	e	enum:jrtplib::RTPSources::ProbationType
+ProbationStore	jrtplib/rtpsources.h	/^			ProbationStore 		\/**< Store incoming RTP packet from a source that's on probation for later retrieval. *\/$/;"	e	enum:jrtplib::RTPSources::ProbationType
+ProbationType	jrtplib/rtpsources.h	/^	enum ProbationType $/;"	g	class:jrtplib::RTPSources
+ProcessReportBlock	jrtplib/rtpinternalsourcedata.h	/^	void ProcessReportBlock(uint8_t fractionlost,int32_t lostpackets,uint32_t exthighseqnr,$/;"	f	class:jrtplib::RTPInternalSourceData
+ProcessSenderInfo	jrtplib/rtpinternalsourcedata.h	/^	void ProcessSenderInfo(const RTPNTPTime &ntptime,uint32_t rtptime,uint32_t packetcount,$/;"	f	class:jrtplib::RTPInternalSourceData
+ProcessedEMail	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedEMail() const		{ return pemail; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ProcessedLocation	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedLocation() const		{ return plocation; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ProcessedName	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedName() const 		{ return pname; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ProcessedNote	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedNote() const		{ return pnote; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ProcessedPhone	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedPhone() const		{ return pphone; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+ProcessedTool	jrtplib/rtcppacketbuilder.h	/^		bool ProcessedTool() const		{ return ptool; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+RR	jrtplib/rtcppacket.h	/^			RR,		\/**< An RTCP receiver report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+RR_GetDelaySinceLastSR	jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetDelaySinceLastSR() const				{ return RRinf.GetDelaySinceLastSR(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetExtendedHighestSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetExtendedHighestSequenceNumber() const			{ return RRinf.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetFractionLost	jrtplib/rtpsourcedata.h	/^	double RR_GetFractionLost() const					{ return RRinf.GetFractionLost(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetJitter	jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetJitter() const						{ return RRinf.GetJitter(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetLastSRTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetLastSRTimestamp() const					{ return RRinf.GetLastSRTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetPacketsLost	jrtplib/rtpsourcedata.h	/^	int32_t	RR_GetPacketsLost() const					{ return RRinf.GetPacketsLost(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime RR_GetReceiveTime() const					{ return RRinf.GetReceiveTime(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_HasInfo	jrtplib/rtpsourcedata.h	/^	bool RR_HasInfo() const							{ return RRinf.HasInfo(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetDelaySinceLastSR	jrtplib/rtpsourcedata.h	/^	uint32_t RR_Prev_GetDelaySinceLastSR() const				{ return RRprevinf.GetDelaySinceLastSR(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetExtendedHighestSequenceNumber	jrtplib/rtpsourcedata.h	/^	uint32_t RR_Prev_GetExtendedHighestSequenceNumber() const		{ return RRprevinf.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetFractionLost	jrtplib/rtpsourcedata.h	/^	double RR_Prev_GetFractionLost() const					{ return RRprevinf.GetFractionLost(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetJitter	jrtplib/rtpsourcedata.h	/^	uint32_t RR_Prev_GetJitter() const					{ return RRprevinf.GetJitter(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetLastSRTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t RR_Prev_GetLastSRTimestamp() const				{ return RRprevinf.GetLastSRTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetPacketsLost	jrtplib/rtpsourcedata.h	/^	int32_t	RR_Prev_GetPacketsLost() const					{ return RRprevinf.GetPacketsLost(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime RR_Prev_GetReceiveTime() const					{ return RRprevinf.GetReceiveTime(); }$/;"	f	class:jrtplib::RTPSourceData
+RR_Prev_HasInfo	jrtplib/rtpsourcedata.h	/^	bool RR_Prev_HasInfo() const						{ return RRprevinf.HasInfo(); }$/;"	f	class:jrtplib::RTPSourceData
+RRinf	jrtplib/rtpsourcedata.h	/^	RTCPReceiverReportInfo RRinf,RRprevinf;$/;"	m	class:jrtplib::RTPSourceData
+RRprevinf	jrtplib/rtpsourcedata.h	/^	RTCPReceiverReportInfo RRinf,RRprevinf;$/;"	m	class:jrtplib::RTPSourceData
+RTCPAPPPACKET_H	jrtplib/rtcpapppacket.h	39;"	d
+RTCPAPPPacket	jrtplib/rtcpapppacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPAPPPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCPBYEPACKET_H	jrtplib/rtcpbyepacket.h	39;"	d
+RTCPBYEPacket	jrtplib/rtcpbyepacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPBYEPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCPCOMPOUNDPACKETBUILDER_H	jrtplib/rtcpcompoundpacketbuilder.h	39;"	d
+RTCPCOMPOUNDPACKET_H	jrtplib/rtcpcompoundpacket.h	39;"	d
+RTCPCommonHeader	jrtplib/rtpstructs.h	/^struct RTCPCommonHeader$/;"	s	namespace:jrtplib
+RTCPCompoundPacket	jrtplib/rtcpcompoundpacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPCompoundPacket : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTCPCompoundPacketBuilder	jrtplib/rtcpcompoundpacketbuilder.h	/^class JRTPLIB_IMPORTEXPORT RTCPCompoundPacketBuilder : public RTCPCompoundPacket$/;"	c	namespace:jrtplib
+RTCPPACKETBUILDER_H	jrtplib/rtcppacketbuilder.h	39;"	d
+RTCPPACKET_H	jrtplib/rtcppacket.h	39;"	d
+RTCPPacket	jrtplib/rtcppacket.h	/^	RTCPPacket(PacketType t,uint8_t *d,size_t dlen) : data(d),datalen(dlen),packettype(t) { knownformat = false; }$/;"	f	class:jrtplib::RTCPPacket
+RTCPPacket	jrtplib/rtcppacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPPacket $/;"	c	namespace:jrtplib
+RTCPPacketBuilder	jrtplib/rtcppacketbuilder.h	/^class JRTPLIB_IMPORTEXPORT RTCPPacketBuilder : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTCPRRPACKET_H	jrtplib/rtcprrpacket.h	39;"	d
+RTCPRRPacket	jrtplib/rtcprrpacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPRRPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCPReceiverReport	jrtplib/rtpstructs.h	/^struct RTCPReceiverReport$/;"	s	namespace:jrtplib
+RTCPReceiverReportInfo	jrtplib/rtpsourcedata.h	/^	RTCPReceiverReportInfo():receivetime(0,0)				{ hasinfo = false; fractionlost = 0; packetslost = 0; exthighseqnr = 0; jitter = 0; lsr = 0; dlsr = 0; } $/;"	f	class:jrtplib::RTCPReceiverReportInfo
+RTCPReceiverReportInfo	jrtplib/rtpsourcedata.h	/^class JRTPLIB_IMPORTEXPORT RTCPReceiverReportInfo$/;"	c	namespace:jrtplib
+RTCPSCHEDULER_H	jrtplib/rtcpscheduler.h	39;"	d
+RTCPSDESHeader	jrtplib/rtpstructs.h	/^struct RTCPSDESHeader$/;"	s	namespace:jrtplib
+RTCPSDESINFO_H	jrtplib/rtcpsdesinfo.h	39;"	d
+RTCPSDESInfo	jrtplib/rtcpsdesinfo.h	/^	RTCPSDESInfo(RTPMemoryManager *mgr = 0) : RTPMemoryObject(mgr)		{ for (int i = 0 ; i < RTCP_SDES_NUMITEMS_NONPRIVATE ; i++) nonprivateitems[i].SetMemoryManager(mgr); }$/;"	f	class:jrtplib::RTCPSDESInfo
+RTCPSDESInfo	jrtplib/rtcpsdesinfo.h	/^class JRTPLIB_IMPORTEXPORT RTCPSDESInfo : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTCPSDESInfoInternal	jrtplib/rtcppacketbuilder.h	/^		RTCPSDESInfoInternal(RTPMemoryManager *mgr) : RTCPSDESInfo(mgr)	{ ClearFlags(); }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+RTCPSDESInfoInternal	jrtplib/rtcppacketbuilder.h	/^	class RTCPSDESInfoInternal : public RTCPSDESInfo$/;"	c	class:jrtplib::RTCPPacketBuilder
+RTCPSDESPACKET_H	jrtplib/rtcpsdespacket.h	39;"	d
+RTCPSDESPacket	jrtplib/rtcpsdespacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPSDESPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCPSRPACKET_H	jrtplib/rtcpsrpacket.h	39;"	d
+RTCPSRPacket	jrtplib/rtcpsrpacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPSRPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCPScheduler	jrtplib/rtcpscheduler.h	/^class JRTPLIB_IMPORTEXPORT RTCPScheduler$/;"	c	namespace:jrtplib
+RTCPSchedulerParams	jrtplib/rtcpscheduler.h	/^class JRTPLIB_IMPORTEXPORT RTCPSchedulerParams$/;"	c	namespace:jrtplib
+RTCPSenderReport	jrtplib/rtpstructs.h	/^struct RTCPSenderReport$/;"	s	namespace:jrtplib
+RTCPSenderReportInfo	jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo():ntptimestamp(0,0),receivetime(0,0)		{ hasinfo = false; rtptimestamp = 0; packetcount = 0; bytecount = 0; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
+RTCPSenderReportInfo	jrtplib/rtpsourcedata.h	/^class JRTPLIB_IMPORTEXPORT RTCPSenderReportInfo$/;"	c	namespace:jrtplib
+RTCPUNKNOWNPACKET_H	jrtplib/rtcpunknownpacket.h	39;"	d
+RTCPUnknownPacket	jrtplib/rtcpunknownpacket.h	/^	RTCPUnknownPacket(uint8_t *data,size_t datalen) : RTCPPacket(Unknown,data,datalen)                                         $/;"	f	class:jrtplib::RTCPUnknownPacket
+RTCPUnknownPacket	jrtplib/rtcpunknownpacket.h	/^class JRTPLIB_IMPORTEXPORT RTCPUnknownPacket : public RTCPPacket$/;"	c	namespace:jrtplib
+RTCP_BYE_MAXREASONLENGTH	jrtplib/rtpdefines.h	67;"	d
+RTCP_DEFAULTBANDWIDTHFRACTION	jrtplib/rtpdefines.h	69;"	d
+RTCP_DEFAULTHALFATSTARTUP	jrtplib/rtpdefines.h	71;"	d
+RTCP_DEFAULTIMMEDIATEBYE	jrtplib/rtpdefines.h	72;"	d
+RTCP_DEFAULTMININTERVAL	jrtplib/rtpdefines.h	68;"	d
+RTCP_DEFAULTSENDERFRACTION	jrtplib/rtpdefines.h	70;"	d
+RTCP_DEFAULTSRBYE	jrtplib/rtpdefines.h	73;"	d
+RTCP_SDES_ID_CNAME	jrtplib/rtpdefines.h	56;"	d
+RTCP_SDES_ID_EMAIL	jrtplib/rtpdefines.h	58;"	d
+RTCP_SDES_ID_LOCATION	jrtplib/rtpdefines.h	60;"	d
+RTCP_SDES_ID_NAME	jrtplib/rtpdefines.h	57;"	d
+RTCP_SDES_ID_NOTE	jrtplib/rtpdefines.h	62;"	d
+RTCP_SDES_ID_PHONE	jrtplib/rtpdefines.h	59;"	d
+RTCP_SDES_ID_PRIVATE	jrtplib/rtpdefines.h	63;"	d
+RTCP_SDES_ID_TOOL	jrtplib/rtpdefines.h	61;"	d
+RTCP_SDES_MAXITEMLENGTH	jrtplib/rtpdefines.h	65;"	d
+RTCP_SDES_NUMITEMS_NONPRIVATE	jrtplib/rtpdefines.h	64;"	d
+RTPADDRESS_H	jrtplib/rtpaddress.h	39;"	d
+RTPAddress	jrtplib/rtpaddress.h	/^	RTPAddress(const AddressType t) : addresstype(t) 		{ }$/;"	f	class:jrtplib::RTPAddress
+RTPAddress	jrtplib/rtpaddress.h	/^class JRTPLIB_IMPORTEXPORT RTPAddress$/;"	c	namespace:jrtplib
+RTPBYTEADDRESS_H	jrtplib/rtpbyteaddress.h	39;"	d
+RTPBYTEADDRESS_MAXLENGTH	jrtplib/rtpbyteaddress.h	46;"	d
+RTPByteAddress	jrtplib/rtpbyteaddress.h	/^	RTPByteAddress(const uint8_t hostaddress[RTPBYTEADDRESS_MAXLENGTH], size_t addrlen, uint16_t port = 0) : RTPAddress(ByteAddress) 	{ if (addrlen > RTPBYTEADDRESS_MAXLENGTH) addrlen = RTPBYTEADDRESS_MAXLENGTH; memcpy(RTPByteAddress::hostaddress, hostaddress, addrlen); RTPByteAddress::addresslength = addrlen; RTPByteAddress::port = port; }$/;"	f	class:jrtplib::RTPByteAddress
+RTPByteAddress	jrtplib/rtpbyteaddress.h	/^class JRTPLIB_IMPORTEXPORT RTPByteAddress : public RTPAddress$/;"	c	namespace:jrtplib
+RTPCOLLISIONLIST_H	jrtplib/rtpcollisionlist.h	39;"	d
+RTPCONFIG_UNIX_H	jrtplib/rtpconfig.h	35;"	d
+RTPCollisionList	jrtplib/rtpcollisionlist.h	/^class JRTPLIB_IMPORTEXPORT RTPCollisionList : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPDEBUG_H	jrtplib/rtpdebug.h	35;"	d
+RTPDEFINES_H	jrtplib/rtpdefines.h	35;"	d
+RTPDelete	jrtplib/rtpmemorymanager.h	/^inline void RTPDelete(ClassName *obj, RTPMemoryManager *mgr)$/;"	f	namespace:jrtplib
+RTPDeleteByteArray	jrtplib/rtpmemorymanager.h	/^inline void RTPDeleteByteArray(uint8_t *buf, RTPMemoryManager *mgr)$/;"	f	namespace:jrtplib
+RTPERRORS_H	jrtplib/rtperrors.h	39;"	d
+RTPEXTERNALTRANSMITTER_H	jrtplib/rtpexternaltransmitter.h	39;"	d
+RTPExtensionHeader	jrtplib/rtpstructs.h	/^struct RTPExtensionHeader$/;"	s	namespace:jrtplib
+RTPExternalPacketInjecter	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalPacketInjecter(RTPExternalTransmitter *trans)					{ transmitter = trans; }$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+RTPExternalPacketInjecter	jrtplib/rtpexternaltransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPExternalPacketInjecter$/;"	c	namespace:jrtplib
+RTPExternalSender	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalSender()										{ }$/;"	f	class:jrtplib::RTPExternalSender
+RTPExternalSender	jrtplib/rtpexternaltransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPExternalSender$/;"	c	namespace:jrtplib
+RTPExternalTransmissionInfo	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalTransmissionInfo(RTPExternalPacketInjecter *p) : RTPTransmissionInfo(RTPTransmitter::ExternalProto) { packetinjector = p; }$/;"	f	class:jrtplib::RTPExternalTransmissionInfo
+RTPExternalTransmissionInfo	jrtplib/rtpexternaltransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPExternalTransmissionInfo : public RTPTransmissionInfo$/;"	c	namespace:jrtplib
+RTPExternalTransmissionParams	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalTransmissionParams(RTPExternalSender *s, int headeroverhead):RTPTransmissionParams(RTPTransmitter::ExternalProto)	{ sender = s; headersize = headeroverhead; }$/;"	f	class:jrtplib::RTPExternalTransmissionParams
+RTPExternalTransmissionParams	jrtplib/rtpexternaltransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPExternalTransmissionParams : public RTPTransmissionParams$/;"	c	namespace:jrtplib
+RTPExternalTransmitter	jrtplib/rtpexternaltransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPExternalTransmitter : public RTPTransmitter$/;"	c	namespace:jrtplib
+RTPHASHTABLE_H	jrtplib/rtphashtable.h	35;"	d
+RTPHashTable	jrtplib/rtphashtable.h	/^class RTPHashTable : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPHashTable	jrtplib/rtphashtable.h	/^inline RTPHashTable<Element,GetIndex,hashsize>::RTPHashTable(RTPMemoryManager *mgr,int memtype) : RTPMemoryObject(mgr)$/;"	f	class:jrtplib::RTPHashTable
+RTPHeader	jrtplib/rtpstructs.h	/^struct RTPHeader$/;"	s	namespace:jrtplib
+RTPINTERNALSOURCEDATA_H	jrtplib/rtpinternalsourcedata.h	39;"	d
+RTPIPV4ADDRESS_H	jrtplib/rtpipv4address.h	39;"	d
+RTPIPV4DESTINATION_H	jrtplib/rtpipv4destination.h	39;"	d
+RTPIPV6ADDRESS_H	jrtplib/rtpipv6address.h	39;"	d
+RTPIPV6DESTINATION_H	jrtplib/rtpipv6destination.h	39;"	d
+RTPIPv4Address	jrtplib/rtpipv4address.h	/^	RTPIPv4Address(const uint8_t ip[4],uint16_t port = 0):RTPAddress(IPv4Address)					{ RTPIPv4Address::ip = (uint32_t)ip[3]; RTPIPv4Address::ip |= (((uint32_t)ip[2])<<8); RTPIPv4Address::ip |= (((uint32_t)ip[1])<<16); RTPIPv4Address::ip |= (((uint32_t)ip[0])<<24); RTPIPv4Address::port = port; }$/;"	f	class:jrtplib::RTPIPv4Address
+RTPIPv4Address	jrtplib/rtpipv4address.h	/^	RTPIPv4Address(uint32_t ip = 0, uint16_t port = 0):RTPAddress(IPv4Address)						{ RTPIPv4Address::ip = ip; RTPIPv4Address::port = port; }$/;"	f	class:jrtplib::RTPIPv4Address
+RTPIPv4Address	jrtplib/rtpipv4address.h	/^class JRTPLIB_IMPORTEXPORT RTPIPv4Address : public RTPAddress$/;"	c	namespace:jrtplib
+RTPIPv4Destination	jrtplib/rtpipv4destination.h	/^	RTPIPv4Destination(uint32_t ip,uint16_t rtpportbase)					$/;"	f	class:jrtplib::RTPIPv4Destination
+RTPIPv4Destination	jrtplib/rtpipv4destination.h	/^class JRTPLIB_IMPORTEXPORT RTPIPv4Destination$/;"	c	namespace:jrtplib
+RTPIPv6Address	jrtplib/rtpipv6address.h	/^	RTPIPv6Address():RTPAddress(IPv6Address)																{ for (int i = 0 ; i < 16 ; i++) ip.s6_addr[i] = 0; port = 0; }$/;"	f	class:jrtplib::RTPIPv6Address
+RTPIPv6Address	jrtplib/rtpipv6address.h	/^	RTPIPv6Address(const uint8_t ip[16],uint16_t port = 0):RTPAddress(IPv6Address)							{ SetIP(ip); RTPIPv6Address::port = port; }$/;"	f	class:jrtplib::RTPIPv6Address
+RTPIPv6Address	jrtplib/rtpipv6address.h	/^	RTPIPv6Address(in6_addr ip,uint16_t port = 0):RTPAddress(IPv6Address)									{ RTPIPv6Address::ip = ip; RTPIPv6Address::port = port; }$/;"	f	class:jrtplib::RTPIPv6Address
+RTPIPv6Address	jrtplib/rtpipv6address.h	/^class JRTPLIB_IMPORTEXPORT RTPIPv6Address : public RTPAddress$/;"	c	namespace:jrtplib
+RTPIPv6Destination	jrtplib/rtpipv6destination.h	/^	RTPIPv6Destination(in6_addr ip,uint16_t portbase)$/;"	f	class:jrtplib::RTPIPv6Destination
+RTPIPv6Destination	jrtplib/rtpipv6destination.h	/^class JRTPLIB_IMPORTEXPORT RTPIPv6Destination$/;"	c	namespace:jrtplib
+RTPInternalSourceData	jrtplib/rtpinternalsourcedata.h	/^class JRTPLIB_IMPORTEXPORT RTPInternalSourceData : public RTPSourceData$/;"	c	namespace:jrtplib
+RTPKEYHASHTABLE_H	jrtplib/rtpkeyhashtable.h	39;"	d
+RTPKeyHashTable	jrtplib/rtpkeyhashtable.h	/^class RTPKeyHashTable : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPKeyHashTable	jrtplib/rtpkeyhashtable.h	/^inline RTPKeyHashTable<Key,Element,GetIndex,hashsize>::RTPKeyHashTable(RTPMemoryManager *mgr,int memtype) : RTPMemoryObject(mgr)$/;"	f	class:jrtplib::RTPKeyHashTable
+RTPLIBRARYVERSION_H	jrtplib/rtplibraryversion.h	39;"	d
+RTPLibraryVersion	jrtplib/rtplibraryversion.h	/^	RTPLibraryVersion(int major,int minor,int debug) 			{ majornr = major; minornr = minor; debugnr = debug; }$/;"	f	class:jrtplib::RTPLibraryVersion
+RTPLibraryVersion	jrtplib/rtplibraryversion.h	/^class JRTPLIB_IMPORTEXPORT RTPLibraryVersion$/;"	c	namespace:jrtplib
+RTPMEMORYMANAGER_H	jrtplib/rtpmemorymanager.h	39;"	d
+RTPMEMORYOBJECT_H	jrtplib/rtpmemoryobject.h	39;"	d
+RTPMEM_TYPE_BUFFER_RECEIVEDRTCPPACKET	jrtplib/rtpmemorymanager.h	51;"	d
+RTPMEM_TYPE_BUFFER_RECEIVEDRTPPACKET	jrtplib/rtpmemorymanager.h	48;"	d
+RTPMEM_TYPE_BUFFER_RTCPAPPPACKET	jrtplib/rtpmemorymanager.h	54;"	d
+RTPMEM_TYPE_BUFFER_RTCPBYEPACKET	jrtplib/rtpmemorymanager.h	57;"	d
+RTPMEM_TYPE_BUFFER_RTCPBYEREASON	jrtplib/rtpmemorymanager.h	60;"	d
+RTPMEM_TYPE_BUFFER_RTCPCOMPOUNDPACKET	jrtplib/rtpmemorymanager.h	63;"	d
+RTPMEM_TYPE_BUFFER_RTCPSDESBLOCK	jrtplib/rtpmemorymanager.h	66;"	d
+RTPMEM_TYPE_BUFFER_RTPPACKET	jrtplib/rtpmemorymanager.h	69;"	d
+RTPMEM_TYPE_BUFFER_RTPPACKETBUILDERBUFFER	jrtplib/rtpmemorymanager.h	72;"	d
+RTPMEM_TYPE_BUFFER_SDESITEM	jrtplib/rtpmemorymanager.h	75;"	d
+RTPMEM_TYPE_CLASS_ACCEPTIGNOREHASHELEMENT	jrtplib/rtpmemorymanager.h	78;"	d
+RTPMEM_TYPE_CLASS_ACCEPTIGNOREPORTINFO	jrtplib/rtpmemorymanager.h	81;"	d
+RTPMEM_TYPE_CLASS_DESTINATIONLISTHASHELEMENT	jrtplib/rtpmemorymanager.h	84;"	d
+RTPMEM_TYPE_CLASS_MULTICASTHASHELEMENT	jrtplib/rtpmemorymanager.h	87;"	d
+RTPMEM_TYPE_CLASS_RTCPAPPPACKET	jrtplib/rtpmemorymanager.h	90;"	d
+RTPMEM_TYPE_CLASS_RTCPBYEPACKET	jrtplib/rtpmemorymanager.h	93;"	d
+RTPMEM_TYPE_CLASS_RTCPCOMPOUNDPACKETBUILDER	jrtplib/rtpmemorymanager.h	96;"	d
+RTPMEM_TYPE_CLASS_RTCPRECEIVERREPORT	jrtplib/rtpmemorymanager.h	99;"	d
+RTPMEM_TYPE_CLASS_RTCPRRPACKET	jrtplib/rtpmemorymanager.h	102;"	d
+RTPMEM_TYPE_CLASS_RTCPSDESPACKET	jrtplib/rtpmemorymanager.h	105;"	d
+RTPMEM_TYPE_CLASS_RTCPSRPACKET	jrtplib/rtpmemorymanager.h	108;"	d
+RTPMEM_TYPE_CLASS_RTCPUNKNOWNPACKET	jrtplib/rtpmemorymanager.h	111;"	d
+RTPMEM_TYPE_CLASS_RTPADDRESS	jrtplib/rtpmemorymanager.h	114;"	d
+RTPMEM_TYPE_CLASS_RTPINTERNALSOURCEDATA	jrtplib/rtpmemorymanager.h	117;"	d
+RTPMEM_TYPE_CLASS_RTPPACKET	jrtplib/rtpmemorymanager.h	120;"	d
+RTPMEM_TYPE_CLASS_RTPPOLLTHREAD	jrtplib/rtpmemorymanager.h	123;"	d
+RTPMEM_TYPE_CLASS_RTPRAWPACKET	jrtplib/rtpmemorymanager.h	126;"	d
+RTPMEM_TYPE_CLASS_RTPTRANSMISSIONINFO	jrtplib/rtpmemorymanager.h	129;"	d
+RTPMEM_TYPE_CLASS_RTPTRANSMITTER	jrtplib/rtpmemorymanager.h	132;"	d
+RTPMEM_TYPE_CLASS_SDESPRIVATEITEM	jrtplib/rtpmemorymanager.h	135;"	d
+RTPMEM_TYPE_CLASS_SDESSOURCE	jrtplib/rtpmemorymanager.h	138;"	d
+RTPMEM_TYPE_CLASS_SOURCETABLEHASHELEMENT	jrtplib/rtpmemorymanager.h	141;"	d
+RTPMEM_TYPE_OTHER	jrtplib/rtpmemorymanager.h	45;"	d
+RTPMemoryManager	jrtplib/rtpmemorymanager.h	/^	RTPMemoryManager()									{ }$/;"	f	class:jrtplib::RTPMemoryManager
+RTPMemoryManager	jrtplib/rtpmemorymanager.h	/^class JRTPLIB_IMPORTEXPORT RTPMemoryManager$/;"	c	namespace:jrtplib
+RTPMemoryObject	jrtplib/rtpmemoryobject.h	/^	RTPMemoryObject(RTPMemoryManager *memmgr) : mgr(memmgr)					{ }$/;"	f	class:jrtplib::RTPMemoryObject
+RTPMemoryObject	jrtplib/rtpmemoryobject.h	/^class JRTPLIB_IMPORTEXPORT RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPNTPTime	jrtplib/rtptimeutilities.h	/^	RTPNTPTime(uint32_t m,uint32_t l)							{ msw = m ; lsw = l; }$/;"	f	class:jrtplib::RTPNTPTime
+RTPNTPTime	jrtplib/rtptimeutilities.h	/^class JRTPLIB_IMPORTEXPORT RTPNTPTime$/;"	c	namespace:jrtplib
+RTPNew	jrtplib/rtpmemorymanager.h	246;"	d
+RTPPACKETBUILDER_H	jrtplib/rtppacketbuilder.h	39;"	d
+RTPPACKET_H	jrtplib/rtppacket.h	39;"	d
+RTPPOLLTHREAD_H	jrtplib/rtppollthread.h	39;"	d
+RTPPacket	jrtplib/rtppacket.h	/^class JRTPLIB_IMPORTEXPORT RTPPacket : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPPacketBuilder	jrtplib/rtppacketbuilder.h	/^class JRTPLIB_IMPORTEXPORT RTPPacketBuilder : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPPollThread	jrtplib/rtppollthread.h	/^class JRTPLIB_IMPORTEXPORT RTPPollThread : private jthread::JThread$/;"	c	namespace:jrtplib
+RTPRANDOMRAND48_H	jrtplib/rtprandomrand48.h	39;"	d
+RTPRANDOMRANDS_H	jrtplib/rtprandomrands.h	39;"	d
+RTPRANDOMURANDOM_H	jrtplib/rtprandomurandom.h	39;"	d
+RTPRANDOM_2POWMIN63	jrtplib/rtprandom.h	45;"	d
+RTPRANDOM_H	jrtplib/rtprandom.h	39;"	d
+RTPRAWPACKET_H	jrtplib/rtprawpacket.h	39;"	d
+RTPRandom	jrtplib/rtprandom.h	/^	RTPRandom()											{ }$/;"	f	class:jrtplib::RTPRandom
+RTPRandom	jrtplib/rtprandom.h	/^class JRTPLIB_IMPORTEXPORT RTPRandom$/;"	c	namespace:jrtplib
+RTPRandomRand48	jrtplib/rtprandomrand48.h	/^class JRTPLIB_IMPORTEXPORT RTPRandomRand48 : public RTPRandom$/;"	c	namespace:jrtplib
+RTPRandomRandS	jrtplib/rtprandomrands.h	/^class JRTPLIB_IMPORTEXPORT RTPRandomRandS : public RTPRandom$/;"	c	namespace:jrtplib
+RTPRandomURandom	jrtplib/rtprandomurandom.h	/^class JRTPLIB_IMPORTEXPORT RTPRandomURandom : public RTPRandom$/;"	c	namespace:jrtplib
+RTPRawPacket	jrtplib/rtprawpacket.h	/^class JRTPLIB_IMPORTEXPORT RTPRawPacket : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPRawPacket	jrtplib/rtprawpacket.h	/^inline RTPRawPacket::RTPRawPacket(uint8_t *data,size_t datalen,RTPAddress *address,RTPTime &recvtime,bool rtp,RTPMemoryManager *mgr):RTPMemoryObject(mgr),receivetime(recvtime)$/;"	f	class:jrtplib::RTPRawPacket
+RTPSESSIONPARAMS_H	jrtplib/rtpsessionparams.h	39;"	d
+RTPSESSIONSOURCES_H	jrtplib/rtpsessionsources.h	39;"	d
+RTPSESSION_H	jrtplib/rtpsession.h	39;"	d
+RTPSOURCEDATA_H	jrtplib/rtpsourcedata.h	39;"	d
+RTPSOURCES_H	jrtplib/rtpsources.h	39;"	d
+RTPSOURCES_HASHSIZE	jrtplib/rtpsources.h	47;"	d
+RTPSTRUCTS_H	jrtplib/rtpstructs.h	39;"	d
+RTPSession	jrtplib/rtpsession.h	/^class JRTPLIB_IMPORTEXPORT RTPSession : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPSessionParams	jrtplib/rtpsessionparams.h	/^class JRTPLIB_IMPORTEXPORT RTPSessionParams$/;"	c	namespace:jrtplib
+RTPSessionSources	jrtplib/rtpsessionsources.h	/^	RTPSessionSources(RTPSession &sess,RTPMemoryManager *mgr) : RTPSources(RTPSources::ProbationStore,mgr),rtpsession(sess)$/;"	f	class:jrtplib::RTPSessionSources
+RTPSessionSources	jrtplib/rtpsessionsources.h	/^class JRTPLIB_IMPORTEXPORT RTPSessionSources : public RTPSources$/;"	c	namespace:jrtplib
+RTPSourceData	jrtplib/rtpsourcedata.h	/^class JRTPLIB_IMPORTEXPORT RTPSourceData : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPSourceIdentifier	jrtplib/rtpstructs.h	/^struct RTPSourceIdentifier$/;"	s	namespace:jrtplib
+RTPSourceStats	jrtplib/rtpsourcedata.h	/^class JRTPLIB_IMPORTEXPORT RTPSourceStats$/;"	c	namespace:jrtplib
+RTPSourceStats	jrtplib/rtpsourcedata.h	/^inline RTPSourceStats::RTPSourceStats():prevpacktime(0,0),lastmsgtime(0,0),lastrtptime(0,0),lastnotetime(0,0)$/;"	f	class:jrtplib::RTPSourceStats
+RTPSources	jrtplib/rtpsources.h	/^class JRTPLIB_IMPORTEXPORT RTPSources : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPSources_GetHashIndex	jrtplib/rtpsources.h	/^class JRTPLIB_IMPORTEXPORT RTPSources_GetHashIndex$/;"	c	namespace:jrtplib
+RTPTIMEUTILITIES_H	jrtplib/rtptimeutilities.h	39;"	d
+RTPTRANSMITTER_H	jrtplib/rtptransmitter.h	39;"	d
+RTPTYPES_WIN_H	jrtplib/rtptypes_win.h	35;"	d
+RTPTime	jrtplib/rtptimeutilities.h	/^	RTPTime(uint32_t seconds, uint32_t microseconds)						{ sec = seconds; microsec = microseconds; }$/;"	f	class:jrtplib::RTPTime
+RTPTime	jrtplib/rtptimeutilities.h	/^class JRTPLIB_IMPORTEXPORT RTPTime$/;"	c	namespace:jrtplib
+RTPTime	jrtplib/rtptimeutilities.h	/^inline RTPTime::RTPTime(RTPNTPTime ntptime)$/;"	f	class:jrtplib::RTPTime
+RTPTime	jrtplib/rtptimeutilities.h	/^inline RTPTime::RTPTime(double t)$/;"	f	class:jrtplib::RTPTime
+RTPTimeInitializer	jrtplib/rtptimeutilities.h	/^class JRTPLIB_IMPORTEXPORT RTPTimeInitializer$/;"	c	namespace:jrtplib
+RTPTransmissionInfo	jrtplib/rtptransmitter.h	/^	RTPTransmissionInfo(RTPTransmitter::TransmissionProtocol p)				{ protocol = p; }$/;"	f	class:jrtplib::RTPTransmissionInfo
+RTPTransmissionInfo	jrtplib/rtptransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPTransmissionInfo$/;"	c	namespace:jrtplib
+RTPTransmissionParams	jrtplib/rtptransmitter.h	/^	RTPTransmissionParams(RTPTransmitter::TransmissionProtocol p)				{ protocol = p; }$/;"	f	class:jrtplib::RTPTransmissionParams
+RTPTransmissionParams	jrtplib/rtptransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPTransmissionParams$/;"	c	namespace:jrtplib
+RTPTransmitter	jrtplib/rtptransmitter.h	/^	RTPTransmitter(RTPMemoryManager *mgr) : RTPMemoryObject(mgr)									{ }$/;"	f	class:jrtplib::RTPTransmitter
+RTPTransmitter	jrtplib/rtptransmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPTransmitter : public RTPMemoryObject$/;"	c	namespace:jrtplib
+RTPUDPV4TRANSMITTER_H	jrtplib/rtpudpv4transmitter.h	39;"	d
+RTPUDPV4TRANS_DEFAULTPORTBASE	jrtplib/rtpudpv4transmitter.h	53;"	d
+RTPUDPV4TRANS_HASHSIZE	jrtplib/rtpudpv4transmitter.h	52;"	d
+RTPUDPV4TRANS_HEADERSIZE	jrtplib/rtpudpv4transmitter.h	183;"	d
+RTPUDPV4TRANS_RTCPRECEIVEBUFFER	jrtplib/rtpudpv4transmitter.h	56;"	d
+RTPUDPV4TRANS_RTCPTRANSMITBUFFER	jrtplib/rtpudpv4transmitter.h	58;"	d
+RTPUDPV4TRANS_RTPRECEIVEBUFFER	jrtplib/rtpudpv4transmitter.h	55;"	d
+RTPUDPV4TRANS_RTPTRANSMITBUFFER	jrtplib/rtpudpv4transmitter.h	57;"	d
+RTPUDPV6TRANSMITTER_H	jrtplib/rtpudpv6transmitter.h	39;"	d
+RTPUDPV6TRANS_DEFAULTPORTBASE	jrtplib/rtpudpv6transmitter.h	60;"	d
+RTPUDPV6TRANS_HASHSIZE	jrtplib/rtpudpv6transmitter.h	59;"	d
+RTPUDPV6TRANS_HEADERSIZE	jrtplib/rtpudpv6transmitter.h	191;"	d
+RTPUDPV6TRANS_RTCPRECEIVEBUFFER	jrtplib/rtpudpv6transmitter.h	63;"	d
+RTPUDPV6TRANS_RTCPTRANSMITBUFFER	jrtplib/rtpudpv6transmitter.h	65;"	d
+RTPUDPV6TRANS_RTPRECEIVEBUFFER	jrtplib/rtpudpv6transmitter.h	62;"	d
+RTPUDPV6TRANS_RTPTRANSMITBUFFER	jrtplib/rtpudpv6transmitter.h	64;"	d
+RTPUDPv4Trans_GetHashIndex_IPv4Dest	jrtplib/rtpudpv4transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv4Trans_GetHashIndex_IPv4Dest$/;"	c	namespace:jrtplib
+RTPUDPv4Trans_GetHashIndex_uint32_t	jrtplib/rtpudpv4transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv4Trans_GetHashIndex_uint32_t$/;"	c	namespace:jrtplib
+RTPUDPv4TransmissionInfo	jrtplib/rtpudpv4transmitter.h	/^	RTPUDPv4TransmissionInfo(std::list<uint32_t> iplist,int rtpsock,int rtcpsock) : RTPTransmissionInfo(RTPTransmitter::IPv4UDPProto) $/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+RTPUDPv4TransmissionInfo	jrtplib/rtpudpv4transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv4TransmissionInfo : public RTPTransmissionInfo$/;"	c	namespace:jrtplib
+RTPUDPv4TransmissionParams	jrtplib/rtpudpv4transmitter.h	/^	RTPUDPv4TransmissionParams():RTPTransmissionParams(RTPTransmitter::IPv4UDPProto)	{ portbase = RTPUDPV4TRANS_DEFAULTPORTBASE; bindIP = 0; multicastTTL = 1; mcastifaceIP = 0; rtpsendbuf = RTPUDPV4TRANS_RTPTRANSMITBUFFER; rtprecvbuf= RTPUDPV4TRANS_RTPRECEIVEBUFFER; rtcpsendbuf = RTPUDPV4TRANS_RTCPTRANSMITBUFFER; rtcprecvbuf = RTPUDPV4TRANS_RTCPRECEIVEBUFFER; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+RTPUDPv4TransmissionParams	jrtplib/rtpudpv4transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv4TransmissionParams : public RTPTransmissionParams$/;"	c	namespace:jrtplib
+RTPUDPv4Transmitter	jrtplib/rtpudpv4transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv4Transmitter : public RTPTransmitter$/;"	c	namespace:jrtplib
+RTPUDPv6Trans_GetHashIndex_IPv6Dest	jrtplib/rtpudpv6transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv6Trans_GetHashIndex_IPv6Dest$/;"	c	namespace:jrtplib
+RTPUDPv6Trans_GetHashIndex_in6_addr	jrtplib/rtpudpv6transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv6Trans_GetHashIndex_in6_addr$/;"	c	namespace:jrtplib
+RTPUDPv6TransmissionInfo	jrtplib/rtpudpv6transmitter.h	/^	RTPUDPv6TransmissionInfo(std::list<in6_addr> iplist,int rtpsock,int rtcpsock) : RTPTransmissionInfo(RTPTransmitter::IPv6UDPProto) $/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+RTPUDPv6TransmissionInfo	jrtplib/rtpudpv6transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv6TransmissionInfo : public RTPTransmissionInfo$/;"	c	namespace:jrtplib
+RTPUDPv6TransmissionParams	jrtplib/rtpudpv6transmitter.h	/^	RTPUDPv6TransmissionParams():RTPTransmissionParams(RTPTransmitter::IPv6UDPProto)	{ portbase = RTPUDPV6TRANS_DEFAULTPORTBASE; for (int i = 0 ; i < 16 ; i++) bindIP.s6_addr[i] = 0; multicastTTL = 1; mcastifidx = 0; rtpsendbuf = RTPUDPV6TRANS_RTPTRANSMITBUFFER; rtprecvbuf= RTPUDPV6TRANS_RTPRECEIVEBUFFER; rtcpsendbuf = RTPUDPV6TRANS_RTCPTRANSMITBUFFER; rtcprecvbuf = RTPUDPV6TRANS_RTCPRECEIVEBUFFER; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+RTPUDPv6TransmissionParams	jrtplib/rtpudpv6transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv6TransmissionParams : public RTPTransmissionParams$/;"	c	namespace:jrtplib
+RTPUDPv6Transmitter	jrtplib/rtpudpv6transmitter.h	/^class JRTPLIB_IMPORTEXPORT RTPUDPv6Transmitter : public RTPTransmitter$/;"	c	namespace:jrtplib
+RTP_BYETIMEOUTMULTIPLIER	jrtplib/rtpdefines.h	44;"	d
+RTP_COLLISIONTIMEOUTMULTIPLIER	jrtplib/rtpdefines.h	46;"	d
+RTP_DEFAULTPACKETSIZE	jrtplib/rtpdefines.h	40;"	d
+RTP_DEFAULTSESSIONBANDWIDTH	jrtplib/rtpdefines.h	48;"	d
+RTP_MAXCSRCS	jrtplib/rtpdefines.h	38;"	d
+RTP_MAXPRIVITEMS	jrtplib/rtpdefines.h	42;"	d
+RTP_MEMBERTIMEOUTMULTIPLIER	jrtplib/rtpdefines.h	45;"	d
+RTP_MINPACKETSIZE	jrtplib/rtpdefines.h	39;"	d
+RTP_NOTETTIMEOUTMULTIPLIER	jrtplib/rtpdefines.h	47;"	d
+RTP_NTPTIMEOFFSET	jrtplib/rtptimeutilities.h	52;"	d
+RTP_PROBATIONCOUNT	jrtplib/rtpdefines.h	41;"	d
+RTP_RTCPTYPE_APP	jrtplib/rtpdefines.h	54;"	d
+RTP_RTCPTYPE_BYE	jrtplib/rtpdefines.h	53;"	d
+RTP_RTCPTYPE_RR	jrtplib/rtpdefines.h	51;"	d
+RTP_RTCPTYPE_SDES	jrtplib/rtpdefines.h	52;"	d
+RTP_RTCPTYPE_SR	jrtplib/rtpdefines.h	50;"	d
+RTP_SENDERTIMEOUTMULTIPLIER	jrtplib/rtpdefines.h	43;"	d
+RTP_SNPRINTF	jrtplib/rtpdefines.h	77;"	d
+RTP_SNPRINTF	jrtplib/rtpdefines.h	79;"	d
+RTP_SNPRINTF	jrtplib/rtpdefines.h	82;"	d
+RTP_SOCKLENTYPE_UINT	jrtplib/rtpconfig.h	51;"	d
+RTP_SUPPORT_GETLOGINR	jrtplib/rtpconfig.h	63;"	d
+RTP_SUPPORT_IFADDRS	jrtplib/rtpconfig.h	69;"	d
+RTP_SUPPORT_IPV4MULTICAST	jrtplib/rtpconfig.h	55;"	d
+RTP_SUPPORT_IPV6	jrtplib/rtpconfig.h	65;"	d
+RTP_SUPPORT_IPV6MULTICAST	jrtplib/rtpconfig.h	67;"	d
+RTP_SUPPORT_MEMORYMANAGEMENT	jrtplib/rtpconfig.h	73;"	d
+RTP_SUPPORT_PROBATION	jrtplib/rtpconfig.h	61;"	d
+RTP_SUPPORT_SDESPRIV	jrtplib/rtpconfig.h	59;"	d
+RTP_SUPPORT_SENDAPP	jrtplib/rtpconfig.h	71;"	d
+RTP_VERSION	jrtplib/rtpdefines.h	37;"	d
+ReceiveMode	jrtplib/rtptransmitter.h	/^	enum ReceiveMode $/;"	g	class:jrtplib::RTPTransmitter
+ReceivedBYE	jrtplib/rtpsourcedata.h	/^	bool ReceivedBYE() const						{ return receivedbye; }$/;"	f	class:jrtplib::RTPSourceData
+Report	jrtplib/rtcpcompoundpacketbuilder.h	/^		Report(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+Report	jrtplib/rtcpcompoundpacketbuilder.h	/^	class Report : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+SDES	jrtplib/rtcpcompoundpacketbuilder.h	/^		SDES(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) { sdesit = sdessources.end(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+SDES	jrtplib/rtcpcompoundpacketbuilder.h	/^	class SDES : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+SDES	jrtplib/rtcppacket.h	/^			SDES,	\/**< An RTCP source description packet. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+SDESItem	jrtplib/rtcpsdesinfo.h	/^		SDESItem(RTPMemoryManager *mgr = 0) : RTPMemoryObject(mgr)$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+SDESItem	jrtplib/rtcpsdesinfo.h	/^	class SDESItem : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPSDESInfo
+SDESPrivateItem	jrtplib/rtcpsdesinfo.h	/^		SDESPrivateItem(RTPMemoryManager *mgr) : SDESItem(mgr)$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+SDESPrivateItem	jrtplib/rtcpsdesinfo.h	/^	class SDESPrivateItem : public SDESItem$/;"	c	class:jrtplib::RTCPSDESInfo
+SDESSource	jrtplib/rtcpcompoundpacketbuilder.h	/^		SDESSource(uint32_t s,RTPMemoryManager *mgr) : RTPMemoryObject(mgr),ssrc(s),totalitemsize(0)  { }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+SDESSource	jrtplib/rtcpcompoundpacketbuilder.h	/^	class SDESSource : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+SDES_GetCNAME	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetCNAME(size_t *len) const				{ return SDESinf.GetCNAME(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetEMail	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetEMail(size_t *len) const				{ return SDESinf.GetEMail(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetLocation	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetLocation(size_t *len) const			{ return SDESinf.GetLocation(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetName	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetName(size_t *len) const				{ return SDESinf.GetName(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetNextPrivateValue	jrtplib/rtpsourcedata.h	/^	bool SDES_GetNextPrivateValue(uint8_t **prefix,size_t *prefixlen,uint8_t **value,size_t *valuelen) 		{ return SDESinf.GetNextPrivateValue(prefix,prefixlen,value,valuelen); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetNote	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetNote(size_t *len) const				{ return SDESinf.GetNote(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetPhone	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetPhone(size_t *len) const				{ return SDESinf.GetPhone(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetPrivateValue	jrtplib/rtpsourcedata.h	/^	bool SDES_GetPrivateValue(uint8_t *prefix,size_t prefixlen,uint8_t **value,size_t *valuelen) const 		{ return SDESinf.GetPrivateValue(prefix,prefixlen,value,valuelen); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GetTool	jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetTool(size_t *len) const				{ return SDESinf.GetTool(len); }$/;"	f	class:jrtplib::RTPSourceData
+SDES_GotoFirstPrivateValue	jrtplib/rtpsourcedata.h	/^	void SDES_GotoFirstPrivateValue()										{ SDESinf.GotoFirstPrivateValue(); }$/;"	f	class:jrtplib::RTPSourceData
+SDESinf	jrtplib/rtpsourcedata.h	/^	RTCPSDESInfo SDESinf;$/;"	m	class:jrtplib::RTPSourceData
+SR	jrtplib/rtcppacket.h	/^			SR,		\/**< An RTCP sender report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+SR_BYE	jrtplib/rtpsessionparams.h	/^	bool SR_BYE;$/;"	m	class:jrtplib::RTPSessionParams
+SR_GetByteCount	jrtplib/rtpsourcedata.h	/^	uint32_t SR_GetByteCount() const					{ return SRinf.GetByteCount(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_GetNTPTimestamp	jrtplib/rtpsourcedata.h	/^	RTPNTPTime SR_GetNTPTimestamp() const				{ return SRinf.GetNTPTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_GetPacketCount	jrtplib/rtpsourcedata.h	/^	uint32_t SR_GetPacketCount() const					{ return SRinf.GetPacketCount(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_GetRTPTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t SR_GetRTPTimestamp() const					{ return SRinf.GetRTPTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime SR_GetReceiveTime() const					{ return SRinf.GetReceiveTime(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_HasInfo	jrtplib/rtpsourcedata.h	/^	bool SR_HasInfo() const								{ return SRinf.HasInfo(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_GetByteCount	jrtplib/rtpsourcedata.h	/^	uint32_t SR_Prev_GetByteCount() const					{ return SRprevinf.GetByteCount(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_GetNTPTimestamp	jrtplib/rtpsourcedata.h	/^	RTPNTPTime SR_Prev_GetNTPTimestamp() const				{ return SRprevinf.GetNTPTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_GetPacketCount	jrtplib/rtpsourcedata.h	/^	uint32_t SR_Prev_GetPacketCount() const				{ return SRprevinf.GetPacketCount(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_GetRTPTimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t SR_Prev_GetRTPTimestamp() const				{ return SRprevinf.GetRTPTimestamp(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_GetReceiveTime	jrtplib/rtpsourcedata.h	/^	RTPTime SR_Prev_GetReceiveTime() const					{ return SRprevinf.GetReceiveTime(); }$/;"	f	class:jrtplib::RTPSourceData
+SR_Prev_HasInfo	jrtplib/rtpsourcedata.h	/^	bool SR_Prev_HasInfo() const						{ return SRprevinf.HasInfo(); }$/;"	f	class:jrtplib::RTPSourceData
+SRinf	jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m	class:jrtplib::RTPSourceData
+SRprevinf	jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m	class:jrtplib::RTPSourceData
+SentRTPPacket	jrtplib/rtpinternalsourcedata.h	/^	void SentRTPPacket()										{ if (!ownssrc) return; RTPTime t = RTPTime::CurrentTime(); issender = true; stats.SetLastRTPPacketTime(t); stats.SetLastMessageTime(t); }$/;"	f	class:jrtplib::RTPInternalSourceData
+Set	jrtplib/rtpsourcedata.h	/^	void Set(const RTPNTPTime &ntptime,uint32_t rtptime,uint32_t pcount,$/;"	f	class:jrtplib::RTCPSenderReportInfo
+Set	jrtplib/rtpsourcedata.h	/^	void Set(uint8_t fraclost,int32_t plost,uint32_t exthigh,$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+SetAcceptOwnPackets	jrtplib/rtpsessionparams.h	/^	void SetAcceptOwnPackets(bool accept)					{ acceptown = accept; }$/;"	f	class:jrtplib::RTPSessionParams
+SetBYETimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	void SetBYETimeoutMultiplier(double m)					{ byetimeoutmultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetBindIP	jrtplib/rtpudpv4transmitter.h	/^	void SetBindIP(uint32_t ip)									{ bindIP = ip; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetBindIP	jrtplib/rtpudpv6transmitter.h	/^	void SetBindIP(in6_addr ip)											{ bindIP = ip; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetCNAME	jrtplib/rtcpsdesinfo.h	/^	int SetCNAME(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_CNAME-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetCNAME	jrtplib/rtpsessionparams.h	/^	void SetCNAME(const std::string &s)					{ cname = s; }$/;"	f	class:jrtplib::RTPSessionParams
+SetCSRC	jrtplib/rtpinternalsourcedata.h	/^	void SetCSRC()											{ validated = true; iscsrc = true; }$/;"	f	class:jrtplib::RTPInternalSourceData
+SetCollisionTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	void SetCollisionTimeoutMultiplier(double m)				{ collisionmultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetControlTrafficFraction	jrtplib/rtpsessionparams.h	/^	void SetControlTrafficFraction(double frac)				{ controlfrac = frac; }$/;"	f	class:jrtplib::RTPSessionParams
+SetDefaultMark	jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::SetDefaultMark(bool m)$/;"	f	class:jrtplib::RTPPacketBuilder
+SetDefaultPayloadType	jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::SetDefaultPayloadType(uint8_t pt)$/;"	f	class:jrtplib::RTPPacketBuilder
+SetDefaultTimestampIncrement	jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::SetDefaultTimestampIncrement(uint32_t timestampinc)$/;"	f	class:jrtplib::RTPPacketBuilder
+SetEMail	jrtplib/rtcpsdesinfo.h	/^	int SetEMail(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_EMAIL-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetEMailInterval	jrtplib/rtcppacketbuilder.h	/^	void SetEMailInterval(int count)						{ if (!init) return; interval_email = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetExtendedSequenceNumber	jrtplib/rtppacket.h	/^	void SetExtendedSequenceNumber(uint32_t seq)										{ extseqnr = seq; }$/;"	f	class:jrtplib::RTPPacket
+SetHeaderOverhead	jrtplib/rtcpscheduler.h	/^	void SetHeaderOverhead(size_t numbytes)								{ headeroverhead = numbytes; }$/;"	f	class:jrtplib::RTCPScheduler
+SetHostAddress	jrtplib/rtpbyteaddress.h	/^	void SetHostAddress(const uint8_t hostaddress[RTPBYTEADDRESS_MAXLENGTH], size_t addrlen)						{ if (addrlen > RTPBYTEADDRESS_MAXLENGTH) addrlen = RTPBYTEADDRESS_MAXLENGTH; memcpy(RTPByteAddress::hostaddress, hostaddress, addrlen); RTPByteAddress::addresslength = addrlen; }$/;"	f	class:jrtplib::RTPByteAddress
+SetIP	jrtplib/rtpipv4address.h	/^	void SetIP(const uint8_t ip[4])																	{ RTPIPv4Address::ip = (uint32_t)ip[3]; RTPIPv4Address::ip |= (((uint32_t)ip[2])<<8); RTPIPv4Address::ip |= (((uint32_t)ip[1])<<16); RTPIPv4Address::ip |= (((uint32_t)ip[0])<<24); }$/;"	f	class:jrtplib::RTPIPv4Address
+SetIP	jrtplib/rtpipv4address.h	/^	void SetIP(uint32_t ip)																			{ RTPIPv4Address::ip = ip; }$/;"	f	class:jrtplib::RTPIPv4Address
+SetIP	jrtplib/rtpipv6address.h	/^	void SetIP(const uint8_t ip[16])																		{ for (int i = 0 ; i < 16 ; i++) RTPIPv6Address::ip.s6_addr[i] = ip[i]; }$/;"	f	class:jrtplib::RTPIPv6Address
+SetIP	jrtplib/rtpipv6address.h	/^	void SetIP(in6_addr ip)																					{ RTPIPv6Address::ip = ip; }$/;"	f	class:jrtplib::RTPIPv6Address
+SetInfo	jrtplib/rtcpsdesinfo.h	/^		int SetInfo(const uint8_t *s,size_t len)			{ return SetString(&str,&length,s,len); }$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+SetLastMessageTime	jrtplib/rtpsourcedata.h	/^	void SetLastMessageTime(const RTPTime &t)				{ lastmsgtime = t; }$/;"	f	class:jrtplib::RTPSourceStats
+SetLastNoteTime	jrtplib/rtpsourcedata.h	/^	void SetLastNoteTime(const RTPTime &t)					{ lastnotetime = t; }$/;"	f	class:jrtplib::RTPSourceStats
+SetLastRTPPacketTime	jrtplib/rtpsourcedata.h	/^	void SetLastRTPPacketTime(const RTPTime &t)				{ lastrtptime = t; }$/;"	f	class:jrtplib::RTPSourceStats
+SetLocalEMail	jrtplib/rtcppacketbuilder.h	/^	int SetLocalEMail(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetEMail((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocalIPList	jrtplib/rtpudpv4transmitter.h	/^	void SetLocalIPList(std::list<uint32_t> &iplist)			{ localIPs = iplist; } $/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetLocalIPList	jrtplib/rtpudpv6transmitter.h	/^	void SetLocalIPList(std::list<in6_addr> &iplist)					{ localIPs = iplist; } $/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetLocalLocation	jrtplib/rtcppacketbuilder.h	/^	int SetLocalLocation(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetLocation((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocalName	jrtplib/rtcppacketbuilder.h	/^	int SetLocalName(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetName((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocalNote	jrtplib/rtcppacketbuilder.h	/^	int SetLocalNote(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetNote((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocalPhone	jrtplib/rtcppacketbuilder.h	/^	int SetLocalPhone(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetPhone((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocalTool	jrtplib/rtcppacketbuilder.h	/^	int SetLocalTool(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetTool((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetLocation	jrtplib/rtcpsdesinfo.h	/^	int SetLocation(const uint8_t *s,size_t l)				{ return SetNonPrivateItem(RTCP_SDES_ID_LOCATION-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetLocationInterval	jrtplib/rtcppacketbuilder.h	/^	void SetLocationInterval(int count)						{ if (!init) return; interval_location = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetMaximumPacketSize	jrtplib/rtcppacketbuilder.h	/^	int SetMaximumPacketSize(size_t maxpacksize)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; if (maxpacksize < RTP_MINPACKETSIZE) return ERR_RTP_RTCPPACKETBUILDER_ILLEGALMAXPACKSIZE; maxpacketsize = maxpacksize; return 0; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetMaximumPacketSize	jrtplib/rtpsessionparams.h	/^	void SetMaximumPacketSize(size_t max)					{ maxpacksize = max; }$/;"	f	class:jrtplib::RTPSessionParams
+SetMemoryManager	jrtplib/rtcpsdesinfo.h	/^		void SetMemoryManager(RTPMemoryManager *mgr)$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+SetMemoryManager	jrtplib/rtpmemoryobject.h	/^	void SetMemoryManager(RTPMemoryManager *m)						{ mgr = m; }$/;"	f	class:jrtplib::RTPMemoryObject
+SetMemoryManager	jrtplib/rtpmemoryobject.h	/^	void SetMemoryManager(RTPMemoryManager *m)						{ }$/;"	f	class:jrtplib::RTPMemoryObject
+SetMinimumRTCPTransmissionInterval	jrtplib/rtpsessionparams.h	/^	void SetMinimumRTCPTransmissionInterval(const RTPTime &t)		{ mininterval = t; }$/;"	f	class:jrtplib::RTPSessionParams
+SetMulticastInterfaceIP	jrtplib/rtpudpv4transmitter.h	/^	void SetMulticastInterfaceIP(uint32_t ip)					{ mcastifaceIP = ip; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetMulticastInterfaceIndex	jrtplib/rtpudpv6transmitter.h	/^	void SetMulticastInterfaceIndex(unsigned int idx)					{ mcastifidx = idx; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetMulticastTTL	jrtplib/rtpudpv4transmitter.h	/^	void SetMulticastTTL(uint8_t mcastTTL)						{ multicastTTL = mcastTTL; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetMulticastTTL	jrtplib/rtpudpv6transmitter.h	/^	void SetMulticastTTL(uint8_t mcastTTL)								{ multicastTTL = mcastTTL; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetName	jrtplib/rtcpsdesinfo.h	/^	int SetName(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_NAME-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetNameInterval	jrtplib/rtcppacketbuilder.h	/^	void SetNameInterval(int count)							{ if (!init) return; interval_name = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetNonPrivateItem	jrtplib/rtcpsdesinfo.h	/^	int SetNonPrivateItem(int itemno,const uint8_t *s,size_t l)		{ if (l > RTCP_SDES_MAXITEMLENGTH) return ERR_RTP_SDES_LENGTHTOOBIG; return nonprivateitems[itemno].SetInfo(s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetNote	jrtplib/rtcpsdesinfo.h	/^	int SetNote(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_NOTE-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetNoteInterval	jrtplib/rtcppacketbuilder.h	/^	void SetNoteInterval(int count)							{ if (!init) return; interval_note = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetNoteTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	void SetNoteTimeoutMultiplier(double m)					{ notemultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetOwnSSRC	jrtplib/rtpinternalsourcedata.h	/^	void SetOwnSSRC()										{ ownssrc = true; validated = true; }$/;"	f	class:jrtplib::RTPInternalSourceData
+SetOwnTimestampUnit	jrtplib/rtpsessionparams.h	/^	void SetOwnTimestampUnit(double tsunit)					{ owntsunit = tsunit; }$/;"	f	class:jrtplib::RTPSessionParams
+SetParameters	jrtplib/rtcpscheduler.h	/^	void SetParameters(const RTCPSchedulerParams &params)						{ schedparams = params; }$/;"	f	class:jrtplib::RTCPScheduler
+SetPhone	jrtplib/rtcpsdesinfo.h	/^	int SetPhone(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_PHONE-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetPhoneInterval	jrtplib/rtcppacketbuilder.h	/^	void SetPhoneInterval(int count)						{ if (!init) return; interval_phone = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetPort	jrtplib/rtpbyteaddress.h	/^	void SetPort(uint16_t port)													{ RTPByteAddress::port = port; }$/;"	f	class:jrtplib::RTPByteAddress
+SetPort	jrtplib/rtpipv4address.h	/^	void SetPort(uint16_t port)																		{ RTPIPv4Address::port = port; }$/;"	f	class:jrtplib::RTPIPv4Address
+SetPort	jrtplib/rtpipv6address.h	/^	void SetPort(uint16_t port)																				{ RTPIPv6Address::port = port; }$/;"	f	class:jrtplib::RTPIPv6Address
+SetPortbase	jrtplib/rtpudpv4transmitter.h	/^	void SetPortbase(uint16_t pbase)							{ portbase = pbase; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetPortbase	jrtplib/rtpudpv6transmitter.h	/^	void SetPortbase(uint16_t pbase)									{ portbase = pbase; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetPreTransmissionDelay	jrtplib/rtcppacketbuilder.h	/^	int SetPreTransmissionDelay(const RTPTime &delay)				{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; transmissiondelay = delay; return 0; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetPredefinedSSRC	jrtplib/rtpsessionparams.h	/^	void SetPredefinedSSRC(uint32_t ssrc)					{ predefinedssrc = ssrc; }$/;"	f	class:jrtplib::RTPSessionParams
+SetPrefix	jrtplib/rtcpsdesinfo.h	/^		int SetPrefix(const uint8_t *s,size_t len)			{ return SetString(&prefix,&prefixlen,s,len); }$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+SetProbationType	jrtplib/rtpsessionparams.h	/^	void SetProbationType(RTPSources::ProbationType probtype)		{ probationtype = probtype; }$/;"	f	class:jrtplib::RTPSessionParams
+SetProbationType	jrtplib/rtpsources.h	/^	void SetProbationType(ProbationType probtype)							{ probationtype = probtype; }$/;"	f	class:jrtplib::RTPSources
+SetProcessedEMail	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedEMail(bool v)		{ pemail = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetProcessedInRTCP	jrtplib/rtpsourcedata.h	/^	void SetProcessedInRTCP(bool v)						{ processedinrtcp = v; }$/;"	f	class:jrtplib::RTPSourceData
+SetProcessedLocation	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedLocation(bool v)	{ plocation  = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetProcessedName	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedName(bool v)		{ pname = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetProcessedNote	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedNote(bool v)		{ pnote = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetProcessedPhone	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedPhone(bool v)		{ pphone = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetProcessedTool	jrtplib/rtcppacketbuilder.h	/^		void SetProcessedTool(bool v)		{ ptool = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetRTCPDataAddress	jrtplib/rtpinternalsourcedata.h	/^inline int RTPInternalSourceData::SetRTCPDataAddress(const RTPAddress *a)$/;"	f	class:jrtplib::RTPInternalSourceData
+SetRTCPReceiveBuffer	jrtplib/rtpudpv4transmitter.h	/^	void SetRTCPReceiveBuffer(int s)							{ rtcprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetRTCPReceiveBuffer	jrtplib/rtpudpv6transmitter.h	/^	void SetRTCPReceiveBuffer(int s)							{ rtcprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetRTCPSendBuffer	jrtplib/rtpudpv4transmitter.h	/^	void SetRTCPSendBuffer(int s)								{ rtcpsendbuf = s; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetRTCPSendBuffer	jrtplib/rtpudpv6transmitter.h	/^	void SetRTCPSendBuffer(int s)								{ rtcpsendbuf = s; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetRTPDataAddress	jrtplib/rtpinternalsourcedata.h	/^inline int RTPInternalSourceData::SetRTPDataAddress(const RTPAddress *a)$/;"	f	class:jrtplib::RTPInternalSourceData
+SetRTPReceiveBuffer	jrtplib/rtpudpv4transmitter.h	/^	void SetRTPReceiveBuffer(int s)								{ rtprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetRTPReceiveBuffer	jrtplib/rtpudpv6transmitter.h	/^	void SetRTPReceiveBuffer(int s)								{ rtprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetRTPSendBuffer	jrtplib/rtpudpv4transmitter.h	/^	void SetRTPSendBuffer(int s)								{ rtpsendbuf = s; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
+SetRTPSendBuffer	jrtplib/rtpudpv6transmitter.h	/^	void SetRTPSendBuffer(int s)								{ rtpsendbuf = s; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+SetReceiveMode	jrtplib/rtpsessionparams.h	/^	void SetReceiveMode(RTPTransmitter::ReceiveMode recvmode)		{ receivemode = recvmode; }$/;"	f	class:jrtplib::RTPSessionParams
+SetRequestImmediateBYE	jrtplib/rtcpscheduler.h	/^	void SetRequestImmediateBYE(bool v)						{ immediatebye = v; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+SetRequestImmediateBYE	jrtplib/rtpsessionparams.h	/^	void SetRequestImmediateBYE(bool v) 					{ immediatebye = v; }$/;"	f	class:jrtplib::RTPSessionParams
+SetResolveLocalHostname	jrtplib/rtpsessionparams.h	/^	void SetResolveLocalHostname(bool v)					{ resolvehostname = v; }$/;"	f	class:jrtplib::RTPSessionParams
+SetSenderControlBandwidthFraction	jrtplib/rtpsessionparams.h	/^	void SetSenderControlBandwidthFraction(double frac)			{ senderfrac = frac; }$/;"	f	class:jrtplib::RTPSessionParams
+SetSenderReportForBYE	jrtplib/rtpsessionparams.h	/^	void SetSenderReportForBYE(bool v)					{ SR_BYE = v; }$/;"	f	class:jrtplib::RTPSessionParams
+SetSenderTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	void SetSenderTimeoutMultiplier(double m)				{ sendermultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetSessionBandwidth	jrtplib/rtpsessionparams.h	/^	void SetSessionBandwidth(double sessbw)					{ sessionbandwidth = sessbw; }$/;"	f	class:jrtplib::RTPSessionParams
+SetSourceTimeoutMultiplier	jrtplib/rtpsessionparams.h	/^	void SetSourceTimeoutMultiplier(double m)				{ generaltimeoutmultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetString	jrtplib/rtcpsdesinfo.h	/^		int SetString(uint8_t **dest,size_t *destlen,const uint8_t *s,size_t len)$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+SetTimestampUnit	jrtplib/rtcppacketbuilder.h	/^	int SetTimestampUnit(double tsunit)						{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; if (tsunit < 0) return ERR_RTP_RTCPPACKETBUILDER_ILLEGALTIMESTAMPUNIT; timestampunit = tsunit; return 0; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetTimestampUnit	jrtplib/rtpsourcedata.h	/^	void SetTimestampUnit(double tsu)					{ timestampunit = tsu; }$/;"	f	class:jrtplib::RTPSourceData
+SetTool	jrtplib/rtcpsdesinfo.h	/^	int SetTool(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_TOOL-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
+SetToolInterval	jrtplib/rtcppacketbuilder.h	/^	void SetToolInterval(int count)							{ if (!init) return; interval_tool = count; }$/;"	f	class:jrtplib::RTCPPacketBuilder
+SetUseHalfAtStartup	jrtplib/rtcpscheduler.h	/^	void SetUseHalfAtStartup(bool usehalf)						{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTCPSchedulerParams
+SetUseHalfRTCPIntervalAtStartup	jrtplib/rtpsessionparams.h	/^	void SetUseHalfRTCPIntervalAtStartup(bool usehalf)			{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTPSessionParams
+SetUsePredefinedSSRC	jrtplib/rtpsessionparams.h	/^	void SetUsePredefinedSSRC(bool f)					{ usepredefinedssrc = f; }$/;"	f	class:jrtplib::RTPSessionParams
+StartNewInterval	jrtplib/rtpsourcedata.h	/^	void StartNewInterval()							{ numnewpackets = 0; savedextseqnr = exthighseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
+TOOL	jrtplib/rtcpsdespacket.h	/^		TOOL,	\/**< Used for a TOOL item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+TransmissionProtocol	jrtplib/rtptransmitter.h	/^	enum TransmissionProtocol $/;"	g	class:jrtplib::RTPTransmitter
+Unknown	jrtplib/rtcppacket.h	/^			Unknown	\/**< The type of RTCP packet was not recognized. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+Unknown	jrtplib/rtcpsdespacket.h	/^		Unknown \/**< Used when there is an item present, but the type is not recognized. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+UpdateMessageTime	jrtplib/rtpinternalsourcedata.h	/^	void UpdateMessageTime(const RTPTime &receivetime)						{ stats.SetLastMessageTime(receivetime); }$/;"	f	class:jrtplib::RTPInternalSourceData
+UserDefinedAddress	jrtplib/rtpaddress.h	/^		UserDefinedAddress  \/**< Can be useful for a user-defined transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
+UserDefinedProto	jrtplib/rtptransmitter.h	/^		UserDefinedProto  \/**< Specifies a user defined, external transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
+Wait	jrtplib/rtptimeutilities.h	/^inline void RTPTime::Wait(const RTPTime &delay)$/;"	f	class:jrtplib::RTPTime
+ZeroData	jrtplib/rtprawpacket.h	/^	void ZeroData()															{ packetdata = 0; packetdatalength = 0; }$/;"	f	class:jrtplib::RTPRawPacket
+abortdesc	jrtplib/rtpexternaltransmitter.h	/^	SOCKET abortdesc[2];$/;"	m	class:jrtplib::RTPExternalTransmitter
+abortdesc	jrtplib/rtpexternaltransmitter.h	/^	int abortdesc[2];$/;"	m	class:jrtplib::RTPExternalTransmitter
+abortdesc	jrtplib/rtpudpv4transmitter.h	/^	SOCKET abortdesc[2];$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+abortdesc	jrtplib/rtpudpv4transmitter.h	/^	int abortdesc[2];$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+abortdesc	jrtplib/rtpudpv6transmitter.h	/^	SOCKET abortdesc[2];$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+abortdesc	jrtplib/rtpudpv6transmitter.h	/^	int abortdesc[2];$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+acceptignoreinfo	jrtplib/rtpudpv4transmitter.h	/^	RTPKeyHashTable<const uint32_t,PortInfo*,RTPUDPv4Trans_GetHashIndex_uint32_t,RTPUDPV4TRANS_HASHSIZE> acceptignoreinfo;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+acceptignoreinfo	jrtplib/rtpudpv6transmitter.h	/^	RTPKeyHashTable<const in6_addr,PortInfo*,RTPUDPv6Trans_GetHashIndex_in6_addr,RTPUDPV6TRANS_HASHSIZE> acceptignoreinfo;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+acceptown	jrtplib/rtpsessionparams.h	/^	bool acceptown;$/;"	m	class:jrtplib::RTPSessionParams
+acceptownpackets	jrtplib/rtpsession.h	/^	bool acceptownpackets;$/;"	m	class:jrtplib::RTPSession
+activecount	jrtplib/rtpsources.h	/^	int activecount;$/;"	m	class:jrtplib::RTPSources
+addr	jrtplib/rtpcollisionlist.h	/^		RTPAddress *addr;$/;"	m	class:jrtplib::RTPCollisionList::AddressAndTime
+addresslength	jrtplib/rtpbyteaddress.h	/^	size_t addresslength;$/;"	m	class:jrtplib::RTPByteAddress
+addresslist	jrtplib/rtpcollisionlist.h	/^	std::list<AddressAndTime> addresslist;$/;"	m	class:jrtplib::RTPCollisionList
+addresstype	jrtplib/rtpaddress.h	/^	const AddressType addresstype;$/;"	m	class:jrtplib::RTPAddress
+all	jrtplib/rtpudpv4transmitter.h	/^		bool all;$/;"	m	class:jrtplib::RTPUDPv4Transmitter::PortInfo
+all	jrtplib/rtpudpv6transmitter.h	/^		bool all;$/;"	m	class:jrtplib::RTPUDPv6Transmitter::PortInfo
+appdatalen	jrtplib/rtcpapppacket.h	/^	size_t appdatalen;$/;"	m	class:jrtplib::RTCPAPPPacket
+apppackets	jrtplib/rtcpcompoundpacketbuilder.h	/^	std::list<Buffer> apppackets;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+appsize	jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t appsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+arebuilding	jrtplib/rtcpcompoundpacketbuilder.h	/^	bool arebuilding;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+avgbyepacketsize	jrtplib/rtcpscheduler.h	/^	size_t avgbyepacketsize;$/;"	m	class:jrtplib::RTCPScheduler
+avgrtcppacksize	jrtplib/rtcpscheduler.h	/^	size_t avgrtcppacksize;$/;"	m	class:jrtplib::RTCPScheduler
+bandwidth	jrtplib/rtcpscheduler.h	/^	double bandwidth;$/;"	m	class:jrtplib::RTCPSchedulerParams
+baseseqnr	jrtplib/rtpsourcedata.h	/^	uint32_t baseseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+bindIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+bindIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+bindIP	jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+bindIP	jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+buffer	jrtplib/rtcpcompoundpacketbuilder.h	/^	uint8_t *buffer;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+buffer	jrtplib/rtppacketbuilder.h	/^	uint8_t *buffer;$/;"	m	class:jrtplib::RTPPacketBuilder
+buildermutex	jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
+byemembers	jrtplib/rtcpscheduler.h	/^	int byemembers,pbyemembers;$/;"	m	class:jrtplib::RTCPScheduler
+byemultiplier	jrtplib/rtpsession.h	/^	double byemultiplier;$/;"	m	class:jrtplib::RTPSession
+byepackets	jrtplib/rtcpcompoundpacketbuilder.h	/^	std::list<Buffer> byepackets;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+byepackets	jrtplib/rtpsession.h	/^	std::list<RTCPCompoundPacket *> byepackets;$/;"	m	class:jrtplib::RTPSession
+byereason	jrtplib/rtpsourcedata.h	/^	uint8_t *byereason;$/;"	m	class:jrtplib::RTPSourceData
+byereasonlen	jrtplib/rtpsourcedata.h	/^	size_t byereasonlen;$/;"	m	class:jrtplib::RTPSourceData
+byescheduled	jrtplib/rtcpscheduler.h	/^	bool byescheduled;$/;"	m	class:jrtplib::RTCPScheduler
+byesize	jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t byesize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+byetime	jrtplib/rtpsourcedata.h	/^	RTPTime byetime;$/;"	m	class:jrtplib::RTPSourceData
+byetimeoutmultiplier	jrtplib/rtpsessionparams.h	/^	double byetimeoutmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+bytecount	jrtplib/rtpsourcedata.h	/^	uint32_t bytecount;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+cname	jrtplib/rtpsessionparams.h	/^	std::string cname;$/;"	m	class:jrtplib::RTPSessionParams
+collisionlist	jrtplib/rtpsession.h	/^	RTPCollisionList collisionlist;$/;"	m	class:jrtplib::RTPSession
+collisionmultiplier	jrtplib/rtpsession.h	/^	double collisionmultiplier;$/;"	m	class:jrtplib::RTPSession
+collisionmultiplier	jrtplib/rtpsessionparams.h	/^	double collisionmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+compoundpacket	jrtplib/rtcpcompoundpacket.h	/^	uint8_t *compoundpacket;$/;"	m	class:jrtplib::RTCPCompoundPacket
+compoundpacketlength	jrtplib/rtcpcompoundpacket.h	/^	size_t compoundpacketlength;$/;"	m	class:jrtplib::RTCPCompoundPacket
+controlfrac	jrtplib/rtpsessionparams.h	/^	double controlfrac;$/;"	m	class:jrtplib::RTPSessionParams
+controlfragment	jrtplib/rtpsession.h	/^	double controlfragment;$/;"	m	class:jrtplib::RTPSession
+count	jrtplib/rtpstructs.h	/^	uint8_t count:5;$/;"	m	struct:jrtplib::RTCPCommonHeader
+created	jrtplib/rtpexternaltransmitter.h	/^	bool created;$/;"	m	class:jrtplib::RTPExternalTransmitter
+created	jrtplib/rtpsession.h	/^	bool created;$/;"	m	class:jrtplib::RTPSession
+created	jrtplib/rtpudpv4transmitter.h	/^	bool created;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+created	jrtplib/rtpudpv6transmitter.h	/^	bool created;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+csrccount	jrtplib/rtpstructs.h	/^	uint8_t csrccount:4;$/;"	m	struct:jrtplib::RTPHeader
+csrcs	jrtplib/rtppacketbuilder.h	/^	uint32_t csrcs[RTP_MAXCSRCS];$/;"	m	class:jrtplib::RTPPacketBuilder
+curchunknum	jrtplib/rtcpsdespacket.h	/^	int curchunknum;$/;"	m	class:jrtplib::RTCPSDESPacket
+curhashelem	jrtplib/rtphashtable.h	/^	HashElement *curhashelem;$/;"	m	class:jrtplib::RTPHashTable
+curhashelem	jrtplib/rtpkeyhashtable.h	/^	HashElement *curhashelem;$/;"	m	class:jrtplib::RTPKeyHashTable
+curitem	jrtplib/rtcpsdesinfo.h	/^	std::list<SDESPrivateItem *>::const_iterator curitem;$/;"	m	class:jrtplib::RTCPSDESInfo
+currentchunk	jrtplib/rtcpsdespacket.h	/^	uint8_t *currentchunk;$/;"	m	class:jrtplib::RTCPSDESPacket
+data	jrtplib/rtcppacket.h	/^	uint8_t *data;$/;"	m	class:jrtplib::RTCPPacket
+datalen	jrtplib/rtcppacket.h	/^	size_t datalen;$/;"	m	class:jrtplib::RTCPPacket
+debugnr	jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
+defaultmark	jrtplib/rtppacketbuilder.h	/^	bool defaultmark;$/;"	m	class:jrtplib::RTPPacketBuilder
+defaultpayloadtype	jrtplib/rtppacketbuilder.h	/^	uint8_t defaultpayloadtype;$/;"	m	class:jrtplib::RTPPacketBuilder
+defaulttimestampinc	jrtplib/rtppacketbuilder.h	/^	uint32_t defaulttimestampinc;$/;"	m	class:jrtplib::RTPPacketBuilder
+defmarkset	jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
+defptset	jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
+deftsset	jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
+deletepacket	jrtplib/rtcpcompoundpacket.h	/^	bool deletepacket;$/;"	m	class:jrtplib::RTCPCompoundPacket
+deletertprnd	jrtplib/rtpsession.h	/^	bool deletertprnd;$/;"	m	class:jrtplib::RTPSession
+deletetransmitter	jrtplib/rtpsession.h	/^	bool deletetransmitter;$/;"	m	class:jrtplib::RTPSession
+destinations	jrtplib/rtpudpv4transmitter.h	/^	RTPHashTable<const RTPIPv4Destination,RTPUDPv4Trans_GetHashIndex_IPv4Dest,RTPUDPV4TRANS_HASHSIZE> destinations;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+destinations	jrtplib/rtpudpv6transmitter.h	/^	RTPHashTable<const RTPIPv6Destination,RTPUDPv6Trans_GetHashIndex_IPv6Dest,RTPUDPV6TRANS_HASHSIZE> destinations;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+device	jrtplib/rtprandomurandom.h	/^	FILE *device;$/;"	m	class:jrtplib::RTPRandomURandom
+djitter	jrtplib/rtpsourcedata.h	/^	double djitter;$/;"	m	class:jrtplib::RTPSourceStats
+dlsr	jrtplib/rtpsourcedata.h	/^	uint32_t dlsr;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+dlsr	jrtplib/rtpstructs.h	/^	uint32_t dlsr;$/;"	m	struct:jrtplib::RTCPReceiverReport
+doemail	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+doloc	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+doname	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+donote	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+dophone	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+dotool	jrtplib/rtcppacketbuilder.h	/^	bool doname,doemail,doloc,dophone,dotool,donote;$/;"	m	class:jrtplib::RTCPPacketBuilder
+dummy	jrtplib/rtptimeutilities.h	/^	int dummy;$/;"	m	class:jrtplib::RTPTimeInitializer
+element	jrtplib/rtphashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+element	jrtplib/rtpkeyhashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+error	jrtplib/rtcpcompoundpacket.h	/^	int error;$/;"	m	class:jrtplib::RTCPCompoundPacket
+error	jrtplib/rtppacket.h	/^	int error;$/;"	m	class:jrtplib::RTPPacket
+extension	jrtplib/rtppacket.h	/^	uint8_t *extension;$/;"	m	class:jrtplib::RTPPacket
+extension	jrtplib/rtpstructs.h	/^	uint8_t extension:1;$/;"	m	struct:jrtplib::RTPHeader
+extensionlength	jrtplib/rtppacket.h	/^	size_t extensionlength;$/;"	m	class:jrtplib::RTPPacket
+external	jrtplib/rtcpcompoundpacketbuilder.h	/^	bool external;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+externalbuffer	jrtplib/rtppacket.h	/^	bool externalbuffer;$/;"	m	class:jrtplib::RTPPacket
+exthighseqnr	jrtplib/rtpsourcedata.h	/^	uint32_t exthighseqnr,prevexthighseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+exthighseqnr	jrtplib/rtpsourcedata.h	/^	uint32_t exthighseqnr;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+exthighseqnr	jrtplib/rtpstructs.h	/^	uint32_t exthighseqnr;$/;"	m	struct:jrtplib::RTCPReceiverReport
+extid	jrtplib/rtppacket.h	/^	uint16_t extid;$/;"	m	class:jrtplib::RTPPacket
+extid	jrtplib/rtpstructs.h	/^	uint16_t extid;$/;"	m	struct:jrtplib::RTPExtensionHeader
+extseqnr	jrtplib/rtppacket.h	/^	uint32_t extseqnr,timestamp,ssrc;$/;"	m	class:jrtplib::RTPPacket
+firstcall	jrtplib/rtcpscheduler.h	/^	bool firstcall;$/;"	m	class:jrtplib::RTCPScheduler
+firsthashelem	jrtplib/rtphashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPHashTable
+firsthashelem	jrtplib/rtpkeyhashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPKeyHashTable
+firstpacket	jrtplib/rtcppacketbuilder.h	/^	bool firstpacket;$/;"	m	class:jrtplib::RTCPPacketBuilder
+fractionlost	jrtplib/rtpsourcedata.h	/^	double fractionlost;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+fractionlost	jrtplib/rtpstructs.h	/^	uint8_t fractionlost;$/;"	m	struct:jrtplib::RTCPReceiverReport
+generaltimeoutmultiplier	jrtplib/rtpsessionparams.h	/^	double generaltimeoutmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+hasextension	jrtplib/rtppacket.h	/^	bool hasextension,hasmarker;$/;"	m	class:jrtplib::RTPPacket
+hashindex	jrtplib/rtphashtable.h	/^		int hashindex;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+hashindex	jrtplib/rtpkeyhashtable.h	/^		int hashindex;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+hashnext	jrtplib/rtphashtable.h	/^		HashElement *hashprev,*hashnext;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+hashnext	jrtplib/rtpkeyhashtable.h	/^		HashElement *hashprev,*hashnext;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+hashprev	jrtplib/rtphashtable.h	/^		HashElement *hashprev,*hashnext;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+hashprev	jrtplib/rtpkeyhashtable.h	/^		HashElement *hashprev,*hashnext;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+hasinfo	jrtplib/rtpsourcedata.h	/^	bool hasinfo;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+hasinfo	jrtplib/rtpsourcedata.h	/^	bool hasinfo;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+hasmarker	jrtplib/rtppacket.h	/^	bool hasextension,hasmarker;$/;"	m	class:jrtplib::RTPPacket
+hassentrtcp	jrtplib/rtcpscheduler.h	/^	bool hassentrtcp;$/;"	m	class:jrtplib::RTCPScheduler
+headerdata	jrtplib/rtcpcompoundpacketbuilder.h	/^		uint8_t *headerdata;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+headerdata32	jrtplib/rtcpcompoundpacketbuilder.h	/^		uint32_t headerdata32[(sizeof(uint32_t)+sizeof(RTCPSenderReport))\/sizeof(uint32_t)]; \/\/ either for ssrc and sender info or just ssrc$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+headerlength	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t headerlength;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+headeroverhead	jrtplib/rtcpscheduler.h	/^	size_t headeroverhead;$/;"	m	class:jrtplib::RTCPScheduler
+headersize	jrtplib/rtpexternaltransmitter.h	/^	int headersize;$/;"	m	class:jrtplib::RTPExternalTransmissionParams
+headersize	jrtplib/rtpexternaltransmitter.h	/^	int headersize;$/;"	m	class:jrtplib::RTPExternalTransmitter
+hostaddress	jrtplib/rtpbyteaddress.h	/^	uint8_t hostaddress[RTPBYTEADDRESS_MAXLENGTH];$/;"	m	class:jrtplib::RTPByteAddress
+immediatebye	jrtplib/rtcpscheduler.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTCPSchedulerParams
+immediatebye	jrtplib/rtpsessionparams.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTPSessionParams
+init	jrtplib/rtcppacketbuilder.h	/^	bool init;$/;"	m	class:jrtplib::RTCPPacketBuilder
+init	jrtplib/rtpexternaltransmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPExternalTransmitter
+init	jrtplib/rtppacketbuilder.h	/^	bool init;$/;"	m	class:jrtplib::RTPPacketBuilder
+init	jrtplib/rtpudpv4transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+init	jrtplib/rtpudpv6transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+initialized	jrtplib/rtprandomrands.h	/^	bool initialized;$/;"	m	class:jrtplib::RTPRandomRandS
+int16_t	jrtplib/rtptypes_win.h	/^typedef short int16_t;$/;"	t
+int32_t	jrtplib/rtptypes_win.h	/^typedef int int32_t;$/;"	t
+int64_t	jrtplib/rtptypes_win.h	/^typedef __int64 int64_t;$/;"	t
+int8_t	jrtplib/rtptypes_win.h	/^typedef char int8_t;$/;"	t
+interval_email	jrtplib/rtcppacketbuilder.h	/^	int interval_name,interval_email,interval_location;$/;"	m	class:jrtplib::RTCPPacketBuilder
+interval_location	jrtplib/rtcppacketbuilder.h	/^	int interval_name,interval_email,interval_location;$/;"	m	class:jrtplib::RTCPPacketBuilder
+interval_name	jrtplib/rtcppacketbuilder.h	/^	int interval_name,interval_email,interval_location;$/;"	m	class:jrtplib::RTCPPacketBuilder
+interval_note	jrtplib/rtcppacketbuilder.h	/^	int interval_phone,interval_tool,interval_note;$/;"	m	class:jrtplib::RTCPPacketBuilder
+interval_phone	jrtplib/rtcppacketbuilder.h	/^	int interval_phone,interval_tool,interval_note;$/;"	m	class:jrtplib::RTCPPacketBuilder
+interval_tool	jrtplib/rtcppacketbuilder.h	/^	int interval_phone,interval_tool,interval_note;$/;"	m	class:jrtplib::RTCPPacketBuilder
+ip	jrtplib/rtpipv4address.h	/^	uint32_t ip;$/;"	m	class:jrtplib::RTPIPv4Address
+ip	jrtplib/rtpipv4destination.h	/^	uint32_t ip;$/;"	m	class:jrtplib::RTPIPv4Destination
+ip	jrtplib/rtpipv6address.h	/^	in6_addr ip;$/;"	m	class:jrtplib::RTPIPv6Address
+isSR	jrtplib/rtcpcompoundpacketbuilder.h	/^		bool isSR;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+iscsrc	jrtplib/rtpsourcedata.h	/^	bool iscsrc;$/;"	m	class:jrtplib::RTPSourceData
+isrtcpaddrset	jrtplib/rtpsourcedata.h	/^	bool isrtpaddrset,isrtcpaddrset;$/;"	m	class:jrtplib::RTPSourceData
+isrtp	jrtplib/rtprawpacket.h	/^	bool isrtp;$/;"	m	class:jrtplib::RTPRawPacket
+isrtpaddrset	jrtplib/rtpsourcedata.h	/^	bool isrtpaddrset,isrtcpaddrset;$/;"	m	class:jrtplib::RTPSourceData
+issender	jrtplib/rtpsourcedata.h	/^	bool issender;$/;"	m	class:jrtplib::RTPSourceData
+itemoffset	jrtplib/rtcpsdespacket.h	/^	size_t itemoffset;$/;"	m	class:jrtplib::RTCPSDESPacket
+items	jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<Buffer> items;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+jitter	jrtplib/rtpsourcedata.h	/^	uint32_t jitter,prevtimestamp;$/;"	m	class:jrtplib::RTPSourceStats
+jitter	jrtplib/rtpsourcedata.h	/^	uint32_t jitter;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+jitter	jrtplib/rtpstructs.h	/^	uint32_t jitter;$/;"	m	struct:jrtplib::RTCPReceiverReport
+jrtplib	jrtplib/rtcpapppacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpbyepacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpcompoundpacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpcompoundpacketbuilder.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcppacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcppacketbuilder.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcprrpacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpscheduler.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpsdesinfo.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpsdespacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpsrpacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtcpunknownpacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpaddress.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpbyteaddress.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpcollisionlist.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtperrors.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpexternaltransmitter.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtphashtable.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpinternalsourcedata.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpipv4address.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpipv4destination.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpipv6address.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpipv6destination.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpkeyhashtable.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtplibraryversion.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpmemorymanager.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpmemoryobject.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtppacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtppacketbuilder.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtppollthread.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtprandom.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtprandomrand48.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtprandomrands.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtprandomurandom.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtprawpacket.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpsession.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpsessionparams.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpsessionsources.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpsourcedata.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpsources.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpstructs.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtptimeutilities.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtptransmitter.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpudpv4transmitter.h	/^namespace jrtplib$/;"	n
+jrtplib	jrtplib/rtpudpv6transmitter.h	/^namespace jrtplib$/;"	n
+key	jrtplib/rtpkeyhashtable.h	/^		Key key;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+knownformat	jrtplib/rtcppacket.h	/^	bool knownformat;$/;"	m	class:jrtplib::RTCPPacket
+lasthashelem	jrtplib/rtphashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPHashTable
+lasthashelem	jrtplib/rtpkeyhashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPKeyHashTable
+lastmsgtime	jrtplib/rtpsourcedata.h	/^	RTPTime lastmsgtime;$/;"	m	class:jrtplib::RTPSourceStats
+lastnotetime	jrtplib/rtpsourcedata.h	/^	RTPTime lastnotetime;$/;"	m	class:jrtplib::RTPSourceStats
+lastrtptime	jrtplib/rtpsourcedata.h	/^	RTPTime lastrtptime;$/;"	m	class:jrtplib::RTPSourceStats
+lastrtptimestamp	jrtplib/rtppacketbuilder.h	/^	uint32_t lastrtptimestamp;$/;"	m	class:jrtplib::RTPPacketBuilder
+lastwallclocktime	jrtplib/rtppacketbuilder.h	/^	RTPTime lastwallclocktime;$/;"	m	class:jrtplib::RTPPacketBuilder
+length	jrtplib/rtcpsdesinfo.h	/^		size_t length;$/;"	m	class:jrtplib::RTCPSDESInfo::SDESItem
+length	jrtplib/rtpstructs.h	/^	uint16_t length;$/;"	m	struct:jrtplib::RTCPCommonHeader
+length	jrtplib/rtpstructs.h	/^	uint16_t length;$/;"	m	struct:jrtplib::RTPExtensionHeader
+length	jrtplib/rtpstructs.h	/^	uint8_t length;$/;"	m	struct:jrtplib::RTCPSDESHeader
+listenPort	testlib/rtpAudio.cpp	/^        int listenPort;$/;"	m	class:AudioSession	file:
+listnext	jrtplib/rtphashtable.h	/^		HashElement *listprev,*listnext;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+listnext	jrtplib/rtpkeyhashtable.h	/^		HashElement *listprev,*listnext;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+listprev	jrtplib/rtphashtable.h	/^		HashElement *listprev,*listnext;$/;"	m	class:jrtplib::RTPHashTable::HashElement
+listprev	jrtplib/rtpkeyhashtable.h	/^		HashElement *listprev,*listnext;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+localIPlist	jrtplib/rtpudpv4transmitter.h	/^	std::list<uint32_t> localIPlist;$/;"	m	class:jrtplib::RTPUDPv4TransmissionInfo
+localIPlist	jrtplib/rtpudpv6transmitter.h	/^	std::list<in6_addr> localIPlist;$/;"	m	class:jrtplib::RTPUDPv6TransmissionInfo
+localIPs	jrtplib/rtpudpv4transmitter.h	/^	std::list<uint32_t> localIPs;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+localIPs	jrtplib/rtpudpv4transmitter.h	/^	std::list<uint32_t> localIPs;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+localIPs	jrtplib/rtpudpv6transmitter.h	/^	std::list<in6_addr> localIPs;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+localIPs	jrtplib/rtpudpv6transmitter.h	/^	std::list<in6_addr> localIPs;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+localhostname	jrtplib/rtpexternaltransmitter.h	/^	uint8_t *localhostname;$/;"	m	class:jrtplib::RTPExternalTransmitter
+localhostname	jrtplib/rtpudpv4transmitter.h	/^	uint8_t *localhostname;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+localhostname	jrtplib/rtpudpv6transmitter.h	/^	uint8_t *localhostname;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+localhostnamelength	jrtplib/rtpexternaltransmitter.h	/^	size_t localhostnamelength;$/;"	m	class:jrtplib::RTPExternalTransmitter
+localhostnamelength	jrtplib/rtpudpv4transmitter.h	/^	size_t localhostnamelength;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+localhostnamelength	jrtplib/rtpudpv6transmitter.h	/^	size_t localhostnamelength;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+lsr	jrtplib/rtpsourcedata.h	/^	uint32_t lsr;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+lsr	jrtplib/rtpstructs.h	/^	uint32_t lsr;$/;"	m	struct:jrtplib::RTCPReceiverReport
+lsw	jrtplib/rtptimeutilities.h	/^	uint32_t msw,lsw;$/;"	m	class:jrtplib::RTPNTPTime
+mainmutex	jrtplib/rtpexternaltransmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPExternalTransmitter
+mainmutex	jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+mainmutex	jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+majornr	jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
+marker	jrtplib/rtpstructs.h	/^	uint8_t marker:1;$/;"	m	struct:jrtplib::RTPHeader
+maximumpacketsize	jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t maximumpacketsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+maxpacketsize	jrtplib/rtcppacketbuilder.h	/^	size_t maxpacketsize;$/;"	m	class:jrtplib::RTCPPacketBuilder
+maxpacksize	jrtplib/rtpexternaltransmitter.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPExternalTransmitter
+maxpacksize	jrtplib/rtppacketbuilder.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPPacketBuilder
+maxpacksize	jrtplib/rtpsession.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPSession
+maxpacksize	jrtplib/rtpsessionparams.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPSessionParams
+maxpacksize	jrtplib/rtpudpv4transmitter.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+maxpacksize	jrtplib/rtpudpv6transmitter.h	/^	size_t maxpacksize;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+mcastifaceIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+mcastifaceIP	jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+mcastifidx	jrtplib/rtpudpv6transmitter.h	/^	unsigned int mcastifidx;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+mcastifidx	jrtplib/rtpudpv6transmitter.h	/^	unsigned int mcastifidx;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+membermultiplier	jrtplib/rtpsession.h	/^	double membermultiplier;$/;"	m	class:jrtplib::RTPSession
+memorytype	jrtplib/rtphashtable.h	/^	int memorytype;$/;"	m	class:jrtplib::RTPHashTable
+memorytype	jrtplib/rtpkeyhashtable.h	/^	int memorytype;$/;"	m	class:jrtplib::RTPKeyHashTable
+mgr	jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *mgr;$/;"	m	class:jrtplib::RTPMemoryObject
+microsec	jrtplib/rtptimeutilities.h	/^	uint32_t sec,microsec;$/;"	m	class:jrtplib::RTPTime
+mininterval	jrtplib/rtcpscheduler.h	/^	RTPTime mininterval;$/;"	m	class:jrtplib::RTCPSchedulerParams
+mininterval	jrtplib/rtpsessionparams.h	/^	RTPTime mininterval;$/;"	m	class:jrtplib::RTPSessionParams
+minornr	jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
+msw	jrtplib/rtptimeutilities.h	/^	uint32_t msw,lsw;$/;"	m	class:jrtplib::RTPNTPTime
+multicastTTL	jrtplib/rtpudpv4transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+multicastTTL	jrtplib/rtpudpv4transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+multicastTTL	jrtplib/rtpudpv6transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+multicastTTL	jrtplib/rtpudpv6transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+multicastgroups	jrtplib/rtpudpv4transmitter.h	/^	RTPHashTable<const uint32_t,RTPUDPv4Trans_GetHashIndex_uint32_t,RTPUDPV4TRANS_HASHSIZE> multicastgroups;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+multicastgroups	jrtplib/rtpudpv6transmitter.h	/^	RTPHashTable<const in6_addr,RTPUDPv6Trans_GetHashIndex_in6_addr,RTPUDPV6TRANS_HASHSIZE> multicastgroups;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+mutex	jrtplib/rtprandomrand48.h	/^	jthread::JMutex mutex;$/;"	m	class:jrtplib::RTPRandomRand48
+new	jrtplib/rtpdebug.h	45;"	d
+new	jrtplib/rtpdebug.h	47;"	d
+nextrtcptime	jrtplib/rtcpscheduler.h	/^	RTPTime nextrtcptime;$/;"	m	class:jrtplib::RTCPScheduler
+nonprivateitems	jrtplib/rtcpsdesinfo.h	/^	SDESItem nonprivateitems[RTCP_SDES_NUMITEMS_NONPRIVATE];$/;"	m	class:jrtplib::RTCPSDESInfo
+notemultiplier	jrtplib/rtpsession.h	/^	double notemultiplier;$/;"	m	class:jrtplib::RTPSession
+notemultiplier	jrtplib/rtpsessionparams.h	/^	double notemultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+ntptime_lsw	jrtplib/rtpstructs.h	/^	uint32_t ntptime_lsw;$/;"	m	struct:jrtplib::RTCPSenderReport
+ntptime_msw	jrtplib/rtpstructs.h	/^	uint32_t ntptime_msw;$/;"	m	struct:jrtplib::RTCPSenderReport
+ntptimestamp	jrtplib/rtpsourcedata.h	/^	RTPNTPTime ntptimestamp;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+numcsrcs	jrtplib/rtppacket.h	/^	int numcsrcs;$/;"	m	class:jrtplib::RTPPacket
+numcsrcs	jrtplib/rtppacketbuilder.h	/^	int numcsrcs;$/;"	m	class:jrtplib::RTPPacketBuilder
+numcycles	jrtplib/rtpsourcedata.h	/^	uint32_t numcycles; \/\/ shifted left 16 bits$/;"	m	class:jrtplib::RTPSourceStats
+numnewpackets	jrtplib/rtpsourcedata.h	/^	uint32_t numnewpackets;$/;"	m	class:jrtplib::RTPSourceStats
+numpackets	jrtplib/rtppacketbuilder.h	/^	uint32_t numpackets;$/;"	m	class:jrtplib::RTPPacketBuilder
+numpayloadbytes	jrtplib/rtppacketbuilder.h	/^	uint32_t numpayloadbytes;$/;"	m	class:jrtplib::RTPPacketBuilder
+octetcount	jrtplib/rtpstructs.h	/^	uint32_t octetcount;$/;"	m	struct:jrtplib::RTCPSenderReport
+operator +=	jrtplib/rtptimeutilities.h	/^inline RTPTime &RTPTime::operator+=(const RTPTime &t)$/;"	f	class:jrtplib::RTPTime
+operator -=	jrtplib/rtptimeutilities.h	/^inline RTPTime &RTPTime::operator-=(const RTPTime &t)$/;"	f	class:jrtplib::RTPTime
+operator <	jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator<(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
+operator <=	jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator<=(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
+operator ==	jrtplib/rtpipv4destination.h	/^	bool operator==(const RTPIPv4Destination &src) const					$/;"	f	class:jrtplib::RTPIPv4Destination
+operator ==	jrtplib/rtpipv6destination.h	/^	bool operator==(const RTPIPv6Destination &src) const				$/;"	f	class:jrtplib::RTPIPv6Destination
+operator >	jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator>(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
+operator >=	jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator>=(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
+operator delete	jrtplib/rtpmemorymanager.h	/^inline void operator delete(void *buffer, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
+operator delete[]	jrtplib/rtpmemorymanager.h	/^inline void operator delete[](void *buffer, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
+operator new	jrtplib/rtpmemorymanager.h	/^inline void *operator new(size_t numbytes, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
+operator new[]	jrtplib/rtpmemorymanager.h	/^inline void *operator new[](size_t numbytes, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
+owncollision	jrtplib/rtpsessionsources.h	/^	bool owncollision;$/;"	m	class:jrtplib::RTPSessionSources
+owndata	jrtplib/rtpsources.h	/^	RTPInternalSourceData *owndata;$/;"	m	class:jrtplib::RTPSources
+ownsdesinfo	jrtplib/rtcppacketbuilder.h	/^	RTCPSDESInfoInternal ownsdesinfo;$/;"	m	class:jrtplib::RTCPPacketBuilder
+ownssrc	jrtplib/rtpsourcedata.h	/^	bool ownssrc;$/;"	m	class:jrtplib::RTPSourceData
+owntsunit	jrtplib/rtpsessionparams.h	/^	double owntsunit;$/;"	m	class:jrtplib::RTPSessionParams
+packet	jrtplib/rtppacket.h	/^	uint8_t *packet,*payload;$/;"	m	class:jrtplib::RTPPacket
+packetbuilder	jrtplib/rtpsession.h	/^	RTPPacketBuilder packetbuilder;$/;"	m	class:jrtplib::RTPSession
+packetcount	jrtplib/rtpsourcedata.h	/^	uint32_t packetcount;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+packetcount	jrtplib/rtpstructs.h	/^	uint32_t packetcount;$/;"	m	struct:jrtplib::RTCPSenderReport
+packetdata	jrtplib/rtcpcompoundpacketbuilder.h	/^		uint8_t *packetdata;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
+packetdata	jrtplib/rtprawpacket.h	/^	uint8_t *packetdata;$/;"	m	class:jrtplib::RTPRawPacket
+packetdatalength	jrtplib/rtprawpacket.h	/^	size_t packetdatalength;$/;"	m	class:jrtplib::RTPRawPacket
+packetinjector	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalPacketInjecter *packetinjector;$/;"	m	class:jrtplib::RTPExternalTransmissionInfo
+packetinjector	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalPacketInjecter packetinjector;$/;"	m	class:jrtplib::RTPExternalTransmitter
+packetlength	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t packetlength;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
+packetlength	jrtplib/rtppacket.h	/^	size_t packetlength,payloadlength;$/;"	m	class:jrtplib::RTPPacket
+packetlength	jrtplib/rtppacketbuilder.h	/^	size_t packetlength;$/;"	m	class:jrtplib::RTPPacketBuilder
+packetlist	jrtplib/rtpsourcedata.h	/^	std::list<RTPPacket *> packetlist;$/;"	m	class:jrtplib::RTPSourceData
+packetslost	jrtplib/rtpsourcedata.h	/^	int32_t packetslost;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+packetslost	jrtplib/rtpstructs.h	/^	uint8_t packetslost[3];$/;"	m	struct:jrtplib::RTCPReceiverReport
+packetsreceived	jrtplib/rtpsourcedata.h	/^	uint32_t packetsreceived;$/;"	m	class:jrtplib::RTPSourceStats
+packettype	jrtplib/rtcppacket.h	/^	const PacketType packettype;$/;"	m	class:jrtplib::RTCPPacket
+packettype	jrtplib/rtpstructs.h	/^	uint8_t packettype;$/;"	m	struct:jrtplib::RTCPCommonHeader
+packsentmutex	jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
+padding	jrtplib/rtpstructs.h	/^	uint8_t padding:1;$/;"	m	struct:jrtplib::RTCPCommonHeader
+padding	jrtplib/rtpstructs.h	/^	uint8_t padding:1;$/;"	m	struct:jrtplib::RTPHeader
+payload	jrtplib/rtppacket.h	/^	uint8_t *packet,*payload;$/;"	m	class:jrtplib::RTPPacket
+payloadlength	jrtplib/rtppacket.h	/^	size_t packetlength,payloadlength;$/;"	m	class:jrtplib::RTPPacket
+payloadtype	jrtplib/rtppacket.h	/^	uint8_t payloadtype;$/;"	m	class:jrtplib::RTPPacket
+payloadtype	jrtplib/rtpstructs.h	/^	uint8_t payloadtype:7;$/;"	m	struct:jrtplib::RTPHeader
+pbyemembers	jrtplib/rtcpscheduler.h	/^	int byemembers,pbyemembers;$/;"	m	class:jrtplib::RTCPScheduler
+pemail	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+plocation	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+pmembers	jrtplib/rtcpscheduler.h	/^	int pmembers;$/;"	m	class:jrtplib::RTCPScheduler
+pname	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+pnote	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+pollthread	jrtplib/rtpsession.h	/^	RTPPollThread *pollthread;$/;"	m	class:jrtplib::RTPSession
+port	jrtplib/rtpbyteaddress.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPByteAddress
+port	jrtplib/rtpipv4address.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPIPv4Address
+port	jrtplib/rtpipv6address.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPIPv6Address
+portbase	jrtplib/rtpudpv4transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+portbase	jrtplib/rtpudpv4transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+portbase	jrtplib/rtpudpv6transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+portbase	jrtplib/rtpudpv6transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+portlist	jrtplib/rtpudpv4transmitter.h	/^		std::list<uint16_t> portlist;$/;"	m	class:jrtplib::RTPUDPv4Transmitter::PortInfo
+portlist	jrtplib/rtpudpv6transmitter.h	/^		std::list<uint16_t> portlist;$/;"	m	class:jrtplib::RTPUDPv6Transmitter::PortInfo
+pphone	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+predefinedssrc	jrtplib/rtpsessionparams.h	/^	uint32_t predefinedssrc;$/;"	m	class:jrtplib::RTPSessionParams
+prefix	jrtplib/rtcpsdesinfo.h	/^		uint8_t *prefix;$/;"	m	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+prefixlen	jrtplib/rtcpsdesinfo.h	/^		size_t prefixlen;$/;"	m	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+prevbuildtime	jrtplib/rtcppacketbuilder.h	/^	RTPTime prevbuildtime,transmissiondelay;$/;"	m	class:jrtplib::RTCPPacketBuilder
+prevexthighseqnr	jrtplib/rtpsourcedata.h	/^	uint32_t exthighseqnr,prevexthighseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+prevpacktime	jrtplib/rtpsourcedata.h	/^	RTPTime prevpacktime;$/;"	m	class:jrtplib::RTPSourceStats
+prevrtcptime	jrtplib/rtcpscheduler.h	/^	RTPTime prevrtcptime;$/;"	m	class:jrtplib::RTCPScheduler
+prevrtptimestamp	jrtplib/rtppacketbuilder.h	/^	uint32_t prevrtptimestamp;$/;"	m	class:jrtplib::RTPPacketBuilder
+prevseqnr	jrtplib/rtpsourcedata.h	/^	uint16_t prevseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+prevtimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t jitter,prevtimestamp;$/;"	m	class:jrtplib::RTPSourceStats
+privitems	jrtplib/rtcpsdesinfo.h	/^	std::list<SDESPrivateItem *> privitems;$/;"	m	class:jrtplib::RTCPSDESInfo
+probation	jrtplib/rtpsourcedata.h	/^	int probation;$/;"	m	class:jrtplib::RTPSourceStats
+probationtype	jrtplib/rtpinternalsourcedata.h	/^	RTPSources::ProbationType probationtype;$/;"	m	class:jrtplib::RTPInternalSourceData
+probationtype	jrtplib/rtpsessionparams.h	/^	RTPSources::ProbationType probationtype;$/;"	m	class:jrtplib::RTPSessionParams
+probationtype	jrtplib/rtpsourcedata.h	/^	RTPSources::ProbationType probationtype;$/;"	m	class:jrtplib::RTPSourceStats
+probationtype	jrtplib/rtpsources.h	/^	ProbationType probationtype;$/;"	m	class:jrtplib::RTPSources
+processedinrtcp	jrtplib/rtpsourcedata.h	/^	bool processedinrtcp;$/;"	m	class:jrtplib::RTPSourceData
+processingsdes	jrtplib/rtcppacketbuilder.h	/^	bool processingsdes;$/;"	m	class:jrtplib::RTCPPacketBuilder
+protocol	jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionInfo
+protocol	jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionParams
+ptool	jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+rawpacketlist	jrtplib/rtpexternaltransmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPExternalTransmitter
+rawpacketlist	jrtplib/rtpudpv4transmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+rawpacketlist	jrtplib/rtpudpv6transmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+reasonoffset	jrtplib/rtcpbyepacket.h	/^	size_t reasonoffset;$/;"	m	class:jrtplib::RTCPBYEPacket
+receivedbye	jrtplib/rtpsourcedata.h	/^	bool receivedbye;$/;"	m	class:jrtplib::RTPSourceData
+receivemode	jrtplib/rtpsessionparams.h	/^	RTPTransmitter::ReceiveMode receivemode;$/;"	m	class:jrtplib::RTPSessionParams
+receivemode	jrtplib/rtpudpv4transmitter.h	/^	RTPTransmitter::ReceiveMode receivemode;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+receivemode	jrtplib/rtpudpv6transmitter.h	/^	RTPTransmitter::ReceiveMode receivemode;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+receivetime	jrtplib/rtppacket.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTPPacket
+receivetime	jrtplib/rtprawpacket.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTPRawPacket
+receivetime	jrtplib/rtpsourcedata.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
+receivetime	jrtplib/rtpsourcedata.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+recvtime	jrtplib/rtpcollisionlist.h	/^		RTPTime recvtime;$/;"	m	class:jrtplib::RTPCollisionList::AddressAndTime
+report	jrtplib/rtcpcompoundpacketbuilder.h	/^	Report report;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+reportblocks	jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<Buffer> reportblocks;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+resolvehostname	jrtplib/rtpsessionparams.h	/^	bool resolvehostname;$/;"	m	class:jrtplib::RTPSessionParams
+rtcpaddr	jrtplib/rtpipv4destination.h	/^	struct sockaddr_in rtcpaddr;$/;"	m	class:jrtplib::RTPIPv4Destination	typeref:struct:jrtplib::RTPIPv4Destination::sockaddr_in
+rtcpaddr	jrtplib/rtpipv6destination.h	/^	struct sockaddr_in6 rtcpaddr;$/;"	m	class:jrtplib::RTPIPv6Destination	typeref:struct:jrtplib::RTPIPv6Destination::sockaddr_in6
+rtcpaddr	jrtplib/rtpsourcedata.h	/^	RTPAddress *rtpaddr,*rtcpaddr;$/;"	m	class:jrtplib::RTPSourceData
+rtcpbuilder	jrtplib/rtpsession.h	/^	RTCPPacketBuilder rtcpbuilder;$/;"	m	class:jrtplib::RTPSession
+rtcppackit	jrtplib/rtcpcompoundpacket.h	/^	std::list<RTCPPacket *>::const_iterator rtcppackit;$/;"	m	class:jrtplib::RTCPCompoundPacket
+rtcppacklist	jrtplib/rtcpcompoundpacket.h	/^	std::list<RTCPPacket *> rtcppacklist;$/;"	m	class:jrtplib::RTCPCompoundPacket
+rtcprecvbuf	jrtplib/rtpudpv4transmitter.h	/^	int rtcpsendbuf, rtcprecvbuf;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+rtcprecvbuf	jrtplib/rtpudpv6transmitter.h	/^	int rtcpsendbuf, rtcprecvbuf;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+rtcpsched	jrtplib/rtppollthread.h	/^	RTCPScheduler &rtcpsched;$/;"	m	class:jrtplib::RTPPollThread
+rtcpsched	jrtplib/rtpsession.h	/^	RTCPScheduler rtcpsched;$/;"	m	class:jrtplib::RTPSession
+rtcpsendbuf	jrtplib/rtpudpv4transmitter.h	/^	int rtcpsendbuf, rtcprecvbuf;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+rtcpsendbuf	jrtplib/rtpudpv6transmitter.h	/^	int rtcpsendbuf, rtcprecvbuf;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+rtcpsock	jrtplib/rtpudpv4transmitter.h	/^	SOCKET rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+rtcpsock	jrtplib/rtpudpv4transmitter.h	/^	int rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+rtcpsock	jrtplib/rtpudpv6transmitter.h	/^	SOCKET rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+rtcpsock	jrtplib/rtpudpv6transmitter.h	/^	int rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+rtcpsocket	jrtplib/rtpudpv4transmitter.h	/^	SOCKET rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv4TransmissionInfo
+rtcpsocket	jrtplib/rtpudpv4transmitter.h	/^	int rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv4TransmissionInfo
+rtcpsocket	jrtplib/rtpudpv6transmitter.h	/^	SOCKET rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv6TransmissionInfo
+rtcpsocket	jrtplib/rtpudpv6transmitter.h	/^	int rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv6TransmissionInfo
+rtpaddr	jrtplib/rtpipv4destination.h	/^	struct sockaddr_in rtpaddr;$/;"	m	class:jrtplib::RTPIPv4Destination	typeref:struct:jrtplib::RTPIPv4Destination::sockaddr_in
+rtpaddr	jrtplib/rtpipv6destination.h	/^	struct sockaddr_in6 rtpaddr;$/;"	m	class:jrtplib::RTPIPv6Destination	typeref:struct:jrtplib::RTPIPv6Destination::sockaddr_in6
+rtpaddr	jrtplib/rtpsourcedata.h	/^	RTPAddress *rtpaddr,*rtcpaddr;$/;"	m	class:jrtplib::RTPSourceData
+rtppacketbuilder	jrtplib/rtcppacketbuilder.h	/^	RTPPacketBuilder &rtppacketbuilder;$/;"	m	class:jrtplib::RTCPPacketBuilder
+rtprand	jrtplib/rtcpscheduler.h	/^	RTPRandom &rtprand;$/;"	m	class:jrtplib::RTCPScheduler
+rtprecvbuf	jrtplib/rtpudpv4transmitter.h	/^	int rtpsendbuf, rtprecvbuf;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+rtprecvbuf	jrtplib/rtpudpv6transmitter.h	/^	int rtpsendbuf, rtprecvbuf;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+rtprnd	jrtplib/rtppacketbuilder.h	/^	RTPRandom &rtprnd;	$/;"	m	class:jrtplib::RTPPacketBuilder
+rtprnd	jrtplib/rtpsession.h	/^	RTPRandom *rtprnd;$/;"	m	class:jrtplib::RTPSession
+rtpsendbuf	jrtplib/rtpudpv4transmitter.h	/^	int rtpsendbuf, rtprecvbuf;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
+rtpsendbuf	jrtplib/rtpudpv6transmitter.h	/^	int rtpsendbuf, rtprecvbuf;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
+rtpsession	jrtplib/rtppollthread.h	/^	RTPSession &rtpsession;$/;"	m	class:jrtplib::RTPPollThread
+rtpsession	jrtplib/rtpsessionsources.h	/^	RTPSession &rtpsession;$/;"	m	class:jrtplib::RTPSessionSources
+rtpsock	jrtplib/rtpudpv4transmitter.h	/^	SOCKET rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+rtpsock	jrtplib/rtpudpv4transmitter.h	/^	int rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+rtpsock	jrtplib/rtpudpv6transmitter.h	/^	SOCKET rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+rtpsock	jrtplib/rtpudpv6transmitter.h	/^	int rtpsock,rtcpsock;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+rtpsocket	jrtplib/rtpudpv4transmitter.h	/^	SOCKET rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv4TransmissionInfo
+rtpsocket	jrtplib/rtpudpv4transmitter.h	/^	int rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv4TransmissionInfo
+rtpsocket	jrtplib/rtpudpv6transmitter.h	/^	SOCKET rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv6TransmissionInfo
+rtpsocket	jrtplib/rtpudpv6transmitter.h	/^	int rtpsocket,rtcpsocket;$/;"	m	class:jrtplib::RTPUDPv6TransmissionInfo
+rtptimestamp	jrtplib/rtpsourcedata.h	/^	uint32_t rtptimestamp;$/;"	m	class:jrtplib::RTCPSenderReportInfo
+rtptimestamp	jrtplib/rtpstructs.h	/^	uint32_t rtptimestamp;$/;"	m	struct:jrtplib::RTCPSenderReport
+rtptrans	jrtplib/rtpsession.h	/^	RTPTransmitter *rtptrans;$/;"	m	class:jrtplib::RTPSession
+savedextseqnr	jrtplib/rtpsourcedata.h	/^	uint32_t savedextseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+schedmutex	jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
+schedparams	jrtplib/rtcpscheduler.h	/^	RTCPSchedulerParams schedparams;$/;"	m	class:jrtplib::RTCPScheduler
+sdes	jrtplib/rtcpcompoundpacketbuilder.h	/^	SDES sdes;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+sdesbuildcount	jrtplib/rtcppacketbuilder.h	/^	int sdesbuildcount;$/;"	m	class:jrtplib::RTCPPacketBuilder
+sdesid	jrtplib/rtpstructs.h	/^	uint8_t sdesid;$/;"	m	struct:jrtplib::RTCPSDESHeader
+sdesit	jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *>::const_iterator sdesit;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+sdessources	jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *> sdessources;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+sec	jrtplib/rtptimeutilities.h	/^	uint32_t sec,microsec;$/;"	m	class:jrtplib::RTPTime
+sendbyenow	jrtplib/rtcpscheduler.h	/^	bool sendbyenow;$/;"	m	class:jrtplib::RTCPScheduler
+sender	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalSender *sender;$/;"	m	class:jrtplib::RTPExternalTransmissionParams
+sender	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalSender *sender;$/;"	m	class:jrtplib::RTPExternalTransmitter
+senderaddress	jrtplib/rtprawpacket.h	/^	RTPAddress *senderaddress;$/;"	m	class:jrtplib::RTPRawPacket
+sendercount	jrtplib/rtpsources.h	/^	int sendercount;$/;"	m	class:jrtplib::RTPSources
+senderfrac	jrtplib/rtpsessionparams.h	/^	double senderfrac;$/;"	m	class:jrtplib::RTPSessionParams
+senderfraction	jrtplib/rtcpscheduler.h	/^	double senderfraction;$/;"	m	class:jrtplib::RTCPSchedulerParams
+sendermultiplier	jrtplib/rtpsession.h	/^	double sendermultiplier;$/;"	m	class:jrtplib::RTPSession
+sendermultiplier	jrtplib/rtpsessionparams.h	/^	double sendermultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+sentdata	jrtplib/rtpsourcedata.h	/^	bool sentdata;$/;"	m	class:jrtplib::RTPSourceStats
+sentpackets	jrtplib/rtpsession.h	/^	bool sentpackets;$/;"	m	class:jrtplib::RTPSession
+seqnr	jrtplib/rtppacketbuilder.h	/^	uint16_t seqnr;$/;"	m	class:jrtplib::RTPPacketBuilder
+sequencenumber	jrtplib/rtpstructs.h	/^	uint16_t sequencenumber;$/;"	m	struct:jrtplib::RTPHeader
+sessionbandwidth	jrtplib/rtpsession.h	/^	double sessionbandwidth;$/;"	m	class:jrtplib::RTPSession
+sessionbandwidth	jrtplib/rtpsessionparams.h	/^	double sessionbandwidth;$/;"	m	class:jrtplib::RTPSessionParams
+sourcelist	jrtplib/rtpsources.h	/^	RTPKeyHashTable<const uint32_t,RTPInternalSourceData*,RTPSources_GetHashIndex,RTPSOURCES_HASHSIZE> sourcelist;$/;"	m	class:jrtplib::RTPSources
+sources	jrtplib/rtcppacketbuilder.h	/^	RTPSources &sources;$/;"	m	class:jrtplib::RTCPPacketBuilder
+sources	jrtplib/rtcpscheduler.h	/^	RTPSources &sources;$/;"	m	class:jrtplib::RTCPScheduler
+sources	jrtplib/rtpsession.h	/^	RTPSessionSources sources;$/;"	m	class:jrtplib::RTPSession
+sourcesmutex	jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
+ssrc	jrtplib/rtcpcompoundpacketbuilder.h	/^		uint32_t ssrc;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+ssrc	jrtplib/rtppacket.h	/^	uint32_t extseqnr,timestamp,ssrc;$/;"	m	class:jrtplib::RTPPacket
+ssrc	jrtplib/rtppacketbuilder.h	/^	uint32_t ssrc;$/;"	m	class:jrtplib::RTPPacketBuilder
+ssrc	jrtplib/rtpsourcedata.h	/^	uint32_t ssrc;$/;"	m	class:jrtplib::RTPSourceData
+ssrc	jrtplib/rtpstructs.h	/^	uint32_t ssrc; \/\/ Identifies about which SSRC's data this report is...$/;"	m	struct:jrtplib::RTCPReceiverReport
+ssrc	jrtplib/rtpstructs.h	/^	uint32_t ssrc;$/;"	m	struct:jrtplib::RTPHeader
+ssrc	jrtplib/rtpstructs.h	/^	uint32_t ssrc;$/;"	m	struct:jrtplib::RTPSourceIdentifier
+state	jrtplib/rtprandomrand48.h	/^	uint64_t state;$/;"	m	class:jrtplib::RTPRandomRand48
+stats	jrtplib/rtpsourcedata.h	/^	RTPSourceStats stats;$/;"	m	class:jrtplib::RTPSourceData
+stop	jrtplib/rtppollthread.h	/^	bool stop;$/;"	m	class:jrtplib::RTPPollThread
+stopmutex	jrtplib/rtppollthread.h	/^	jthread::JMutex stopmutex;$/;"	m	class:jrtplib::RTPPollThread
+str	jrtplib/rtcpsdesinfo.h	/^		uint8_t *str;$/;"	m	class:jrtplib::RTCPSDESInfo::SDESItem
+supportsmulticasting	jrtplib/rtpudpv4transmitter.h	/^	bool supportsmulticasting;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+supportsmulticasting	jrtplib/rtpudpv6transmitter.h	/^	bool supportsmulticasting;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+table	jrtplib/rtphashtable.h	/^	HashElement *table[hashsize];$/;"	m	class:jrtplib::RTPHashTable
+table	jrtplib/rtpkeyhashtable.h	/^	HashElement *table[hashsize];$/;"	m	class:jrtplib::RTPKeyHashTable
+threadsafe	jrtplib/rtpexternaltransmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPExternalTransmitter
+threadsafe	jrtplib/rtpudpv4transmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+threadsafe	jrtplib/rtpudpv6transmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+timestamp	jrtplib/rtppacket.h	/^	uint32_t extseqnr,timestamp,ssrc;$/;"	m	class:jrtplib::RTPPacket
+timestamp	jrtplib/rtppacketbuilder.h	/^	uint32_t timestamp;$/;"	m	class:jrtplib::RTPPacketBuilder
+timestamp	jrtplib/rtpstructs.h	/^	uint32_t timestamp;$/;"	m	struct:jrtplib::RTPHeader
+timestampunit	jrtplib/rtcppacketbuilder.h	/^	double timestampunit;$/;"	m	class:jrtplib::RTCPPacketBuilder
+timestampunit	jrtplib/rtpsourcedata.h	/^	double timestampunit;$/;"	m	class:jrtplib::RTPSourceData
+totalcount	jrtplib/rtpsources.h	/^	int totalcount;$/;"	m	class:jrtplib::RTPSources
+totalitemsize	jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t totalitemsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+transmissiondelay	jrtplib/rtcppacketbuilder.h	/^	RTPTime prevbuildtime,transmissiondelay;$/;"	m	class:jrtplib::RTCPPacketBuilder
+transmitter	jrtplib/rtpexternaltransmitter.h	/^	RTPExternalTransmitter *transmitter;$/;"	m	class:jrtplib::RTPExternalPacketInjecter
+transmitter	jrtplib/rtppollthread.h	/^	RTPTransmitter *transmitter;$/;"	m	class:jrtplib::RTPPollThread
+uint16_t	jrtplib/rtptypes_win.h	/^typedef unsigned short uint16_t;$/;"	t
+uint32_t	jrtplib/rtptypes_win.h	/^typedef unsigned int uint32_t;$/;"	t
+uint64_t	jrtplib/rtptypes_win.h	/^typedef unsigned __int64 uint64_t;$/;"	t
+uint8_t	jrtplib/rtptypes_win.h	/^typedef unsigned char uint8_t;$/;"	t
+unknownpackets	jrtplib/rtcpcompoundpacketbuilder.h	/^	std::list<Buffer> unknownpackets;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+unknownsize	jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t unknownsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+useSR_BYEifpossible	jrtplib/rtpsession.h	/^	bool useSR_BYEifpossible;$/;"	m	class:jrtplib::RTPSession
+usehalfatstartup	jrtplib/rtcpscheduler.h	/^	bool usehalfatstartup;$/;"	m	class:jrtplib::RTCPSchedulerParams
+usehalfatstartup	jrtplib/rtpsessionparams.h	/^	bool usehalfatstartup;$/;"	m	class:jrtplib::RTPSessionParams
+usepollthread	jrtplib/rtpsessionparams.h	/^	bool usepollthread;$/;"	m	class:jrtplib::RTPSessionParams
+usepredefinedssrc	jrtplib/rtpsessionparams.h	/^	bool usepredefinedssrc;$/;"	m	class:jrtplib::RTPSessionParams
+usingpollthread	jrtplib/rtpsession.h	/^	bool usingpollthread;$/;"	m	class:jrtplib::RTPSession
+validated	jrtplib/rtpsourcedata.h	/^	bool validated;$/;"	m	class:jrtplib::RTPSourceData
+version	jrtplib/rtpstructs.h	/^	uint8_t version:2;$/;"	m	struct:jrtplib::RTCPCommonHeader
+version	jrtplib/rtpstructs.h	/^	uint8_t version:2;$/;"	m	struct:jrtplib::RTPHeader
+waitingfordata	jrtplib/rtpexternaltransmitter.h	/^	bool waitingfordata;$/;"	m	class:jrtplib::RTPExternalTransmitter
+waitingfordata	jrtplib/rtpudpv4transmitter.h	/^	bool waitingfordata;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+waitingfordata	jrtplib/rtpudpv6transmitter.h	/^	bool waitingfordata;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+waitmutex	jrtplib/rtpexternaltransmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPExternalTransmitter
+waitmutex	jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
+waitmutex	jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+~RTCPAPPPacket	jrtplib/rtcpapppacket.h	/^	~RTCPAPPPacket()							{ }$/;"	f	class:jrtplib::RTCPAPPPacket
+~RTCPBYEPacket	jrtplib/rtcpbyepacket.h	/^	~RTCPBYEPacket()							{ }$/;"	f	class:jrtplib::RTCPBYEPacket
+~RTCPPacket	jrtplib/rtcppacket.h	/^	virtual ~RTCPPacket()								{ }	$/;"	f	class:jrtplib::RTCPPacket
+~RTCPRRPacket	jrtplib/rtcprrpacket.h	/^	~RTCPRRPacket()								{ }$/;"	f	class:jrtplib::RTCPRRPacket
+~RTCPSDESInfo	jrtplib/rtcpsdesinfo.h	/^	virtual ~RTCPSDESInfo()							{ Clear(); }$/;"	f	class:jrtplib::RTCPSDESInfo
+~RTCPSDESPacket	jrtplib/rtcpsdespacket.h	/^	~RTCPSDESPacket()							{ }$/;"	f	class:jrtplib::RTCPSDESPacket
+~RTCPSRPacket	jrtplib/rtcpsrpacket.h	/^	~RTCPSRPacket()								{ }$/;"	f	class:jrtplib::RTCPSRPacket
+~RTCPUnknownPacket	jrtplib/rtcpunknownpacket.h	/^	~RTCPUnknownPacket()                                                                    { }$/;"	f	class:jrtplib::RTCPUnknownPacket
+~RTPAddress	jrtplib/rtpaddress.h	/^	virtual ~RTPAddress()						{ }$/;"	f	class:jrtplib::RTPAddress
+~RTPCollisionList	jrtplib/rtpcollisionlist.h	/^	~RTPCollisionList()								{ Clear(); }$/;"	f	class:jrtplib::RTPCollisionList
+~RTPExternalPacketInjecter	jrtplib/rtpexternaltransmitter.h	/^	~RTPExternalPacketInjecter()									{ }$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+~RTPExternalSender	jrtplib/rtpexternaltransmitter.h	/^	virtual ~RTPExternalSender()									{ }$/;"	f	class:jrtplib::RTPExternalSender
+~RTPHashTable	jrtplib/rtphashtable.h	/^	~RTPHashTable()						{ Clear(); }$/;"	f	class:jrtplib::RTPHashTable
+~RTPIPv4Address	jrtplib/rtpipv4address.h	/^	~RTPIPv4Address()																				{ }$/;"	f	class:jrtplib::RTPIPv4Address
+~RTPIPv6Address	jrtplib/rtpipv6address.h	/^	~RTPIPv6Address()																						{ }$/;"	f	class:jrtplib::RTPIPv6Address
+~RTPKeyHashTable	jrtplib/rtpkeyhashtable.h	/^	~RTPKeyHashTable()					{ Clear(); }$/;"	f	class:jrtplib::RTPKeyHashTable
+~RTPMemoryManager	jrtplib/rtpmemorymanager.h	/^	virtual ~RTPMemoryManager()								{ }$/;"	f	class:jrtplib::RTPMemoryManager
+~RTPMemoryObject	jrtplib/rtpmemoryobject.h	/^	virtual ~RTPMemoryObject()								{ }$/;"	f	class:jrtplib::RTPMemoryObject
+~RTPPacket	jrtplib/rtppacket.h	/^	virtual ~RTPPacket()																{ if (packet && !externalbuffer) RTPDeleteByteArray(packet,GetMemoryManager());  }$/;"	f	class:jrtplib::RTPPacket
+~RTPRandom	jrtplib/rtprandom.h	/^	virtual ~RTPRandom()										{ }$/;"	f	class:jrtplib::RTPRandom
+~RTPRawPacket	jrtplib/rtprawpacket.h	/^inline RTPRawPacket::~RTPRawPacket()$/;"	f	class:jrtplib::RTPRawPacket
+~RTPSessionSources	jrtplib/rtpsessionsources.h	/^	~RTPSessionSources()										{ }$/;"	f	class:jrtplib::RTPSessionSources
+~RTPTransmissionInfo	jrtplib/rtptransmitter.h	/^	virtual ~RTPTransmissionInfo() { }$/;"	f	class:jrtplib::RTPTransmissionInfo
+~RTPTransmissionParams	jrtplib/rtptransmitter.h	/^	virtual ~RTPTransmissionParams() { }$/;"	f	class:jrtplib::RTPTransmissionParams
+~RTPTransmitter	jrtplib/rtptransmitter.h	/^	virtual ~RTPTransmitter()													{ }$/;"	f	class:jrtplib::RTPTransmitter
+~RTPUDPv4TransmissionInfo	jrtplib/rtpudpv4transmitter.h	/^	~RTPUDPv4TransmissionInfo()								{ }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
+~RTPUDPv6TransmissionInfo	jrtplib/rtpudpv6transmitter.h	/^	~RTPUDPv6TransmissionInfo()								{ }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
+~Report	jrtplib/rtcpcompoundpacketbuilder.h	/^		~Report() { Clear(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+~SDES	jrtplib/rtcpcompoundpacketbuilder.h	/^		~SDES() { Clear(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+~SDESItem	jrtplib/rtcpsdesinfo.h	/^		~SDESItem() 							$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
+~SDESPrivateItem	jrtplib/rtcpsdesinfo.h	/^		~SDESPrivateItem()						$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
+~SDESSource	jrtplib/rtcpcompoundpacketbuilder.h	/^		~SDESSource()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
