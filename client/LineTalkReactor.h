@@ -73,8 +73,6 @@ class LineTalkReactor : public IReactor
         MLock _q_lock;
         std::queue<CMD *> _extQueue;
 
-        Trans * _trans;
-        size_t     _transPort;
         MLock _lock;
         DataParser * _svrdata;
         DataParser * _userdata;

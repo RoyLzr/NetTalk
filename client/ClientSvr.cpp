@@ -58,6 +58,9 @@ int ClientSvr::extUserInput(void * data, int len)
     _coreAct->extCmd(userInput);
 }
 
-
+int ClientSvr::setAudioTrans(Trans * audio)
+{
+    _audio = audio;
+}
 
 

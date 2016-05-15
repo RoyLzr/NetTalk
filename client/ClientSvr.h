@@ -3,6 +3,7 @@
 
 #include "../interface/thread.h"
 #include "../interface/ireactor.h"
+#include "../interface/trans.h"
 #include "../common/asynLog.h"
 
 class ClientSvr
@@ -10,7 +11,8 @@ class ClientSvr
 
     public:
         ClientSvr(): _listenUserThread(NULL),
-                     _coreAct(NULL)
+                     _coreAct(NULL),
+                     _audio(NULL)
         {};
 
         virtual ~ClientSvr();
@@ -27,10 +29,13 @@ class ClientSvr
 
         virtual int extUserInput(void * data, int len);
         
+        virtual int setAudioTrans(Trans *);
+        
 
     protected:
         WorkerThread * _listenUserThread;
-        IReactor     * _coreAct; 
+        IReactor     * _coreAct;
+        Trans        * _audio; 
 };
 
 #endif

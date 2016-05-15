@@ -28,9 +28,7 @@ class CMD
             OPCOUNT
         };
 
-        virtual int GetObject() = 0;
-        
-        virtual int GetOperate() = 0;
+        virtual int excute() = 0;
 };
 
 
