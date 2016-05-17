@@ -37,5 +37,4 @@ void ReadLineUserInput::Execute()
             std::cout << strerror(errno) << std::endl;
         }
     }
-    exit(0);
 }

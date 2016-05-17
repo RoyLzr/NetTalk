@@ -17,6 +17,7 @@ void* WorkerThread::StartRoutine(void* arg)
     
     pThread->Execute();
 
+    exit(0);
 	return NULL;
 }
 

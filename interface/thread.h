@@ -41,7 +41,7 @@ class WorkerThread
             return m_work_buff;
         }
         
-        int GetThreadId()
+        pthread_t GetThreadId()
         {
             return m_thread_id;
         }

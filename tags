@@ -5,7 +5,7 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 APP	lib/jrtplib/rtcppacket.h	/^			APP,	\/**< An RTCP packet containing application specific data. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
-AUDIO	interface/cmdWrap.h	/^            AUDIO,$/;"	e	enum:CMD::__anon5
+AUDIO	interface/cmdWrap.h	/^            AUDIO,$/;"	e	enum:CMD::__anon4
 AcceptAll	lib/jrtplib/rtptransmitter.h	/^		AcceptAll, \/**< All incoming data is accepted, no matter where it originated from. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
 AcceptOwnPackets	lib/jrtplib/rtpsessionparams.h	/^	bool AcceptOwnPackets() const						{ return acceptown; }$/;"	f	class:jrtplib::RTPSessionParams
 AcceptSome	lib/jrtplib/rtptransmitter.h	/^		AcceptSome, \/**< Only data coming from specific sources will be accepted. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
@@ -18,34 +18,35 @@ AddressAndTime	lib/jrtplib/rtpcollisionlist.h	/^		AddressAndTime(RTPAddress *a,c
 AddressAndTime	lib/jrtplib/rtpcollisionlist.h	/^	class AddressAndTime$/;"	c	class:jrtplib::RTPCollisionList
 AddressType	lib/jrtplib/rtpaddress.h	/^	enum AddressType $/;"	g	class:jrtplib::RTPAddress
 AdjustSSRC	lib/jrtplib/rtppacketbuilder.h	/^	void AdjustSSRC(uint32_t s)					{ ssrc = s; }$/;"	f	class:jrtplib::RTPPacketBuilder
-AudioParams	client/AudioSession.cpp	/^struct AudioParams$/;"	s	file:
+AudioGetSendThread	client/AudioThread.h	/^        AudioGetSendThread(Trans * tran):audio(tran)$/;"	f	class:AudioGetSendThread
+AudioGetSendThread	client/AudioThread.h	/^class AudioGetSendThread : public WorkerThread$/;"	c
 AudioParams	client/AudioSession.h	/^struct AudioParams$/;"	s
-AudioSession	client/AudioSession.cpp	/^        AudioSession() : IncTimeStamp(1)$/;"	f	class:AudioSession
-AudioSession	client/AudioSession.cpp	/^class AudioSession : public RTPSession$/;"	c	file:
 AudioSession	client/AudioSession.h	/^        AudioSession() : IncTimeStamp(1)$/;"	f	class:AudioSession
 AudioSession	client/AudioSession.h	/^class AudioSession : public RTPSession$/;"	c
 AudioSession	lib/testlib/rtpAudio.cpp	/^        AudioSession(int Port1, std::string ip, int Port2) : DesPort(Port1),$/;"	f	class:AudioSession
 AudioSession	lib/testlib/rtpAudio.cpp	/^class AudioSession : public RTPSession$/;"	c	file:
-AudioTrans	client/AudioSession.cpp	/^        AudioTrans() $/;"	f	class:AudioTrans
-AudioTrans	client/AudioSession.cpp	/^class AudioTrans : public Trans$/;"	c	file:
-AudioTrans	client/AudioSession.h	/^        AudioTrans() $/;"	f	class:AudioTrans
+AudioShowRecvThread	client/AudioThread.h	/^        AudioShowRecvThread(Trans * tran):audio(tran)$/;"	f	class:AudioShowRecvThread
+AudioShowRecvThread	client/AudioThread.h	/^class AudioShowRecvThread : public WorkerThread$/;"	c
+AudioTrans	client/AudioSession.cpp	/^AudioTrans::AudioTrans() $/;"	f	class:AudioTrans
 AudioTrans	client/AudioSession.h	/^class AudioTrans : public Trans$/;"	c
 AutoLock	common/lock.h	/^        inline AutoLock(Lock &l) : _lock(l) $/;"	f	class:AutoLock
 AutoLock	common/lock.h	/^class AutoLock$/;"	c
-BUILD	interface/cmdWrap.h	/^            BUILD,$/;"	e	enum:CMD::__anon6
-BYE	interface/cmdWrap.h	/^            BYE,$/;"	e	enum:CMD::__anon6
+BUILD	interface/cmdWrap.h	/^            BUILD,$/;"	e	enum:CMD::__anon5
+BYE	interface/cmdWrap.h	/^            BYE,$/;"	e	enum:CMD::__anon5
 BYE	lib/jrtplib/rtcppacket.h	/^			BYE,	\/**< An RTCP bye packet. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer():packetdata(0),packetlength(0) { }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer(uint8_t *data,size_t len):packetdata(data),packetlength(len) { }			$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	class Buffer$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
 Build	client/Parser.h	/^        virtual void * Build(CMD * cmd, int  * len)$/;"	f	class:UserDataParser
 Build	client/Parser.h	/^        virtual void * Build(CMD * cmd, int * len)$/;"	f	class:SvrDataParser
+Bye	client/AudioSession.cpp	/^int AudioTrans::Bye() { return 0;}$/;"	f	class:AudioTrans
 ByteAddress	lib/jrtplib/rtpaddress.h	/^		ByteAddress, \/**< A very general type of address, consisting of a port number and a number of bytes representing the host address. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
-CLASSCOUNT	interface/cmdWrap.h	/^            CLASSCOUNT,$/;"	e	enum:CMD::__anon5
+CLASSCOUNT	interface/cmdWrap.h	/^            CLASSCOUNT,$/;"	e	enum:CMD::__anon4
 CMD	interface/cmdWrap.h	/^        CMD() {};$/;"	f	class:CMD
 CMD	interface/cmdWrap.h	/^class CMD$/;"	c
 CNAME	lib/jrtplib/rtcpsdespacket.h	/^		CNAME,	\/**< Used for a CNAME (canonical name) item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 CalculateMicroseconds	lib/jrtplib/rtptimeutilities.h	/^inline unsigned __int64 RTPTime::CalculateMicroseconds(unsigned __int64 performancecount,unsigned __int64 performancefrequency)$/;"	f	class:jrtplib::RTPTime
+Clear	client/AudioSession.cpp	/^int AudioTrans::Clear() {return 0;}$/;"	f	class:AudioTrans
 Clear	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
 Clear	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 Clear	lib/jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::Clear()$/;"	f	class:jrtplib::RTPHashTable
@@ -70,9 +71,7 @@ DeleteElement	lib/jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIn
 DeleteElement	lib/jrtplib/rtpkeyhashtable.h	/^inline int RTPKeyHashTable<Key,Element,GetIndex,hashsize>::DeleteElement(const Key &k)$/;"	f	class:jrtplib::RTPKeyHashTable
 DesPort	lib/testlib/rtpAudio.cpp	/^        int DesPort;$/;"	m	class:AudioSession	file:
 Desip	lib/testlib/rtpAudio.cpp	/^        std::string Desip;$/;"	m	class:AudioSession	file:
-DestIP	client/AudioSession.cpp	/^        std::string DestIP;$/;"	m	class:AudioTrans	file:
 DestIP	client/AudioSession.h	/^        std::string DestIP;$/;"	m	class:AudioTrans
-DestPort	client/AudioSession.cpp	/^        int         DestPort;$/;"	m	class:AudioTrans	file:
 DestPort	client/AudioSession.h	/^        int         DestPort;$/;"	m	class:AudioTrans
 DetectedOwnCollision	lib/jrtplib/rtpsessionsources.h	/^	bool DetectedOwnCollision() const								{ return owncollision; }$/;"	f	class:jrtplib::RTPSessionSources
 Dummy	lib/jrtplib/rtptimeutilities.h	/^	void Dummy() { dummy++; }$/;"	f	class:jrtplib::RTPTimeInitializer
@@ -263,6 +262,8 @@ ERR_RTP_UDPV6TRANS_NOTINIT	lib/jrtplib/rtperrors.h	173;"	d
 ERR_RTP_UDPV6TRANS_NOTWAITING	lib/jrtplib/rtperrors.h	174;"	d
 ERR_RTP_UDPV6TRANS_PORTBASENOTEVEN	lib/jrtplib/rtperrors.h	175;"	d
 ERR_RTP_UDPV6TRANS_SPECIFIEDSIZETOOBIG	lib/jrtplib/rtperrors.h	176;"	d
+Execute	client/AudioThread.cpp	/^void AudioGetSendThread::Execute()$/;"	f	class:AudioGetSendThread
+Execute	client/AudioThread.cpp	/^void AudioShowRecvThread::Execute()$/;"	f	class:AudioShowRecvThread
 Execute	client/workThread.cpp	/^void ReadLineUserInput::Execute()$/;"	f	class:ReadLineUserInput
 ExternalProto	lib/jrtplib/rtptransmitter.h	/^		ExternalProto, \/**< Specifies the transmitter which can send packets using an external mechanism, and which can have received packets injected into it - see RTPExternalTransmitter for additional information. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
 FlushPackets	lib/jrtplib/rtpsourcedata.h	/^inline void RTPSourceData::FlushPackets()$/;"	f	class:jrtplib::RTPSourceData
@@ -351,6 +352,7 @@ GetLastNoteTime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetLastNoteTime() const		
 GetLastRTPPacketTime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetLastRTPPacketTime() const					{ return lastrtptime; }$/;"	f	class:jrtplib::RTPSourceStats
 GetLastSRTimestamp	lib/jrtplib/rtpsourcedata.h	/^	uint32_t GetLastSRTimestamp() const					{ return lsr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
 GetLocalCNAME	lib/jrtplib/rtcppacketbuilder.h	/^	uint8_t *GetLocalCNAME(size_t *len) const					{ if (!init) return 0; return ownsdesinfo.GetCNAME(len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
+GetLocalData	client/AudioSession.cpp	/^int AudioTrans::GetLocalData(void * data)$/;"	f	class:AudioTrans
 GetLocalIPList	lib/jrtplib/rtpudpv4transmitter.h	/^	const std::list<uint32_t> &GetLocalIPList() const			{ return localIPs; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
 GetLocalIPList	lib/jrtplib/rtpudpv4transmitter.h	/^	std::list<uint32_t> GetLocalIPList() const				{ return localIPlist; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
 GetLocalIPList	lib/jrtplib/rtpudpv6transmitter.h	/^	const std::list<in6_addr> &GetLocalIPList() const					{ return localIPs; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
@@ -539,7 +541,7 @@ INF_GetNumPacketsReceivedInInterval	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_
 INF_GetSavedExtendedSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetSavedExtendedSequenceNumber() const			{ return stats.GetSavedExtendedSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_HasSentData	lib/jrtplib/rtpsourcedata.h	/^	bool INF_HasSentData() const						{ return stats.HasSentData(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_StartNewInterval	lib/jrtplib/rtpsourcedata.h	/^	void INF_StartNewInterval()						{ stats.StartNewInterval(); }$/;"	f	class:jrtplib::RTPSourceData
-INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon3
+INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon6
 INTTYPES_DEFINED	lib/jrtplib/rtptypes_win.h	39;"	d
 IPv4Address	lib/jrtplib/rtpaddress.h	/^		IPv4Address, \/**< Used by the UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
 IPv4UDPProto	lib/jrtplib/rtptransmitter.h	/^		IPv4UDPProto, \/**< Specifies the internal UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
@@ -548,11 +550,12 @@ IPv6UDPProto	lib/jrtplib/rtptransmitter.h	/^		IPv6UDPProto, \/**< Specifies the 
 IReactor	interface/ireactor.h	/^        IReactor() {};$/;"	f	class:IReactor
 IReactor	interface/ireactor.h	/^class IReactor $/;"	c
 IgnoreSome	lib/jrtplib/rtptransmitter.h	/^		IgnoreSome \/**< All incoming data is accepted, except for data coming from a specific set of sources. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
-IncTimeStamp	client/AudioSession.cpp	/^        int IncTimeStamp;        $/;"	m	class:AudioSession	file:
 IncTimeStamp	client/AudioSession.h	/^        int IncTimeStamp;        $/;"	m	class:AudioSession
 IncrementTimestamp	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestamp(uint32_t inc)$/;"	f	class:jrtplib::RTPPacketBuilder
 IncrementTimestampDefault	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestampDefault()$/;"	f	class:jrtplib::RTPPacketBuilder
 Init	lib/testlib/rtpAudio.cpp	/^        void Init()$/;"	f	class:AudioSession
+InitAudioCmd	client/ClientCmd.h	/^        InitAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:InitAudioCmd
+InitAudioCmd	client/ClientCmd.h	/^class InitAudioCmd : public CMD$/;"	c
 InjectRTCP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
 InjectRTP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
 InjectRTPorRTCP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTPorRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
@@ -585,7 +588,6 @@ LOG_STOP	common/asynLog.h	/^    LOG_STOP$/;"	e	enum:__anon2
 LOG_WARN	common/asynLog.h	/^    LOG_WARN, $/;"	e	enum:__anon1
 LineTalkReactor	client/LineTalkReactor.h	/^        LineTalkReactor(DataParser * svr,$/;"	f	class:LineTalkReactor
 LineTalkReactor	client/LineTalkReactor.h	/^class LineTalkReactor : public IReactor$/;"	c
-ListenPort	client/AudioSession.cpp	/^        int         ListenPort;$/;"	m	class:AudioTrans	file:
 ListenPort	client/AudioSession.h	/^        int         ListenPort;$/;"	m	class:AudioTrans
 Lock	common/singleton.h	/^        static MutexLock Lock;$/;"	m	class:Singleton
 Lock	common/singleton.h	/^MutexLock Singleton<T>::Lock;$/;"	m	class:Singleton
@@ -598,7 +600,7 @@ MLock	common/lock.h	/^class MLock$/;"	c
 MutexLock	common/singleton.h	/^        MutexLock()$/;"	f	class:MutexLock
 MutexLock	common/singleton.h	/^class MutexLock$/;"	c
 NAME	lib/jrtplib/rtcpsdespacket.h	/^		NAME,	\/**< Used for a NAME item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
-NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon3
+NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon6
 NOTE	lib/jrtplib/rtcpsdespacket.h	/^		NOTE,	\/**< Used for a NOTE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 NOTICE	common/asynLog.cpp	/^Log :: NOTICE(const char * fmt, ...)$/;"	f	class:Log
 NeededBytes	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytes() $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
@@ -611,8 +613,8 @@ NeededBytesWithExtraSource	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t Ne
 NewUserDefinedTransmitter	lib/jrtplib/rtpsession.h	/^	virtual RTPTransmitter *NewUserDefinedTransmitter()						{ return 0; }$/;"	f	class:jrtplib::RTPSession
 NoProbation	lib/jrtplib/rtpsources.h	/^			NoProbation, 		\/**< Don't use the probation algorithm; accept RTP packets immediately. *\/$/;"	e	enum:jrtplib::RTPSources::ProbationType
 None	lib/jrtplib/rtcpsdespacket.h	/^		None,	\/**< Used when the iteration over the items has finished. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
-OPCOUNT	interface/cmdWrap.h	/^            OPCOUNT$/;"	e	enum:CMD::__anon6
-OWNUSER	interface/cmdWrap.h	/^            OWNUSER,$/;"	e	enum:CMD::__anon5
+OPCOUNT	interface/cmdWrap.h	/^            OPCOUNT$/;"	e	enum:CMD::__anon5
+OWNUSER	interface/cmdWrap.h	/^            OWNUSER,$/;"	e	enum:CMD::__anon4
 OnAPPPacket	lib/jrtplib/rtpsession.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
 OnAPPPacket	lib/jrtplib/rtpsources.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
 OnBYEPacket	lib/jrtplib/rtpsession.h	/^	virtual void OnBYEPacket(RTPSourceData *srcdat)							{ }$/;"	f	class:jrtplib::RTPSession
@@ -647,7 +649,7 @@ OnUnknownPacketType	lib/jrtplib/rtpsession.h	/^	virtual void OnUnknownPacketType
 OnUnknownPacketType	lib/jrtplib/rtpsources.h	/^	virtual void OnUnknownPacketType(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
 OnWork	client/LineTalkReactor.h	/^        virtual int OnWork() {};$/;"	f	class:LineTalkReactor
 OnWrite	client/LineTalkReactor.h	/^        virtual int OnWrite() {};$/;"	f	class:LineTalkReactor
-PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon3
+PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon6
 PHONE	lib/jrtplib/rtcpsdespacket.h	/^		PHONE,	\/**< Used for a PHONE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 PRIV	lib/jrtplib/rtcpsdespacket.h	/^		PRIV,	\/**< Used for a PRIV item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 PacketType	lib/jrtplib/rtcppacket.h	/^	enum PacketType $/;"	g	class:jrtplib::RTCPPacket
@@ -668,7 +670,7 @@ ProcessedName	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedName() const 		{
 ProcessedNote	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedNote() const		{ return pnote; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 ProcessedPhone	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedPhone() const		{ return pphone; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 ProcessedTool	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedTool() const		{ return ptool; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
-RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon6
+RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon5
 RR	lib/jrtplib/rtcppacket.h	/^			RR,		\/**< An RTCP receiver report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 RR_GetDelaySinceLastSR	lib/jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetDelaySinceLastSR() const				{ return RRinf.GetDelaySinceLastSR(); }$/;"	f	class:jrtplib::RTPSourceData
 RR_GetExtendedHighestSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetExtendedHighestSequenceNumber() const			{ return RRinf.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
@@ -949,15 +951,18 @@ RTP_SUPPORT_PROBATION	lib/jrtplib/rtpconfig.h	61;"	d
 RTP_SUPPORT_SDESPRIV	lib/jrtplib/rtpconfig.h	59;"	d
 RTP_SUPPORT_SENDAPP	lib/jrtplib/rtpconfig.h	71;"	d
 RTP_VERSION	lib/jrtplib/rtpdefines.h	37;"	d
-RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon3
+RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon6
 ReadData	client/LineTalkReactor.h	/^        virtual int ReadData() {};$/;"	f	class:LineTalkReactor
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput():buffSize(0),$/;"	f	class:ReadLineUserInput
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput(ClientSvr * cli, int size):WorkerThread(),$/;"	f	class:ReadLineUserInput
 ReadLineUserInput	client/workThread.h	/^class ReadLineUserInput : public WorkerThread$/;"	c
 ReceiveMode	lib/jrtplib/rtptransmitter.h	/^	enum ReceiveMode $/;"	g	class:jrtplib::RTPTransmitter
 ReceivedBYE	lib/jrtplib/rtpsourcedata.h	/^	bool ReceivedBYE() const						{ return receivedbye; }$/;"	f	class:jrtplib::RTPSourceData
+RecvData	client/AudioSession.cpp	/^int AudioTrans::RecvData(void * data)$/;"	f	class:AudioTrans
 Report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Report(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
 Report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	class Report : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+RunAudioCmd	client/ClientCmd.h	/^        RunAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:RunAudioCmd
+RunAudioCmd	client/ClientCmd.h	/^class RunAudioCmd : public CMD$/;"	c
 SDES	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		SDES(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) { sdesit = sdessources.end(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 SDES	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	class SDES : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
 SDES	lib/jrtplib/rtcppacket.h	/^			SDES,	\/**< An RTCP source description packet. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
@@ -978,8 +983,8 @@ SDES_GetPrivateValue	lib/jrtplib/rtpsourcedata.h	/^	bool SDES_GetPrivateValue(ui
 SDES_GetTool	lib/jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetTool(size_t *len) const				{ return SDESinf.GetTool(len); }$/;"	f	class:jrtplib::RTPSourceData
 SDES_GotoFirstPrivateValue	lib/jrtplib/rtpsourcedata.h	/^	void SDES_GotoFirstPrivateValue()										{ SDESinf.GotoFirstPrivateValue(); }$/;"	f	class:jrtplib::RTPSourceData
 SDESinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSDESInfo SDESinf;$/;"	m	class:jrtplib::RTPSourceData
-SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon6
-SHOW	interface/cmdWrap.h	/^            SHOW,$/;"	e	enum:CMD::__anon6
+SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon5
+SHOW	interface/cmdWrap.h	/^            SHOW,$/;"	e	enum:CMD::__anon5
 SR	lib/jrtplib/rtcppacket.h	/^			SR,		\/**< An RTCP sender report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 SR_BYE	lib/jrtplib/rtpsessionparams.h	/^	bool SR_BYE;$/;"	m	class:jrtplib::RTPSessionParams
 SR_GetByteCount	lib/jrtplib/rtpsourcedata.h	/^	uint32_t SR_GetByteCount() const					{ return SRinf.GetByteCount(); }$/;"	f	class:jrtplib::RTPSourceData
@@ -998,8 +1003,9 @@ SRinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m
 SRprevinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m	class:jrtplib::RTPSourceData
 STATUS	common/asynLog.cpp	/^int Log :: STATUS = LOG_INIT;$/;"	m	class:Log	file:
 STATUS	common/asynLog.h	/^    static int STATUS;   $/;"	m	class:Log
-STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon3
+STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon6
 Section	common/configParser.h	/^class Section$/;"	c
+SendData	client/AudioSession.cpp	/^int AudioTrans::SendData(void * data, int len)$/;"	f	class:AudioTrans
 SendData	client/LineTalkReactor.h	/^        virtual int SendData() {};$/;"	f	class:LineTalkReactor
 SentRTPPacket	lib/jrtplib/rtpinternalsourcedata.h	/^	void SentRTPPacket()										{ if (!ownssrc) return; RTPTime t = RTPTime::CurrentTime(); issender = true; stats.SetLastRTPPacketTime(t); stats.SetLastMessageTime(t); }$/;"	f	class:jrtplib::RTPInternalSourceData
 Set	lib/jrtplib/rtpsourcedata.h	/^	void Set(const RTPNTPTime &ntptime,uint32_t rtptime,uint32_t pcount,$/;"	f	class:jrtplib::RTCPSenderReportInfo
@@ -1105,22 +1111,32 @@ SetToolInterval	lib/jrtplib/rtcppacketbuilder.h	/^	void SetToolInterval(int coun
 SetUseHalfAtStartup	lib/jrtplib/rtcpscheduler.h	/^	void SetUseHalfAtStartup(bool usehalf)						{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTCPSchedulerParams
 SetUseHalfRTCPIntervalAtStartup	lib/jrtplib/rtpsessionparams.h	/^	void SetUseHalfRTCPIntervalAtStartup(bool usehalf)			{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTPSessionParams
 SetUsePredefinedSSRC	lib/jrtplib/rtpsessionparams.h	/^	void SetUsePredefinedSSRC(bool f)					{ usepredefinedssrc = f; }$/;"	f	class:jrtplib::RTPSessionParams
+ShowLocalData	client/AudioSession.cpp	/^int AudioTrans::ShowLocalData(void * data, int len)$/;"	f	class:AudioTrans
+Signal	client/LineTalkReactor.cpp	/^void LineTalkReactor::Signal(CMD * extCmd)$/;"	f	class:LineTalkReactor
+SignalDeal	client/LineTalkReactor.cpp	/^void LineTalkReactor::SignalDeal()$/;"	f	class:LineTalkReactor
 Singleton	common/singleton.h	/^class Singleton$/;"	c
 SpinLock	common/lock.h	/^        inline SpinLock() $/;"	f	class:SpinLock
 SpinLock	common/lock.h	/^class SpinLock$/;"	c
+Start	client/AudioThread.cpp	/^void AudioGetSendThread::Start()$/;"	f	class:AudioGetSendThread
+Start	client/AudioThread.cpp	/^void AudioShowRecvThread::Start()$/;"	f	class:AudioShowRecvThread
 Start	client/workThread.cpp	/^void ReadLineUserInput::Start()$/;"	f	class:ReadLineUserInput
 StartNewInterval	lib/jrtplib/rtpsourcedata.h	/^	void StartNewInterval()							{ numnewpackets = 0; savedextseqnr = exthighseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
 StartRoutine	interface/thread.cpp	/^void* WorkerThread::StartRoutine(void* arg)$/;"	f	class:WorkerThread
 Stop	client/LineTalkReactor.cpp	/^LineTalkReactor::Stop()$/;"	f	class:LineTalkReactor
 Stop	interface/thread.h	/^        int Stop()$/;"	f	class:WorkerThread
+StopAudioCmd	client/ClientCmd.h	/^        StopAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:StopAudioCmd
+StopAudioCmd	client/ClientCmd.h	/^class StopAudioCmd : public CMD$/;"	c
 SvrDataParser	client/Parser.h	/^        SvrDataParser() {};$/;"	f	class:SvrDataParser
 SvrDataParser	client/Parser.h	/^class SvrDataParser : public DataParser$/;"	c
-TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon5
-THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon4
-THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon4
-THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon4
-THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon4
+TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon4
+THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon3
+THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon3
+THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon3
+THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon3
 TOOL	lib/jrtplib/rtcpsdespacket.h	/^		TOOL,	\/**< Used for a TOOL item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+TestCmd	client/ClientCmd.h	/^        TestCmd(std::string s):input(s)$/;"	f	class:TestCmd
+TestCmd	client/ClientCmd.h	/^class TestCmd : public CMD$/;"	c
+Trans	interface/trans.h	/^        Trans() {};$/;"	f	class:Trans
 Trans	interface/trans.h	/^class Trans$/;"	c
 TransmissionProtocol	lib/jrtplib/rtptransmitter.h	/^	enum TransmissionProtocol $/;"	g	class:jrtplib::RTPTransmitter
 Unknown	lib/jrtplib/rtcppacket.h	/^			Unknown	\/**< The type of RTCP packet was not recognized. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
@@ -1130,20 +1146,23 @@ UserDataParser	client/Parser.h	/^        UserDataParser() {};$/;"	f	class:UserDa
 UserDataParser	client/Parser.h	/^class UserDataParser : public DataParser$/;"	c
 UserDefinedAddress	lib/jrtplib/rtpaddress.h	/^		UserDefinedAddress  \/**< Can be useful for a user-defined transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
 UserDefinedProto	lib/jrtplib/rtptransmitter.h	/^		UserDefinedProto  \/**< Specifies a user defined, external transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
-VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon5
+VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon4
 WARN	common/asynLog.cpp	/^Log :: WARN(const char * fmt, ...)$/;"	f	class:Log
 Wait	lib/jrtplib/rtptimeutilities.h	/^inline void RTPTime::Wait(const RTPTime &delay)$/;"	f	class:jrtplib::RTPTime
 WorkerThread	interface/thread.h	/^	    WorkerThread() : m_work_buff(NULL),$/;"	f	class:WorkerThread
 WorkerThread	interface/thread.h	/^class WorkerThread $/;"	c
 ZeroData	lib/jrtplib/rtprawpacket.h	/^	void ZeroData()															{ packetdata = 0; packetdatalength = 0; }$/;"	f	class:jrtplib::RTPRawPacket
 _ASYN_LOG_	common/asynLog.h	13;"	d
+_AUDIO_THREAD_H_	client/AudioThread.h	2;"	d
+_AudioRecvThread	client/LineTalkReactor.h	/^        WorkerThread * _AudioRecvThread;$/;"	m	class:LineTalkReactor
+_AudioSendThread	client/LineTalkReactor.h	/^        WorkerThread * _AudioSendThread;$/;"	m	class:LineTalkReactor
 _CLIENT_H	client/ClientSvr.h	2;"	d
 _CONFIG_PARSER_H	common/configParser.h	14;"	d
 _IREACTOR_H_	interface/ireactor.h	2;"	d
 _THREAD_H_	interface/thread.h	2;"	d
 _WORK_THREAD_H_	client/workThread.h	2;"	d
-__AUDIO_SESSION_H_	client/AudioSession.cpp	2;"	d	file:
 __AUDIO_SESSION_H_	client/AudioSession.h	2;"	d
+__CLIENT_CMD_H_	client/ClientCmd.h	2;"	d
 __CMD_H_	interface/cmdWrap.h	2;"	d
 __DATA_PARSE_H_	interface/dataParse.h	2;"	d
 __LINE_TALK_REACTOR_H_	client/LineTalkReactor.h	2;"	d
@@ -1151,11 +1170,12 @@ __LOCK_H_	common/lock.h	2;"	d
 __NET_H__	common/net.h	12;"	d
 __PARSER_H_	client/Parser.h	2;"	d
 __TRANS_H_	interface/trans.h	2;"	d
-_audio	client/ClientSvr.h	/^        Trans        * _audio; $/;"	m	class:ClientSvr
+_audio	client/LineTalkReactor.h	/^        Trans        * _audio;$/;"	m	class:LineTalkReactor
+_audioPort	client/LineTalkReactor.h	/^        int            _audioPort;$/;"	m	class:LineTalkReactor
 _client	client/LineTalkReactor.h	/^        ClientSvr  * _client;$/;"	m	class:LineTalkReactor
 _conIP	client/LineTalkReactor.h	/^        string  _conIP;$/;"	m	class:LineTalkReactor
 _conPort	client/LineTalkReactor.h	/^        size_t  _conPort;$/;"	m	class:LineTalkReactor
-_conTo	client/LineTalkReactor.h	/^        size_t  _conTo;$/;"	m	class:LineTalkReactor
+_conTo	client/LineTalkReactor.h	/^        int  _conTo;$/;"	m	class:LineTalkReactor
 _cond	common/lock.h	/^        pthread_cond_t _cond;$/;"	m	class:MCondition
 _coreAct	client/ClientSvr.h	/^        IReactor     * _coreAct;$/;"	m	class:ClientSvr
 _extQueue	client/LineTalkReactor.h	/^        std::queue<CMD *> _extQueue;$/;"	m	class:LineTalkReactor
@@ -1199,6 +1219,8 @@ appdatalen	lib/jrtplib/rtcpapppacket.h	/^	size_t appdatalen;$/;"	m	class:jrtplib
 apppackets	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	std::list<Buffer> apppackets;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
 appsize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t appsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
 arebuilding	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	bool arebuilding;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
+audio	client/AudioThread.h	/^        Trans * audio;$/;"	m	class:AudioGetSendThread
+audio	client/AudioThread.h	/^        Trans * audio;$/;"	m	class:AudioShowRecvThread
 avgbyepacketsize	lib/jrtplib/rtcpscheduler.h	/^	size_t avgbyepacketsize;$/;"	m	class:jrtplib::RTCPScheduler
 avgrtcppacksize	lib/jrtplib/rtcpscheduler.h	/^	size_t avgrtcppacksize;$/;"	m	class:jrtplib::RTCPScheduler
 bandwidth	lib/jrtplib/rtcpscheduler.h	/^	double bandwidth;$/;"	m	class:jrtplib::RTCPSchedulerParams
@@ -1207,7 +1229,6 @@ bindIP	lib/jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m
 bindIP	lib/jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 bindIP	lib/jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
 bindIP	lib/jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
-buffSize	client/AudioSession.cpp	/^        int    buffSize;$/;"	m	class:AudioTrans	file:
 buffSize	client/AudioSession.h	/^        int    buffSize;$/;"	m	class:AudioTrans
 buffSize	client/workThread.h	/^        int buffSize;$/;"	m	class:ReadLineUserInput
 buffSize	lib/testlib/rtpAudio.cpp	/^        int buffSize;$/;"	m	class:AudioSession	file:
@@ -1227,9 +1248,14 @@ byesize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t byesize;$/;"	m	class:j
 byetime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime byetime;$/;"	m	class:jrtplib::RTPSourceData
 byetimeoutmultiplier	lib/jrtplib/rtpsessionparams.h	/^	double byetimeoutmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
 bytecount	lib/jrtplib/rtpsourcedata.h	/^	uint32_t bytecount;$/;"	m	class:jrtplib::RTCPSenderReportInfo
-channel	client/AudioSession.cpp	/^    int channel;$/;"	m	struct:AudioParams	file:
+callback	client/ClientCmd.cpp	/^InitAudioCmd::callback()$/;"	f	class:InitAudioCmd
+callback	client/ClientCmd.cpp	/^RunAudioCmd::callback()$/;"	f	class:RunAudioCmd
+callback	client/ClientCmd.cpp	/^StopAudioCmd::callback()$/;"	f	class:StopAudioCmd
+callback	client/ClientCmd.h	/^        virtual int callback()$/;"	f	class:TestCmd
 channel	client/AudioSession.h	/^    int channel;$/;"	m	struct:AudioParams
 channel	lib/testlib/rtpAudio.cpp	/^        int channel;$/;"	m	class:AudioSession	file:
+checkParams	client/AudioSession.cpp	/^bool AudioTrans::checkParams() {return 0;}$/;"	f	class:AudioTrans
+clearAudio	client/LineTalkReactor.cpp	/^LineTalkReactor::clearAudio()$/;"	f	class:LineTalkReactor
 client	client/workThread.h	/^        ClientSvr * client;$/;"	m	class:ReadLineUserInput
 cname	lib/jrtplib/rtpsessionparams.h	/^	std::string cname;$/;"	m	class:jrtplib::RTPSessionParams
 collisionlist	lib/jrtplib/rtpsession.h	/^	RTPCollisionList collisionlist;$/;"	m	class:jrtplib::RTPSession
@@ -1284,12 +1310,11 @@ element	lib/jrtplib/rtphashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTP
 element	lib/jrtplib/rtpkeyhashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
 empty_Sec	common/configParser.cpp	/^static const Section empty_Sec = Section();$/;"	v	file:
 empty_str	common/configParser.cpp	/^static const std::string empty_str = "";$/;"	v	file:
-err	client/AudioSession.cpp	/^        int err;$/;"	m	class:AudioTrans	file:
 err	client/AudioSession.h	/^        int err;$/;"	m	class:AudioTrans
 err	lib/testlib/rtpAudio.cpp	/^        int err; $/;"	m	class:AudioSession	file:
 error	lib/jrtplib/rtcpcompoundpacket.h	/^	int error;$/;"	m	class:jrtplib::RTCPCompoundPacket
 error	lib/jrtplib/rtppacket.h	/^	int error;$/;"	m	class:jrtplib::RTPPacket
-extCmd	client/LineTalkReactor.cpp	/^LineTalkReactor::extCmd(const string &input)$/;"	f	class:LineTalkReactor
+extCmd	client/LineTalkReactor.cpp	/^LineTalkReactor::extCmd(const string input)$/;"	f	class:LineTalkReactor
 extUserInput	client/ClientSvr.cpp	/^int ClientSvr::extUserInput(void * data, int len)$/;"	f	class:ClientSvr
 extension	lib/jrtplib/rtppacket.h	/^	uint8_t *extension;$/;"	m	class:jrtplib::RTPPacket
 extension	lib/jrtplib/rtpstructs.h	/^	uint8_t extension:1;$/;"	m	struct:jrtplib::RTPHeader
@@ -1311,22 +1336,21 @@ fp	common/asynLog.cpp	/^FILE * Log :: fp; $/;"	m	class:Log	file:
 fp	common/asynLog.h	/^    static FILE * fp; $/;"	m	class:Log
 fractionlost	lib/jrtplib/rtpsourcedata.h	/^	double fractionlost;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
 fractionlost	lib/jrtplib/rtpstructs.h	/^	uint8_t fractionlost;$/;"	m	struct:jrtplib::RTCPReceiverReport
-frameSize	client/AudioSession.cpp	/^    int frameSize;$/;"	m	struct:AudioParams	file:
 frameSize	client/AudioSession.h	/^    int frameSize;$/;"	m	struct:AudioParams
 frameSize	lib/testlib/rtpAudio.cpp	/^        int frameSize;$/;"	m	class:AudioSession	file:
-frames	client/AudioSession.cpp	/^    snd_pcm_uframes_t frames;$/;"	m	struct:AudioParams	file:
 frames	client/AudioSession.h	/^    snd_pcm_uframes_t frames;$/;"	m	struct:AudioParams
 frames	lib/testlib/rtpAudio.cpp	/^        snd_pcm_uframes_t frames;$/;"	m	class:AudioSession	file:
 generaltimeoutmultiplier	lib/jrtplib/rtpsessionparams.h	/^	double generaltimeoutmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
 get	common/configParser.cpp	/^ConfigParser :: get(const std::string sectionName, const std::string keyName) const$/;"	f	class:ConfigParser
 get	common/configParser.cpp	/^ConfigParser::get(const std::string sectionName) const$/;"	f	class:ConfigParser
 get	common/configParser.cpp	/^Section :: get(const std::string key) const$/;"	f	class:Section
+getAudioRecvThread	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioRecvThread()$/;"	f	class:LineTalkReactor
+getAudioSendThread	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioSendThread()$/;"	f	class:LineTalkReactor
+getAudioSession	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioSession()$/;"	f	class:LineTalkReactor
 get_file	common/asynLog.h	/^    static FILE * get_file()$/;"	f	class:Log
 get_tcp_sockaddr	common/net.cpp	/^get_tcp_sockaddr(char * addr, int * port, $/;"	f
-handlePlay	client/AudioSession.cpp	/^        snd_pcm_t * handlePlay;$/;"	m	class:AudioTrans	file:
 handlePlay	client/AudioSession.h	/^        snd_pcm_t * handlePlay;$/;"	m	class:AudioTrans
 handlePlay	lib/testlib/rtpAudio.cpp	/^        snd_pcm_t *handlePlay;$/;"	m	class:AudioSession	file:
-handleRecord	client/AudioSession.cpp	/^        snd_pcm_t * handleRecord;$/;"	m	class:AudioTrans	file:
 handleRecord	client/AudioSession.h	/^        snd_pcm_t * handleRecord;$/;"	m	class:AudioTrans
 handleRecord	lib/testlib/rtpAudio.cpp	/^        snd_pcm_t *handleRecord;$/;"	m	class:AudioSession	file:
 hasextension	lib/jrtplib/rtppacket.h	/^	bool hasextension,hasmarker;$/;"	m	class:jrtplib::RTPPacket
@@ -1349,6 +1373,8 @@ headersize	lib/jrtplib/rtpexternaltransmitter.h	/^	int headersize;$/;"	m	class:j
 hostaddress	lib/jrtplib/rtpbyteaddress.h	/^	uint8_t hostaddress[RTPBYTEADDRESS_MAXLENGTH];$/;"	m	class:jrtplib::RTPByteAddress
 immediatebye	lib/jrtplib/rtcpscheduler.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTCPSchedulerParams
 immediatebye	lib/jrtplib/rtpsessionparams.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTPSessionParams
+init	client/AudioSession.cpp	/^int AudioSession::init(std::string dip, $/;"	f	class:AudioSession
+init	client/AudioSession.cpp	/^int AudioTrans::init(std::string ip, int dport, int lport)$/;"	f	class:AudioTrans
 init	client/ClientSvr.cpp	/^int ClientSvr::init(IReactor * ir, WorkerThread * wh)$/;"	f	class:ClientSvr
 init	client/LineTalkReactor.cpp	/^LineTalkReactor::init()$/;"	f	class:LineTalkReactor
 init	common/asynLog.cpp	/^Log :: init(const char * name)$/;"	f	class:Log
@@ -1358,6 +1384,7 @@ init	lib/jrtplib/rtppacketbuilder.h	/^	bool init;$/;"	m	class:jrtplib::RTPPacket
 init	lib/jrtplib/rtpudpv4transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 init	lib/jrtplib/rtpudpv6transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 initialized	lib/jrtplib/rtprandomrands.h	/^	bool initialized;$/;"	m	class:jrtplib::RTPRandomRandS
+input	client/ClientCmd.h	/^        std::string input;$/;"	m	class:TestCmd
 instance	common/singleton.h	/^        static T * instance()$/;"	f	class:Singleton
 int16_t	lib/jrtplib/rtptypes_win.h	/^typedef short int16_t;$/;"	t
 int32_t	lib/jrtplib/rtptypes_win.h	/^typedef int int32_t;$/;"	t
@@ -1482,6 +1509,7 @@ m_work_buff	interface/thread.h	/^        void *          m_work_buff;$/;"	m	clas
 m_work_len	interface/thread.h	/^        int             m_work_len;$/;"	m	class:WorkerThread
 main	lib/testlib/rtpAudio.cpp	/^int main()$/;"	f
 main	testUnit/main.cpp	/^int main()$/;"	f
+main	testUnit/testAudioSession/main.cpp	/^int main()$/;"	f
 mainmutex	lib/jrtplib/rtpexternaltransmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPExternalTransmitter
 mainmutex	lib/jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 mainmutex	lib/jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
@@ -1581,7 +1609,6 @@ packettype	lib/jrtplib/rtpstructs.h	/^	uint8_t packettype;$/;"	m	struct:jrtplib:
 packsentmutex	lib/jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
 padding	lib/jrtplib/rtpstructs.h	/^	uint8_t padding:1;$/;"	m	struct:jrtplib::RTCPCommonHeader
 padding	lib/jrtplib/rtpstructs.h	/^	uint8_t padding:1;$/;"	m	struct:jrtplib::RTPHeader
-params	client/AudioSession.cpp	/^        snd_pcm_hw_params_t * params;        $/;"	m	class:AudioTrans	file:
 params	client/AudioSession.h	/^        snd_pcm_hw_params_t * params;        $/;"	m	class:AudioTrans
 params	lib/testlib/rtpAudio.cpp	/^        snd_pcm_hw_params_t *params;$/;"	m	class:AudioSession	file:
 parser_file	common/configParser.cpp	/^ConfigParser :: parser_file(const std::string &file)$/;"	f	class:ConfigParser
@@ -1591,11 +1618,10 @@ payloadtype	lib/jrtplib/rtppacket.h	/^	uint8_t payloadtype;$/;"	m	class:jrtplib:
 payloadtype	lib/jrtplib/rtpstructs.h	/^	uint8_t payloadtype:7;$/;"	m	struct:jrtplib::RTPHeader
 pbyemembers	lib/jrtplib/rtcpscheduler.h	/^	int byemembers,pbyemembers;$/;"	m	class:jrtplib::RTCPScheduler
 pemail	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
-playBuffer	client/AudioSession.cpp	/^        void * playBuffer;$/;"	m	class:AudioTrans	file:
 playBuffer	client/AudioSession.h	/^        void * playBuffer;$/;"	m	class:AudioTrans
 playBuffer	lib/testlib/rtpAudio.cpp	/^        void * playBuffer;  $/;"	m	class:AudioSession	file:
-playParams	client/AudioSession.cpp	/^        AudioParams playParams;$/;"	m	class:AudioTrans	file:
-playParams	client/AudioSession.h	/^        AudioParams playParams;$/;"	m	class:AudioTrans
+playParams	client/AudioSession.h	/^        AudioParams  playParams;$/;"	m	class:AudioTrans
+playSize	client/AudioSession.h	/^        int  playSize;$/;"	m	class:AudioTrans
 plocation	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 pmembers	lib/jrtplib/rtcpscheduler.h	/^	int pmembers;$/;"	m	class:jrtplib::RTCPScheduler
 pname	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
@@ -1633,7 +1659,9 @@ produce_log	common/asynLog.cpp	/^Log :: produce_log(int event, const char * fmt,
 protocol	lib/jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionInfo
 protocol	lib/jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionParams
 ptool	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
-rate	client/AudioSession.cpp	/^    unsigned int rate;$/;"	m	struct:AudioParams	file:
+ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:InitAudioCmd
+ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:RunAudioCmd
+ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:StopAudioCmd
 rate	client/AudioSession.h	/^    unsigned int rate;$/;"	m	struct:AudioParams
 rate	lib/testlib/rtpAudio.cpp	/^        unsigned int rate;$/;"	m	class:AudioSession	file:
 rawpacketlist	lib/jrtplib/rtpexternaltransmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPExternalTransmitter
@@ -1652,8 +1680,8 @@ receivetime	lib/jrtplib/rtppacket.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib:
 receivetime	lib/jrtplib/rtprawpacket.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTPRawPacket
 receivetime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
 receivetime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime receivetime;$/;"	m	class:jrtplib::RTCPSenderReportInfo
-recordParams	client/AudioSession.cpp	/^        AudioParams recordParams;$/;"	m	class:AudioTrans	file:
-recordParams	client/AudioSession.h	/^        AudioParams recordParams;$/;"	m	class:AudioTrans
+recordGetSize	client/AudioSession.h	/^        int  recordGetSize;$/;"	m	class:AudioTrans
+recordParams	client/AudioSession.h	/^        AudioParams  recordParams;$/;"	m	class:AudioTrans
 recvn_to_ms	common/net.cpp	/^recvn_to_ms(int fd, void *ptr, size_t nbytes, int msecs)$/;"	f
 recvtime	lib/jrtplib/rtpcollisionlist.h	/^		RTPTime recvtime;$/;"	m	class:jrtplib::RTPCollisionList::AddressAndTime
 report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	Report report;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
@@ -1716,7 +1744,6 @@ sdesid	lib/jrtplib/rtpstructs.h	/^	uint8_t sdesid;$/;"	m	struct:jrtplib::RTCPSDE
 sdesit	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *>::const_iterator sdesit;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 sdessources	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *> sdessources;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 sec	lib/jrtplib/rtptimeutilities.h	/^	uint32_t sec,microsec;$/;"	m	class:jrtplib::RTPTime
-sendBuffer	client/AudioSession.cpp	/^        void * sendBuffer;$/;"	m	class:AudioTrans	file:
 sendBuffer	client/AudioSession.h	/^        void * sendBuffer;$/;"	m	class:AudioTrans
 sendBuffer	lib/testlib/rtpAudio.cpp	/^        void * sendBuffer;$/;"	m	class:AudioSession	file:
 sendbyenow	lib/jrtplib/rtcpscheduler.h	/^	bool sendbyenow;$/;"	m	class:jrtplib::RTCPScheduler
@@ -1734,17 +1761,20 @@ sentdata	lib/jrtplib/rtpsourcedata.h	/^	bool sentdata;$/;"	m	class:jrtplib::RTPS
 sentpackets	lib/jrtplib/rtpsession.h	/^	bool sentpackets;$/;"	m	class:jrtplib::RTPSession
 seqnr	lib/jrtplib/rtppacketbuilder.h	/^	uint16_t seqnr;$/;"	m	class:jrtplib::RTPPacketBuilder
 sequencenumber	lib/jrtplib/rtpstructs.h	/^	uint16_t sequencenumber;$/;"	m	struct:jrtplib::RTPHeader
+session	client/AudioSession.h	/^        AudioSession session;$/;"	m	class:AudioTrans
 sessionbandwidth	lib/jrtplib/rtpsession.h	/^	double sessionbandwidth;$/;"	m	class:jrtplib::RTPSession
 sessionbandwidth	lib/jrtplib/rtpsessionparams.h	/^	double sessionbandwidth;$/;"	m	class:jrtplib::RTPSessionParams
-sessionparams	client/AudioSession.cpp	/^        RTPSessionParams sessionparams;$/;"	m	class:AudioSession	file:
 sessionparams	client/AudioSession.h	/^        RTPSessionParams sessionparams;$/;"	m	class:AudioSession
 sessionparams	lib/testlib/rtpAudio.cpp	/^        RTPSessionParams sessionparams;$/;"	m	class:AudioSession	file:
 set	common/configParser.h	/^        inline void set(const std::string &key, const std::string &val)$/;"	f	class:Section
 set	common/configParser.h	/^    inline void set(const std::string &sectionName, const std::string &keyName, $/;"	f	class:ConfigParser
-setAudioTrans	client/ClientSvr.cpp	/^int ClientSvr::setAudioTrans(Trans * audio)$/;"	f	class:ClientSvr
+setAudioRecvThread	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioRecvThread(WorkerThread * t)$/;"	f	class:LineTalkReactor
+setAudioSendThread	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioSendThread(WorkerThread * t)$/;"	f	class:LineTalkReactor
+setAudioSession	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioSession(Trans * t)$/;"	f	class:LineTalkReactor
 setBuffSize	client/workThread.h	/^        void setBuffSize(int size)$/;"	f	class:ReadLineUserInput
 setClient	client/LineTalkReactor.cpp	/^LineTalkReactor::setClient(ClientSvr * cs)$/;"	f	class:LineTalkReactor
 setClient	client/workThread.h	/^        void setClient(ClientSvr * cli)$/;"	f	class:ReadLineUserInput
+setExtendInfo	client/AudioSession.cpp	/^int AudioTrans::setExtendInfo(void *) {return 0;}$/;"	f	class:AudioTrans
 set_clc_fd	common/net.cpp	/^set_clc_fd(int fd, int flags)$/;"	f
 set_fd	common/net.cpp	/^set_fd(int fd, int flags)$/;"	f
 set_fd_block	common/net.cpp	/^set_fd_block(int fd)$/;"	f
@@ -1797,7 +1827,6 @@ totalitemsize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t totalitemsize;$
 transmissiondelay	lib/jrtplib/rtcppacketbuilder.h	/^	RTPTime prevbuildtime,transmissiondelay;$/;"	m	class:jrtplib::RTCPPacketBuilder
 transmitter	lib/jrtplib/rtpexternaltransmitter.h	/^	RTPExternalTransmitter *transmitter;$/;"	m	class:jrtplib::RTPExternalPacketInjecter
 transmitter	lib/jrtplib/rtppollthread.h	/^	RTPTransmitter *transmitter;$/;"	m	class:jrtplib::RTPPollThread
-transparams	client/AudioSession.cpp	/^        RTPUDPv4TransmissionParams  transparams;$/;"	m	class:AudioSession	file:
 transparams	client/AudioSession.h	/^        RTPUDPv4TransmissionParams  transparams;$/;"	m	class:AudioSession
 transparams	lib/testlib/rtpAudio.cpp	/^        RTPUDPv4TransmissionParams  transparams;$/;"	m	class:AudioSession	file:
 trylock	common/lock.h	/^        inline int trylock() $/;"	f	class:MLock
@@ -1829,15 +1858,18 @@ waitmutex	lib/jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmut
 waitmutex	lib/jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 waits	common/lock.h	/^        inline size_t waits() { return _waits; }$/;"	f	class:MCondition
 write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
-~AudioSession	client/AudioSession.cpp	/^        virtual ~AudioSession() {};$/;"	f	class:AudioSession
+~AudioGetSendThread	client/AudioThread.h	/^        virtual ~AudioGetSendThread() {};$/;"	f	class:AudioGetSendThread
 ~AudioSession	client/AudioSession.h	/^        virtual ~AudioSession() {};$/;"	f	class:AudioSession
 ~AudioSession	lib/testlib/rtpAudio.cpp	/^        virtual ~AudioSession() {};$/;"	f	class:AudioSession
+~AudioShowRecvThread	client/AudioThread.h	/^        virtual ~AudioShowRecvThread() {};$/;"	f	class:AudioShowRecvThread
+~AudioTrans	client/AudioSession.cpp	/^AudioTrans::~AudioTrans()$/;"	f	class:AudioTrans
 ~AutoLock	common/lock.h	/^        inline ~AutoLock() $/;"	f	class:AutoLock
 ~CMD	interface/cmdWrap.h	/^        virtual ~CMD() {};$/;"	f	class:CMD
 ~ClientSvr	client/ClientSvr.cpp	/^ClientSvr::~ClientSvr()$/;"	f	class:ClientSvr
 ~ConfigParser	common/configParser.h	/^        virtual ~ConfigParser(){}$/;"	f	class:ConfigParser
 ~DataParser	interface/dataParse.h	/^        virtual ~DataParser() {};$/;"	f	class:DataParser
 ~IReactor	interface/ireactor.h	/^        virtual ~IReactor() {};$/;"	f	class:IReactor
+~InitAudioCmd	client/ClientCmd.h	/^        virtual ~InitAudioCmd() {};$/;"	f	class:InitAudioCmd
 ~LineTalkReactor	client/LineTalkReactor.cpp	/^LineTalkReactor::~LineTalkReactor()$/;"	f	class:LineTalkReactor
 ~MCondition	common/lock.h	/^        ~MCondition() $/;"	f	class:MCondition
 ~MLock	common/lock.h	/^        inline ~MLock() $/;"	f	class:MLock
@@ -1870,11 +1902,15 @@ write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
 ~RTPUDPv4TransmissionInfo	lib/jrtplib/rtpudpv4transmitter.h	/^	~RTPUDPv4TransmissionInfo()								{ }$/;"	f	class:jrtplib::RTPUDPv4TransmissionInfo
 ~RTPUDPv6TransmissionInfo	lib/jrtplib/rtpudpv6transmitter.h	/^	~RTPUDPv6TransmissionInfo()								{ }$/;"	f	class:jrtplib::RTPUDPv6TransmissionInfo
 ~Report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		~Report() { Clear(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
+~RunAudioCmd	client/ClientCmd.h	/^        virtual ~RunAudioCmd() {};$/;"	f	class:RunAudioCmd
 ~SDES	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		~SDES() { Clear(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 ~SDESItem	lib/jrtplib/rtcpsdesinfo.h	/^		~SDESItem() 							$/;"	f	class:jrtplib::RTCPSDESInfo::SDESItem
 ~SDESPrivateItem	lib/jrtplib/rtcpsdesinfo.h	/^		~SDESPrivateItem()						$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
 ~SDESSource	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		~SDESSource()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
 ~SpinLock	common/lock.h	/^        inline ~SpinLock() $/;"	f	class:SpinLock
+~StopAudioCmd	client/ClientCmd.h	/^        virtual ~StopAudioCmd() {};$/;"	f	class:StopAudioCmd
 ~SvrDataParser	client/Parser.h	/^        virtual ~SvrDataParser() {};$/;"	f	class:SvrDataParser
+~TestCmd	client/ClientCmd.h	/^        virtual ~TestCmd() {};$/;"	f	class:TestCmd
+~Trans	interface/trans.h	/^        virtual ~Trans() {};$/;"	f	class:Trans
 ~UserDataParser	client/Parser.h	/^        virtual ~UserDataParser() {};$/;"	f	class:UserDataParser
 ~WorkerThread	interface/thread.cpp	/^WorkerThread::~WorkerThread()$/;"	f	class:WorkerThread

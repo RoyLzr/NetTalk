@@ -28,7 +28,7 @@ class CMD
             OPCOUNT
         };
 
-        virtual int excute() = 0;
+        virtual int callback() = 0;
 };
 
 

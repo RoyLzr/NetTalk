@@ -53,7 +53,6 @@ AudioTrans::~AudioTrans()
     snd_pcm_close(handlePlay);  
     snd_pcm_drain(handleRecord);  
     snd_pcm_close(handleRecord);  
-
 }
 
 int AudioTrans::init(std::string ip, int dport, int lport)
@@ -130,6 +129,7 @@ int AudioTrans::init(std::string ip, int dport, int lport)
     }
 
     playBuffer = malloc(buffSize);
+    if(playBuffer == NULL)
     {
         std::cout << "init malloc error" << std::endl;    
         return -1;
@@ -210,8 +210,8 @@ int AudioTrans::ShowLocalData(void * data, int len)
             {
                 playBuffer = pack->GetPayloadData();
                 playSize   = pack->GetPayloadLength();
-
-                printf("%d \n", playSize);
+                
+                printf("play %d\n", playSize);
 
                 int prc = snd_pcm_writei(handlePlay, 
                                   playBuffer,

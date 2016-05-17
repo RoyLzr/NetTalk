@@ -326,17 +326,14 @@ set_fd(int fd, int flags)
         close(fd);
         return -1;
     }
-    if(val & flags)
-        return val;
 
-    sockflag = val;
     val |= flags;
     if ((fcntl(fd, F_SETFL, val)) < 0)
     {
         close(fd);
         return -1;
     }
-    return sockflag;
+    return 0;
 }
 
 int

@@ -22,7 +22,7 @@ class IReactor
     
     public:
 
-        virtual int extCmd(const std::string &) = 0;
+        virtual int extCmd(const std::string ) = 0;
 
         virtual int init() = 0; 
         

@@ -1,5 +1,16 @@
-test: configParser.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o main.o
-	g++ -o test configParser.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o -lpthread
+test: configParser.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o main.o
+	g++ -o test configParser.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o  ../lib/jrtplib/libjrtp.a -lpthread -lasound
+
+
+
+ClientCmd.o:../client/ClientCmd.cpp
+	g++ -std=c++11 -g -c ../client/ClientCmd.cpp
+
+AudioThread.o:../client/AudioThread.cpp
+	g++ -std=c++11 -g -c ../client/AudioThread.cpp
+
+AudioSession.o:../client/AudioSession.cpp
+	g++ -std=c++11 -g -c ../client/AudioSession.cpp
 
 net.o: ../common/net.cpp
 	g++ -std=c++11 -g -c ../common/net.cpp

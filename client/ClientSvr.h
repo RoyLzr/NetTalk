@@ -11,8 +11,7 @@ class ClientSvr
 
     public:
         ClientSvr(): _listenUserThread(NULL),
-                     _coreAct(NULL),
-                     _audio(NULL)
+                     _coreAct(NULL)
         {};
 
         virtual ~ClientSvr();
@@ -29,13 +28,9 @@ class ClientSvr
 
         virtual int extUserInput(void * data, int len);
         
-        virtual int setAudioTrans(Trans *);
-        
-
     protected:
         WorkerThread * _listenUserThread;
         IReactor     * _coreAct;
-        Trans        * _audio; 
 };
 
 #endif
