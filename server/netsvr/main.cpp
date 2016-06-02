@@ -2,7 +2,7 @@
 
 int main()
 {
-    Singleton<ConfigParser>::instance()->parser_file("./client.conf");
+    Singleton<ConfigParser>::instance()->parser_file("./svr.conf");
     Singleton<ConfigParser>::instance()->scan();
     const Section & NetSec = Singleton<ConfigParser>::instance()->get("NetSvr");
     

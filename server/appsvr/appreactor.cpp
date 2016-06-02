@@ -143,10 +143,8 @@ int
 NetReactor::NetReactor::init()
 {
     event_init();
-
     _fdPool = (struct bufferevent **) malloc(_maxConnected * 
                              sizeof(struct bufferevent *));
-    _fdUserName.resize(_maxConnected);
 
     for(int i = 0; i < _maxConnected; i++)
         _fdPool[i] = NULL;

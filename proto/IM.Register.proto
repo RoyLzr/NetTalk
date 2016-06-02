@@ -1,0 +1,19 @@
+syntax="proto3";
+package IM.Register;
+import "IM.Base.proto";
+
+message IMRegisterReq
+{
+    string name      = 1;
+    string password  = 2;
+    uint32 created   = 3; 
+}
+
+message IMRegisterRes
+{
+    IM.Base.ResultType status  = 1;
+    string             reason  = 2;
+    uint32             created = 3;
+}
+
+

@@ -1,20 +1,31 @@
-#ifndef  _NETSVR_H_
-#define  _NETSVR_H_
+#ifndef  _APPREACTOR_H_
+#define  _APPREACTOR_H_
 
 #include "../../interface/ireactor.h"
 #include "../../common/net.h"
 #include "../../common/asynLog.h"
+#include "../../common/lock.h"
 #include <event.h>
 #include <vector>
-#include <string>
+#include <map>
 
 #define MINWRITEDATA 0
 
-class NetReactor
+/* use for record user addr and user login status*/
+/* only online user exists in this map */
+typedef map<string, string> UserAddrMap_t;
+
+struct MutexBufferEvent
+{
+    bufferevent * bev;
+    MLock         _writeLock; 
+};
+
+class APPReactor
 {
     public:
-        NetReactor(const Section &sec);
-        virtual ~NetReactor();
+        APPReactor(const Section &sec);
+        virtual ~APPReactor();
     public:
         
         virtual int extCmd(const std::string ) {};
@@ -46,14 +57,12 @@ class NetReactor
     protected:
         
         struct event          _listener;
-        struct bufferevent ** _fdPool;
         int                   _listenFd;
         int                   _status;
-        std::vector<string>   _fdUserName;
-                                
+       
         int                   _port;
-        std::vector<string>   _logicIP;
         int                   _maxConnected;
+        int                   _threadNum;
 };
 
 

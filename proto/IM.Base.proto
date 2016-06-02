@@ -1,0 +1,65 @@
+syntax="proto3";
+
+package IM.Base;
+
+enum RegisterCmdID
+{
+    NONEREG                   =  0;
+    CID_REGISTER_REQ          =  0x0401;
+    CID_REGISTER_RES          =  0x0402;
+}
+
+enum LoginCmdID
+{
+    NONELOG                      = 0;
+    CID_LOGIN_REQ_USERLOGIN      = 0x0101;
+    CID_LOGIN_RES_USERLOGIN      = 0x0102;
+    CID_LOGIN_REQ_USERLOGOUT     = 0x0103;
+    CID_LOGIN_RES_USERLOGOUT     = 0x0104;
+}
+
+enum BuddyCmdID
+{
+    NONEBUDDY                   = 0;
+    CID_BUDDY_REQ_USER_LIST     = 0x0201;
+    CID_BUDDY_RES_USER_LIST     = 0x0202;
+    CID_BUDDY_REQ_BUILD_USER    = 0x0203;
+    CID_BUDDY_RES_BUILD_USER    = 0x0204;
+    CID_BUDDY_REQ_DEL_USER      = 0x0205;
+    CID_BUDDY_RES_DEL_USER      = 0x0206;
+}
+
+
+enum SessionCmdID
+{
+    NONESESS                 = 0;
+    CID_SESSION_REQ_BUILD    = 0x0301;
+    CID_SESSION_RES_BUILD    = 0x0302;
+    CID_SESSION_REQ_STOP     = 0x0303;
+    CID_SESSION_RES_STOP     = 0x0304;
+
+}
+
+enum ResultType
+{
+    RESULT_LOGIN_SUCC  = 0;
+    RESULT_LOGIN_FAIL  = 1;
+    RESULT_BUDDY_SUCC  = 2;
+    RESULT_BUDDY_FAIL  = 3;
+    RESULT_SESSION_SUCC  = 4;
+    RESULT_SESSION_FAIL  = 5;
+    RESULT_REGISTER_SUCC = 6;
+    RESULT_REGISTER_FAIL = 7;
+}
+
+
+message UserInfo
+{
+    uint32 user_id      = 1;
+    string user_name    = 2;
+    uint32 created      = 3;
+    uint32 user_lastlog = 4; 
+}
+
+
+
