@@ -54,7 +54,7 @@ int
 set_fd_block(int fd);
 
 int
-set_tcp_sockaddr(char * addr, int port, 
+set_tcp_sockaddr(const char * addr, int port, 
                  struct sockaddr_in * soin);
 
 const char *

@@ -503,7 +503,7 @@ net_connect_to_tv(int fd, struct sockaddr * sa,
 }
 
 int
-set_tcp_sockaddr(char * addr, int port, 
+set_tcp_sockaddr(const char * addr, int port, 
                  struct sockaddr_in * soin)
 {
     soin->sin_family = AF_INET;

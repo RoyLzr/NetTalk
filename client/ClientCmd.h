@@ -7,6 +7,7 @@
 #include "../common/asynLog.h"
 #include "AudioSession.h"
 #include "AudioThread.h"
+#include "../common/IMProto.h"
 
 
 class LineTalkReactor;
@@ -16,17 +17,17 @@ class TestCmd : public CMD
     public:
         TestCmd(std::string s):input(s)
         {};
+        
+        TestCmd(LineTalkReactor * r):ract(r)
+        {};
 
         virtual ~TestCmd() {};
         
-        virtual int callback()
-        {
-            Log::NOTICE("USER input cmd : %s",input.c_str());
-        }
-
+        virtual int callback();
 
     private:
         std::string input;
+        LineTalkReactor * ract;
 };
 
 class InitAudioCmd : public CMD

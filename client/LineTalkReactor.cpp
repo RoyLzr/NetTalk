@@ -100,9 +100,13 @@ LineTalkReactor::run()
     {
         if(isStop())
             break;
+        
         fd_set fdset;
+
         FD_ZERO(&fdset);
         FD_SET(_pipe[0], &fdset);
+        FD_SET(_fd,      &fdset);
+
         int res;
         tv.tv_sec  = sec;
         tv.tv_usec = usec;
@@ -117,6 +121,12 @@ LineTalkReactor::run()
         if(FD_ISSET(_pipe[0], &fdset))
         {
             SignalDeal(); 
+        }
+        if(FD_ISSET(_fd, &fdset))
+        {
+            Log::DEBUG("RECV NETSVR data, will parse it");
+            if(extSvrRes() < 0)
+                break;
         }
     } 
     return 0;
@@ -143,11 +153,119 @@ LineTalkReactor::extCmd(const string input)
         CMD * cmd = new StopAudioCmd(this);
         Signal(cmd);
     }
+    else if(input == "test\n")
+    {
+        CMD * cmd = new TestCmd(this);
+        Signal(cmd); 
+    }
     else
     {
         Log::WARN("USER INPUT ERROR");
     }
     return 0;
+}
+
+int LineTalkReactor::extSvrRes()
+{
+    int res = readSvrRes();
+    if(res < 0)
+        return -1;  
+    else if(res == 0)
+        return 0;
+   
+    _svrData.InitByHeaderAddBuf(_svrBuf, _svrBufLen);
+    string * content = _svrData.GetBuffer();
+    Log::DEBUG("Recv Svr Data, header: len:%d, command:%d,punch:%d,user:%d", 
+                _svrData.GetLength(),
+                _svrData.GetCommandID(),
+                _svrData.GetPunch(),
+                _svrData.GetUserID());
+    
+    std::cout << *content << std::endl;
+    _svrBufLen = 0;
+}
+
+int LineTalkReactor::dealSvrError(int res)
+{
+    if(res == 0)
+        Log::ERROR("SVR CLOSE FD , CLIENT DOWN");
+    if(res < 0)
+        Log::ERROR("CONNECT NETSVR error, reconnect");
+    
+    close(_fd);
+    _fd = -1;
+}
+
+int LineTalkReactor::expandSvrBuf()
+{
+    int dataLen = ((ImPheader_t *)_svrBuf)->length;
+    int totalLen = ImProto::_headerlen + dataLen;
+
+    int newBufCap = (2*_svrBufCap)>totalLen?(2*_svrBufCap):totalLen;
+
+    void * tmp = malloc(newBufCap);
+    memcpy((char *)tmp, (char *)_svrBuf, _svrBufLen);
+           
+    Log::NOTICE("expand SVR Buf SUCC ORI : %d, NOW: %d",
+            _svrBufCap, newBufCap);
+
+    _svrBufCap = newBufCap;
+    free(_svrBuf);
+    _svrBuf = tmp; 
+
+}
+
+/*
+ * -1, read error
+ *  0, read unfinish
+ *  1, buf can be ext
+ */
+int LineTalkReactor::readSvrRes()
+{
+    int res;
+    if(_svrBufLen < ImProto::_headerlen) 
+    {
+        int headleft = ImProto::_headerlen - _svrBufLen;
+        res = recv(_fd,
+                   (char *)_svrBuf+_svrBufLen,
+                   headleft,
+                   MSG_DONTWAIT);
+        if(res <= 0)
+        {
+            dealSvrError(res);
+            return -1;
+        }
+        _svrBufLen += res;
+    }
+    else if(_svrBufLen >= ImProto::_headerlen)
+    {
+        int dataLen = ((ImPheader_t *)_svrBuf)->length;
+        int totalLen = ImProto::_headerlen + dataLen;
+        int dataleft = totalLen - _svrBufLen;
+        
+        if(_svrBufCap < totalLen) 
+        {
+            expandSvrBuf();
+        }
+
+        res = recv(_fd,
+                   (char *)_svrBuf+_svrBufLen,
+                   dataleft,
+                   MSG_DONTWAIT);
+        if(res <= 0)
+        {
+            dealSvrError(res);
+            return -1;
+        }
+        _svrBufLen += res;
+        
+        printf("read data %d total%d buf%d\n", 
+                res, totalLen, _svrBufLen);
+
+        if(_svrBufLen == totalLen)
+            return 1;
+    }
+    return 0;  
 }
 
 int
@@ -223,6 +341,32 @@ LineTalkReactor::init()
         Log::WARN("PIPE NOBlock Error");    
         return -1;
     }
+    struct sockaddr_in svr_address;
+    set_tcp_sockaddr(_conIP.c_str(),
+                     _conPort,
+                     &svr_address);
+    _fd = socket(AF_INET, SOCK_STREAM, 0); 
+    int res = net_connect_to_ms(_fd, 
+                           (struct sockaddr *)&svr_address,
+                           sizeof(svr_address),
+                           _conTo, 1);
+    if(res < 0)
+    {
+        Log::ERROR("INIT ERROR: CAN not connect to netSvr");
+        close(_fd);
+        _fd = -1;
+        return -1;
+    }
+    Log::NOTICE("INIT netSvr Succ, _fd : %d", _fd);
+    
+    _svrBuf    = malloc(ImProto::_headerlen); 
+    if(_svrBuf == NULL)
+    {
+        Log::WARN("INIT recv Svr buf error");
+        return -1;
+    }
+    _svrBufCap = ImProto::_headerlen;
+    _svrBufLen = 0;
 
     return 0;
 }
@@ -286,6 +430,8 @@ LineTalkReactor::~LineTalkReactor()
         ::close(_pipe[1]);
         _pipe[0] = _pipe[1] = -1;
     }
+    if(_fd > 0)
+        ::close(_fd);
 
 }
 

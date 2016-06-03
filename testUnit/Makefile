@@ -1,7 +1,8 @@
-test: configParser.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o main.o
-	g++ -o test configParser.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o  ../lib/jrtplib/libjrtp.a -lpthread -lasound
+test: configParser.o IMProto.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o main.o
+	g++ -o test configParser.o IMProto.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o  ../lib/jrtplib/libjrtp.a -lpthread -lasound
 
-
+IMProto.o:../common/IMProto.cpp
+	g++ -std=c++11 -g -c ../common/IMProto.cpp
 
 ClientCmd.o:../client/ClientCmd.cpp
 	g++ -std=c++11 -g -c ../client/ClientCmd.cpp

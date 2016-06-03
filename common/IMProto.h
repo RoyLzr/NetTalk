@@ -1,5 +1,6 @@
-#ifndef _ASYN_LOG_
-#define _ASYN_LOG_
+#ifndef __IMPROTO_H__
+#define __IMPROTO_H__
+
 #include "net.h"
 #include <event.h>
 #include "../proto/IM.Base.pb.h"
@@ -10,6 +11,7 @@ typedef struct
     uint32_t length;
     uint16_t command_id;
     uint16_t punch_flag;
+    uint32_t user_id;
 }ImPheader_t;
 
 class ImProto
@@ -30,6 +32,9 @@ class ImProto
         uint16_t GetCommandID()   
         {return _imHeader.command_id;}  
         
+        uint16_t GetUserID()   
+        {return _imHeader.user_id;}  
+        
         uint16_t GetPunch()       
         {return _imHeader.punch_flag;}  
         
@@ -38,6 +43,9 @@ class ImProto
         
         void SetCommandID(uint16_t command) 
         {_imHeader.command_id = command;}
+        
+        void SetUserID(uint16_t user) 
+        {_imHeader.user_id = user;}
         
         void SetPunch(uint16_t punch)       
         {_imHeader.punch_flag = punch;}
@@ -50,22 +58,8 @@ class ImProto
     protected:
         ImPheader_t            _imHeader;
         std::string            _buf;
+    public:
         static int             _headerlen;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif

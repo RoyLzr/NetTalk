@@ -9,10 +9,12 @@
 #include "../interface/dataParse.h"
 #include "../interface/cmdWrap.h"
 #include "../interface/thread.h"
+#include "../common/IMProto.h"
 #include "ClientCmd.h"
 #include <atomic>
 #include <vector>
 #include <queue>
+#include <event.h>
 
 
 
@@ -40,7 +42,10 @@ class LineTalkReactor : public IReactor
                                               _audio(NULL),
                                               _AudioRecvThread(NULL),
                                               _AudioSendThread(NULL),
-                                              _audioPort(0)
+                                              _audioPort(0),
+                                              _svrBuf(NULL),
+                                              _svrBufLen(0),
+                                              _svrBufCap(0)
         {  load(sec); }
                                              
         virtual ~LineTalkReactor();
@@ -57,6 +62,10 @@ class LineTalkReactor : public IReactor
 		virtual int status();
 
         virtual int extCmd(const string );
+        
+        virtual int extSvrRes();
+        virtual int readSvrRes();
+        virtual int dealSvrError(int);
         
         virtual bool isStop();
         
@@ -76,8 +85,12 @@ class LineTalkReactor : public IReactor
         virtual WorkerThread * getAudioRecvThread();
 
         virtual int clearAudio();
+        virtual int expandSvrBuf();
+        
         virtual int getAudioStatus() {return _audioStatus;}
         virtual int setAudioStatus(int s) {_audioStatus = s;}
+
+        virtual int getSvrFd()  {return _fd;}
 
     protected:
 
@@ -108,6 +121,12 @@ class LineTalkReactor : public IReactor
         WorkerThread * _AudioRecvThread;
         int            _audioPort;
         int            _audioStatus;
+
+
+        void        * _svrBuf;
+        int           _svrBufLen; 
+        int           _svrBufCap;
+        ImProto       _svrData; 
 
         MLock _lock;
         DataParser * _svrdata;

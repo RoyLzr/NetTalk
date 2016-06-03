@@ -12,7 +12,12 @@ ClientSvr::~ClientSvr()
 int ClientSvr::init(IReactor * ir, WorkerThread * wh)
 {
     _coreAct = ir;
-    _coreAct->init();
+    while(true)
+    {
+        if(_coreAct->init() >=0)
+            break;
+        sleep(1);
+    }
     _listenUserThread = wh;
 }
 

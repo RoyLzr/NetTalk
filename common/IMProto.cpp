@@ -6,6 +6,7 @@ ImProto::ImProto()
     _imHeader.length = 0;
     _imHeader.command_id = 0;
     _imHeader.punch_flag = 0;
+    _imHeader.user_id = 0;
     _headerlen = sizeof(ImPheader_t);
 }
 
@@ -38,6 +39,7 @@ int ImProto::InitByHeaderAddBuf(void * buf, int len)
     _imHeader.length = head->length;
     _imHeader.command_id = head->command_id;
     _imHeader.punch_flag = head->punch_flag; 
+    _imHeader.user_id = head->user_id; 
     
     buf = (void *)((char *)buf + _headerlen);
 

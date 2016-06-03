@@ -2,6 +2,25 @@
 #include "ClientCmd.h"
 #include "LineTalkReactor.h"
 
+
+int TestCmd::callback()
+{
+    ImPheader_t head;
+    head.length = 40;
+    head.command_id = 5;
+    head.punch_flag = 0;
+    head.user_id    = 0;
+    char * test = (char *)malloc(head.length);
+    for(int i = 0; i < head.length; i++)
+        test[i] = '1';
+            
+    send(ract->getSvrFd(), (char *)&head, sizeof(head), MSG_WAITALL);            
+    send(ract->getSvrFd(), test, head.length,  MSG_WAITALL);            
+
+    free(test);
+}
+
+
 int 
 InitAudioCmd::callback()
 {

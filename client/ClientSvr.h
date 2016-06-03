@@ -5,6 +5,7 @@
 #include "../interface/ireactor.h"
 #include "../interface/trans.h"
 #include "../common/asynLog.h"
+#include <unistd.h>
 
 class ClientSvr
 {
