@@ -2,23 +2,21 @@
 
 ClientSvr::~ClientSvr()
 {
-    if(_coreAct != NULL)
-        delete _coreAct;
-    if(_listenUserThread != NULL)
-        delete _listenUserThread;
+    Log::NOTICE("CORE REACTOR FINISH");
 }
 
     
-int ClientSvr::init(IReactor * ir, WorkerThread * wh)
+int ClientSvr::init(std::unique_ptr<IReactor> ir,
+                    std::unique_ptr<WorkerThread> wh)
 {
-    _coreAct = ir;
+    _coreAct = std::move(ir);
     while(true)
     {
         if(_coreAct->init() >=0)
             break;
         sleep(1);
     }
-    _listenUserThread = wh;
+    _listenUserThread = std::move(wh);
 }
 
 int ClientSvr::run()
@@ -60,6 +58,6 @@ int ClientSvr::destroy()
 int ClientSvr::extUserInput(void * data, int len)
 {
     std::string userInput((char *)data, len);
-    _coreAct->extCmd(userInput);
+    _coreAct->extCmd(std::move(userInput));
 }
 

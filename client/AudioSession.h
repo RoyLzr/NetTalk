@@ -16,6 +16,7 @@
 #include <sys/socket.h>     
 #include <string>     
 #include <netinet/in.h>     
+#include <memory>     
 
 
 using namespace jrtplib;
@@ -73,8 +74,9 @@ class AudioTrans : public Trans
         AudioSession session;
         AudioParams  playParams;
         AudioParams  recordParams;
-        void * sendBuffer;
-        void * playBuffer;
+        std::unique_ptr<char[]> sendBuffer;
+        void * playBuffer; 
+        //std::unique_ptr<char[]> playBuffer;
         int    buffSize;
 
         int  recordGetSize;

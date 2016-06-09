@@ -20,6 +20,7 @@
 #include <string>
 #include <stdarg.h>
 #include <pthread.h>
+#include <memory>
 
 using std::string;
 using std::queue;
@@ -44,7 +45,7 @@ class Log
 {
     private:
 
-    static queue<string> log_buffer;   
+    static queue<std::unique_ptr<char[]>> log_buffer;   
     static FILE * fp; 
     static char buffer[LOG_MAXLINE];
     static int STATUS;   

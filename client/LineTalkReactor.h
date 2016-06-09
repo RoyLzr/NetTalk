@@ -10,16 +10,18 @@
 #include "../interface/cmdWrap.h"
 #include "../interface/thread.h"
 #include "../common/IMProto.h"
+#include "../proto/IM.Test.pb.h"
 #include "ClientCmd.h"
 #include <atomic>
 #include <vector>
 #include <queue>
 #include <event.h>
+#include <memory>
 
 
 
 class ClientSvr;
-class LineTalkReactor : public IReactor
+class LineTalkReactor : public IReactor,public Uncopyable
 {
     public:
         enum
@@ -28,24 +30,33 @@ class LineTalkReactor : public IReactor
             AUDIORUN,
             AUDIOSTOP,
         };
+        enum
+        {
+            UNUSE,
+            USERREGINPUT,
+            USERREGING,
+            USERLOGINPUT,
+            USERLOGING,
+            USERLOGED,
+        };
 
-        LineTalkReactor(DataParser * svr,
-                        DataParser * user, 
+        LineTalkReactor(std::shared_ptr<DataParser> svr,
+                        std::shared_ptr<DataParser> user, 
                         const Section &sec):  _fd(-1),
                                               _status(NONE),
                                               _audioStatus(AUDIOSTOP),
                                               _conPort(-1),
                                               _conTo(-1),
-                                              _svrdata(svr),
-                                              _userdata(user),
+                                              _svrdata(std::move(svr)),
+                                              _userdata(std::move(user)),
                                               _client(NULL),
                                               _audio(NULL),
                                               _AudioRecvThread(NULL),
                                               _AudioSendThread(NULL),
                                               _audioPort(0),
-                                              _svrBuf(NULL),
                                               _svrBufLen(0),
-                                              _svrBufCap(0)
+                                              _svrBufCap(0),
+                                              _userStatus(UNUSE)
         {  load(sec); }
                                              
         virtual ~LineTalkReactor();
@@ -71,7 +82,7 @@ class LineTalkReactor : public IReactor
         
         virtual int setClient(ClientSvr *);
         
-        virtual void Signal(CMD *);
+        virtual void Signal(unique_ptr<CMD>);
         
         virtual void SignalDeal();
         
@@ -91,7 +102,10 @@ class LineTalkReactor : public IReactor
         virtual int setAudioStatus(int s) {_audioStatus = s;}
 
         virtual int getSvrFd()  {return _fd;}
+        
+        virtual int getUserStatus() {return _userStatus;}
 
+        virtual void setUserStatus(int s) {_userStatus = s;}
     protected:
 
         virtual int OnRead() {}; 
@@ -114,8 +128,9 @@ class LineTalkReactor : public IReactor
         int  _conTo;
         int  _pipe[2];
         MLock _q_lock;
-        std::queue<CMD *> _extQueue;
-        
+        std::queue<std::unique_ptr<CMD> > _extQueue;
+        int            _userStatus;
+
         Trans        * _audio;
         WorkerThread * _AudioSendThread;
         WorkerThread * _AudioRecvThread;
@@ -123,14 +138,14 @@ class LineTalkReactor : public IReactor
         int            _audioStatus;
 
 
-        void        * _svrBuf;
-        int           _svrBufLen; 
-        int           _svrBufCap;
-        ImProto       _svrData; 
+        std::unique_ptr<char[]>   _svrBuf;
+        int                     _svrBufLen; 
+        int                     _svrBufCap;
+        ImProto                 _svrData; 
 
         MLock _lock;
-        DataParser * _svrdata;
-        DataParser * _userdata;
+        shared_ptr<DataParser>  _svrdata;
+        shared_ptr<DataParser>  _userdata;
         ClientSvr  * _client;
 };
 

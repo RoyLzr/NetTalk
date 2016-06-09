@@ -1,0 +1,10 @@
+syntax="proto3";
+package IM.Test;
+import "IM.Base.proto";
+
+
+message TestMsg
+{
+    uint32 id    =1;
+    string buf   =2;
+}

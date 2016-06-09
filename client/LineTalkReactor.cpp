@@ -137,31 +137,11 @@ int
 LineTalkReactor::extCmd(const string input)
 {
     Log::NOTICE("User ORG INPUT DATA: %s", input.c_str()); 
-    
-    if(input == "init\n")
-    {
-        CMD * cmd = new InitAudioCmd(this);
-        Signal(cmd);
-    }
-    else if(input == "run\n")
-    {
-        CMD * cmd = new RunAudioCmd(this);
-        Signal(cmd);
-    }
-    else if(input == "stop\n")
-    {
-        CMD * cmd = new StopAudioCmd(this);
-        Signal(cmd);
-    }
-    else if(input == "test\n")
-    {
-        CMD * cmd = new TestCmd(this);
-        Signal(cmd); 
-    }
-    else
-    {
-        Log::WARN("USER INPUT ERROR");
-    }
+   
+    std::unique_ptr<CMD> cmd = _userdata->Parser(std::move(input), 
+                                                 this);
+    if(cmd)
+        Signal(std::move(cmd)); 
     return 0;
 }
 
@@ -173,15 +153,24 @@ int LineTalkReactor::extSvrRes()
     else if(res == 0)
         return 0;
    
-    _svrData.InitByHeaderAddBuf(_svrBuf, _svrBufLen);
+    _svrData.InitByHeaderAddBuf((void *)_svrBuf.get(), _svrBufLen);
     string * content = _svrData.GetBuffer();
+    
     Log::DEBUG("Recv Svr Data, header: len:%d, command:%d,punch:%d,user:%d", 
                 _svrData.GetLength(),
                 _svrData.GetCommandID(),
                 _svrData.GetPunch(),
                 _svrData.GetUserID());
     
-    std::cout << *content << std::endl;
+    IM::Test::TestMsg msg;
+    if(!msg.ParseFromString(*content))
+    {
+        Log::ERROR("Parse content data error");
+    }
+
+    std::cout << msg.id() << std::endl;
+    std::cout << msg.buf() << "; len:" << msg.buf().size()<<std::endl;
+
     _svrBufLen = 0;
 }
 
@@ -198,20 +187,19 @@ int LineTalkReactor::dealSvrError(int res)
 
 int LineTalkReactor::expandSvrBuf()
 {
-    int dataLen = ((ImPheader_t *)_svrBuf)->length;
+    int dataLen = ((ImPheader_t *)_svrBuf.get())->length;
     int totalLen = ImProto::_headerlen + dataLen;
 
     int newBufCap = (2*_svrBufCap)>totalLen?(2*_svrBufCap):totalLen;
 
-    void * tmp = malloc(newBufCap);
-    memcpy((char *)tmp, (char *)_svrBuf, _svrBufLen);
+    std::unique_ptr<char[]> tmp(new char[newBufCap]);
+    memcpy(tmp.get(), _svrBuf.get(), _svrBufLen);
            
     Log::NOTICE("expand SVR Buf SUCC ORI : %d, NOW: %d",
             _svrBufCap, newBufCap);
 
     _svrBufCap = newBufCap;
-    free(_svrBuf);
-    _svrBuf = tmp; 
+    _svrBuf = std::move(tmp); 
 
 }
 
@@ -227,7 +215,7 @@ int LineTalkReactor::readSvrRes()
     {
         int headleft = ImProto::_headerlen - _svrBufLen;
         res = recv(_fd,
-                   (char *)_svrBuf+_svrBufLen,
+                   _svrBuf.get()+_svrBufLen,
                    headleft,
                    MSG_DONTWAIT);
         if(res <= 0)
@@ -239,7 +227,7 @@ int LineTalkReactor::readSvrRes()
     }
     else if(_svrBufLen >= ImProto::_headerlen)
     {
-        int dataLen = ((ImPheader_t *)_svrBuf)->length;
+        int dataLen = ((ImPheader_t *)_svrBuf.get())->length;
         int totalLen = ImProto::_headerlen + dataLen;
         int dataleft = totalLen - _svrBufLen;
         
@@ -249,7 +237,7 @@ int LineTalkReactor::readSvrRes()
         }
 
         res = recv(_fd,
-                   (char *)_svrBuf+_svrBufLen,
+                   _svrBuf.get()+_svrBufLen,
                    dataleft,
                    MSG_DONTWAIT);
         if(res <= 0)
@@ -358,9 +346,10 @@ LineTalkReactor::init()
         return -1;
     }
     Log::NOTICE("INIT netSvr Succ, _fd : %d", _fd);
-    
-    _svrBuf    = malloc(ImProto::_headerlen); 
-    if(_svrBuf == NULL)
+    std::unique_ptr<char[]> tmp(new char[ImProto::_headerlen]);  
+    _svrBuf    =  std::move(tmp);
+
+    if(!_svrBuf)
     {
         Log::WARN("INIT recv Svr buf error");
         return -1;
@@ -371,11 +360,11 @@ LineTalkReactor::init()
     return 0;
 }
 
-void LineTalkReactor::Signal(CMD * extCmd)
+void LineTalkReactor::Signal(std::unique_ptr<CMD> extCmd)
 {
     ::write(_pipe[1], "a", 1);
     AutoLock<MLock> l(_q_lock);
-    _extQueue.push(extCmd);
+    _extQueue.push(std::move(extCmd));
 }
 
 void LineTalkReactor::SignalDeal()
@@ -387,7 +376,6 @@ void LineTalkReactor::SignalDeal()
         if(ret < (int)sizeof(buf))
             break;
     }while(true);
-    CMD * extCmd;
     while(true)
     {
         _q_lock.lock();
@@ -396,28 +384,16 @@ void LineTalkReactor::SignalDeal()
             _q_lock.unlock();
             break;
         }
-        extCmd = _extQueue.front();
+        std::unique_ptr<CMD> extCmd = std::move(_extQueue.front());
         _extQueue.pop();
         _q_lock.unlock();
         extCmd->callback();
-        delete extCmd;
     } 
 }
 
 
 LineTalkReactor::~LineTalkReactor()
 {
-    AutoLock<MLock> l(_q_lock);
-    while(!_extQueue.empty())
-    {
-        CMD * tmp = _extQueue.front();
-        _extQueue.pop();
-        delete tmp;
-    }
-    if(_svrdata!=NULL)
-        delete _svrdata;
-    if(_userdata!=NULL)
-        delete _userdata;
     if(_audio!=NULL)
         delete _audio;
     if(_AudioSendThread!=NULL)
@@ -432,6 +408,5 @@ LineTalkReactor::~LineTalkReactor()
     }
     if(_fd > 0)
         ::close(_fd);
-
 }
 

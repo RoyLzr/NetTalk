@@ -21,6 +21,9 @@ int ReadLineUserInput::readLineOnce()
             return 0;
         return -1;
     }
+
+    //printf("readSize %d\n", readSize);
+
     client->extUserInput(m_work_buff, readSize);
     return 0;
 }

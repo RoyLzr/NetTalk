@@ -1,34 +1,6 @@
-[NOTICE] 06-03 17:49:44  LOG INIT SUCCES
-[NOTICE] 06-03 17:49:44  Listen Port 1025
-[NOTICE] 06-03 17:57:58  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 17:58:12  Client close connection connfd: 8
-[NOTICE] 06-03 18:03:25  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:03:30  Client close connection connfd: 8
-[NOTICE] 06-03 18:05:02  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[WARN]   06-03 18:10:47  connection error connfd: 8 error: 
-[NOTICE] 06-03 18:11:04  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:11:18  Client close connection connfd: 8
-[NOTICE] 06-03 18:11:38  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:14:29  Client close connection connfd: 8
-[NOTICE] 06-03 18:14:57  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[WARN]   06-03 18:15:15  connection error connfd: 8 error: 
-[NOTICE] 06-03 18:15:59  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:16:07  Client close connection connfd: 8
-[NOTICE] 06-03 18:16:12  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:19:10  Client close connection connfd: 8
-[NOTICE] 06-03 18:19:26  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:20:14  Client close connection connfd: 8
-[NOTICE] 06-03 18:20:29  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:22:49  Client close connection connfd: 8
-[NOTICE] 06-03 18:23:02  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:23:58  Client close connection connfd: 8
-[NOTICE] 06-03 18:24:11  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:25:12  Client close connection connfd: 8
-[NOTICE] 06-03 18:26:15  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:26:34  Client close connection connfd: 8
-[NOTICE] 06-03 18:31:22  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:32:01  Client close connection connfd: 8
-[NOTICE] 06-03 18:33:45  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:33:57  Client close connection connfd: 8
-[NOTICE] 06-03 18:34:39  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-03 18:35:46  Client close connection connfd: 8
+[NOTICE] 06-09 14:51:31  LOG INIT SUCCES
+[NOTICE] 06-09 14:51:31  Listen Port 1025
+[NOTICE] 06-09 14:51:33  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
+[NOTICE] 06-09 14:51:40  Client close connection connfd: 8
+[NOTICE] 06-09 15:02:48  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
+[NOTICE] 06-09 15:03:09  Client close connection connfd: 8

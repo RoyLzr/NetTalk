@@ -1,7 +1,7 @@
 #include "asynLog.h"
 
 
-queue<string> Log :: log_buffer;
+queue<std::unique_ptr<char[]>> Log :: log_buffer;
 pthread_cond_t Log:: log_cond;
 pthread_mutex_t Log :: log_mutex;
 char Log :: buffer[LOG_MAXLINE];
@@ -52,12 +52,12 @@ Log :: write_log(void *)
         }
         if(STATUS != LOG_RUN)
             return NULL;
-        
-        string content(log_buffer.front());
+       
+        std::unique_ptr<char[]> content = std::move(log_buffer.front()); 
         log_buffer.pop();
  
         pthread_mutex_unlock(&log_mutex);
-        fprintf(fp, "%s\n", (content).c_str());
+        fprintf(fp, "%s\n", content.get());
     //#ifndef WORK
         fflush(fp);
     //#endif
@@ -152,30 +152,31 @@ ctime(char * t_time, size_t n)
 void
 Log :: produce_log(int event, const char * fmt, va_list args)
 {
-    string s(LOG_MAXLINE, '\0');
+    std::unique_ptr<char[]> tmp(new char[LOG_MAXLINE]);
     switch(event)
     {
         case LOG_DEBUG:
-            add_prefix(&s[0], str_prefix[LOG_DEBUG]);
+            add_prefix(tmp.get(), str_prefix[LOG_DEBUG]);
             break;
         case LOG_NOTICE:
-            add_prefix(&s[0], str_prefix[LOG_NOTICE]);
+            add_prefix(tmp.get(), str_prefix[LOG_NOTICE]);
             break;
         case LOG_WARN:
-            add_prefix(&s[0], str_prefix[LOG_WARN]);
+            add_prefix(tmp.get(), str_prefix[LOG_WARN]);
             break;
         case LOG_ERROR:
-            add_prefix(&s[0], str_prefix[LOG_ERROR]);
+            add_prefix(tmp.get(), str_prefix[LOG_ERROR]);
             break;
     }
 
-    ctime(&s[9], 20);
-    s[23] = ' '; 
-    s[24] = ' '; 
-    vsprintf(&s[25], fmt, args);
+    char * valPtr = tmp.get();
+    ctime(&valPtr[9], 20);
+    valPtr[23] = ' '; 
+    valPtr[24] = ' '; 
+    vsprintf(&valPtr[25], fmt, args);
 
     pthread_mutex_lock(&log_mutex);
-    log_buffer.push(s);
+    log_buffer.push(std::move(tmp));
     if(log_buffer.size() == 1)
         pthread_cond_signal(&log_cond);
     pthread_mutex_unlock(&log_mutex);

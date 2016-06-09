@@ -33,22 +33,10 @@ AudioTrans::AudioTrans()
 {
     memset((void *)&playParams, 0, sizeof(AudioParams));
     memset((void *)&recordParams, 0, sizeof(AudioParams));
-    sendBuffer = NULL;
-    playBuffer = NULL;   
 }
         
 AudioTrans::~AudioTrans()
 {
-    if(sendBuffer != NULL)
-    {
-        delete (char *)sendBuffer;
-        sendBuffer = NULL;
-    }
-    if(playBuffer != NULL)
-    {
-        delete (char *)playBuffer;
-        playBuffer = NULL;
-    }
     snd_pcm_drain(handlePlay);  
     snd_pcm_close(handlePlay);  
     snd_pcm_drain(handleRecord);  
@@ -121,19 +109,25 @@ int AudioTrans::init(std::string ip, int dport, int lport)
 
 
     /*init buffer*/
-    sendBuffer = malloc(buffSize);
-    if(sendBuffer == NULL)
+    std::unique_ptr<char[]> tmpSend(new char[buffSize]);
+    sendBuffer = std::move(tmpSend);
+    
+    if(!sendBuffer)
     {
         std::cout << "init malloc error" << std::endl;    
         return -1;
     }
+    
+    //std::unique_ptr<char[]> tmpPlay(new char[buffSize]);
+    //playBuffer = std::move(tmpPlay);
+    /*
+    if(!playBuffer)
+    {
+        std::cout << "init malloc error" << std::endl;    
+        return -1;
+    }
+    */
 
-    playBuffer = malloc(buffSize);
-    if(playBuffer == NULL)
-    {
-        std::cout << "init malloc error" << std::endl;    
-        return -1;
-    }
     return 0;
 }
 
@@ -142,7 +136,7 @@ int AudioTrans::SendData(void * data, int len)
     if(data != NULL)
         return -1;
     
-    int status = session.SendPacket(sendBuffer, 
+    int status = session.SendPacket(sendBuffer.get(), 
                                     recordGetSize*recordParams.frameSize);
 
     if(status < 0)
@@ -179,7 +173,7 @@ int AudioTrans::GetLocalData(void * data)
 {
     if(data != NULL)
         return -1;
-    int rc = snd_pcm_readi(handleRecord,sendBuffer,2*recordParams.frames);
+    int rc = snd_pcm_readi(handleRecord,sendBuffer.get(),2*recordParams.frames);
 
     if(rc == -EPIPE)
     {

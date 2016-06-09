@@ -5,19 +5,21 @@
 #include "../interface/ireactor.h"
 #include "../interface/trans.h"
 #include "../common/asynLog.h"
+#include "../common/util.h"
 #include <unistd.h>
+#include <memory>
 
-class ClientSvr
+class ClientSvr : public Uncopyable
 {
 
     public:
-        ClientSvr(): _listenUserThread(NULL),
-                     _coreAct(NULL)
+        ClientSvr()
         {};
 
         virtual ~ClientSvr();
     
-        virtual int init(IReactor *, WorkerThread *);
+        virtual int init(std::unique_ptr<IReactor>, 
+                         std::unique_ptr<WorkerThread>);
         
         virtual int openLog(const Section &);
 
@@ -30,8 +32,8 @@ class ClientSvr
         virtual int extUserInput(void * data, int len);
         
     protected:
-        WorkerThread * _listenUserThread;
-        IReactor     * _coreAct;
+        std::unique_ptr<WorkerThread> _listenUserThread;
+        std::unique_ptr<IReactor>     _coreAct;
 };
 
 #endif

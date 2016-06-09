@@ -5,7 +5,11 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 APP	lib/jrtplib/rtcppacket.h	/^			APP,	\/**< An RTCP packet containing application specific data. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
-AUDIO	interface/cmdWrap.h	/^            AUDIO,$/;"	e	enum:CMD::__anon4
+APPReactor	server/appsvr/appreactor.h	/^class APPReactor$/;"	c
+AUDIO	interface/cmdWrap.h	/^            AUDIO,$/;"	e	enum:CMD::__anon5
+AUDIOINIT	client/LineTalkReactor.h	/^            AUDIOINIT,$/;"	e	enum:LineTalkReactor::__anon1
+AUDIORUN	client/LineTalkReactor.h	/^            AUDIORUN,$/;"	e	enum:LineTalkReactor::__anon1
+AUDIOSTOP	client/LineTalkReactor.h	/^            AUDIOSTOP,$/;"	e	enum:LineTalkReactor::__anon1
 AcceptAll	lib/jrtplib/rtptransmitter.h	/^		AcceptAll, \/**< All incoming data is accepted, no matter where it originated from. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
 AcceptOwnPackets	lib/jrtplib/rtpsessionparams.h	/^	bool AcceptOwnPackets() const						{ return acceptown; }$/;"	f	class:jrtplib::RTPSessionParams
 AcceptSome	lib/jrtplib/rtptransmitter.h	/^		AcceptSome, \/**< Only data coming from specific sources will be accepted. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
@@ -31,9 +35,22 @@ AudioTrans	client/AudioSession.cpp	/^AudioTrans::AudioTrans() $/;"	f	class:Audio
 AudioTrans	client/AudioSession.h	/^class AudioTrans : public Trans$/;"	c
 AutoLock	common/lock.h	/^        inline AutoLock(Lock &l) : _lock(l) $/;"	f	class:AutoLock
 AutoLock	common/lock.h	/^class AutoLock$/;"	c
-BUILD	interface/cmdWrap.h	/^            BUILD,$/;"	e	enum:CMD::__anon5
-BYE	interface/cmdWrap.h	/^            BYE,$/;"	e	enum:CMD::__anon5
+BUILD	interface/cmdWrap.h	/^            BUILD,$/;"	e	enum:CMD::__anon6
+BYE	interface/cmdWrap.h	/^            BYE,$/;"	e	enum:CMD::__anon6
 BYE	lib/jrtplib/rtcppacket.h	/^			BYE,	\/**< An RTCP bye packet. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
+Base	proto/IM.Base.pb.cc	/^namespace Base {$/;"	n	namespace:IM	file:
+Base	proto/IM.Base.pb.h	/^namespace Base {$/;"	n	namespace:IM
+BuddyCmdID	proto/IM.Base.pb.h	/^enum BuddyCmdID {$/;"	g	namespace:IM::Base
+BuddyCmdID_ARRAYSIZE	proto/IM.Base.pb.h	/^const int BuddyCmdID_ARRAYSIZE = BuddyCmdID_MAX + 1;$/;"	m	namespace:IM::Base
+BuddyCmdID_INT_MAX_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  BuddyCmdID_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max$/;"	e	enum:IM::Base::BuddyCmdID
+BuddyCmdID_INT_MIN_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  BuddyCmdID_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,$/;"	e	enum:IM::Base::BuddyCmdID
+BuddyCmdID_IsValid	proto/IM.Base.pb.cc	/^bool BuddyCmdID_IsValid(int value) {$/;"	f	namespace:IM::Base
+BuddyCmdID_MAX	proto/IM.Base.pb.h	/^const BuddyCmdID BuddyCmdID_MAX = CID_BUDDY_RES_DEL_USER;$/;"	m	namespace:IM::Base
+BuddyCmdID_MIN	proto/IM.Base.pb.h	/^const BuddyCmdID BuddyCmdID_MIN = NONEBUDDY;$/;"	m	namespace:IM::Base
+BuddyCmdID_Name	proto/IM.Base.pb.h	/^inline const ::std::string& BuddyCmdID_Name(BuddyCmdID value) {$/;"	f	namespace:IM::Base
+BuddyCmdID_Parse	proto/IM.Base.pb.h	/^inline bool BuddyCmdID_Parse($/;"	f	namespace:IM::Base
+BuddyCmdID_descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* BuddyCmdID_descriptor() {$/;"	f	namespace:IM::Base
+BuddyCmdID_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* BuddyCmdID_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer():packetdata(0),packetlength(0) { }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Buffer(uint8_t *data,size_t len):packetdata(data),packetlength(len) { }			$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Buffer
 Buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	class Buffer$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
@@ -41,7 +58,27 @@ Build	client/Parser.h	/^        virtual void * Build(CMD * cmd, int  * len)$/;"	
 Build	client/Parser.h	/^        virtual void * Build(CMD * cmd, int * len)$/;"	f	class:SvrDataParser
 Bye	client/AudioSession.cpp	/^int AudioTrans::Bye() { return 0;}$/;"	f	class:AudioTrans
 ByteAddress	lib/jrtplib/rtpaddress.h	/^		ByteAddress, \/**< A very general type of address, consisting of a port number and a number of bytes representing the host address. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
-CLASSCOUNT	interface/cmdWrap.h	/^            CLASSCOUNT,$/;"	e	enum:CMD::__anon4
+ByteSize	proto/IM.Base.pb.cc	/^int UserInfo::ByteSize() const {$/;"	f	class:IM::Base::UserInfo
+ByteSize	proto/IM.Register.pb.cc	/^int IMRegisterReq::ByteSize() const {$/;"	f	class:IM::Register::IMRegisterReq
+ByteSize	proto/IM.Register.pb.cc	/^int IMRegisterRes::ByteSize() const {$/;"	f	class:IM::Register::IMRegisterRes
+ByteSize	proto/IM.Test.pb.cc	/^int TestMsg::ByteSize() const {$/;"	f	class:IM::Test::TestMsg
+CID_BUDDY_REQ_BUILD_USER	proto/IM.Base.pb.h	/^  CID_BUDDY_REQ_BUILD_USER = 515,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_BUDDY_REQ_DEL_USER	proto/IM.Base.pb.h	/^  CID_BUDDY_REQ_DEL_USER = 517,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_BUDDY_REQ_USER_LIST	proto/IM.Base.pb.h	/^  CID_BUDDY_REQ_USER_LIST = 513,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_BUDDY_RES_BUILD_USER	proto/IM.Base.pb.h	/^  CID_BUDDY_RES_BUILD_USER = 516,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_BUDDY_RES_DEL_USER	proto/IM.Base.pb.h	/^  CID_BUDDY_RES_DEL_USER = 518,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_BUDDY_RES_USER_LIST	proto/IM.Base.pb.h	/^  CID_BUDDY_RES_USER_LIST = 514,$/;"	e	enum:IM::Base::BuddyCmdID
+CID_LOGIN_REQ_USERLOGIN	proto/IM.Base.pb.h	/^  CID_LOGIN_REQ_USERLOGIN = 257,$/;"	e	enum:IM::Base::LoginCmdID
+CID_LOGIN_REQ_USERLOGOUT	proto/IM.Base.pb.h	/^  CID_LOGIN_REQ_USERLOGOUT = 259,$/;"	e	enum:IM::Base::LoginCmdID
+CID_LOGIN_RES_USERLOGIN	proto/IM.Base.pb.h	/^  CID_LOGIN_RES_USERLOGIN = 258,$/;"	e	enum:IM::Base::LoginCmdID
+CID_LOGIN_RES_USERLOGOUT	proto/IM.Base.pb.h	/^  CID_LOGIN_RES_USERLOGOUT = 260,$/;"	e	enum:IM::Base::LoginCmdID
+CID_REGISTER_REQ	proto/IM.Base.pb.h	/^  CID_REGISTER_REQ = 1025,$/;"	e	enum:IM::Base::RegisterCmdID
+CID_REGISTER_RES	proto/IM.Base.pb.h	/^  CID_REGISTER_RES = 1026,$/;"	e	enum:IM::Base::RegisterCmdID
+CID_SESSION_REQ_BUILD	proto/IM.Base.pb.h	/^  CID_SESSION_REQ_BUILD = 769,$/;"	e	enum:IM::Base::SessionCmdID
+CID_SESSION_REQ_STOP	proto/IM.Base.pb.h	/^  CID_SESSION_REQ_STOP = 771,$/;"	e	enum:IM::Base::SessionCmdID
+CID_SESSION_RES_BUILD	proto/IM.Base.pb.h	/^  CID_SESSION_RES_BUILD = 770,$/;"	e	enum:IM::Base::SessionCmdID
+CID_SESSION_RES_STOP	proto/IM.Base.pb.h	/^  CID_SESSION_RES_STOP = 772,$/;"	e	enum:IM::Base::SessionCmdID
+CLASSCOUNT	interface/cmdWrap.h	/^            CLASSCOUNT,$/;"	e	enum:CMD::__anon5
 CMD	interface/cmdWrap.h	/^        CMD() {};$/;"	f	class:CMD
 CMD	interface/cmdWrap.h	/^class CMD$/;"	c
 CNAME	lib/jrtplib/rtcpsdespacket.h	/^		CNAME,	\/**< Used for a CNAME (canonical name) item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
@@ -51,18 +88,56 @@ Clear	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtpl
 Clear	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		void Clear()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 Clear	lib/jrtplib/rtphashtable.h	/^inline void RTPHashTable<Element,GetIndex,hashsize>::Clear()$/;"	f	class:jrtplib::RTPHashTable
 Clear	lib/jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::Clear()$/;"	f	class:jrtplib::RTPKeyHashTable
+Clear	proto/IM.Base.pb.cc	/^void UserInfo::Clear() {$/;"	f	class:IM::Base::UserInfo
+Clear	proto/IM.Register.pb.cc	/^void IMRegisterReq::Clear() {$/;"	f	class:IM::Register::IMRegisterReq
+Clear	proto/IM.Register.pb.cc	/^void IMRegisterRes::Clear() {$/;"	f	class:IM::Register::IMRegisterRes
+Clear	proto/IM.Test.pb.cc	/^void TestMsg::Clear() {$/;"	f	class:IM::Test::TestMsg
 ClearFlags	lib/jrtplib/rtcppacketbuilder.h	/^		void ClearFlags()			{ pname = false; pemail = false; plocation = false; pphone = false; ptool = false; pnote = false; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 ClearLocalIPList	lib/jrtplib/rtpudpv4transmitter.h	/^	void ClearLocalIPList()										{ localIPs.clear(); }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
 ClearLocalIPList	lib/jrtplib/rtpudpv6transmitter.h	/^	void ClearLocalIPList()												{ localIPs.clear(); }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
 ClearNote	lib/jrtplib/rtpinternalsourcedata.h	/^	void ClearNote()										{ SDESinf.SetNote(0,0); }$/;"	f	class:jrtplib::RTPInternalSourceData
 ClearOwnCollisionFlag	lib/jrtplib/rtpsessionsources.h	/^	void ClearOwnCollisionFlag()									{ owncollision = false; }$/;"	f	class:jrtplib::RTPSessionSources
 ClearSenderFlag	lib/jrtplib/rtpinternalsourcedata.h	/^	void ClearSenderFlag()										{ issender = false; }$/;"	f	class:jrtplib::RTPInternalSourceData
-ClientSvr	client/ClientSvr.h	/^        ClientSvr(): _listenUserThread(NULL),$/;"	f	class:ClientSvr
-ClientSvr	client/ClientSvr.h	/^class ClientSvr$/;"	c
+ClientSvr	client/ClientSvr.h	/^        ClientSvr()$/;"	f	class:ClientSvr
+ClientSvr	client/ClientSvr.h	/^class ClientSvr : public Uncopyable$/;"	c
 ConfigParser	common/configParser.h	/^        ConfigParser(){}$/;"	f	class:ConfigParser
 ConfigParser	common/configParser.h	/^class ConfigParser$/;"	c
+CopyFrom	proto/IM.Base.pb.cc	/^void UserInfo::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Base::UserInfo
+CopyFrom	proto/IM.Base.pb.cc	/^void UserInfo::CopyFrom(const UserInfo& from) {$/;"	f	class:IM::Base::UserInfo
+CopyFrom	proto/IM.Register.pb.cc	/^void IMRegisterReq::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Register::IMRegisterReq
+CopyFrom	proto/IM.Register.pb.cc	/^void IMRegisterReq::CopyFrom(const IMRegisterReq& from) {$/;"	f	class:IM::Register::IMRegisterReq
+CopyFrom	proto/IM.Register.pb.cc	/^void IMRegisterRes::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Register::IMRegisterRes
+CopyFrom	proto/IM.Register.pb.cc	/^void IMRegisterRes::CopyFrom(const IMRegisterRes& from) {$/;"	f	class:IM::Register::IMRegisterRes
+CopyFrom	proto/IM.Test.pb.cc	/^void TestMsg::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Test::TestMsg
+CopyFrom	proto/IM.Test.pb.cc	/^void TestMsg::CopyFrom(const TestMsg& from) {$/;"	f	class:IM::Test::TestMsg
 CurrentTime	lib/jrtplib/rtptimeutilities.h	/^inline RTPTime RTPTime::CurrentTime()$/;"	f	class:jrtplib::RTPTime
 DEBUG	common/asynLog.cpp	/^Log :: DEBUG(const char * fmt, ...)$/;"	f	class:Log
+DNS_ERR_FORMAT	lib/libevent/evdns.h	243;"	d
+DNS_ERR_NONE	lib/libevent/evdns.h	241;"	d
+DNS_ERR_NOTEXIST	lib/libevent/evdns.h	248;"	d
+DNS_ERR_NOTIMPL	lib/libevent/evdns.h	250;"	d
+DNS_ERR_REFUSED	lib/libevent/evdns.h	253;"	d
+DNS_ERR_SERVERFAILED	lib/libevent/evdns.h	246;"	d
+DNS_ERR_SHUTDOWN	lib/libevent/evdns.h	261;"	d
+DNS_ERR_TIMEOUT	lib/libevent/evdns.h	259;"	d
+DNS_ERR_TRUNCATED	lib/libevent/evdns.h	255;"	d
+DNS_ERR_UNKNOWN	lib/libevent/evdns.h	257;"	d
+DNS_IPv4_A	lib/libevent/evdns.h	263;"	d
+DNS_NO_SEARCH	lib/libevent/evdns.h	304;"	d
+DNS_OPTIONS_ALL	lib/libevent/evdns.h	271;"	d
+DNS_OPTION_MISC	lib/libevent/evdns.h	270;"	d
+DNS_OPTION_NAMESERVERS	lib/libevent/evdns.h	269;"	d
+DNS_OPTION_SEARCH	lib/libevent/evdns.h	268;"	d
+DNS_PTR	lib/libevent/evdns.h	264;"	d
+DNS_QUERY_NO_SEARCH	lib/libevent/evdns.h	266;"	d
+DO_	proto/IM.Base.pb.cc	332;"	d	file:
+DO_	proto/IM.Base.pb.cc	419;"	d	file:
+DO_	proto/IM.Register.pb.cc	223;"	d	file:
+DO_	proto/IM.Register.pb.cc	297;"	d	file:
+DO_	proto/IM.Register.pb.cc	672;"	d	file:
+DO_	proto/IM.Register.pb.cc	745;"	d	file:
+DO_	proto/IM.Test.pb.cc	189;"	d	file:
+DO_	proto/IM.Test.pb.cc	246;"	d	file:
 DataParser	interface/dataParse.h	/^        DataParser() {};$/;"	f	class:DataParser
 DataParser	interface/dataParse.h	/^class DataParser$/;"	c
 DeleteCurrentElement	lib/jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::DeleteCurrentElement()$/;"	f	class:jrtplib::RTPHashTable
@@ -262,29 +337,85 @@ ERR_RTP_UDPV6TRANS_NOTINIT	lib/jrtplib/rtperrors.h	173;"	d
 ERR_RTP_UDPV6TRANS_NOTWAITING	lib/jrtplib/rtperrors.h	174;"	d
 ERR_RTP_UDPV6TRANS_PORTBASENOTEVEN	lib/jrtplib/rtperrors.h	175;"	d
 ERR_RTP_UDPV6TRANS_SPECIFIEDSIZETOOBIG	lib/jrtplib/rtperrors.h	176;"	d
+EVBUFFER_DATA	lib/libevent/event.h	275;"	d
+EVBUFFER_EOF	lib/libevent/event.h	228;"	d
+EVBUFFER_ERROR	lib/libevent/event.h	229;"	d
+EVBUFFER_INPUT	lib/libevent/event.h	276;"	d
+EVBUFFER_LENGTH	lib/libevent/event.h	274;"	d
+EVBUFFER_OUTPUT	lib/libevent/event.h	277;"	d
+EVBUFFER_READ	lib/libevent/event.h	226;"	d
+EVBUFFER_TIMEOUT	lib/libevent/event.h	230;"	d
+EVBUFFER_WRITE	lib/libevent/event.h	227;"	d
+EVCON_CONNECTED	lib/libevent/http-internal.h	/^	EVCON_CONNECTED		\/* connection is established *\/$/;"	e	enum:evhttp_connection_state
+EVCON_CONNECTING	lib/libevent/http-internal.h	/^	EVCON_CONNECTING,	\/* tries to currently connect *\/$/;"	e	enum:evhttp_connection_state
+EVCON_DISCONNECTED	lib/libevent/http-internal.h	/^	EVCON_DISCONNECTED,	\/* not currently connected not trying either *\/$/;"	e	enum:evhttp_connection_state
+EVENTDNS_H	lib/libevent/evdns.h	238;"	d
+EVENT_FD	lib/libevent/event.h	106;"	d
+EVENT_SIGNAL	lib/libevent/event.h	105;"	d
+EVHTTP_CON_INCOMING	lib/libevent/http-internal.h	42;"	d
+EVHTTP_CON_OUTGOING	lib/libevent/http-internal.h	43;"	d
+EVHTTP_REQUEST	lib/libevent/http-internal.h	/^enum evhttp_request_kind { EVHTTP_REQUEST, EVHTTP_RESPONSE };$/;"	e	enum:evhttp_request_kind
+EVHTTP_REQ_GET	lib/libevent/evhttp.h	/^enum evhttp_cmd_type { EVHTTP_REQ_GET, EVHTTP_REQ_POST, EVHTTP_REQ_HEAD };$/;"	e	enum:evhttp_cmd_type
+EVHTTP_REQ_HEAD	lib/libevent/evhttp.h	/^enum evhttp_cmd_type { EVHTTP_REQ_GET, EVHTTP_REQ_POST, EVHTTP_REQ_HEAD };$/;"	e	enum:evhttp_cmd_type
+EVHTTP_REQ_OWN_CONNECTION	lib/libevent/http-internal.h	61;"	d
+EVHTTP_REQ_POST	lib/libevent/evhttp.h	/^enum evhttp_cmd_type { EVHTTP_REQ_GET, EVHTTP_REQ_POST, EVHTTP_REQ_HEAD };$/;"	e	enum:evhttp_cmd_type
+EVHTTP_RESPONSE	lib/libevent/http-internal.h	/^enum evhttp_request_kind { EVHTTP_REQUEST, EVHTTP_RESPONSE };$/;"	e	enum:evhttp_request_kind
+EVLIST_ACTIVE	lib/libevent/event.h	48;"	d
+EVLIST_ALL	lib/libevent/event.h	53;"	d
+EVLIST_INIT	lib/libevent/event.h	50;"	d
+EVLIST_INSERTED	lib/libevent/event.h	46;"	d
+EVLIST_INTERNAL	lib/libevent/event.h	49;"	d
+EVLIST_SIGNAL	lib/libevent/event.h	47;"	d
+EVLIST_TIMEOUT	lib/libevent/event.h	45;"	d
+EVLOOP_NONBLOCK	lib/libevent/event.h	161;"	d
+EVLOOP_ONCE	lib/libevent/event.h	160;"	d
+EV_PERSIST	lib/libevent/event.h	59;"	d
+EV_READ	lib/libevent/event.h	56;"	d
+EV_SIGNAL	lib/libevent/event.h	58;"	d
+EV_TIMEOUT	lib/libevent/event.h	55;"	d
+EV_WRITE	lib/libevent/event.h	57;"	d
+EvErrorCallback	server/appsvr/appreactor.cpp	/^void EvErrorCallback(struct bufferevent * bev,$/;"	f
+EvErrorCallback	server/netsvr/netReactor.cpp	/^void EvErrorCallback(struct bufferevent * bev,$/;"	f
+EvReadCallback	server/appsvr/appreactor.cpp	/^void EvReadCallback(struct bufferevent * bev, void * arg)$/;"	f
+EvReadCallback	server/netsvr/netReactor.cpp	/^void EvReadCallback(struct bufferevent * bev, void * arg)$/;"	f
+EvWriteCallback	server/appsvr/appreactor.cpp	/^void EvWriteCallback(struct bufferevent * bev,void * arg)$/;"	f
+EvWriteCallback	server/netsvr/netReactor.cpp	/^void EvWriteCallback(struct bufferevent * bev,void * arg)$/;"	f
 Execute	client/AudioThread.cpp	/^void AudioGetSendThread::Execute()$/;"	f	class:AudioGetSendThread
 Execute	client/AudioThread.cpp	/^void AudioShowRecvThread::Execute()$/;"	f	class:AudioShowRecvThread
 Execute	client/workThread.cpp	/^void ReadLineUserInput::Execute()$/;"	f	class:ReadLineUserInput
 ExternalProto	lib/jrtplib/rtptransmitter.h	/^		ExternalProto, \/**< Specifies the transmitter which can send packets using an external mechanism, and which can have received packets injected into it - see RTPExternalTransmitter for additional information. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
 FlushPackets	lib/jrtplib/rtpsourcedata.h	/^inline void RTPSourceData::FlushPackets()$/;"	f	class:jrtplib::RTPSourceData
+GOOGLE_ATTRIBUTE_COLD	proto/IM.Base.pb.cc	/^static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;$/;"	m	namespace:IM::Base::__anon17	file:
+GOOGLE_ATTRIBUTE_COLD	proto/IM.Register.pb.cc	/^static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;$/;"	m	namespace:IM::Register::__anon11	file:
+GOOGLE_ATTRIBUTE_COLD	proto/IM.Test.pb.cc	/^static void MergeFromFail(int line) GOOGLE_ATTRIBUTE_COLD;$/;"	m	namespace:IM::Test::__anon14	file:
 GetAPPData	lib/jrtplib/rtcpapppacket.h	/^inline uint8_t *RTCPAPPPacket::GetAPPData()$/;"	f	class:jrtplib::RTCPAPPPacket
 GetAPPDataLength	lib/jrtplib/rtcpapppacket.h	/^inline size_t RTCPAPPPacket::GetAPPDataLength() const$/;"	f	class:jrtplib::RTCPAPPPacket
 GetActiveMemberCount	lib/jrtplib/rtpsources.h	/^	int GetActiveMemberCount() const								{ return activecount; } $/;"	f	class:jrtplib::RTPSources
 GetAdditionalHeaderSize	lib/jrtplib/rtpexternaltransmitter.h	/^	int GetAdditionalHeaderSize() const								{ return headersize; }$/;"	f	class:jrtplib::RTPExternalTransmissionParams
 GetAddressType	lib/jrtplib/rtpaddress.h	/^	AddressType GetAddressType() const				{ return addresstype; }$/;"	f	class:jrtplib::RTPAddress
+GetArenaNoVirtual	proto/IM.Base.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:IM::Base::UserInfo
+GetArenaNoVirtual	proto/IM.Register.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:IM::Register::IMRegisterReq
+GetArenaNoVirtual	proto/IM.Register.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:IM::Register::IMRegisterRes
+GetArenaNoVirtual	proto/IM.Test.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:IM::Test::TestMsg
 GetBYEReason	lib/jrtplib/rtpsourcedata.h	/^	uint8_t *GetBYEReason(size_t *len) const				{ *len = byereasonlen; return byereason; }$/;"	f	class:jrtplib::RTPSourceData
 GetBYETime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetBYETime() const						{ return byetime; }$/;"	f	class:jrtplib::RTPSourceData
 GetBYETimeoutMultiplier	lib/jrtplib/rtpsessionparams.h	/^	double GetBYETimeoutMultiplier() const					{ return byetimeoutmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
 GetBaseSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t GetBaseSequenceNumber() const					{ return baseseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
 GetBindIP	lib/jrtplib/rtpudpv4transmitter.h	/^	uint32_t GetBindIP() const									{ return bindIP; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
 GetBindIP	lib/jrtplib/rtpudpv6transmitter.h	/^	in6_addr GetBindIP() const											{ return bindIP; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
+GetBuffer	common/IMProto.h	/^        std::string * GetBuffer() $/;"	f	class:ImProto
 GetByteCount	lib/jrtplib/rtpsourcedata.h	/^	uint32_t GetByteCount() const						{ return bytecount; }$/;"	f	class:jrtplib::RTCPSenderReportInfo
 GetCNAME	lib/jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetCNAME(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_CNAME-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
 GetCNAME	lib/jrtplib/rtpsessionparams.h	/^	std::string GetCNAME() const						{ return cname; }$/;"	f	class:jrtplib::RTPSessionParams
 GetCSRCCount	lib/jrtplib/rtppacket.h	/^	int GetCSRCCount() const															{ return numcsrcs; }$/;"	f	class:jrtplib::RTPPacket
+GetCachedSize	proto/IM.Base.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:IM::Base::UserInfo
+GetCachedSize	proto/IM.Register.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:IM::Register::IMRegisterReq
+GetCachedSize	proto/IM.Register.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:IM::Register::IMRegisterRes
+GetCachedSize	proto/IM.Test.pb.h	/^  int GetCachedSize() const { return _cached_size_; }$/;"	f	class:IM::Test::TestMsg
 GetChunkCount	lib/jrtplib/rtcpsdespacket.h	/^inline int RTCPSDESPacket::GetChunkCount() const$/;"	f	class:jrtplib::RTCPSDESPacket
 GetChunkSSRC	lib/jrtplib/rtcpsdespacket.h	/^inline uint32_t RTCPSDESPacket::GetChunkSSRC() const$/;"	f	class:jrtplib::RTCPSDESPacket
 GetCollisionTimeoutMultiplier	lib/jrtplib/rtpsessionparams.h	/^	double GetCollisionTimeoutMultiplier() const				{ return collisionmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
+GetCommandID	common/IMProto.h	/^        uint16_t GetCommandID()   $/;"	f	class:ImProto
 GetCompoundPacketData	lib/jrtplib/rtcpcompoundpacket.h	/^	uint8_t *GetCompoundPacketData()						{ return compoundpacket; }$/;"	f	class:jrtplib::RTCPCompoundPacket
 GetCompoundPacketLength	lib/jrtplib/rtcpcompoundpacket.h	/^	size_t GetCompoundPacketLength()						{ return compoundpacketlength; }$/;"	f	class:jrtplib::RTCPCompoundPacket
 GetControlTrafficFraction	lib/jrtplib/rtpsessionparams.h	/^	double GetControlTrafficFraction() const				{ return controlfrac; }$/;"	f	class:jrtplib::RTPSessionParams
@@ -305,6 +436,11 @@ GetDouble	lib/jrtplib/rtptimeutilities.h	/^	double GetDouble() const 										{
 GetEMail	lib/jrtplib/rtcpsdesinfo.h	/^	uint8_t *GetEMail(size_t *len) const					{ return GetNonPrivateItem(RTCP_SDES_ID_EMAIL-1,len); }$/;"	f	class:jrtplib::RTCPSDESInfo
 GetElement	lib/jrtplib/rtphashtable.h	/^		Element &GetElement()						{ return element; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
 GetElement	lib/jrtplib/rtpkeyhashtable.h	/^		Element &GetElement()						{ return element; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+GetEnumDescriptor	proto/IM.Base.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::BuddyCmdID>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	proto/IM.Base.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::LoginCmdID>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	proto/IM.Base.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::RegisterCmdID>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	proto/IM.Base.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::ResultType>() {$/;"	f	namespace:google::protobuf
+GetEnumDescriptor	proto/IM.Base.pb.h	/^inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::SessionCmdID>() {$/;"	f	namespace:google::protobuf
 GetExtendedHighestSequenceNumber	lib/jrtplib/rtcprrpacket.h	/^inline uint32_t RTCPRRPacket::GetExtendedHighestSequenceNumber(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
 GetExtendedHighestSequenceNumber	lib/jrtplib/rtcpsrpacket.h	/^inline uint32_t RTCPSRPacket::GetExtendedHighestSequenceNumber(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
 GetExtendedHighestSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t GetExtendedHighestSequenceNumber() const			{ return exthighseqnr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
@@ -318,6 +454,7 @@ GetFractionLost	lib/jrtplib/rtcpsrpacket.h	/^inline uint8_t RTCPSRPacket::GetFra
 GetFractionLost	lib/jrtplib/rtpsourcedata.h	/^	double GetFractionLost() const						{ return fractionlost; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
 GetHashIndex	lib/jrtplib/rtphashtable.h	/^		int GetHashIndex() 						{ return hashindex; }$/;"	f	class:jrtplib::RTPHashTable::HashElement
 GetHashIndex	lib/jrtplib/rtpkeyhashtable.h	/^		int GetHashIndex() 						{ return hashindex; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
+GetHeader	common/IMProto.h	/^        ImPheader_t * GetHeader() $/;"	f	class:ImProto
 GetHeaderOverhead	lib/jrtplib/rtcpscheduler.h	/^	size_t GetHeaderOverhead() const								{ return headeroverhead; }$/;"	f	class:jrtplib::RTCPScheduler
 GetHeaderOverhead	lib/jrtplib/rtpexternaltransmitter.h	/^	size_t GetHeaderOverhead()									{ return headersize; }$/;"	f	class:jrtplib::RTPExternalTransmitter
 GetHeaderOverhead	lib/jrtplib/rtpudpv4transmitter.h	/^	size_t GetHeaderOverhead()							{ return RTPUDPV4TRANS_HEADERSIZE; }$/;"	f	class:jrtplib::RTPUDPv4Transmitter
@@ -351,6 +488,7 @@ GetLastMessageTime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetLastMessageTime() c
 GetLastNoteTime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetLastNoteTime() const						{ return lastnotetime; }$/;"	f	class:jrtplib::RTPSourceStats
 GetLastRTPPacketTime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime GetLastRTPPacketTime() const					{ return lastrtptime; }$/;"	f	class:jrtplib::RTPSourceStats
 GetLastSRTimestamp	lib/jrtplib/rtpsourcedata.h	/^	uint32_t GetLastSRTimestamp() const					{ return lsr; }$/;"	f	class:jrtplib::RTCPReceiverReportInfo
+GetLength	common/IMProto.h	/^        uint32_t GetLength()      $/;"	f	class:ImProto
 GetLocalCNAME	lib/jrtplib/rtcppacketbuilder.h	/^	uint8_t *GetLocalCNAME(size_t *len) const					{ if (!init) return 0; return ownsdesinfo.GetCNAME(len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
 GetLocalData	client/AudioSession.cpp	/^int AudioTrans::GetLocalData(void * data)$/;"	f	class:AudioTrans
 GetLocalIPList	lib/jrtplib/rtpudpv4transmitter.h	/^	const std::list<uint32_t> &GetLocalIPList() const			{ return localIPs; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
@@ -365,6 +503,10 @@ GetMajorNumber	lib/jrtplib/rtplibraryversion.h	/^	int GetMajorNumber() const				
 GetMaximumPacketSize	lib/jrtplib/rtpsessionparams.h	/^	size_t GetMaximumPacketSize() const					{ return maxpacksize; }$/;"	f	class:jrtplib::RTPSessionParams
 GetMemoryManager	lib/jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *GetMemoryManager() const						{ return 0; }$/;"	f	class:jrtplib::RTPMemoryObject
 GetMemoryManager	lib/jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *GetMemoryManager() const						{ return mgr; }$/;"	f	class:jrtplib::RTPMemoryObject
+GetMetadata	proto/IM.Base.pb.cc	/^::google::protobuf::Metadata UserInfo::GetMetadata() const {$/;"	f	class:IM::Base::UserInfo
+GetMetadata	proto/IM.Register.pb.cc	/^::google::protobuf::Metadata IMRegisterReq::GetMetadata() const {$/;"	f	class:IM::Register::IMRegisterReq
+GetMetadata	proto/IM.Register.pb.cc	/^::google::protobuf::Metadata IMRegisterRes::GetMetadata() const {$/;"	f	class:IM::Register::IMRegisterRes
+GetMetadata	proto/IM.Test.pb.cc	/^::google::protobuf::Metadata TestMsg::GetMetadata() const {$/;"	f	class:IM::Test::TestMsg
 GetMicroSeconds	lib/jrtplib/rtptimeutilities.h	/^	uint32_t GetMicroSeconds() const								{ return microsec; }$/;"	f	class:jrtplib::RTPTime
 GetMinimumRTCPTransmissionInterval	lib/jrtplib/rtpsessionparams.h	/^	RTPTime GetMinimumRTCPTransmissionInterval() const			{ return mininterval; }$/;"	f	class:jrtplib::RTPSessionParams
 GetMinimumTransmissionInterval	lib/jrtplib/rtcpscheduler.h	/^	RTPTime GetMinimumTransmissionInterval() const					{ return mininterval; }$/;"	f	class:jrtplib::RTCPSchedulerParams
@@ -418,6 +560,7 @@ GetPortbase	lib/jrtplib/rtpudpv6transmitter.h	/^	uint16_t GetPortbase() const			
 GetPredefinedSSRC	lib/jrtplib/rtpsessionparams.h	/^	uint32_t GetPredefinedSSRC() const					{ return predefinedssrc; }$/;"	f	class:jrtplib::RTPSessionParams
 GetPrefix	lib/jrtplib/rtcpsdesinfo.h	/^		uint8_t *GetPrefix(size_t *len) const				{ *len = prefixlen; return prefix; }$/;"	f	class:jrtplib::RTCPSDESInfo::SDESPrivateItem
 GetProbationType	lib/jrtplib/rtpsessionparams.h	/^	RTPSources::ProbationType GetProbationType() const			{ return probationtype; }$/;"	f	class:jrtplib::RTPSessionParams
+GetPunch	common/IMProto.h	/^        uint16_t GetPunch()       $/;"	f	class:ImProto
 GetRTCPBandwidth	lib/jrtplib/rtcpscheduler.h	/^	double GetRTCPBandwidth() const							{ return bandwidth; }$/;"	f	class:jrtplib::RTCPSchedulerParams
 GetRTCPDataAddress	lib/jrtplib/rtpsourcedata.h	/^	const RTPAddress *GetRTCPDataAddress() const				{ return rtcpaddr; }$/;"	f	class:jrtplib::RTPSourceData
 GetRTCPPort_NBO	lib/jrtplib/rtpipv4destination.h	/^	uint16_t GetRTCPPort_NBO() const							{ return rtcpaddr.sin_port; }$/;"	f	class:jrtplib::RTPIPv4Destination
@@ -484,7 +627,7 @@ GetSessionBandwidth	lib/jrtplib/rtpsessionparams.h	/^	double GetSessionBandwidth
 GetSourceTimeoutMultiplier	lib/jrtplib/rtpsessionparams.h	/^	double GetSourceTimeoutMultiplier() const				{ return generaltimeoutmultiplier; }$/;"	f	class:jrtplib::RTPSessionParams
 GetStatus	interface/thread.h	/^        int GetStatus()$/;"	f	class:WorkerThread
 GetSubType	lib/jrtplib/rtcpapppacket.h	/^inline uint8_t RTCPAPPPacket::GetSubType() const$/;"	f	class:jrtplib::RTCPAPPPacket
-GetThreadId	interface/thread.h	/^        int GetThreadId()$/;"	f	class:WorkerThread
+GetThreadId	interface/thread.h	/^        pthread_t GetThreadId()$/;"	f	class:WorkerThread
 GetTimestamp	lib/jrtplib/rtppacket.h	/^	uint32_t GetTimestamp() const														{ return timestamp; }$/;"	f	class:jrtplib::RTPPacket
 GetTimestamp	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t GetTimestamp() const					{ if (!init) return 0; return timestamp; }$/;"	f	class:jrtplib::RTPPacketBuilder
 GetTimestampUnit	lib/jrtplib/rtpsourcedata.h	/^	double GetTimestampUnit() const						{ return timestampunit; }$/;"	f	class:jrtplib::RTPSourceData
@@ -496,6 +639,7 @@ GetTransmissionProtocol	lib/jrtplib/rtptransmitter.h	/^	RTPTransmitter::Transmis
 GetUseHalfAtStartup	lib/jrtplib/rtcpscheduler.h	/^	bool GetUseHalfAtStartup() const						{ return usehalfatstartup; }$/;"	f	class:jrtplib::RTCPSchedulerParams
 GetUseHalfRTCPIntervalAtStartup	lib/jrtplib/rtpsessionparams.h	/^	bool GetUseHalfRTCPIntervalAtStartup() const				{ return usehalfatstartup; }$/;"	f	class:jrtplib::RTPSessionParams
 GetUsePredefinedSSRC	lib/jrtplib/rtpsessionparams.h	/^	bool GetUsePredefinedSSRC() const					{ return usepredefinedssrc; }$/;"	f	class:jrtplib::RTPSessionParams
+GetUserID	common/IMProto.h	/^        uint16_t GetUserID()   $/;"	f	class:ImProto
 GetWorkerBuff	interface/thread.h	/^        void * GetWorkerBuff()$/;"	f	class:WorkerThread
 GetWorkerLen	interface/thread.h	/^        int GetWorkerLen()$/;"	f	class:WorkerThread
 GotoElement	lib/jrtplib/rtphashtable.h	/^inline int RTPHashTable<Element,GetIndex,hashsize>::GotoElement(const Element &e)$/;"	f	class:jrtplib::RTPHashTable
@@ -515,6 +659,15 @@ GotoPreviousElement	lib/jrtplib/rtphashtable.h	/^inline void RTPHashTable<Elemen
 GotoPreviousElement	lib/jrtplib/rtpkeyhashtable.h	/^inline void RTPKeyHashTable<Key,Element,GetIndex,hashsize>::GotoPreviousElement()$/;"	f	class:jrtplib::RTPKeyHashTable
 GotoReport	lib/jrtplib/rtcprrpacket.h	/^inline RTCPReceiverReport *RTCPRRPacket::GotoReport(int index) const$/;"	f	class:jrtplib::RTCPRRPacket
 GotoReport	lib/jrtplib/rtcpsrpacket.h	/^inline RTCPReceiverReport *RTCPSRPacket::GotoReport(int index) const$/;"	f	class:jrtplib::RTCPSRPacket
+HTTP_CONNECT_TIMEOUT	lib/libevent/http-internal.h	13;"	d
+HTTP_DEFAULTPORT	lib/libevent/http-internal.h	18;"	d
+HTTP_MOVEPERM	lib/libevent/evhttp.h	53;"	d
+HTTP_MOVETEMP	lib/libevent/evhttp.h	54;"	d
+HTTP_NOTFOUND	lib/libevent/evhttp.h	55;"	d
+HTTP_OK	lib/libevent/evhttp.h	52;"	d
+HTTP_PREFIX	lib/libevent/http-internal.h	17;"	d
+HTTP_READ_TIMEOUT	lib/libevent/http-internal.h	15;"	d
+HTTP_WRITE_TIMEOUT	lib/libevent/http-internal.h	14;"	d
 HasCurrentElement	lib/jrtplib/rtphashtable.h	/^	bool HasCurrentElement()				{ return (curhashelem == 0)?false:true; }$/;"	f	class:jrtplib::RTPHashTable
 HasCurrentElement	lib/jrtplib/rtpkeyhashtable.h	/^	bool HasCurrentElement()				{ return (curhashelem == 0)?false:true; }$/;"	f	class:jrtplib::RTPKeyHashTable
 HasData	lib/jrtplib/rtpsourcedata.h	/^	bool HasData() const							{ if (!validated) return false; return packetlist.empty()?false:true; }$/;"	f	class:jrtplib::RTPSourceData
@@ -530,6 +683,22 @@ HashElement	lib/jrtplib/rtphashtable.h	/^		HashElement(const Element &e,int inde
 HashElement	lib/jrtplib/rtphashtable.h	/^	class HashElement$/;"	c	class:jrtplib::RTPHashTable
 HashElement	lib/jrtplib/rtpkeyhashtable.h	/^		HashElement(const Key &k,const Element &e,int index):key(k),element(e) { hashprev = 0; hashnext = 0; listnext = 0; listprev = 0; hashindex = index; }$/;"	f	class:jrtplib::RTPKeyHashTable::HashElement
 HashElement	lib/jrtplib/rtpkeyhashtable.h	/^	class HashElement$/;"	c	class:jrtplib::RTPKeyHashTable
+IM	proto/IM.Base.pb.cc	/^namespace IM {$/;"	n	file:
+IM	proto/IM.Base.pb.h	/^namespace IM {$/;"	n
+IM	proto/IM.Register.pb.cc	/^namespace IM {$/;"	n	file:
+IM	proto/IM.Register.pb.h	/^namespace IM {$/;"	n
+IM	proto/IM.Test.pb.cc	/^namespace IM {$/;"	n	file:
+IM	proto/IM.Test.pb.h	/^namespace IM {$/;"	n
+IMRegisterReq	proto/IM.Register.pb.cc	/^IMRegisterReq::IMRegisterReq()$/;"	f	class:IM::Register::IMRegisterReq
+IMRegisterReq	proto/IM.Register.pb.cc	/^IMRegisterReq::IMRegisterReq(const IMRegisterReq& from)$/;"	f	class:IM::Register::IMRegisterReq
+IMRegisterReq	proto/IM.Register.pb.h	/^class IMRegisterReq : public ::google::protobuf::Message {$/;"	c	namespace:IM::Register
+IMRegisterReq_descriptor_	proto/IM.Register.pb.cc	/^const ::google::protobuf::Descriptor* IMRegisterReq_descriptor_ = NULL;$/;"	m	namespace:IM::Register::__anon9	file:
+IMRegisterReq_reflection_	proto/IM.Register.pb.cc	/^  IMRegisterReq_reflection_ = NULL;$/;"	m	namespace:IM::Register::__anon9	file:
+IMRegisterRes	proto/IM.Register.pb.cc	/^IMRegisterRes::IMRegisterRes()$/;"	f	class:IM::Register::IMRegisterRes
+IMRegisterRes	proto/IM.Register.pb.cc	/^IMRegisterRes::IMRegisterRes(const IMRegisterRes& from)$/;"	f	class:IM::Register::IMRegisterRes
+IMRegisterRes	proto/IM.Register.pb.h	/^class IMRegisterRes : public ::google::protobuf::Message {$/;"	c	namespace:IM::Register
+IMRegisterRes_descriptor_	proto/IM.Register.pb.cc	/^const ::google::protobuf::Descriptor* IMRegisterRes_descriptor_ = NULL;$/;"	m	namespace:IM::Register::__anon9	file:
+IMRegisterRes_reflection_	proto/IM.Register.pb.cc	/^  IMRegisterRes_reflection_ = NULL;$/;"	m	namespace:IM::Register::__anon9	file:
 INF_GetBaseSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetBaseSequenceNumber() const				{ return stats.GetBaseSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_GetExtendedHighestSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetExtendedHighestSequenceNumber() const			{ return stats.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_GetJitter	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetJitter() const						{ return stats.GetJitter(); }$/;"	f	class:jrtplib::RTPSourceData
@@ -541,7 +710,10 @@ INF_GetNumPacketsReceivedInInterval	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_
 INF_GetSavedExtendedSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t INF_GetSavedExtendedSequenceNumber() const			{ return stats.GetSavedExtendedSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_HasSentData	lib/jrtplib/rtpsourcedata.h	/^	bool INF_HasSentData() const						{ return stats.HasSentData(); }$/;"	f	class:jrtplib::RTPSourceData
 INF_StartNewInterval	lib/jrtplib/rtpsourcedata.h	/^	void INF_StartNewInterval()						{ stats.StartNewInterval(); }$/;"	f	class:jrtplib::RTPSourceData
-INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon6
+INIT	interface/ireactor.h	/^            INIT,$/;"	e	enum:IReactor::__anon7
+INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION	proto/IM.Base.pb.cc	4;"	d	file:
+INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION	proto/IM.Register.pb.cc	4;"	d	file:
+INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION	proto/IM.Test.pb.cc	4;"	d	file:
 INTTYPES_DEFINED	lib/jrtplib/rtptypes_win.h	39;"	d
 IPv4Address	lib/jrtplib/rtpaddress.h	/^		IPv4Address, \/**< Used by the UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
 IPv4UDPProto	lib/jrtplib/rtptransmitter.h	/^		IPv4UDPProto, \/**< Specifies the internal UDP over IPv4 transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
@@ -550,20 +722,37 @@ IPv6UDPProto	lib/jrtplib/rtptransmitter.h	/^		IPv6UDPProto, \/**< Specifies the 
 IReactor	interface/ireactor.h	/^        IReactor() {};$/;"	f	class:IReactor
 IReactor	interface/ireactor.h	/^class IReactor $/;"	c
 IgnoreSome	lib/jrtplib/rtptransmitter.h	/^		IgnoreSome \/**< All incoming data is accepted, except for data coming from a specific set of sources. *\/$/;"	e	enum:jrtplib::RTPTransmitter::ReceiveMode
+ImPheader_t	common/IMProto.h	/^}ImPheader_t;$/;"	t	typeref:struct:__anon2
+ImProto	common/IMProto.cpp	/^ImProto::ImProto()$/;"	f	class:ImProto
+ImProto	common/IMProto.h	/^class ImProto$/;"	c
 IncTimeStamp	client/AudioSession.h	/^        int IncTimeStamp;        $/;"	m	class:AudioSession
 IncrementTimestamp	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestamp(uint32_t inc)$/;"	f	class:jrtplib::RTPPacketBuilder
 IncrementTimestampDefault	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::IncrementTimestampDefault()$/;"	f	class:jrtplib::RTPPacketBuilder
 Init	lib/testlib/rtpAudio.cpp	/^        void Init()$/;"	f	class:AudioSession
+InitAsDefaultInstance	proto/IM.Base.pb.cc	/^void UserInfo::InitAsDefaultInstance() {$/;"	f	class:IM::Base::UserInfo
+InitAsDefaultInstance	proto/IM.Register.pb.cc	/^void IMRegisterReq::InitAsDefaultInstance() {$/;"	f	class:IM::Register::IMRegisterReq
+InitAsDefaultInstance	proto/IM.Register.pb.cc	/^void IMRegisterRes::InitAsDefaultInstance() {$/;"	f	class:IM::Register::IMRegisterRes
+InitAsDefaultInstance	proto/IM.Test.pb.cc	/^void TestMsg::InitAsDefaultInstance() {$/;"	f	class:IM::Test::TestMsg
 InitAudioCmd	client/ClientCmd.h	/^        InitAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:InitAudioCmd
 InitAudioCmd	client/ClientCmd.h	/^class InitAudioCmd : public CMD$/;"	c
+InitByHeaderAddBuf	common/IMProto.cpp	/^int ImProto::InitByHeaderAddBuf(void * buf, int len)$/;"	f	class:ImProto
 InjectRTCP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
 InjectRTP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
 InjectRTPorRTCP	lib/jrtplib/rtpexternaltransmitter.h	/^inline void RTPExternalPacketInjecter::InjectRTPorRTCP(const void *data, size_t len, const RTPAddress &a)$/;"	f	class:jrtplib::RTPExternalPacketInjecter
+InternalSwap	proto/IM.Base.pb.cc	/^void UserInfo::InternalSwap(UserInfo* other) {$/;"	f	class:IM::Base::UserInfo
+InternalSwap	proto/IM.Register.pb.cc	/^void IMRegisterReq::InternalSwap(IMRegisterReq* other) {$/;"	f	class:IM::Register::IMRegisterReq
+InternalSwap	proto/IM.Register.pb.cc	/^void IMRegisterRes::InternalSwap(IMRegisterRes* other) {$/;"	f	class:IM::Register::IMRegisterRes
+InternalSwap	proto/IM.Test.pb.cc	/^void TestMsg::InternalSwap(TestMsg* other) {$/;"	f	class:IM::Test::TestMsg
 IsActive	lib/jrtplib/rtpsourcedata.h	/^	bool IsActive() const							{ if (!validated) return false; if (receivedbye) return false; return true; }$/;"	f	class:jrtplib::RTPSourceData
 IsCSRC	lib/jrtplib/rtpsourcedata.h	/^	bool IsCSRC() const							{ return iscsrc; }$/;"	f	class:jrtplib::RTPSourceData
+IsInitialized	proto/IM.Base.pb.cc	/^bool UserInfo::IsInitialized() const {$/;"	f	class:IM::Base::UserInfo
+IsInitialized	proto/IM.Register.pb.cc	/^bool IMRegisterReq::IsInitialized() const {$/;"	f	class:IM::Register::IMRegisterReq
+IsInitialized	proto/IM.Register.pb.cc	/^bool IMRegisterRes::IsInitialized() const {$/;"	f	class:IM::Register::IMRegisterRes
+IsInitialized	proto/IM.Test.pb.cc	/^bool TestMsg::IsInitialized() const {$/;"	f	class:IM::Test::TestMsg
 IsKnownFormat	lib/jrtplib/rtcppacket.h	/^	bool IsKnownFormat() const							{ return knownformat; }$/;"	f	class:jrtplib::RTCPPacket
 IsOwnSSRC	lib/jrtplib/rtpsourcedata.h	/^	bool IsOwnSSRC() const							{ return ownssrc; }$/;"	f	class:jrtplib::RTPSourceData
 IsProcessedInRTCP	lib/jrtplib/rtpsourcedata.h	/^	bool IsProcessedInRTCP() const						{ return processedinrtcp; }$/;"	f	class:jrtplib::RTPSourceData
+IsProtoValid	common/IMProto.cpp	/^int ImProto::IsProtoValid(void *buf,$/;"	f	class:ImProto
 IsRTCPAddressSet	lib/jrtplib/rtpsourcedata.h	/^	bool IsRTCPAddressSet() const						{ return isrtcpaddrset; }$/;"	f	class:jrtplib::RTPSourceData
 IsRTP	lib/jrtplib/rtprawpacket.h	/^	bool IsRTP() const														{ return isrtp; }$/;"	f	class:jrtplib::RTPRawPacket
 IsRTPAddressSet	lib/jrtplib/rtpsourcedata.h	/^	bool IsRTPAddressSet() const						{ return isrtpaddrset; }$/;"	f	class:jrtplib::RTPSourceData
@@ -578,29 +767,66 @@ JRTPLIB_IMPORTEXPORT	lib/jrtplib/rtpconfig.h	42;"	d
 LEVEL	common/asynLog.cpp	/^int Log :: LEVEL = LOG_DEBUG;$/;"	m	class:Log	file:
 LEVEL	common/asynLog.h	/^    static int LEVEL;$/;"	m	class:Log
 LOC	lib/jrtplib/rtcpsdespacket.h	/^		LOC,	\/**< Used for a LOC (location) item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
-LOG_DEBUG	common/asynLog.h	/^    LOG_DEBUG,$/;"	e	enum:__anon1
-LOG_ERROR	common/asynLog.h	/^    LOG_ERROR,$/;"	e	enum:__anon1
-LOG_INIT	common/asynLog.h	/^    LOG_INIT,$/;"	e	enum:__anon2
-LOG_MAXLINE	common/asynLog.h	/^    LOG_MAXLINE = 1024$/;"	e	enum:__anon1
-LOG_NOTICE	common/asynLog.h	/^    LOG_NOTICE,$/;"	e	enum:__anon1
-LOG_RUN	common/asynLog.h	/^    LOG_RUN,$/;"	e	enum:__anon2
-LOG_STOP	common/asynLog.h	/^    LOG_STOP$/;"	e	enum:__anon2
-LOG_WARN	common/asynLog.h	/^    LOG_WARN, $/;"	e	enum:__anon1
-LineTalkReactor	client/LineTalkReactor.h	/^        LineTalkReactor(DataParser * svr,$/;"	f	class:LineTalkReactor
-LineTalkReactor	client/LineTalkReactor.h	/^class LineTalkReactor : public IReactor$/;"	c
+LOG_DEBUG	common/asynLog.h	/^    LOG_DEBUG,$/;"	e	enum:__anon3
+LOG_ERROR	common/asynLog.h	/^    LOG_ERROR,$/;"	e	enum:__anon3
+LOG_INIT	common/asynLog.h	/^    LOG_INIT,$/;"	e	enum:__anon4
+LOG_MAXLINE	common/asynLog.h	/^    LOG_MAXLINE = 1024$/;"	e	enum:__anon3
+LOG_NOTICE	common/asynLog.h	/^    LOG_NOTICE,$/;"	e	enum:__anon3
+LOG_RUN	common/asynLog.h	/^    LOG_RUN,$/;"	e	enum:__anon4
+LOG_STOP	common/asynLog.h	/^    LOG_STOP$/;"	e	enum:__anon4
+LOG_WARN	common/asynLog.h	/^    LOG_WARN, $/;"	e	enum:__anon3
+LineTalkReactor	client/LineTalkReactor.h	/^        LineTalkReactor(std::shared_ptr<DataParser> svr,$/;"	f	class:LineTalkReactor
+LineTalkReactor	client/LineTalkReactor.h	/^class LineTalkReactor : public IReactor,public Uncopyable$/;"	c
 ListenPort	client/AudioSession.h	/^        int         ListenPort;$/;"	m	class:AudioTrans
 Lock	common/singleton.h	/^        static MutexLock Lock;$/;"	m	class:Singleton
 Lock	common/singleton.h	/^MutexLock Singleton<T>::Lock;$/;"	m	class:Singleton
 Log	common/asynLog.h	/^class Log$/;"	c
+LoginCmdID	proto/IM.Base.pb.h	/^enum LoginCmdID {$/;"	g	namespace:IM::Base
+LoginCmdID_ARRAYSIZE	proto/IM.Base.pb.h	/^const int LoginCmdID_ARRAYSIZE = LoginCmdID_MAX + 1;$/;"	m	namespace:IM::Base
+LoginCmdID_INT_MAX_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  LoginCmdID_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max$/;"	e	enum:IM::Base::LoginCmdID
+LoginCmdID_INT_MIN_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  LoginCmdID_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,$/;"	e	enum:IM::Base::LoginCmdID
+LoginCmdID_IsValid	proto/IM.Base.pb.cc	/^bool LoginCmdID_IsValid(int value) {$/;"	f	namespace:IM::Base
+LoginCmdID_MAX	proto/IM.Base.pb.h	/^const LoginCmdID LoginCmdID_MAX = CID_LOGIN_RES_USERLOGOUT;$/;"	m	namespace:IM::Base
+LoginCmdID_MIN	proto/IM.Base.pb.h	/^const LoginCmdID LoginCmdID_MIN = NONELOG;$/;"	m	namespace:IM::Base
+LoginCmdID_Name	proto/IM.Base.pb.h	/^inline const ::std::string& LoginCmdID_Name(LoginCmdID value) {$/;"	f	namespace:IM::Base
+LoginCmdID_Parse	proto/IM.Base.pb.h	/^inline bool LoginCmdID_Parse($/;"	f	namespace:IM::Base
+LoginCmdID_descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* LoginCmdID_descriptor() {$/;"	f	namespace:IM::Base
+LoginCmdID_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* LoginCmdID_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
 MCondition	common/lock.h	/^        MCondition(MLock &l) : _lock(l._lock), _waits(0) $/;"	f	class:MCondition
 MCondition	common/lock.h	/^        MCondition(pthread_mutex_t &l) : _lock(l), _waits(0) $/;"	f	class:MCondition
 MCondition	common/lock.h	/^class MCondition$/;"	c
+MINWRITEDATA	server/appsvr/appreactor.h	12;"	d
+MINWRITEDATA	server/netsvr/netReactor.h	11;"	d
 MLock	common/lock.h	/^        inline MLock() $/;"	f	class:MLock
 MLock	common/lock.h	/^class MLock$/;"	c
+MaybeArenaPtr	proto/IM.Base.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:IM::Base::UserInfo
+MaybeArenaPtr	proto/IM.Register.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:IM::Register::IMRegisterReq
+MaybeArenaPtr	proto/IM.Register.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:IM::Register::IMRegisterRes
+MaybeArenaPtr	proto/IM.Test.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:IM::Test::TestMsg
+MergeFrom	proto/IM.Base.pb.cc	/^void UserInfo::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Base::UserInfo
+MergeFrom	proto/IM.Base.pb.cc	/^void UserInfo::MergeFrom(const UserInfo& from) {$/;"	f	class:IM::Base::UserInfo
+MergeFrom	proto/IM.Register.pb.cc	/^void IMRegisterReq::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Register::IMRegisterReq
+MergeFrom	proto/IM.Register.pb.cc	/^void IMRegisterReq::MergeFrom(const IMRegisterReq& from) {$/;"	f	class:IM::Register::IMRegisterReq
+MergeFrom	proto/IM.Register.pb.cc	/^void IMRegisterRes::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Register::IMRegisterRes
+MergeFrom	proto/IM.Register.pb.cc	/^void IMRegisterRes::MergeFrom(const IMRegisterRes& from) {$/;"	f	class:IM::Register::IMRegisterRes
+MergeFrom	proto/IM.Test.pb.cc	/^void TestMsg::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:IM::Test::TestMsg
+MergeFrom	proto/IM.Test.pb.cc	/^void TestMsg::MergeFrom(const TestMsg& from) {$/;"	f	class:IM::Test::TestMsg
+MergeFromFail	proto/IM.Base.pb.cc	/^static void MergeFromFail(int line) {$/;"	f	namespace:IM::Base::__anon17
+MergeFromFail	proto/IM.Register.pb.cc	/^static void MergeFromFail(int line) {$/;"	f	namespace:IM::Register::__anon11
+MergeFromFail	proto/IM.Test.pb.cc	/^static void MergeFromFail(int line) {$/;"	f	namespace:IM::Test::__anon14
+MergePartialFromCodedStream	proto/IM.Base.pb.cc	/^bool UserInfo::MergePartialFromCodedStream($/;"	f	class:IM::Base::UserInfo
+MergePartialFromCodedStream	proto/IM.Register.pb.cc	/^bool IMRegisterReq::MergePartialFromCodedStream($/;"	f	class:IM::Register::IMRegisterReq
+MergePartialFromCodedStream	proto/IM.Register.pb.cc	/^bool IMRegisterRes::MergePartialFromCodedStream($/;"	f	class:IM::Register::IMRegisterRes
+MergePartialFromCodedStream	proto/IM.Test.pb.cc	/^bool TestMsg::MergePartialFromCodedStream($/;"	f	class:IM::Test::TestMsg
+MutexBufferEvent	server/appsvr/appreactor.h	/^struct MutexBufferEvent$/;"	s
 MutexLock	common/singleton.h	/^        MutexLock()$/;"	f	class:MutexLock
 MutexLock	common/singleton.h	/^class MutexLock$/;"	c
 NAME	lib/jrtplib/rtcpsdespacket.h	/^		NAME,	\/**< Used for a NAME item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
-NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon6
+NONE	interface/ireactor.h	/^            NONE,$/;"	e	enum:IReactor::__anon7
+NONEBUDDY	proto/IM.Base.pb.h	/^  NONEBUDDY = 0,$/;"	e	enum:IM::Base::BuddyCmdID
+NONELOG	proto/IM.Base.pb.h	/^  NONELOG = 0,$/;"	e	enum:IM::Base::LoginCmdID
+NONEREG	proto/IM.Base.pb.h	/^  NONEREG = 0,$/;"	e	enum:IM::Base::RegisterCmdID
+NONESESS	proto/IM.Base.pb.h	/^  NONESESS = 0,$/;"	e	enum:IM::Base::SessionCmdID
 NOTE	lib/jrtplib/rtcpsdespacket.h	/^		NOTE,	\/**< Used for a NOTE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 NOTICE	common/asynLog.cpp	/^Log :: NOTICE(const char * fmt, ...)$/;"	f	class:Log
 NeededBytes	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytes() $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
@@ -610,11 +836,22 @@ NeededBytesWithExtraItem	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t Need
 NeededBytesWithExtraItem	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraItem(uint8_t itemdatalength)$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
 NeededBytesWithExtraReportBlock	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraReportBlock()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
 NeededBytesWithExtraSource	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t NeededBytesWithExtraSource()$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
+NetReactor	server/appsvr/appreactor.cpp	/^NetReactor::NetReactor(const Section &sec)$/;"	f	class:NetReactor
+NetReactor	server/netsvr/netReactor.cpp	/^NetReactor::NetReactor(const Section &sec)$/;"	f	class:NetReactor
+NetReactor	server/netsvr/netReactor.h	/^class NetReactor$/;"	c
+New	proto/IM.Base.pb.cc	/^UserInfo* UserInfo::New(::google::protobuf::Arena* arena) const {$/;"	f	class:IM::Base::UserInfo
+New	proto/IM.Base.pb.h	/^  inline UserInfo* New() const { return New(NULL); }$/;"	f	class:IM::Base::UserInfo
+New	proto/IM.Register.pb.cc	/^IMRegisterReq* IMRegisterReq::New(::google::protobuf::Arena* arena) const {$/;"	f	class:IM::Register::IMRegisterReq
+New	proto/IM.Register.pb.cc	/^IMRegisterRes* IMRegisterRes::New(::google::protobuf::Arena* arena) const {$/;"	f	class:IM::Register::IMRegisterRes
+New	proto/IM.Register.pb.h	/^  inline IMRegisterReq* New() const { return New(NULL); }$/;"	f	class:IM::Register::IMRegisterReq
+New	proto/IM.Register.pb.h	/^  inline IMRegisterRes* New() const { return New(NULL); }$/;"	f	class:IM::Register::IMRegisterRes
+New	proto/IM.Test.pb.cc	/^TestMsg* TestMsg::New(::google::protobuf::Arena* arena) const {$/;"	f	class:IM::Test::TestMsg
+New	proto/IM.Test.pb.h	/^  inline TestMsg* New() const { return New(NULL); }$/;"	f	class:IM::Test::TestMsg
 NewUserDefinedTransmitter	lib/jrtplib/rtpsession.h	/^	virtual RTPTransmitter *NewUserDefinedTransmitter()						{ return 0; }$/;"	f	class:jrtplib::RTPSession
 NoProbation	lib/jrtplib/rtpsources.h	/^			NoProbation, 		\/**< Don't use the probation algorithm; accept RTP packets immediately. *\/$/;"	e	enum:jrtplib::RTPSources::ProbationType
 None	lib/jrtplib/rtcpsdespacket.h	/^		None,	\/**< Used when the iteration over the items has finished. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
-OPCOUNT	interface/cmdWrap.h	/^            OPCOUNT$/;"	e	enum:CMD::__anon5
-OWNUSER	interface/cmdWrap.h	/^            OWNUSER,$/;"	e	enum:CMD::__anon4
+OPCOUNT	interface/cmdWrap.h	/^            OPCOUNT$/;"	e	enum:CMD::__anon6
+OWNUSER	interface/cmdWrap.h	/^            OWNUSER,$/;"	e	enum:CMD::__anon5
 OnAPPPacket	lib/jrtplib/rtpsession.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSession
 OnAPPPacket	lib/jrtplib/rtpsources.h	/^	virtual void OnAPPPacket(RTCPAPPPacket *apppacket,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
 OnBYEPacket	lib/jrtplib/rtpsession.h	/^	virtual void OnBYEPacket(RTPSourceData *srcdat)							{ }$/;"	f	class:jrtplib::RTPSession
@@ -649,12 +886,15 @@ OnUnknownPacketType	lib/jrtplib/rtpsession.h	/^	virtual void OnUnknownPacketType
 OnUnknownPacketType	lib/jrtplib/rtpsources.h	/^	virtual void OnUnknownPacketType(RTCPPacket *rtcppack,const RTPTime &receivetime,$/;"	f	class:jrtplib::RTPSources
 OnWork	client/LineTalkReactor.h	/^        virtual int OnWork() {};$/;"	f	class:LineTalkReactor
 OnWrite	client/LineTalkReactor.h	/^        virtual int OnWrite() {};$/;"	f	class:LineTalkReactor
-PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon6
+PAUSE	interface/ireactor.h	/^            PAUSE,$/;"	e	enum:IReactor::__anon7
 PHONE	lib/jrtplib/rtcpsdespacket.h	/^		PHONE,	\/**< Used for a PHONE item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 PRIV	lib/jrtplib/rtcpsdespacket.h	/^		PRIV,	\/**< Used for a PRIV item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+PROTOBUF_IM_2eBase_2eproto__INCLUDED	proto/IM.Base.pb.h	5;"	d
+PROTOBUF_IM_2eRegister_2eproto__INCLUDED	proto/IM.Register.pb.h	5;"	d
+PROTOBUF_IM_2eTest_2eproto__INCLUDED	proto/IM.Test.pb.h	5;"	d
 PacketType	lib/jrtplib/rtcppacket.h	/^	enum PacketType $/;"	g	class:jrtplib::RTCPPacket
-Parser	client/Parser.h	/^        virtual CMD * Parser(void * data, int len)$/;"	f	class:SvrDataParser
-Parser	client/Parser.h	/^        virtual CMD * Parser(void * data, int len)$/;"	f	class:UserDataParser
+Parser	client/Parser.cpp	/^std::unique_ptr<CMD> UserDataParser::Parser(const void *data,$/;"	f	class:UserDataParser
+Parser	client/Parser.h	/^        virtual std::unique_ptr<CMD> Parser(const void * data, int len,void *)$/;"	f	class:SvrDataParser
 PortInfo	lib/jrtplib/rtpudpv4transmitter.h	/^		PortInfo() { all = false; }$/;"	f	class:jrtplib::RTPUDPv4Transmitter::PortInfo
 PortInfo	lib/jrtplib/rtpudpv4transmitter.h	/^	class PortInfo$/;"	c	class:jrtplib::RTPUDPv4Transmitter
 PortInfo	lib/jrtplib/rtpudpv6transmitter.h	/^		PortInfo() { all = false; }$/;"	f	class:jrtplib::RTPUDPv6Transmitter::PortInfo
@@ -670,7 +910,17 @@ ProcessedName	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedName() const 		{
 ProcessedNote	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedNote() const		{ return pnote; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 ProcessedPhone	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedPhone() const		{ return pphone; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 ProcessedTool	lib/jrtplib/rtcppacketbuilder.h	/^		bool ProcessedTool() const		{ return ptool; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
-RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon5
+RB_ENTRY	lib/libevent/event.h	129;"	d
+RB_ENTRY	lib/libevent/event.h	72;"	d
+RECV	interface/cmdWrap.h	/^            RECV,$/;"	e	enum:CMD::__anon6
+RESULT_BUDDY_FAIL	proto/IM.Base.pb.h	/^  RESULT_BUDDY_FAIL = 3,$/;"	e	enum:IM::Base::ResultType
+RESULT_BUDDY_SUCC	proto/IM.Base.pb.h	/^  RESULT_BUDDY_SUCC = 2,$/;"	e	enum:IM::Base::ResultType
+RESULT_LOGIN_FAIL	proto/IM.Base.pb.h	/^  RESULT_LOGIN_FAIL = 1,$/;"	e	enum:IM::Base::ResultType
+RESULT_LOGIN_SUCC	proto/IM.Base.pb.h	/^  RESULT_LOGIN_SUCC = 0,$/;"	e	enum:IM::Base::ResultType
+RESULT_REGISTER_FAIL	proto/IM.Base.pb.h	/^  RESULT_REGISTER_FAIL = 7,$/;"	e	enum:IM::Base::ResultType
+RESULT_REGISTER_SUCC	proto/IM.Base.pb.h	/^  RESULT_REGISTER_SUCC = 6,$/;"	e	enum:IM::Base::ResultType
+RESULT_SESSION_FAIL	proto/IM.Base.pb.h	/^  RESULT_SESSION_FAIL = 5,$/;"	e	enum:IM::Base::ResultType
+RESULT_SESSION_SUCC	proto/IM.Base.pb.h	/^  RESULT_SESSION_SUCC = 4,$/;"	e	enum:IM::Base::ResultType
 RR	lib/jrtplib/rtcppacket.h	/^			RR,		\/**< An RTCP receiver report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 RR_GetDelaySinceLastSR	lib/jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetDelaySinceLastSR() const				{ return RRinf.GetDelaySinceLastSR(); }$/;"	f	class:jrtplib::RTPSourceData
 RR_GetExtendedHighestSequenceNumber	lib/jrtplib/rtpsourcedata.h	/^	uint32_t RR_GetExtendedHighestSequenceNumber() const			{ return RRinf.GetExtendedHighestSequenceNumber(); }$/;"	f	class:jrtplib::RTPSourceData
@@ -951,7 +1201,9 @@ RTP_SUPPORT_PROBATION	lib/jrtplib/rtpconfig.h	61;"	d
 RTP_SUPPORT_SDESPRIV	lib/jrtplib/rtpconfig.h	59;"	d
 RTP_SUPPORT_SENDAPP	lib/jrtplib/rtpconfig.h	71;"	d
 RTP_VERSION	lib/jrtplib/rtpdefines.h	37;"	d
-RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon6
+RUNNING	interface/ireactor.h	/^            RUNNING,$/;"	e	enum:IReactor::__anon7
+ReactorAccept	server/appsvr/appreactor.cpp	/^void ReactorAccept(int listenFd, short listenEv, void * arg)$/;"	f
+ReactorAccept	server/netsvr/netReactor.cpp	/^void ReactorAccept(int listenFd, short listenEv, void * arg)$/;"	f
 ReadData	client/LineTalkReactor.h	/^        virtual int ReadData() {};$/;"	f	class:LineTalkReactor
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput():buffSize(0),$/;"	f	class:ReadLineUserInput
 ReadLineUserInput	client/workThread.h	/^        ReadLineUserInput(ClientSvr * cli, int size):WorkerThread(),$/;"	f	class:ReadLineUserInput
@@ -959,8 +1211,32 @@ ReadLineUserInput	client/workThread.h	/^class ReadLineUserInput : public WorkerT
 ReceiveMode	lib/jrtplib/rtptransmitter.h	/^	enum ReceiveMode $/;"	g	class:jrtplib::RTPTransmitter
 ReceivedBYE	lib/jrtplib/rtpsourcedata.h	/^	bool ReceivedBYE() const						{ return receivedbye; }$/;"	f	class:jrtplib::RTPSourceData
 RecvData	client/AudioSession.cpp	/^int AudioTrans::RecvData(void * data)$/;"	f	class:AudioTrans
+Register	proto/IM.Register.pb.cc	/^namespace Register {$/;"	n	namespace:IM	file:
+Register	proto/IM.Register.pb.h	/^namespace Register {$/;"	n	namespace:IM
+RegisterCmdID	proto/IM.Base.pb.h	/^enum RegisterCmdID {$/;"	g	namespace:IM::Base
+RegisterCmdID_ARRAYSIZE	proto/IM.Base.pb.h	/^const int RegisterCmdID_ARRAYSIZE = RegisterCmdID_MAX + 1;$/;"	m	namespace:IM::Base
+RegisterCmdID_INT_MAX_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  RegisterCmdID_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max$/;"	e	enum:IM::Base::RegisterCmdID
+RegisterCmdID_INT_MIN_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  RegisterCmdID_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,$/;"	e	enum:IM::Base::RegisterCmdID
+RegisterCmdID_IsValid	proto/IM.Base.pb.cc	/^bool RegisterCmdID_IsValid(int value) {$/;"	f	namespace:IM::Base
+RegisterCmdID_MAX	proto/IM.Base.pb.h	/^const RegisterCmdID RegisterCmdID_MAX = CID_REGISTER_RES;$/;"	m	namespace:IM::Base
+RegisterCmdID_MIN	proto/IM.Base.pb.h	/^const RegisterCmdID RegisterCmdID_MIN = NONEREG;$/;"	m	namespace:IM::Base
+RegisterCmdID_Name	proto/IM.Base.pb.h	/^inline const ::std::string& RegisterCmdID_Name(RegisterCmdID value) {$/;"	f	namespace:IM::Base
+RegisterCmdID_Parse	proto/IM.Base.pb.h	/^inline bool RegisterCmdID_Parse($/;"	f	namespace:IM::Base
+RegisterCmdID_descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* RegisterCmdID_descriptor() {$/;"	f	namespace:IM::Base
+RegisterCmdID_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* RegisterCmdID_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
 Report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		Report(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) $/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::Report
 Report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	class Report : public RTPMemoryObject$/;"	c	class:jrtplib::RTCPCompoundPacketBuilder
+ResultType	proto/IM.Base.pb.h	/^enum ResultType {$/;"	g	namespace:IM::Base
+ResultType_ARRAYSIZE	proto/IM.Base.pb.h	/^const int ResultType_ARRAYSIZE = ResultType_MAX + 1;$/;"	m	namespace:IM::Base
+ResultType_INT_MAX_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  ResultType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max$/;"	e	enum:IM::Base::ResultType
+ResultType_INT_MIN_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  ResultType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,$/;"	e	enum:IM::Base::ResultType
+ResultType_IsValid	proto/IM.Base.pb.cc	/^bool ResultType_IsValid(int value) {$/;"	f	namespace:IM::Base
+ResultType_MAX	proto/IM.Base.pb.h	/^const ResultType ResultType_MAX = RESULT_REGISTER_FAIL;$/;"	m	namespace:IM::Base
+ResultType_MIN	proto/IM.Base.pb.h	/^const ResultType ResultType_MIN = RESULT_LOGIN_SUCC;$/;"	m	namespace:IM::Base
+ResultType_Name	proto/IM.Base.pb.h	/^inline const ::std::string& ResultType_Name(ResultType value) {$/;"	f	namespace:IM::Base
+ResultType_Parse	proto/IM.Base.pb.h	/^inline bool ResultType_Parse($/;"	f	namespace:IM::Base
+ResultType_descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* ResultType_descriptor() {$/;"	f	namespace:IM::Base
+ResultType_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* ResultType_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
 RunAudioCmd	client/ClientCmd.h	/^        RunAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:RunAudioCmd
 RunAudioCmd	client/ClientCmd.h	/^class RunAudioCmd : public CMD$/;"	c
 SDES	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		SDES(RTPMemoryManager *mgr) : RTPMemoryObject(mgr) { sdesit = sdessources.end(); }$/;"	f	class:jrtplib::RTCPCompoundPacketBuilder::SDES
@@ -983,8 +1259,8 @@ SDES_GetPrivateValue	lib/jrtplib/rtpsourcedata.h	/^	bool SDES_GetPrivateValue(ui
 SDES_GetTool	lib/jrtplib/rtpsourcedata.h	/^	uint8_t *SDES_GetTool(size_t *len) const				{ return SDESinf.GetTool(len); }$/;"	f	class:jrtplib::RTPSourceData
 SDES_GotoFirstPrivateValue	lib/jrtplib/rtpsourcedata.h	/^	void SDES_GotoFirstPrivateValue()										{ SDESinf.GotoFirstPrivateValue(); }$/;"	f	class:jrtplib::RTPSourceData
 SDESinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSDESInfo SDESinf;$/;"	m	class:jrtplib::RTPSourceData
-SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon5
-SHOW	interface/cmdWrap.h	/^            SHOW,$/;"	e	enum:CMD::__anon5
+SEND	interface/cmdWrap.h	/^            SEND,$/;"	e	enum:CMD::__anon6
+SHOW	interface/cmdWrap.h	/^            SHOW,$/;"	e	enum:CMD::__anon6
 SR	lib/jrtplib/rtcppacket.h	/^			SR,		\/**< An RTCP sender report. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 SR_BYE	lib/jrtplib/rtpsessionparams.h	/^	bool SR_BYE;$/;"	m	class:jrtplib::RTPSessionParams
 SR_GetByteCount	lib/jrtplib/rtpsourcedata.h	/^	uint32_t SR_GetByteCount() const					{ return SRinf.GetByteCount(); }$/;"	f	class:jrtplib::RTPSourceData
@@ -1003,11 +1279,30 @@ SRinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m
 SRprevinf	lib/jrtplib/rtpsourcedata.h	/^	RTCPSenderReportInfo SRinf,SRprevinf;$/;"	m	class:jrtplib::RTPSourceData
 STATUS	common/asynLog.cpp	/^int Log :: STATUS = LOG_INIT;$/;"	m	class:Log	file:
 STATUS	common/asynLog.h	/^    static int STATUS;   $/;"	m	class:Log
-STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon6
+STOP	interface/ireactor.h	/^            STOP,$/;"	e	enum:IReactor::__anon7
 Section	common/configParser.h	/^class Section$/;"	c
 SendData	client/AudioSession.cpp	/^int AudioTrans::SendData(void * data, int len)$/;"	f	class:AudioTrans
 SendData	client/LineTalkReactor.h	/^        virtual int SendData() {};$/;"	f	class:LineTalkReactor
 SentRTPPacket	lib/jrtplib/rtpinternalsourcedata.h	/^	void SentRTPPacket()										{ if (!ownssrc) return; RTPTime t = RTPTime::CurrentTime(); issender = true; stats.SetLastRTPPacketTime(t); stats.SetLastMessageTime(t); }$/;"	f	class:jrtplib::RTPInternalSourceData
+SerializeWithCachedSizes	proto/IM.Base.pb.cc	/^void UserInfo::SerializeWithCachedSizes($/;"	f	class:IM::Base::UserInfo
+SerializeWithCachedSizes	proto/IM.Register.pb.cc	/^void IMRegisterReq::SerializeWithCachedSizes($/;"	f	class:IM::Register::IMRegisterReq
+SerializeWithCachedSizes	proto/IM.Register.pb.cc	/^void IMRegisterRes::SerializeWithCachedSizes($/;"	f	class:IM::Register::IMRegisterRes
+SerializeWithCachedSizes	proto/IM.Test.pb.cc	/^void TestMsg::SerializeWithCachedSizes($/;"	f	class:IM::Test::TestMsg
+SerializeWithCachedSizesToArray	proto/IM.Base.pb.cc	/^::google::protobuf::uint8* UserInfo::SerializeWithCachedSizesToArray($/;"	f	class:IM::Base::UserInfo
+SerializeWithCachedSizesToArray	proto/IM.Register.pb.cc	/^::google::protobuf::uint8* IMRegisterReq::SerializeWithCachedSizesToArray($/;"	f	class:IM::Register::IMRegisterReq
+SerializeWithCachedSizesToArray	proto/IM.Register.pb.cc	/^::google::protobuf::uint8* IMRegisterRes::SerializeWithCachedSizesToArray($/;"	f	class:IM::Register::IMRegisterRes
+SerializeWithCachedSizesToArray	proto/IM.Test.pb.cc	/^::google::protobuf::uint8* TestMsg::SerializeWithCachedSizesToArray($/;"	f	class:IM::Test::TestMsg
+SessionCmdID	proto/IM.Base.pb.h	/^enum SessionCmdID {$/;"	g	namespace:IM::Base
+SessionCmdID_ARRAYSIZE	proto/IM.Base.pb.h	/^const int SessionCmdID_ARRAYSIZE = SessionCmdID_MAX + 1;$/;"	m	namespace:IM::Base
+SessionCmdID_INT_MAX_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  SessionCmdID_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max$/;"	e	enum:IM::Base::SessionCmdID
+SessionCmdID_INT_MIN_SENTINEL_DO_NOT_USE_	proto/IM.Base.pb.h	/^  SessionCmdID_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,$/;"	e	enum:IM::Base::SessionCmdID
+SessionCmdID_IsValid	proto/IM.Base.pb.cc	/^bool SessionCmdID_IsValid(int value) {$/;"	f	namespace:IM::Base
+SessionCmdID_MAX	proto/IM.Base.pb.h	/^const SessionCmdID SessionCmdID_MAX = CID_SESSION_RES_STOP;$/;"	m	namespace:IM::Base
+SessionCmdID_MIN	proto/IM.Base.pb.h	/^const SessionCmdID SessionCmdID_MIN = NONESESS;$/;"	m	namespace:IM::Base
+SessionCmdID_Name	proto/IM.Base.pb.h	/^inline const ::std::string& SessionCmdID_Name(SessionCmdID value) {$/;"	f	namespace:IM::Base
+SessionCmdID_Parse	proto/IM.Base.pb.h	/^inline bool SessionCmdID_Parse($/;"	f	namespace:IM::Base
+SessionCmdID_descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* SessionCmdID_descriptor() {$/;"	f	namespace:IM::Base
+SessionCmdID_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::EnumDescriptor* SessionCmdID_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
 Set	lib/jrtplib/rtpsourcedata.h	/^	void Set(const RTPNTPTime &ntptime,uint32_t rtptime,uint32_t pcount,$/;"	f	class:jrtplib::RTCPSenderReportInfo
 Set	lib/jrtplib/rtpsourcedata.h	/^	void Set(uint8_t fraclost,int32_t plost,uint32_t exthigh,$/;"	f	class:jrtplib::RTCPReceiverReportInfo
 SetAcceptOwnPackets	lib/jrtplib/rtpsessionparams.h	/^	void SetAcceptOwnPackets(bool accept)					{ acceptown = accept; }$/;"	f	class:jrtplib::RTPSessionParams
@@ -1018,7 +1313,12 @@ SetBuff	interface/thread.h	/^        int SetBuff(int size)$/;"	f	class:WorkerThr
 SetCNAME	lib/jrtplib/rtcpsdesinfo.h	/^	int SetCNAME(const uint8_t *s,size_t l)					{ return SetNonPrivateItem(RTCP_SDES_ID_CNAME-1,s,l); }$/;"	f	class:jrtplib::RTCPSDESInfo
 SetCNAME	lib/jrtplib/rtpsessionparams.h	/^	void SetCNAME(const std::string &s)					{ cname = s; }$/;"	f	class:jrtplib::RTPSessionParams
 SetCSRC	lib/jrtplib/rtpinternalsourcedata.h	/^	void SetCSRC()											{ validated = true; iscsrc = true; }$/;"	f	class:jrtplib::RTPInternalSourceData
+SetCachedSize	proto/IM.Base.pb.cc	/^void UserInfo::SetCachedSize(int size) const {$/;"	f	class:IM::Base::UserInfo
+SetCachedSize	proto/IM.Register.pb.cc	/^void IMRegisterReq::SetCachedSize(int size) const {$/;"	f	class:IM::Register::IMRegisterReq
+SetCachedSize	proto/IM.Register.pb.cc	/^void IMRegisterRes::SetCachedSize(int size) const {$/;"	f	class:IM::Register::IMRegisterRes
+SetCachedSize	proto/IM.Test.pb.cc	/^void TestMsg::SetCachedSize(int size) const {$/;"	f	class:IM::Test::TestMsg
 SetCollisionTimeoutMultiplier	lib/jrtplib/rtpsessionparams.h	/^	void SetCollisionTimeoutMultiplier(double m)				{ collisionmultiplier = m; }$/;"	f	class:jrtplib::RTPSessionParams
+SetCommandID	common/IMProto.h	/^        void SetCommandID(uint16_t command) $/;"	f	class:ImProto
 SetControlTrafficFraction	lib/jrtplib/rtpsessionparams.h	/^	void SetControlTrafficFraction(double frac)				{ controlfrac = frac; }$/;"	f	class:jrtplib::RTPSessionParams
 SetDefaultMark	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::SetDefaultMark(bool m)$/;"	f	class:jrtplib::RTPPacketBuilder
 SetDefaultPayloadType	lib/jrtplib/rtppacketbuilder.h	/^inline int RTPPacketBuilder::SetDefaultPayloadType(uint8_t pt)$/;"	f	class:jrtplib::RTPPacketBuilder
@@ -1036,6 +1336,7 @@ SetInfo	lib/jrtplib/rtcpsdesinfo.h	/^		int SetInfo(const uint8_t *s,size_t len)	
 SetLastMessageTime	lib/jrtplib/rtpsourcedata.h	/^	void SetLastMessageTime(const RTPTime &t)				{ lastmsgtime = t; }$/;"	f	class:jrtplib::RTPSourceStats
 SetLastNoteTime	lib/jrtplib/rtpsourcedata.h	/^	void SetLastNoteTime(const RTPTime &t)					{ lastnotetime = t; }$/;"	f	class:jrtplib::RTPSourceStats
 SetLastRTPPacketTime	lib/jrtplib/rtpsourcedata.h	/^	void SetLastRTPPacketTime(const RTPTime &t)				{ lastrtptime = t; }$/;"	f	class:jrtplib::RTPSourceStats
+SetLength	common/IMProto.h	/^        void SetLength(uint16_t len)        $/;"	f	class:ImProto
 SetLocalEMail	lib/jrtplib/rtcppacketbuilder.h	/^	int SetLocalEMail(const void *s,size_t len)					{ if (!init) return ERR_RTP_RTCPPACKETBUILDER_NOTINIT; return ownsdesinfo.SetEMail((const uint8_t *)s,len); }$/;"	f	class:jrtplib::RTCPPacketBuilder
 SetLocalIPList	lib/jrtplib/rtpudpv4transmitter.h	/^	void SetLocalIPList(std::list<uint32_t> &iplist)			{ localIPs = iplist; } $/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
 SetLocalIPList	lib/jrtplib/rtpudpv6transmitter.h	/^	void SetLocalIPList(std::list<in6_addr> &iplist)					{ localIPs = iplist; } $/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
@@ -1084,6 +1385,7 @@ SetProcessedName	lib/jrtplib/rtcppacketbuilder.h	/^		void SetProcessedName(bool 
 SetProcessedNote	lib/jrtplib/rtcppacketbuilder.h	/^		void SetProcessedNote(bool v)		{ pnote = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 SetProcessedPhone	lib/jrtplib/rtcppacketbuilder.h	/^		void SetProcessedPhone(bool v)		{ pphone = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
 SetProcessedTool	lib/jrtplib/rtcppacketbuilder.h	/^		void SetProcessedTool(bool v)		{ ptool = v; }$/;"	f	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+SetPunch	common/IMProto.h	/^        void SetPunch(uint16_t punch)       $/;"	f	class:ImProto
 SetRTCPDataAddress	lib/jrtplib/rtpinternalsourcedata.h	/^inline int RTPInternalSourceData::SetRTCPDataAddress(const RTPAddress *a)$/;"	f	class:jrtplib::RTPInternalSourceData
 SetRTCPReceiveBuffer	lib/jrtplib/rtpudpv4transmitter.h	/^	void SetRTCPReceiveBuffer(int s)							{ rtcprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv4TransmissionParams
 SetRTCPReceiveBuffer	lib/jrtplib/rtpudpv6transmitter.h	/^	void SetRTCPReceiveBuffer(int s)							{ rtcprecvbuf = s; }$/;"	f	class:jrtplib::RTPUDPv6TransmissionParams
@@ -1111,8 +1413,17 @@ SetToolInterval	lib/jrtplib/rtcppacketbuilder.h	/^	void SetToolInterval(int coun
 SetUseHalfAtStartup	lib/jrtplib/rtcpscheduler.h	/^	void SetUseHalfAtStartup(bool usehalf)						{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTCPSchedulerParams
 SetUseHalfRTCPIntervalAtStartup	lib/jrtplib/rtpsessionparams.h	/^	void SetUseHalfRTCPIntervalAtStartup(bool usehalf)			{ usehalfatstartup = usehalf; }$/;"	f	class:jrtplib::RTPSessionParams
 SetUsePredefinedSSRC	lib/jrtplib/rtpsessionparams.h	/^	void SetUsePredefinedSSRC(bool f)					{ usepredefinedssrc = f; }$/;"	f	class:jrtplib::RTPSessionParams
+SetUserID	common/IMProto.h	/^        void SetUserID(uint16_t user) $/;"	f	class:ImProto
+SharedCtor	proto/IM.Base.pb.cc	/^void UserInfo::SharedCtor() {$/;"	f	class:IM::Base::UserInfo
+SharedCtor	proto/IM.Register.pb.cc	/^void IMRegisterReq::SharedCtor() {$/;"	f	class:IM::Register::IMRegisterReq
+SharedCtor	proto/IM.Register.pb.cc	/^void IMRegisterRes::SharedCtor() {$/;"	f	class:IM::Register::IMRegisterRes
+SharedCtor	proto/IM.Test.pb.cc	/^void TestMsg::SharedCtor() {$/;"	f	class:IM::Test::TestMsg
+SharedDtor	proto/IM.Base.pb.cc	/^void UserInfo::SharedDtor() {$/;"	f	class:IM::Base::UserInfo
+SharedDtor	proto/IM.Register.pb.cc	/^void IMRegisterReq::SharedDtor() {$/;"	f	class:IM::Register::IMRegisterReq
+SharedDtor	proto/IM.Register.pb.cc	/^void IMRegisterRes::SharedDtor() {$/;"	f	class:IM::Register::IMRegisterRes
+SharedDtor	proto/IM.Test.pb.cc	/^void TestMsg::SharedDtor() {$/;"	f	class:IM::Test::TestMsg
 ShowLocalData	client/AudioSession.cpp	/^int AudioTrans::ShowLocalData(void * data, int len)$/;"	f	class:AudioTrans
-Signal	client/LineTalkReactor.cpp	/^void LineTalkReactor::Signal(CMD * extCmd)$/;"	f	class:LineTalkReactor
+Signal	client/LineTalkReactor.cpp	/^void LineTalkReactor::Signal(std::unique_ptr<CMD> extCmd)$/;"	f	class:LineTalkReactor
 SignalDeal	client/LineTalkReactor.cpp	/^void LineTalkReactor::SignalDeal()$/;"	f	class:LineTalkReactor
 Singleton	common/singleton.h	/^class Singleton$/;"	c
 SpinLock	common/lock.h	/^        inline SpinLock() $/;"	f	class:SpinLock
@@ -1122,81 +1433,185 @@ Start	client/AudioThread.cpp	/^void AudioShowRecvThread::Start()$/;"	f	class:Aud
 Start	client/workThread.cpp	/^void ReadLineUserInput::Start()$/;"	f	class:ReadLineUserInput
 StartNewInterval	lib/jrtplib/rtpsourcedata.h	/^	void StartNewInterval()							{ numnewpackets = 0; savedextseqnr = exthighseqnr; }$/;"	f	class:jrtplib::RTPSourceStats
 StartRoutine	interface/thread.cpp	/^void* WorkerThread::StartRoutine(void* arg)$/;"	f	class:WorkerThread
+StaticDescriptorInitializer_IM_2eBase_2eproto	proto/IM.Base.pb.cc	/^  StaticDescriptorInitializer_IM_2eBase_2eproto() {$/;"	f	struct:IM::Base::StaticDescriptorInitializer_IM_2eBase_2eproto
+StaticDescriptorInitializer_IM_2eBase_2eproto	proto/IM.Base.pb.cc	/^struct StaticDescriptorInitializer_IM_2eBase_2eproto {$/;"	s	namespace:IM::Base	file:
+StaticDescriptorInitializer_IM_2eRegister_2eproto	proto/IM.Register.pb.cc	/^  StaticDescriptorInitializer_IM_2eRegister_2eproto() {$/;"	f	struct:IM::Register::StaticDescriptorInitializer_IM_2eRegister_2eproto
+StaticDescriptorInitializer_IM_2eRegister_2eproto	proto/IM.Register.pb.cc	/^struct StaticDescriptorInitializer_IM_2eRegister_2eproto {$/;"	s	namespace:IM::Register	file:
+StaticDescriptorInitializer_IM_2eTest_2eproto	proto/IM.Test.pb.cc	/^  StaticDescriptorInitializer_IM_2eTest_2eproto() {$/;"	f	struct:IM::Test::StaticDescriptorInitializer_IM_2eTest_2eproto
+StaticDescriptorInitializer_IM_2eTest_2eproto	proto/IM.Test.pb.cc	/^struct StaticDescriptorInitializer_IM_2eTest_2eproto {$/;"	s	namespace:IM::Test	file:
 Stop	client/LineTalkReactor.cpp	/^LineTalkReactor::Stop()$/;"	f	class:LineTalkReactor
 Stop	interface/thread.h	/^        int Stop()$/;"	f	class:WorkerThread
+Stop	server/appsvr/appreactor.cpp	/^NetReactor::Stop()$/;"	f	class:NetReactor
+Stop	server/netsvr/netReactor.cpp	/^NetReactor::Stop()$/;"	f	class:NetReactor
 StopAudioCmd	client/ClientCmd.h	/^        StopAudioCmd(LineTalkReactor * r):ract(r)$/;"	f	class:StopAudioCmd
 StopAudioCmd	client/ClientCmd.h	/^class StopAudioCmd : public CMD$/;"	c
 SvrDataParser	client/Parser.h	/^        SvrDataParser() {};$/;"	f	class:SvrDataParser
 SvrDataParser	client/Parser.h	/^class SvrDataParser : public DataParser$/;"	c
-TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon4
-THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon3
-THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon3
-THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon3
-THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon3
+Swap	proto/IM.Base.pb.cc	/^void UserInfo::Swap(UserInfo* other) {$/;"	f	class:IM::Base::UserInfo
+Swap	proto/IM.Register.pb.cc	/^void IMRegisterReq::Swap(IMRegisterReq* other) {$/;"	f	class:IM::Register::IMRegisterReq
+Swap	proto/IM.Register.pb.cc	/^void IMRegisterRes::Swap(IMRegisterRes* other) {$/;"	f	class:IM::Register::IMRegisterRes
+Swap	proto/IM.Test.pb.cc	/^void TestMsg::Swap(TestMsg* other) {$/;"	f	class:IM::Test::TestMsg
+TAILQ_ENTRY	lib/libevent/event.h	120;"	d
+TAILQ_ENTRY	lib/libevent/event.h	64;"	d
+TEXT	interface/cmdWrap.h	/^            TEXT,$/;"	e	enum:CMD::__anon5
+THREADINIT	interface/thread.h	/^        THREADINIT,$/;"	e	enum:WorkerThread::__anon8
+THREADNONE	interface/thread.h	/^        THREADNONE,$/;"	e	enum:WorkerThread::__anon8
+THREADRUN	interface/thread.h	/^        THREADRUN,$/;"	e	enum:WorkerThread::__anon8
+THREADSTOP	interface/thread.h	/^        THREADSTOP,$/;"	e	enum:WorkerThread::__anon8
+TIMEOUT_DEFAULT	lib/libevent/event.h	143;"	d
 TOOL	lib/jrtplib/rtcpsdespacket.h	/^		TOOL,	\/**< Used for a TOOL item. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
+Test	proto/IM.Test.pb.cc	/^namespace Test {$/;"	n	namespace:IM	file:
+Test	proto/IM.Test.pb.h	/^namespace Test {$/;"	n	namespace:IM
+TestCmd	client/ClientCmd.h	/^        TestCmd(LineTalkReactor * r):ract(r)$/;"	f	class:TestCmd
 TestCmd	client/ClientCmd.h	/^        TestCmd(std::string s):input(s)$/;"	f	class:TestCmd
 TestCmd	client/ClientCmd.h	/^class TestCmd : public CMD$/;"	c
+TestMsg	proto/IM.Test.pb.cc	/^TestMsg::TestMsg()$/;"	f	class:IM::Test::TestMsg
+TestMsg	proto/IM.Test.pb.cc	/^TestMsg::TestMsg(const TestMsg& from)$/;"	f	class:IM::Test::TestMsg
+TestMsg	proto/IM.Test.pb.h	/^class TestMsg : public ::google::protobuf::Message {$/;"	c	namespace:IM::Test
+TestMsg_descriptor_	proto/IM.Test.pb.cc	/^const ::google::protobuf::Descriptor* TestMsg_descriptor_ = NULL;$/;"	m	namespace:IM::Test::__anon12	file:
+TestMsg_reflection_	proto/IM.Test.pb.cc	/^  TestMsg_reflection_ = NULL;$/;"	m	namespace:IM::Test::__anon12	file:
 Trans	interface/trans.h	/^        Trans() {};$/;"	f	class:Trans
 Trans	interface/trans.h	/^class Trans$/;"	c
 TransmissionProtocol	lib/jrtplib/rtptransmitter.h	/^	enum TransmissionProtocol $/;"	g	class:jrtplib::RTPTransmitter
+Uncopyable	common/util.h	/^        Uncopyable() {}$/;"	f	class:Uncopyable
+Uncopyable	common/util.h	/^class Uncopyable$/;"	c
 Unknown	lib/jrtplib/rtcppacket.h	/^			Unknown	\/**< The type of RTCP packet was not recognized. *\/$/;"	e	enum:jrtplib::RTCPPacket::PacketType
 Unknown	lib/jrtplib/rtcpsdespacket.h	/^		Unknown \/**< Used when there is an item present, but the type is not recognized. *\/$/;"	e	enum:jrtplib::RTCPSDESPacket::ItemType
 UpdateMessageTime	lib/jrtplib/rtpinternalsourcedata.h	/^	void UpdateMessageTime(const RTPTime &receivetime)						{ stats.SetLastMessageTime(receivetime); }$/;"	f	class:jrtplib::RTPInternalSourceData
-UserDataParser	client/Parser.h	/^        UserDataParser() {};$/;"	f	class:UserDataParser
+UserAddrMap_t	server/appsvr/appreactor.h	/^typedef map<string, string> UserAddrMap_t;$/;"	t
+UserDataParser	client/Parser.h	/^        UserDataParser():init("init\\n"),$/;"	f	class:UserDataParser
 UserDataParser	client/Parser.h	/^class UserDataParser : public DataParser$/;"	c
 UserDefinedAddress	lib/jrtplib/rtpaddress.h	/^		UserDefinedAddress  \/**< Can be useful for a user-defined transmitter. *\/$/;"	e	enum:jrtplib::RTPAddress::AddressType
 UserDefinedProto	lib/jrtplib/rtptransmitter.h	/^		UserDefinedProto  \/**< Specifies a user defined, external transmitter. *\/$/;"	e	enum:jrtplib::RTPTransmitter::TransmissionProtocol
-VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon4
+UserInfo	proto/IM.Base.pb.cc	/^UserInfo::UserInfo()$/;"	f	class:IM::Base::UserInfo
+UserInfo	proto/IM.Base.pb.cc	/^UserInfo::UserInfo(const UserInfo& from)$/;"	f	class:IM::Base::UserInfo
+UserInfo	proto/IM.Base.pb.h	/^class UserInfo : public ::google::protobuf::Message {$/;"	c	namespace:IM::Base
+UserInfo_descriptor_	proto/IM.Base.pb.cc	/^const ::google::protobuf::Descriptor* UserInfo_descriptor_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
+UserInfo_reflection_	proto/IM.Base.pb.cc	/^  UserInfo_reflection_ = NULL;$/;"	m	namespace:IM::Base::__anon15	file:
+UserModel	server/appsvr/StragyModel.h	/^        UserModel() {};$/;"	f	class:UserStragy
+UserModel	server/appsvr/userModel.h	/^class UserModel$/;"	c
+UserStragy	server/appsvr/StragyModel.h	/^class UserStragy$/;"	c
+VIDEO	interface/cmdWrap.h	/^            VIDEO,$/;"	e	enum:CMD::__anon5
 WARN	common/asynLog.cpp	/^Log :: WARN(const char * fmt, ...)$/;"	f	class:Log
+WIN32_LEAN_AND_MEAN	lib/libevent/event.h	39;"	d
+WIN32_LEAN_AND_MEAN	lib/libevent/event.h	41;"	d
+WIN32_LEAN_AND_MEAN	lib/libevent/evhttp.h	35;"	d
+WIN32_LEAN_AND_MEAN	lib/libevent/evhttp.h	37;"	d
 Wait	lib/jrtplib/rtptimeutilities.h	/^inline void RTPTime::Wait(const RTPTime &delay)$/;"	f	class:jrtplib::RTPTime
 WorkerThread	interface/thread.h	/^	    WorkerThread() : m_work_buff(NULL),$/;"	f	class:WorkerThread
-WorkerThread	interface/thread.h	/^class WorkerThread $/;"	c
+WorkerThread	interface/thread.h	/^class WorkerThread : public Uncopyable$/;"	c
+ZR_	proto/IM.Base.pb.cc	317;"	d	file:
+ZR_	proto/IM.Base.pb.cc	326;"	d	file:
+ZR_	proto/IM.Register.pb.cc	657;"	d	file:
+ZR_	proto/IM.Register.pb.cc	666;"	d	file:
+ZR_HELPER_	proto/IM.Base.pb.cc	307;"	d	file:
+ZR_HELPER_	proto/IM.Base.pb.cc	325;"	d	file:
+ZR_HELPER_	proto/IM.Register.pb.cc	647;"	d	file:
+ZR_HELPER_	proto/IM.Register.pb.cc	665;"	d	file:
 ZeroData	lib/jrtplib/rtprawpacket.h	/^	void ZeroData()															{ packetdata = 0; packetdatalength = 0; }$/;"	f	class:jrtplib::RTPRawPacket
+_APPREACTOR_H_	server/appsvr/appreactor.h	2;"	d
 _ASYN_LOG_	common/asynLog.h	13;"	d
 _AUDIO_THREAD_H_	client/AudioThread.h	2;"	d
 _AudioRecvThread	client/LineTalkReactor.h	/^        WorkerThread * _AudioRecvThread;$/;"	m	class:LineTalkReactor
 _AudioSendThread	client/LineTalkReactor.h	/^        WorkerThread * _AudioSendThread;$/;"	m	class:LineTalkReactor
 _CLIENT_H	client/ClientSvr.h	2;"	d
 _CONFIG_PARSER_H	common/configParser.h	14;"	d
+_EVENT_DEFINED_RBENTRY	lib/libevent/event.h	130;"	d
+_EVENT_DEFINED_RBENTRY	lib/libevent/event.h	71;"	d
+_EVENT_DEFINED_TQENTRY	lib/libevent/event.h	123;"	d
+_EVENT_DEFINED_TQENTRY	lib/libevent/event.h	63;"	d
+_EVENT_H_	lib/libevent/event.h	28;"	d
+_EVENT_INTERNAL_H_	lib/libevent/event-internal.h	28;"	d
+_EVENT_LOG_DEBUG	lib/libevent/event.h	150;"	d
+_EVENT_LOG_ERR	lib/libevent/event.h	153;"	d
+_EVENT_LOG_MSG	lib/libevent/event.h	151;"	d
+_EVENT_LOG_WARN	lib/libevent/event.h	152;"	d
+_EVHTTP_H_	lib/libevent/evhttp.h	28;"	d
+_EVSIGNAL_H_	lib/libevent/evsignal.h	28;"	d
+_HTTP_H_	lib/libevent/http-internal.h	11;"	d
 _IREACTOR_H_	interface/ireactor.h	2;"	d
+_LOG_H_	lib/libevent/log.h	28;"	d
+_NETSVR_H_	server/netsvr/netReactor.h	2;"	d
 _THREAD_H_	interface/thread.h	2;"	d
+_UTIL_	common/util.h	2;"	d
 _WORK_THREAD_H_	client/workThread.h	2;"	d
 __AUDIO_SESSION_H_	client/AudioSession.h	2;"	d
 __CLIENT_CMD_H_	client/ClientCmd.h	2;"	d
 __CMD_H_	interface/cmdWrap.h	2;"	d
 __DATA_PARSE_H_	interface/dataParse.h	2;"	d
+__IMPROTO_H__	common/IMProto.h	2;"	d
 __LINE_TALK_REACTOR_H_	client/LineTalkReactor.h	2;"	d
 __LOCK_H_	common/lock.h	2;"	d
 __NET_H__	common/net.h	12;"	d
 __PARSER_H_	client/Parser.h	2;"	d
+__STRAGY_MODEL__	server/appsvr/StragyModel.h	2;"	d
 __TRANS_H_	interface/trans.h	2;"	d
+__USER_MODEL__	server/appsvr/userModel.h	2;"	d
 _audio	client/LineTalkReactor.h	/^        Trans        * _audio;$/;"	m	class:LineTalkReactor
 _audioPort	client/LineTalkReactor.h	/^        int            _audioPort;$/;"	m	class:LineTalkReactor
+_audioStatus	client/LineTalkReactor.h	/^        int            _audioStatus;$/;"	m	class:LineTalkReactor
+_buf	common/IMProto.h	/^        std::string            _buf;$/;"	m	class:ImProto
+_cached_size_	proto/IM.Base.pb.h	/^  mutable int _cached_size_;$/;"	m	class:IM::Base::UserInfo
+_cached_size_	proto/IM.Register.pb.h	/^  mutable int _cached_size_;$/;"	m	class:IM::Register::IMRegisterReq
+_cached_size_	proto/IM.Register.pb.h	/^  mutable int _cached_size_;$/;"	m	class:IM::Register::IMRegisterRes
+_cached_size_	proto/IM.Test.pb.h	/^  mutable int _cached_size_;$/;"	m	class:IM::Test::TestMsg
 _client	client/LineTalkReactor.h	/^        ClientSvr  * _client;$/;"	m	class:LineTalkReactor
 _conIP	client/LineTalkReactor.h	/^        string  _conIP;$/;"	m	class:LineTalkReactor
 _conPort	client/LineTalkReactor.h	/^        size_t  _conPort;$/;"	m	class:LineTalkReactor
 _conTo	client/LineTalkReactor.h	/^        int  _conTo;$/;"	m	class:LineTalkReactor
 _cond	common/lock.h	/^        pthread_cond_t _cond;$/;"	m	class:MCondition
-_coreAct	client/ClientSvr.h	/^        IReactor     * _coreAct;$/;"	m	class:ClientSvr
-_extQueue	client/LineTalkReactor.h	/^        std::queue<CMD *> _extQueue;$/;"	m	class:LineTalkReactor
+_coreAct	client/ClientSvr.h	/^        std::unique_ptr<IReactor>     _coreAct;$/;"	m	class:ClientSvr
+_extQueue	client/LineTalkReactor.h	/^        std::queue<std::unique_ptr<CMD> > _extQueue;$/;"	m	class:LineTalkReactor
 _fd	client/LineTalkReactor.h	/^        int  _fd;$/;"	m	class:LineTalkReactor
+_fdPool	server/netsvr/netReactor.h	/^        struct bufferevent ** _fdPool;$/;"	m	class:NetReactor	typeref:struct:NetReactor::bufferevent
+_fdUserName	server/netsvr/netReactor.h	/^        std::vector<string>   _fdUserName;$/;"	m	class:NetReactor
+_headerlen	common/IMProto.cpp	/^int ImProto::_headerlen = 0;$/;"	m	class:ImProto	file:
+_headerlen	common/IMProto.h	/^        static int             _headerlen;$/;"	m	class:ImProto
+_imHeader	common/IMProto.h	/^        ImPheader_t            _imHeader;$/;"	m	class:ImProto
 _initialized	common/singleton.h	/^        static bool _initialized;$/;"	m	class:Singleton
 _initialized	common/singleton.h	/^bool Singleton<T>::_initialized = false;$/;"	m	class:Singleton
 _instance	common/singleton.h	/^        static T * _instance;$/;"	m	class:Singleton
 _instance	common/singleton.h	/^T * Singleton<T>::_instance = NULL;$/;"	m	class:Singleton
-_listenUserThread	client/ClientSvr.h	/^        WorkerThread * _listenUserThread;$/;"	m	class:ClientSvr
+_instance	server/appsvr/StragyModel.cpp	/^UserModel * UserStragy::_instance = NULL;$/;"	m	class:UserStragy	file:
+_instance	server/appsvr/StragyModel.h	/^        static UserModel * _instance;$/;"	m	class:UserStragy
+_internal_metadata_	proto/IM.Base.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:IM::Base::UserInfo
+_internal_metadata_	proto/IM.Register.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:IM::Register::IMRegisterReq
+_internal_metadata_	proto/IM.Register.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:IM::Register::IMRegisterRes
+_internal_metadata_	proto/IM.Test.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:IM::Test::TestMsg
+_is_default_instance_	proto/IM.Base.pb.h	/^  bool _is_default_instance_;$/;"	m	class:IM::Base::UserInfo
+_is_default_instance_	proto/IM.Register.pb.h	/^  bool _is_default_instance_;$/;"	m	class:IM::Register::IMRegisterReq
+_is_default_instance_	proto/IM.Register.pb.h	/^  bool _is_default_instance_;$/;"	m	class:IM::Register::IMRegisterRes
+_is_default_instance_	proto/IM.Test.pb.h	/^  bool _is_default_instance_;$/;"	m	class:IM::Test::TestMsg
+_listenFd	server/appsvr/appreactor.h	/^        int                   _listenFd;$/;"	m	class:APPReactor
+_listenFd	server/netsvr/netReactor.h	/^        int                   _listenFd;$/;"	m	class:NetReactor
+_listenUserThread	client/ClientSvr.h	/^        std::unique_ptr<WorkerThread> _listenUserThread;$/;"	m	class:ClientSvr
+_listener	server/appsvr/appreactor.h	/^        struct event          _listener;$/;"	m	class:APPReactor	typeref:struct:APPReactor::event
+_listener	server/netsvr/netReactor.h	/^        struct event          _listener;$/;"	m	class:NetReactor	typeref:struct:NetReactor::event
 _lock	client/LineTalkReactor.h	/^        MLock _lock;$/;"	m	class:LineTalkReactor
 _lock	common/lock.h	/^        Lock & _lock;$/;"	m	class:AutoLock
 _lock	common/lock.h	/^        pthread_mutex_t & _lock;$/;"	m	class:MCondition
 _lock	common/lock.h	/^        pthread_mutex_t _lock;$/;"	m	class:MLock
 _lock	common/lock.h	/^        pthread_spinlock_t _lock;$/;"	m	class:SpinLock
+_logicIP	server/netsvr/netReactor.h	/^        std::vector<string>   _logicIP;$/;"	m	class:NetReactor
+_maxConnected	server/appsvr/appreactor.h	/^        int                   _maxConnected;$/;"	m	class:APPReactor
+_maxConnected	server/netsvr/netReactor.h	/^        int                   _maxConnected;$/;"	m	class:NetReactor
 _pipe	client/LineTalkReactor.h	/^        int  _pipe[2];$/;"	m	class:LineTalkReactor
+_port	server/appsvr/appreactor.h	/^        int                   _port;$/;"	m	class:APPReactor
+_port	server/netsvr/netReactor.h	/^        int                   _port;$/;"	m	class:NetReactor
 _q_lock	client/LineTalkReactor.h	/^        MLock _q_lock;$/;"	m	class:LineTalkReactor
 _singleton_h	common/singleton.h	13;"	d
 _status	client/LineTalkReactor.h	/^        size_t  _status;$/;"	m	class:LineTalkReactor
-_svrdata	client/LineTalkReactor.h	/^        DataParser * _svrdata;$/;"	m	class:LineTalkReactor
-_userdata	client/LineTalkReactor.h	/^        DataParser * _userdata;$/;"	m	class:LineTalkReactor
+_status	server/appsvr/appreactor.h	/^        int                   _status;$/;"	m	class:APPReactor
+_status	server/netsvr/netReactor.h	/^        int                   _status;$/;"	m	class:NetReactor
+_svrBuf	client/LineTalkReactor.h	/^        std::unique_ptr<char[]>   _svrBuf;$/;"	m	class:LineTalkReactor
+_svrBufCap	client/LineTalkReactor.h	/^        int                     _svrBufCap;$/;"	m	class:LineTalkReactor
+_svrBufLen	client/LineTalkReactor.h	/^        int                     _svrBufLen; $/;"	m	class:LineTalkReactor
+_svrData	client/LineTalkReactor.h	/^        ImProto                 _svrData; $/;"	m	class:LineTalkReactor
+_svrdata	client/LineTalkReactor.h	/^        shared_ptr<DataParser>  _svrdata;$/;"	m	class:LineTalkReactor
+_threadNum	server/appsvr/appreactor.h	/^        int                   _threadNum;$/;"	m	class:APPReactor
+_userdata	client/LineTalkReactor.h	/^        shared_ptr<DataParser>  _userdata;$/;"	m	class:LineTalkReactor
 _waits	common/lock.h	/^        size_t _waits;$/;"	m	class:MCondition
+_writeLock	server/appsvr/appreactor.h	/^    MLock         _writeLock; $/;"	m	struct:MutexBufferEvent
 abortdesc	lib/jrtplib/rtpexternaltransmitter.h	/^	SOCKET abortdesc[2];$/;"	m	class:jrtplib::RTPExternalTransmitter
 abortdesc	lib/jrtplib/rtpexternaltransmitter.h	/^	int abortdesc[2];$/;"	m	class:jrtplib::RTPExternalTransmitter
 abortdesc	lib/jrtplib/rtpudpv4transmitter.h	/^	SOCKET abortdesc[2];$/;"	m	class:jrtplib::RTPUDPv4Transmitter
@@ -1208,8 +1623,11 @@ acceptignoreinfo	lib/jrtplib/rtpudpv6transmitter.h	/^	RTPKeyHashTable<const in6_
 acceptown	lib/jrtplib/rtpsessionparams.h	/^	bool acceptown;$/;"	m	class:jrtplib::RTPSessionParams
 acceptownpackets	lib/jrtplib/rtpsession.h	/^	bool acceptownpackets;$/;"	m	class:jrtplib::RTPSession
 activecount	lib/jrtplib/rtpsources.h	/^	int activecount;$/;"	m	class:jrtplib::RTPSources
+activequeues	lib/libevent/event-internal.h	/^	struct event_list **activequeues;$/;"	m	struct:event_base	typeref:struct:event_base::event_list
+add	lib/libevent/event.h	/^	int (*add)(void *, struct event *);$/;"	m	struct:eventop
 add_prefix	common/asynLog.cpp	/^add_prefix(char * dest, const string &add)$/;"	f
 addr	lib/jrtplib/rtpcollisionlist.h	/^		RTPAddress *addr;$/;"	m	class:jrtplib::RTPCollisionList::AddressAndTime
+address	lib/libevent/http-internal.h	/^	char *address;$/;"	m	struct:evhttp_connection
 addresslength	lib/jrtplib/rtpbyteaddress.h	/^	size_t addresslength;$/;"	m	class:jrtplib::RTPByteAddress
 addresslist	lib/jrtplib/rtpcollisionlist.h	/^	std::list<AddressAndTime> addresslist;$/;"	m	class:jrtplib::RTPCollisionList
 addresstype	lib/jrtplib/rtpaddress.h	/^	const AddressType addresstype;$/;"	m	class:jrtplib::RTPAddress
@@ -1225,10 +1643,15 @@ avgbyepacketsize	lib/jrtplib/rtcpscheduler.h	/^	size_t avgbyepacketsize;$/;"	m	c
 avgrtcppacksize	lib/jrtplib/rtcpscheduler.h	/^	size_t avgrtcppacksize;$/;"	m	class:jrtplib::RTCPScheduler
 bandwidth	lib/jrtplib/rtcpscheduler.h	/^	double bandwidth;$/;"	m	class:jrtplib::RTCPSchedulerParams
 baseseqnr	lib/jrtplib/rtpsourcedata.h	/^	uint32_t baseseqnr;$/;"	m	class:jrtplib::RTPSourceStats
+bev	server/appsvr/appreactor.h	/^    bufferevent * bev;$/;"	m	struct:MutexBufferEvent
 bindIP	lib/jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
 bindIP	lib/jrtplib/rtpudpv4transmitter.h	/^	uint32_t bindIP, mcastifaceIP;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 bindIP	lib/jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
 bindIP	lib/jrtplib/rtpudpv6transmitter.h	/^	in6_addr bindIP;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+bind_ev	lib/libevent/http-internal.h	/^	struct event bind_ev;$/;"	m	struct:evhttp	typeref:struct:evhttp::event
+buf	proto/IM.Test.pb.cc	/^ const ::std::string& TestMsg::buf() const {$/;"	f	class:IM::Test::TestMsg
+buf	proto/IM.Test.pb.h	/^inline const ::std::string& TestMsg::buf() const {$/;"	f	class:IM::Test::TestMsg
+buf_	proto/IM.Test.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr buf_;$/;"	m	class:IM::Test::TestMsg
 buffSize	client/AudioSession.h	/^        int    buffSize;$/;"	m	class:AudioTrans
 buffSize	client/workThread.h	/^        int buffSize;$/;"	m	class:ReadLineUserInput
 buffSize	lib/testlib/rtpAudio.cpp	/^        int buffSize;$/;"	m	class:AudioSession	file:
@@ -1236,6 +1659,8 @@ buffer	common/asynLog.cpp	/^char Log :: buffer[LOG_MAXLINE];$/;"	m	class:Log	fil
 buffer	common/asynLog.h	/^    static char buffer[LOG_MAXLINE];$/;"	m	class:Log
 buffer	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	uint8_t *buffer;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
 buffer	lib/jrtplib/rtppacketbuilder.h	/^	uint8_t *buffer;$/;"	m	class:jrtplib::RTPPacketBuilder
+buffer	lib/libevent/event.h	/^	u_char *buffer;$/;"	m	struct:evbuffer
+bufferevent	lib/libevent/event.h	/^struct bufferevent {$/;"	s
 buildermutex	lib/jrtplib/rtpsession.h	/^	jthread::JMutex sourcesmutex,buildermutex,schedmutex,packsentmutex;$/;"	m	class:jrtplib::RTPSession
 byemembers	lib/jrtplib/rtcpscheduler.h	/^	int byemembers,pbyemembers;$/;"	m	class:jrtplib::RTCPScheduler
 byemultiplier	lib/jrtplib/rtpsession.h	/^	double byemultiplier;$/;"	m	class:jrtplib::RTPSession
@@ -1251,16 +1676,51 @@ bytecount	lib/jrtplib/rtpsourcedata.h	/^	uint32_t bytecount;$/;"	m	class:jrtplib
 callback	client/ClientCmd.cpp	/^InitAudioCmd::callback()$/;"	f	class:InitAudioCmd
 callback	client/ClientCmd.cpp	/^RunAudioCmd::callback()$/;"	f	class:RunAudioCmd
 callback	client/ClientCmd.cpp	/^StopAudioCmd::callback()$/;"	f	class:StopAudioCmd
-callback	client/ClientCmd.h	/^        virtual int callback()$/;"	f	class:TestCmd
+callback	client/ClientCmd.cpp	/^int TestCmd::callback()$/;"	f	class:TestCmd
+callbacks	lib/libevent/http-internal.h	/^	TAILQ_HEAD(httpcbq, evhttp_cb) callbacks;$/;"	m	struct:evhttp
+cb	lib/libevent/event.h	/^	void (*cb)(struct evbuffer *, size_t, size_t, void *);$/;"	m	struct:evbuffer
+cb	lib/libevent/http-internal.h	/^	void (*cb)(struct evhttp_connection *, void *);$/;"	m	struct:evhttp_connection
+cb	lib/libevent/http-internal.h	/^	void (*cb)(struct evhttp_request *, void *);$/;"	m	struct:evhttp_request
+cb	lib/libevent/http-internal.h	/^	void (*cb)(struct evhttp_request *req, void *);$/;"	m	struct:evhttp_cb
+cb_arg	lib/libevent/http-internal.h	/^	void *cb_arg;$/;"	m	struct:evhttp_connection
+cb_arg	lib/libevent/http-internal.h	/^	void *cb_arg;$/;"	m	struct:evhttp_request
+cbarg	lib/libevent/event.h	/^	void *cbarg;$/;"	m	struct:bufferevent
+cbarg	lib/libevent/event.h	/^	void *cbarg;$/;"	m	struct:evbuffer
+cbarg	lib/libevent/http-internal.h	/^	void *cbarg;$/;"	m	struct:evhttp_cb
 channel	client/AudioSession.h	/^    int channel;$/;"	m	struct:AudioParams
 channel	lib/testlib/rtpAudio.cpp	/^        int channel;$/;"	m	class:AudioSession	file:
 checkParams	client/AudioSession.cpp	/^bool AudioTrans::checkParams() {return 0;}$/;"	f	class:AudioTrans
 clearAudio	client/LineTalkReactor.cpp	/^LineTalkReactor::clearAudio()$/;"	f	class:LineTalkReactor
+clear_buf	proto/IM.Test.pb.cc	/^void TestMsg::clear_buf() {$/;"	f	class:IM::Test::TestMsg
+clear_buf	proto/IM.Test.pb.h	/^inline void TestMsg::clear_buf() {$/;"	f	class:IM::Test::TestMsg
+clear_created	proto/IM.Base.pb.cc	/^void UserInfo::clear_created() {$/;"	f	class:IM::Base::UserInfo
+clear_created	proto/IM.Base.pb.h	/^inline void UserInfo::clear_created() {$/;"	f	class:IM::Base::UserInfo
+clear_created	proto/IM.Register.pb.cc	/^void IMRegisterReq::clear_created() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_created	proto/IM.Register.pb.cc	/^void IMRegisterRes::clear_created() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_created	proto/IM.Register.pb.h	/^inline void IMRegisterReq::clear_created() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_created	proto/IM.Register.pb.h	/^inline void IMRegisterRes::clear_created() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_id	proto/IM.Test.pb.cc	/^void TestMsg::clear_id() {$/;"	f	class:IM::Test::TestMsg
+clear_id	proto/IM.Test.pb.h	/^inline void TestMsg::clear_id() {$/;"	f	class:IM::Test::TestMsg
+clear_name	proto/IM.Register.pb.cc	/^void IMRegisterReq::clear_name() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_name	proto/IM.Register.pb.h	/^inline void IMRegisterReq::clear_name() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_password	proto/IM.Register.pb.cc	/^void IMRegisterReq::clear_password() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_password	proto/IM.Register.pb.h	/^inline void IMRegisterReq::clear_password() {$/;"	f	class:IM::Register::IMRegisterReq
+clear_reason	proto/IM.Register.pb.cc	/^void IMRegisterRes::clear_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_reason	proto/IM.Register.pb.h	/^inline void IMRegisterRes::clear_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_status	proto/IM.Register.pb.cc	/^void IMRegisterRes::clear_status() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_status	proto/IM.Register.pb.h	/^inline void IMRegisterRes::clear_status() {$/;"	f	class:IM::Register::IMRegisterRes
+clear_user_id	proto/IM.Base.pb.cc	/^void UserInfo::clear_user_id() {$/;"	f	class:IM::Base::UserInfo
+clear_user_id	proto/IM.Base.pb.h	/^inline void UserInfo::clear_user_id() {$/;"	f	class:IM::Base::UserInfo
+clear_user_lastlog	proto/IM.Base.pb.cc	/^void UserInfo::clear_user_lastlog() {$/;"	f	class:IM::Base::UserInfo
+clear_user_lastlog	proto/IM.Base.pb.h	/^inline void UserInfo::clear_user_lastlog() {$/;"	f	class:IM::Base::UserInfo
+clear_user_name	proto/IM.Base.pb.cc	/^void UserInfo::clear_user_name() {$/;"	f	class:IM::Base::UserInfo
+clear_user_name	proto/IM.Base.pb.h	/^inline void UserInfo::clear_user_name() {$/;"	f	class:IM::Base::UserInfo
 client	client/workThread.h	/^        ClientSvr * client;$/;"	m	class:ReadLineUserInput
 cname	lib/jrtplib/rtpsessionparams.h	/^	std::string cname;$/;"	m	class:jrtplib::RTPSessionParams
 collisionlist	lib/jrtplib/rtpsession.h	/^	RTPCollisionList collisionlist;$/;"	m	class:jrtplib::RTPSession
 collisionmultiplier	lib/jrtplib/rtpsession.h	/^	double collisionmultiplier;$/;"	m	class:jrtplib::RTPSession
 collisionmultiplier	lib/jrtplib/rtpsessionparams.h	/^	double collisionmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+command_id	common/IMProto.h	/^    uint16_t command_id;$/;"	m	struct:__anon2
 compoundpacket	lib/jrtplib/rtcpcompoundpacket.h	/^	uint8_t *compoundpacket;$/;"	m	class:jrtplib::RTCPCompoundPacket
 compoundpacketlength	lib/jrtplib/rtcpcompoundpacket.h	/^	size_t compoundpacketlength;$/;"	m	class:jrtplib::RTCPCompoundPacket
 controlfrac	lib/jrtplib/rtpsessionparams.h	/^	double controlfrac;$/;"	m	class:jrtplib::RTPSessionParams
@@ -1270,6 +1730,15 @@ created	lib/jrtplib/rtpexternaltransmitter.h	/^	bool created;$/;"	m	class:jrtpli
 created	lib/jrtplib/rtpsession.h	/^	bool created;$/;"	m	class:jrtplib::RTPSession
 created	lib/jrtplib/rtpudpv4transmitter.h	/^	bool created;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 created	lib/jrtplib/rtpudpv6transmitter.h	/^	bool created;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+created	proto/IM.Base.pb.cc	/^ ::google::protobuf::uint32 UserInfo::created() const {$/;"	f	class:IM::Base::UserInfo
+created	proto/IM.Base.pb.h	/^inline ::google::protobuf::uint32 UserInfo::created() const {$/;"	f	class:IM::Base::UserInfo
+created	proto/IM.Register.pb.cc	/^ ::google::protobuf::uint32 IMRegisterReq::created() const {$/;"	f	class:IM::Register::IMRegisterReq
+created	proto/IM.Register.pb.cc	/^ ::google::protobuf::uint32 IMRegisterRes::created() const {$/;"	f	class:IM::Register::IMRegisterRes
+created	proto/IM.Register.pb.h	/^inline ::google::protobuf::uint32 IMRegisterReq::created() const {$/;"	f	class:IM::Register::IMRegisterReq
+created	proto/IM.Register.pb.h	/^inline ::google::protobuf::uint32 IMRegisterRes::created() const {$/;"	f	class:IM::Register::IMRegisterRes
+created_	proto/IM.Base.pb.h	/^  ::google::protobuf::uint32 created_;$/;"	m	class:IM::Base::UserInfo
+created_	proto/IM.Register.pb.h	/^  ::google::protobuf::uint32 created_;$/;"	m	class:IM::Register::IMRegisterReq
+created_	proto/IM.Register.pb.h	/^  ::google::protobuf::uint32 created_;$/;"	m	class:IM::Register::IMRegisterRes
 csrccount	lib/jrtplib/rtpstructs.h	/^	uint8_t csrccount:4;$/;"	m	struct:jrtplib::RTPHeader
 csrcs	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t csrcs[RTP_MAXCSRCS];$/;"	m	class:jrtplib::RTPPacketBuilder
 ctime	common/asynLog.cpp	/^ctime(char * t_time, size_t n)$/;"	f
@@ -1280,22 +1749,42 @@ curitem	lib/jrtplib/rtcpsdesinfo.h	/^	std::list<SDESPrivateItem *>::const_iterat
 currentchunk	lib/jrtplib/rtcpsdespacket.h	/^	uint8_t *currentchunk;$/;"	m	class:jrtplib::RTCPSDESPacket
 data	lib/jrtplib/rtcppacket.h	/^	uint8_t *data;$/;"	m	class:jrtplib::RTCPPacket
 datalen	lib/jrtplib/rtcppacket.h	/^	size_t datalen;$/;"	m	class:jrtplib::RTCPPacket
+dealSvrError	client/LineTalkReactor.cpp	/^int LineTalkReactor::dealSvrError(int res)$/;"	f	class:LineTalkReactor
+dealloc	lib/libevent/event.h	/^	void (*dealloc)(void *);$/;"	m	struct:eventop
 debugnr	lib/jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
 default_hand	common/net.cpp	/^default_hand(int sig)$/;"	f
+default_instance	proto/IM.Base.pb.cc	/^const UserInfo& UserInfo::default_instance() {$/;"	f	class:IM::Base::UserInfo
+default_instance	proto/IM.Register.pb.cc	/^const IMRegisterReq& IMRegisterReq::default_instance() {$/;"	f	class:IM::Register::IMRegisterReq
+default_instance	proto/IM.Register.pb.cc	/^const IMRegisterRes& IMRegisterRes::default_instance() {$/;"	f	class:IM::Register::IMRegisterRes
+default_instance	proto/IM.Test.pb.cc	/^const TestMsg& TestMsg::default_instance() {$/;"	f	class:IM::Test::TestMsg
+default_instance_	proto/IM.Base.pb.cc	/^UserInfo* UserInfo::default_instance_ = NULL;$/;"	m	class:IM::Base::UserInfo	file:
+default_instance_	proto/IM.Base.pb.h	/^  static UserInfo* default_instance_;$/;"	m	class:IM::Base::UserInfo
+default_instance_	proto/IM.Register.pb.cc	/^IMRegisterReq* IMRegisterReq::default_instance_ = NULL;$/;"	m	class:IM::Register::IMRegisterReq	file:
+default_instance_	proto/IM.Register.pb.cc	/^IMRegisterRes* IMRegisterRes::default_instance_ = NULL;$/;"	m	class:IM::Register::IMRegisterRes	file:
+default_instance_	proto/IM.Register.pb.h	/^  static IMRegisterReq* default_instance_;$/;"	m	class:IM::Register::IMRegisterReq
+default_instance_	proto/IM.Register.pb.h	/^  static IMRegisterRes* default_instance_;$/;"	m	class:IM::Register::IMRegisterRes
+default_instance_	proto/IM.Test.pb.cc	/^TestMsg* TestMsg::default_instance_ = NULL;$/;"	m	class:IM::Test::TestMsg	file:
+default_instance_	proto/IM.Test.pb.h	/^  static TestMsg* default_instance_;$/;"	m	class:IM::Test::TestMsg
 defaultmark	lib/jrtplib/rtppacketbuilder.h	/^	bool defaultmark;$/;"	m	class:jrtplib::RTPPacketBuilder
 defaultpayloadtype	lib/jrtplib/rtppacketbuilder.h	/^	uint8_t defaultpayloadtype;$/;"	m	class:jrtplib::RTPPacketBuilder
 defaulttimestampinc	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t defaulttimestampinc;$/;"	m	class:jrtplib::RTPPacketBuilder
 defmarkset	lib/jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
 defptset	lib/jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
 deftsset	lib/jrtplib/rtppacketbuilder.h	/^	bool deftsset,defptset,defmarkset;$/;"	m	class:jrtplib::RTPPacketBuilder
+del	lib/libevent/event.h	/^	int (*del)(void *, struct event *);$/;"	m	struct:eventop
 deletepacket	lib/jrtplib/rtcpcompoundpacket.h	/^	bool deletepacket;$/;"	m	class:jrtplib::RTCPCompoundPacket
 deletertprnd	lib/jrtplib/rtpsession.h	/^	bool deletertprnd;$/;"	m	class:jrtplib::RTPSession
 deletetransmitter	lib/jrtplib/rtpsession.h	/^	bool deletetransmitter;$/;"	m	class:jrtplib::RTPSession
+descriptor	proto/IM.Base.pb.cc	/^const ::google::protobuf::Descriptor* UserInfo::descriptor() {$/;"	f	class:IM::Base::UserInfo
+descriptor	proto/IM.Register.pb.cc	/^const ::google::protobuf::Descriptor* IMRegisterReq::descriptor() {$/;"	f	class:IM::Register::IMRegisterReq
+descriptor	proto/IM.Register.pb.cc	/^const ::google::protobuf::Descriptor* IMRegisterRes::descriptor() {$/;"	f	class:IM::Register::IMRegisterRes
+descriptor	proto/IM.Test.pb.cc	/^const ::google::protobuf::Descriptor* TestMsg::descriptor() {$/;"	f	class:IM::Test::TestMsg
 destinations	lib/jrtplib/rtpudpv4transmitter.h	/^	RTPHashTable<const RTPIPv4Destination,RTPUDPv4Trans_GetHashIndex_IPv4Dest,RTPUDPV4TRANS_HASHSIZE> destinations;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 destinations	lib/jrtplib/rtpudpv6transmitter.h	/^	RTPHashTable<const RTPIPv6Destination,RTPUDPv6Trans_GetHashIndex_IPv6Dest,RTPUDPV6TRANS_HASHSIZE> destinations;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 destroy	client/ClientSvr.cpp	/^int ClientSvr::destroy()$/;"	f	class:ClientSvr
 destroy	common/singleton.h	/^        static void destroy()$/;"	f	class:Singleton
 device	lib/jrtplib/rtprandomurandom.h	/^	FILE *device;$/;"	m	class:jrtplib::RTPRandomURandom
+dispatch	lib/libevent/event.h	/^	int (*dispatch)(struct event_base *, void *, struct timeval *);$/;"	m	struct:eventop
 djitter	lib/jrtplib/rtpsourcedata.h	/^	double djitter;$/;"	m	class:jrtplib::RTPSourceStats
 dlsr	lib/jrtplib/rtpsourcedata.h	/^	uint32_t dlsr;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
 dlsr	lib/jrtplib/rtpstructs.h	/^	uint32_t dlsr;$/;"	m	struct:jrtplib::RTCPReceiverReport
@@ -1310,11 +1799,70 @@ element	lib/jrtplib/rtphashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTP
 element	lib/jrtplib/rtpkeyhashtable.h	/^		Element element;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
 empty_Sec	common/configParser.cpp	/^static const Section empty_Sec = Section();$/;"	v	file:
 empty_str	common/configParser.cpp	/^static const std::string empty_str = "";$/;"	v	file:
+enabled	lib/libevent/event.h	/^	short enabled;	\/* events that are currently enabled *\/$/;"	m	struct:bufferevent
 err	client/AudioSession.h	/^        int err;$/;"	m	class:AudioTrans
 err	lib/testlib/rtpAudio.cpp	/^        int err; $/;"	m	class:AudioSession	file:
 error	lib/jrtplib/rtcpcompoundpacket.h	/^	int error;$/;"	m	class:jrtplib::RTCPCompoundPacket
 error	lib/jrtplib/rtppacket.h	/^	int error;$/;"	m	class:jrtplib::RTPPacket
+errorcb	lib/libevent/event.h	/^	everrorcb errorcb;$/;"	m	struct:bufferevent
+ev	lib/libevent/http-internal.h	/^	struct event ev;$/;"	m	struct:evhttp_connection	typeref:struct:evhttp_connection::event
+ev_active_next	lib/libevent/event.h	/^	TAILQ_ENTRY (event) ev_active_next;$/;"	m	struct:event
+ev_arg	lib/libevent/event.h	/^	void *ev_arg;$/;"	m	struct:event
+ev_base	lib/libevent/event.h	/^	struct event_base *ev_base;$/;"	m	struct:event	typeref:struct:event::event_base
+ev_callback	lib/libevent/event.h	/^	void (*ev_callback)(int, short, void *arg);$/;"	m	struct:event
+ev_events	lib/libevent/event.h	/^	short ev_events;$/;"	m	struct:event
+ev_fd	lib/libevent/event.h	/^	int ev_fd;$/;"	m	struct:event
+ev_flags	lib/libevent/event.h	/^	int ev_flags;$/;"	m	struct:event
+ev_ncalls	lib/libevent/event.h	/^	short ev_ncalls;$/;"	m	struct:event
+ev_next	lib/libevent/event.h	/^	TAILQ_ENTRY (event) ev_next;$/;"	m	struct:event
+ev_pncalls	lib/libevent/event.h	/^	short *ev_pncalls;	\/* Allows deletes in callback *\/$/;"	m	struct:event
+ev_pri	lib/libevent/event.h	/^	int ev_pri;		\/* smaller numbers are higher priority *\/$/;"	m	struct:event
+ev_read	lib/libevent/event.h	/^	struct event ev_read;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event
+ev_res	lib/libevent/event.h	/^	int ev_res;		\/* result passed to event callback *\/$/;"	m	struct:event
+ev_signal_next	lib/libevent/event.h	/^	TAILQ_ENTRY (event) ev_signal_next;$/;"	m	struct:event
+ev_timeout	lib/libevent/event.h	/^	struct timeval ev_timeout;$/;"	m	struct:event	typeref:struct:event::timeval
+ev_timeout_node	lib/libevent/event.h	/^	RB_ENTRY (event) ev_timeout_node;$/;"	m	struct:event
+ev_write	lib/libevent/event.h	/^	struct event ev_write;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event
+evbase	lib/libevent/event-internal.h	/^	void *evbase;$/;"	m	struct:event_base
+evbuffer	lib/libevent/event.h	/^struct evbuffer {$/;"	s
+evbuffercb	lib/libevent/event.h	/^typedef void (*evbuffercb)(struct bufferevent *, void *);$/;"	t
+evcon	lib/libevent/http-internal.h	/^	struct evhttp_connection *evcon;$/;"	m	struct:evhttp_request	typeref:struct:evhttp_request::evhttp_connection
+evdns_callback_type	lib/libevent/evdns.h	/^typedef void (*evdns_callback_type) (int result, char type, int count, int ttl, void *addresses, void *arg);$/;"	t
+evdns_debug_log_fn_type	lib/libevent/evdns.h	/^typedef void (*evdns_debug_log_fn_type)(int is_warning, const char *msg);$/;"	t
+event	lib/libevent/event.h	/^struct event {$/;"	s
+event_base	lib/libevent/event-internal.h	/^struct event_base {$/;"	s
+event_count	lib/libevent/event-internal.h	/^	int event_count;		\/* counts number of total events *\/$/;"	m	struct:event_base
+event_count_active	lib/libevent/event-internal.h	/^	int event_count_active;	\/* counts number of active events *\/$/;"	m	struct:event_base
+event_debug	lib/libevent/log.h	38;"	d
+event_debug	lib/libevent/log.h	40;"	d
+event_gotterm	lib/libevent/event-internal.h	/^	int event_gotterm;		\/* Set to terminate loop *\/$/;"	m	struct:event_base
+event_initialized	lib/libevent/event.h	196;"	d
+event_initialized	lib/libevent/event.h	198;"	d
+event_log_cb	lib/libevent/event.h	/^typedef void (*event_log_cb)(int severity, const char *msg);$/;"	t
+event_tv	lib/libevent/event-internal.h	/^	struct timeval event_tv;$/;"	m	struct:event_base	typeref:struct:event_base::timeval
+event_watermark	lib/libevent/event.h	/^struct event_watermark {$/;"	s
+eventop	lib/libevent/event.h	/^struct eventop {$/;"	s
+eventqueue	lib/libevent/event-internal.h	/^	struct event_list eventqueue;$/;"	m	struct:event_base	typeref:struct:event_base::event_list
+everrorcb	lib/libevent/event.h	/^typedef void (*everrorcb)(struct bufferevent *, short what, void *);$/;"	t
+evhttp	lib/libevent/http-internal.h	/^struct evhttp {$/;"	s
+evhttp_cb	lib/libevent/http-internal.h	/^struct evhttp_cb {$/;"	s
+evhttp_cmd_type	lib/libevent/evhttp.h	/^enum evhttp_cmd_type { EVHTTP_REQ_GET, EVHTTP_REQ_POST, EVHTTP_REQ_HEAD };$/;"	g
+evhttp_connection	lib/libevent/http-internal.h	/^struct evhttp_connection {$/;"	s
+evhttp_connection_state	lib/libevent/http-internal.h	/^enum evhttp_connection_state {$/;"	g
+evhttp_request	lib/libevent/http-internal.h	/^struct evhttp_request {$/;"	s
+evhttp_request_kind	lib/libevent/http-internal.h	/^enum evhttp_request_kind { EVHTTP_REQUEST, EVHTTP_RESPONSE };$/;"	g
+evkeyval	lib/libevent/event.h	/^struct evkeyval {$/;"	s
+evsel	lib/libevent/event-internal.h	/^	const struct eventop *evsel;$/;"	m	struct:event_base	typeref:struct:event_base::eventop
+evtimer_add	lib/libevent/event.h	167;"	d
+evtimer_del	lib/libevent/event.h	169;"	d
+evtimer_initialized	lib/libevent/event.h	171;"	d
+evtimer_pending	lib/libevent/event.h	170;"	d
+evtimer_set	lib/libevent/event.h	168;"	d
+expandSvrBuf	client/LineTalkReactor.cpp	/^int LineTalkReactor::expandSvrBuf()$/;"	f	class:LineTalkReactor
 extCmd	client/LineTalkReactor.cpp	/^LineTalkReactor::extCmd(const string input)$/;"	f	class:LineTalkReactor
+extCmd	server/appsvr/appreactor.h	/^        virtual int extCmd(const std::string ) {};$/;"	f	class:APPReactor
+extCmd	server/netsvr/netReactor.h	/^        virtual int extCmd(const std::string ) {};$/;"	f	class:NetReactor
+extSvrRes	client/LineTalkReactor.cpp	/^int LineTalkReactor::extSvrRes()$/;"	f	class:LineTalkReactor
 extUserInput	client/ClientSvr.cpp	/^int ClientSvr::extUserInput(void * data, int len)$/;"	f	class:ClientSvr
 extension	lib/jrtplib/rtppacket.h	/^	uint8_t *extension;$/;"	m	class:jrtplib::RTPPacket
 extension	lib/jrtplib/rtpstructs.h	/^	uint8_t extension:1;$/;"	m	struct:jrtplib::RTPHeader
@@ -1327,11 +1875,14 @@ exthighseqnr	lib/jrtplib/rtpstructs.h	/^	uint32_t exthighseqnr;$/;"	m	struct:jrt
 extid	lib/jrtplib/rtppacket.h	/^	uint16_t extid;$/;"	m	class:jrtplib::RTPPacket
 extid	lib/jrtplib/rtpstructs.h	/^	uint16_t extid;$/;"	m	struct:jrtplib::RTPExtensionHeader
 extseqnr	lib/jrtplib/rtppacket.h	/^	uint32_t extseqnr,timestamp,ssrc;$/;"	m	class:jrtplib::RTPPacket
+fd	lib/libevent/http-internal.h	/^	int fd;$/;"	m	struct:evhttp_connection
 find_line	common/net.cpp	/^find_line(char * req, int end, char label)$/;"	f
 firstcall	lib/jrtplib/rtcpscheduler.h	/^	bool firstcall;$/;"	m	class:jrtplib::RTCPScheduler
 firsthashelem	lib/jrtplib/rtphashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPHashTable
 firsthashelem	lib/jrtplib/rtpkeyhashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPKeyHashTable
 firstpacket	lib/jrtplib/rtcppacketbuilder.h	/^	bool firstpacket;$/;"	m	class:jrtplib::RTCPPacketBuilder
+flags	lib/libevent/http-internal.h	/^	int flags;$/;"	m	struct:evhttp_connection
+flags	lib/libevent/http-internal.h	/^	int flags;$/;"	m	struct:evhttp_request
 fp	common/asynLog.cpp	/^FILE * Log :: fp; $/;"	m	class:Log	file:
 fp	common/asynLog.h	/^    static FILE * fp; $/;"	m	class:Log
 fractionlost	lib/jrtplib/rtpsourcedata.h	/^	double fractionlost;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
@@ -1340,6 +1891,8 @@ frameSize	client/AudioSession.h	/^    int frameSize;$/;"	m	struct:AudioParams
 frameSize	lib/testlib/rtpAudio.cpp	/^        int frameSize;$/;"	m	class:AudioSession	file:
 frames	client/AudioSession.h	/^    snd_pcm_uframes_t frames;$/;"	m	struct:AudioParams
 frames	lib/testlib/rtpAudio.cpp	/^        snd_pcm_uframes_t frames;$/;"	m	class:AudioSession	file:
+gencb	lib/libevent/http-internal.h	/^	void (*gencb)(struct evhttp_request *req, void *);$/;"	m	struct:evhttp
+gencbarg	lib/libevent/http-internal.h	/^	void *gencbarg;$/;"	m	struct:evhttp
 generaltimeoutmultiplier	lib/jrtplib/rtpsessionparams.h	/^	double generaltimeoutmultiplier;$/;"	m	class:jrtplib::RTPSessionParams
 get	common/configParser.cpp	/^ConfigParser :: get(const std::string sectionName, const std::string keyName) const$/;"	f	class:ConfigParser
 get	common/configParser.cpp	/^ConfigParser::get(const std::string sectionName) const$/;"	f	class:ConfigParser
@@ -1347,8 +1900,19 @@ get	common/configParser.cpp	/^Section :: get(const std::string key) const$/;"	f	
 getAudioRecvThread	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioRecvThread()$/;"	f	class:LineTalkReactor
 getAudioSendThread	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioSendThread()$/;"	f	class:LineTalkReactor
 getAudioSession	client/LineTalkReactor.cpp	/^LineTalkReactor::getAudioSession()$/;"	f	class:LineTalkReactor
+getAudioStatus	client/LineTalkReactor.h	/^        virtual int getAudioStatus() {return _audioStatus;}$/;"	f	class:LineTalkReactor
+getFdPool	server/appsvr/appreactor.h	/^        struct bufferevent ** getFdPool()$/;"	f	class:APPReactor
+getFdPool	server/netsvr/netReactor.h	/^        struct bufferevent ** getFdPool()$/;"	f	class:NetReactor
+getInstance	server/appsvr/StragyModel.h	/^        static UserModel * getInstance()$/;"	f	class:UserStragy
+getListenEv	server/appsvr/appreactor.h	/^        event getListenEv()$/;"	f	class:APPReactor
+getListenEv	server/netsvr/netReactor.h	/^        event getListenEv()$/;"	f	class:NetReactor
+getMaxConnected	server/appsvr/appreactor.h	/^        int getMaxConnected()$/;"	f	class:APPReactor
+getMaxConnected	server/netsvr/netReactor.h	/^        int getMaxConnected()$/;"	f	class:NetReactor
+getSvrFd	client/LineTalkReactor.h	/^        virtual int getSvrFd()  {return _fd;}$/;"	f	class:LineTalkReactor
 get_file	common/asynLog.h	/^    static FILE * get_file()$/;"	f	class:Log
 get_tcp_sockaddr	common/net.cpp	/^get_tcp_sockaddr(char * addr, int * port, $/;"	f
+google	proto/IM.Base.pb.h	/^namespace google {$/;"	n
+got_firstline	lib/libevent/http-internal.h	/^	int got_firstline;$/;"	m	struct:evhttp_request
 handlePlay	client/AudioSession.h	/^        snd_pcm_t * handlePlay;$/;"	m	class:AudioTrans
 handlePlay	lib/testlib/rtpAudio.cpp	/^        snd_pcm_t *handlePlay;$/;"	m	class:AudioSession	file:
 handleRecord	client/AudioSession.h	/^        snd_pcm_t * handleRecord;$/;"	m	class:AudioTrans
@@ -1370,21 +1934,33 @@ headerlength	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t headerlength;$/;
 headeroverhead	lib/jrtplib/rtcpscheduler.h	/^	size_t headeroverhead;$/;"	m	class:jrtplib::RTCPScheduler
 headersize	lib/jrtplib/rtpexternaltransmitter.h	/^	int headersize;$/;"	m	class:jrtplib::RTPExternalTransmissionParams
 headersize	lib/jrtplib/rtpexternaltransmitter.h	/^	int headersize;$/;"	m	class:jrtplib::RTPExternalTransmitter
+high	lib/libevent/event.h	/^	size_t high;$/;"	m	struct:event_watermark
 hostaddress	lib/jrtplib/rtpbyteaddress.h	/^	uint8_t hostaddress[RTPBYTEADDRESS_MAXLENGTH];$/;"	m	class:jrtplib::RTPByteAddress
+id	proto/IM.Test.pb.cc	/^ ::google::protobuf::uint32 TestMsg::id() const {$/;"	f	class:IM::Test::TestMsg
+id	proto/IM.Test.pb.h	/^inline ::google::protobuf::uint32 TestMsg::id() const {$/;"	f	class:IM::Test::TestMsg
+id_	proto/IM.Test.pb.h	/^  ::google::protobuf::uint32 id_;$/;"	m	class:IM::Test::TestMsg
 immediatebye	lib/jrtplib/rtcpscheduler.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTCPSchedulerParams
 immediatebye	lib/jrtplib/rtpsessionparams.h	/^	bool immediatebye;$/;"	m	class:jrtplib::RTPSessionParams
 init	client/AudioSession.cpp	/^int AudioSession::init(std::string dip, $/;"	f	class:AudioSession
 init	client/AudioSession.cpp	/^int AudioTrans::init(std::string ip, int dport, int lport)$/;"	f	class:AudioTrans
-init	client/ClientSvr.cpp	/^int ClientSvr::init(IReactor * ir, WorkerThread * wh)$/;"	f	class:ClientSvr
+init	client/ClientSvr.cpp	/^int ClientSvr::init(std::unique_ptr<IReactor> ir,$/;"	f	class:ClientSvr
 init	client/LineTalkReactor.cpp	/^LineTalkReactor::init()$/;"	f	class:LineTalkReactor
+init	client/Parser.h	/^        const std::string init;$/;"	m	class:UserDataParser
 init	common/asynLog.cpp	/^Log :: init(const char * name)$/;"	f	class:Log
 init	lib/jrtplib/rtcppacketbuilder.h	/^	bool init;$/;"	m	class:jrtplib::RTCPPacketBuilder
 init	lib/jrtplib/rtpexternaltransmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPExternalTransmitter
 init	lib/jrtplib/rtppacketbuilder.h	/^	bool init;$/;"	m	class:jrtplib::RTPPacketBuilder
 init	lib/jrtplib/rtpudpv4transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 init	lib/jrtplib/rtpudpv6transmitter.h	/^	bool init;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+init	lib/libevent/event.h	/^	void *(*init)(void);$/;"	m	struct:eventop
+init	server/appsvr/appreactor.cpp	/^NetReactor::NetReactor::init()$/;"	f	class:NetReactor::NetReactor
+init	server/netsvr/netReactor.cpp	/^NetReactor::NetReactor::init()$/;"	f	class:NetReactor::NetReactor
 initialized	lib/jrtplib/rtprandomrands.h	/^	bool initialized;$/;"	m	class:jrtplib::RTPRandomRandS
 input	client/ClientCmd.h	/^        std::string input;$/;"	m	class:TestCmd
+input	lib/libevent/event.h	/^	struct evbuffer *input;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::evbuffer
+input_buffer	lib/libevent/http-internal.h	/^	struct evbuffer *input_buffer;	\/* read data *\/$/;"	m	struct:evhttp_request	typeref:struct:evhttp_request::evbuffer
+input_buffer	lib/libevent/http-internal.h	/^	struct evbuffer *input_buffer;$/;"	m	struct:evhttp_connection	typeref:struct:evhttp_connection::evbuffer
+input_headers	lib/libevent/http-internal.h	/^	struct evkeyvalq *input_headers;$/;"	m	struct:evhttp_request	typeref:struct:evhttp_request::evkeyvalq
 instance	common/singleton.h	/^        static T * instance()$/;"	f	class:Singleton
 int16_t	lib/jrtplib/rtptypes_win.h	/^typedef short int16_t;$/;"	t
 int32_t	lib/jrtplib/rtptypes_win.h	/^typedef int int32_t;$/;"	t
@@ -1402,6 +1978,13 @@ ip	lib/jrtplib/rtpipv6address.h	/^	in6_addr ip;$/;"	m	class:jrtplib::RTPIPv6Addr
 isSR	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		bool isSR;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
 isStop	client/LineTalkReactor.cpp	/^LineTalkReactor::isStop()$/;"	f	class:LineTalkReactor
 isStop	interface/thread.h	/^        bool isStop()$/;"	f	class:WorkerThread
+isStop	server/appsvr/appreactor.cpp	/^NetReactor::isStop()$/;"	f	class:NetReactor
+isStop	server/netsvr/netReactor.cpp	/^NetReactor::isStop()$/;"	f	class:NetReactor
+is_proto_enum	proto/IM.Base.pb.h	/^template <> struct is_proto_enum< ::IM::Base::BuddyCmdID> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	proto/IM.Base.pb.h	/^template <> struct is_proto_enum< ::IM::Base::LoginCmdID> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	proto/IM.Base.pb.h	/^template <> struct is_proto_enum< ::IM::Base::RegisterCmdID> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	proto/IM.Base.pb.h	/^template <> struct is_proto_enum< ::IM::Base::ResultType> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
+is_proto_enum	proto/IM.Base.pb.h	/^template <> struct is_proto_enum< ::IM::Base::SessionCmdID> : ::google::protobuf::internal::true_type {};$/;"	s	namespace:google::protobuf
 iscsrc	lib/jrtplib/rtpsourcedata.h	/^	bool iscsrc;$/;"	m	class:jrtplib::RTPSourceData
 isrtcpaddrset	lib/jrtplib/rtpsourcedata.h	/^	bool isrtpaddrset,isrtcpaddrset;$/;"	m	class:jrtplib::RTPSourceData
 isrtp	lib/jrtplib/rtprawpacket.h	/^	bool isrtp;$/;"	m	class:jrtplib::RTPRawPacket
@@ -1458,7 +2041,33 @@ jrtplib	lib/jrtplib/rtptimeutilities.h	/^namespace jrtplib$/;"	n
 jrtplib	lib/jrtplib/rtptransmitter.h	/^namespace jrtplib$/;"	n
 jrtplib	lib/jrtplib/rtpudpv4transmitter.h	/^namespace jrtplib$/;"	n
 jrtplib	lib/jrtplib/rtpudpv6transmitter.h	/^namespace jrtplib$/;"	n
+kBufFieldNumber	proto/IM.Test.pb.cc	/^const int TestMsg::kBufFieldNumber;$/;"	m	class:IM::Test::TestMsg	file:
+kBufFieldNumber	proto/IM.Test.pb.h	/^  static const int kBufFieldNumber = 2;$/;"	m	class:IM::Test::TestMsg
+kCreatedFieldNumber	proto/IM.Base.pb.cc	/^const int UserInfo::kCreatedFieldNumber;$/;"	m	class:IM::Base::UserInfo	file:
+kCreatedFieldNumber	proto/IM.Base.pb.h	/^  static const int kCreatedFieldNumber = 3;$/;"	m	class:IM::Base::UserInfo
+kCreatedFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterReq::kCreatedFieldNumber;$/;"	m	class:IM::Register::IMRegisterReq	file:
+kCreatedFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterRes::kCreatedFieldNumber;$/;"	m	class:IM::Register::IMRegisterRes	file:
+kCreatedFieldNumber	proto/IM.Register.pb.h	/^  static const int kCreatedFieldNumber = 3;$/;"	m	class:IM::Register::IMRegisterReq
+kCreatedFieldNumber	proto/IM.Register.pb.h	/^  static const int kCreatedFieldNumber = 3;$/;"	m	class:IM::Register::IMRegisterRes
+kIdFieldNumber	proto/IM.Test.pb.cc	/^const int TestMsg::kIdFieldNumber;$/;"	m	class:IM::Test::TestMsg	file:
+kIdFieldNumber	proto/IM.Test.pb.h	/^  static const int kIdFieldNumber = 1;$/;"	m	class:IM::Test::TestMsg
+kNameFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterReq::kNameFieldNumber;$/;"	m	class:IM::Register::IMRegisterReq	file:
+kNameFieldNumber	proto/IM.Register.pb.h	/^  static const int kNameFieldNumber = 1;$/;"	m	class:IM::Register::IMRegisterReq
+kPasswordFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterReq::kPasswordFieldNumber;$/;"	m	class:IM::Register::IMRegisterReq	file:
+kPasswordFieldNumber	proto/IM.Register.pb.h	/^  static const int kPasswordFieldNumber = 2;$/;"	m	class:IM::Register::IMRegisterReq
+kReasonFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterRes::kReasonFieldNumber;$/;"	m	class:IM::Register::IMRegisterRes	file:
+kReasonFieldNumber	proto/IM.Register.pb.h	/^  static const int kReasonFieldNumber = 2;$/;"	m	class:IM::Register::IMRegisterRes
+kStatusFieldNumber	proto/IM.Register.pb.cc	/^const int IMRegisterRes::kStatusFieldNumber;$/;"	m	class:IM::Register::IMRegisterRes	file:
+kStatusFieldNumber	proto/IM.Register.pb.h	/^  static const int kStatusFieldNumber = 1;$/;"	m	class:IM::Register::IMRegisterRes
+kUserIdFieldNumber	proto/IM.Base.pb.cc	/^const int UserInfo::kUserIdFieldNumber;$/;"	m	class:IM::Base::UserInfo	file:
+kUserIdFieldNumber	proto/IM.Base.pb.h	/^  static const int kUserIdFieldNumber = 1;$/;"	m	class:IM::Base::UserInfo
+kUserLastlogFieldNumber	proto/IM.Base.pb.cc	/^const int UserInfo::kUserLastlogFieldNumber;$/;"	m	class:IM::Base::UserInfo	file:
+kUserLastlogFieldNumber	proto/IM.Base.pb.h	/^  static const int kUserLastlogFieldNumber = 4;$/;"	m	class:IM::Base::UserInfo
+kUserNameFieldNumber	proto/IM.Base.pb.cc	/^const int UserInfo::kUserNameFieldNumber;$/;"	m	class:IM::Base::UserInfo	file:
+kUserNameFieldNumber	proto/IM.Base.pb.h	/^  static const int kUserNameFieldNumber = 2;$/;"	m	class:IM::Base::UserInfo
 key	lib/jrtplib/rtpkeyhashtable.h	/^		Key key;$/;"	m	class:jrtplib::RTPKeyHashTable::HashElement
+key	lib/libevent/event.h	/^	char *key;$/;"	m	struct:evkeyval
+kind	lib/libevent/http-internal.h	/^	enum evhttp_request_kind kind;$/;"	m	struct:evhttp_request	typeref:enum:evhttp_request::evhttp_request_kind
 knownformat	lib/jrtplib/rtcppacket.h	/^	bool knownformat;$/;"	m	class:jrtplib::RTCPPacket
 lasthashelem	lib/jrtplib/rtphashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPHashTable
 lasthashelem	lib/jrtplib/rtpkeyhashtable.h	/^	HashElement *firsthashelem,*lasthashelem;$/;"	m	class:jrtplib::RTPKeyHashTable
@@ -1467,6 +2076,7 @@ lastnotetime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime lastnotetime;$/;"	m	class:jr
 lastrtptime	lib/jrtplib/rtpsourcedata.h	/^	RTPTime lastrtptime;$/;"	m	class:jrtplib::RTPSourceStats
 lastrtptimestamp	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t lastrtptimestamp;$/;"	m	class:jrtplib::RTPPacketBuilder
 lastwallclocktime	lib/jrtplib/rtppacketbuilder.h	/^	RTPTime lastwallclocktime;$/;"	m	class:jrtplib::RTPPacketBuilder
+length	common/IMProto.h	/^    uint32_t length;$/;"	m	struct:__anon2
 length	lib/jrtplib/rtcpsdesinfo.h	/^		size_t length;$/;"	m	class:jrtplib::RTCPSDESInfo::SDESItem
 length	lib/jrtplib/rtpstructs.h	/^	uint16_t length;$/;"	m	struct:jrtplib::RTCPCommonHeader
 length	lib/jrtplib/rtpstructs.h	/^	uint16_t length;$/;"	m	struct:jrtplib::RTPExtensionHeader
@@ -1492,12 +2102,13 @@ localhostnamelength	lib/jrtplib/rtpudpv6transmitter.h	/^	size_t localhostnamelen
 lock	common/lock.h	/^        inline int lock() $/;"	f	class:MLock
 lock	common/lock.h	/^        inline int lock() $/;"	f	class:SpinLock
 lock	common/singleton.h	/^        void lock()$/;"	f	class:MutexLock
-log_buffer	common/asynLog.cpp	/^queue<string> Log :: log_buffer;$/;"	m	class:Log	file:
-log_buffer	common/asynLog.h	/^    static queue<string> log_buffer;   $/;"	m	class:Log
+log_buffer	common/asynLog.cpp	/^queue<std::unique_ptr<char[]>> Log :: log_buffer;$/;"	m	class:Log	file:
+log_buffer	common/asynLog.h	/^    static queue<std::unique_ptr<char[]>> log_buffer;   $/;"	m	class:Log
 log_cond	common/asynLog.cpp	/^pthread_cond_t Log:: log_cond;$/;"	m	class:Log	file:
 log_cond	common/asynLog.h	/^    static pthread_cond_t  log_cond;$/;"	m	class:Log
 log_mutex	common/asynLog.cpp	/^pthread_mutex_t Log :: log_mutex;$/;"	m	class:Log	file:
 log_mutex	common/asynLog.h	/^    static pthread_mutex_t log_mutex;$/;"	m	class:Log
+low	lib/libevent/event.h	/^	size_t low;$/;"	m	struct:event_watermark
 lsr	lib/jrtplib/rtpsourcedata.h	/^	uint32_t lsr;$/;"	m	class:jrtplib::RTCPReceiverReportInfo
 lsr	lib/jrtplib/rtpstructs.h	/^	uint32_t lsr;$/;"	m	struct:jrtplib::RTCPReceiverReport
 lsw	lib/jrtplib/rtptimeutilities.h	/^	uint32_t msw,lsw;$/;"	m	class:jrtplib::RTPNTPTime
@@ -1507,12 +2118,15 @@ m_status	interface/thread.h	/^        int             m_status;$/;"	m	class:Work
 m_thread_id	interface/thread.h	/^	    pthread_t		m_thread_id;$/;"	m	class:WorkerThread
 m_work_buff	interface/thread.h	/^        void *          m_work_buff;$/;"	m	class:WorkerThread
 m_work_len	interface/thread.h	/^        int             m_work_len;$/;"	m	class:WorkerThread
+main	common/test/improtoTest.cpp	/^int main()$/;"	f
 main	lib/testlib/rtpAudio.cpp	/^int main()$/;"	f
+main	server/netsvr/main.cpp	/^int main()$/;"	f
 main	testUnit/main.cpp	/^int main()$/;"	f
 main	testUnit/testAudioSession/main.cpp	/^int main()$/;"	f
 mainmutex	lib/jrtplib/rtpexternaltransmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPExternalTransmitter
 mainmutex	lib/jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 mainmutex	lib/jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+major	lib/libevent/http-internal.h	/^	char major;			\/* HTTP Major number *\/$/;"	m	struct:evhttp_request
 majornr	lib/jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
 marker	lib/jrtplib/rtpstructs.h	/^	uint8_t marker:1;$/;"	m	struct:jrtplib::RTPHeader
 maximumpacketsize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t maximumpacketsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
@@ -1534,7 +2148,9 @@ mgr	lib/jrtplib/rtpmemoryobject.h	/^	RTPMemoryManager *mgr;$/;"	m	class:jrtplib:
 microsec	lib/jrtplib/rtptimeutilities.h	/^	uint32_t sec,microsec;$/;"	m	class:jrtplib::RTPTime
 mininterval	lib/jrtplib/rtcpscheduler.h	/^	RTPTime mininterval;$/;"	m	class:jrtplib::RTCPSchedulerParams
 mininterval	lib/jrtplib/rtpsessionparams.h	/^	RTPTime mininterval;$/;"	m	class:jrtplib::RTPSessionParams
+minor	lib/libevent/http-internal.h	/^	char minor;			\/* HTTP Minor number *\/$/;"	m	struct:evhttp_request
 minornr	lib/jrtplib/rtplibraryversion.h	/^	int debugnr,minornr,majornr;$/;"	m	class:jrtplib::RTPLibraryVersion
+misalign	lib/libevent/event.h	/^	size_t misalign;$/;"	m	struct:evbuffer
 move_forward	common/net.cpp	/^move_forward(char * req, int start, int end)$/;"	f
 msw	lib/jrtplib/rtptimeutilities.h	/^	uint32_t msw,lsw;$/;"	m	class:jrtplib::RTPNTPTime
 multicastTTL	lib/jrtplib/rtpudpv4transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
@@ -1543,8 +2159,23 @@ multicastTTL	lib/jrtplib/rtpudpv6transmitter.h	/^	uint8_t multicastTTL;$/;"	m	cl
 multicastTTL	lib/jrtplib/rtpudpv6transmitter.h	/^	uint8_t multicastTTL;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 multicastgroups	lib/jrtplib/rtpudpv4transmitter.h	/^	RTPHashTable<const uint32_t,RTPUDPv4Trans_GetHashIndex_uint32_t,RTPUDPV4TRANS_HASHSIZE> multicastgroups;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 multicastgroups	lib/jrtplib/rtpudpv6transmitter.h	/^	RTPHashTable<const in6_addr,RTPUDPv6Trans_GetHashIndex_in6_addr,RTPUDPV6TRANS_HASHSIZE> multicastgroups;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+mutable_buf	proto/IM.Test.pb.cc	/^ ::std::string* TestMsg::mutable_buf() {$/;"	f	class:IM::Test::TestMsg
+mutable_buf	proto/IM.Test.pb.h	/^inline ::std::string* TestMsg::mutable_buf() {$/;"	f	class:IM::Test::TestMsg
+mutable_name	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterReq::mutable_name() {$/;"	f	class:IM::Register::IMRegisterReq
+mutable_name	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterReq::mutable_name() {$/;"	f	class:IM::Register::IMRegisterReq
+mutable_password	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterReq::mutable_password() {$/;"	f	class:IM::Register::IMRegisterReq
+mutable_password	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterReq::mutable_password() {$/;"	f	class:IM::Register::IMRegisterReq
+mutable_reason	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterRes::mutable_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+mutable_reason	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterRes::mutable_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+mutable_user_name	proto/IM.Base.pb.cc	/^ ::std::string* UserInfo::mutable_user_name() {$/;"	f	class:IM::Base::UserInfo
+mutable_user_name	proto/IM.Base.pb.h	/^inline ::std::string* UserInfo::mutable_user_name() {$/;"	f	class:IM::Base::UserInfo
 mutex	common/singleton.h	/^        pthread_mutex_t mutex;$/;"	m	class:MutexLock
 mutex	lib/jrtplib/rtprandomrand48.h	/^	jthread::JMutex mutex;$/;"	m	class:jrtplib::RTPRandomRand48
+nactivequeues	lib/libevent/event-internal.h	/^	int nactivequeues;$/;"	m	struct:event_base
+name	lib/libevent/event.h	/^	char *name;$/;"	m	struct:eventop
+name	proto/IM.Register.pb.cc	/^ const ::std::string& IMRegisterReq::name() const {$/;"	f	class:IM::Register::IMRegisterReq
+name	proto/IM.Register.pb.h	/^inline const ::std::string& IMRegisterReq::name() const {$/;"	f	class:IM::Register::IMRegisterReq
+name_	proto/IM.Register.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr name_;$/;"	m	class:IM::Register::IMRegisterReq
 net_accept	common/net.cpp	/^net_accept(int sockfd, struct sockaddr *sa, socklen_t * addrlen)$/;"	f
 net_connect_to_ms	common/net.cpp	/^net_connect_to_ms(int sockfd, struct sockaddr *sa, $/;"	f
 net_connect_to_tv	common/net.cpp	/^net_connect_to_tv(int fd, struct sockaddr * sa, $/;"	f
@@ -1556,10 +2187,14 @@ net_ep_del	common/net.cpp	/^net_ep_del(int epfd, int fd)$/;"	f
 net_tcplisten	common/net.cpp	/^net_tcplisten(int port, int queue)$/;"	f
 new	lib/jrtplib/rtpdebug.h	45;"	d
 new	lib/jrtplib/rtpdebug.h	47;"	d
+next	lib/libevent/event.h	/^	TAILQ_ENTRY(evkeyval) next;$/;"	m	struct:evkeyval
+next	lib/libevent/http-internal.h	/^	TAILQ_ENTRY(evhttp_cb) next;$/;"	m	struct:evhttp_cb
+next	lib/libevent/http-internal.h	/^	TAILQ_ENTRY(evhttp_request) next;$/;"	m	struct:evhttp_request
 nextrtcptime	lib/jrtplib/rtcpscheduler.h	/^	RTPTime nextrtcptime;$/;"	m	class:jrtplib::RTCPScheduler
 nonprivateitems	lib/jrtplib/rtcpsdesinfo.h	/^	SDESItem nonprivateitems[RTCP_SDES_NUMITEMS_NONPRIVATE];$/;"	m	class:jrtplib::RTCPSDESInfo
 notemultiplier	lib/jrtplib/rtpsession.h	/^	double notemultiplier;$/;"	m	class:jrtplib::RTPSession
 notemultiplier	lib/jrtplib/rtpsessionparams.h	/^	double notemultiplier;$/;"	m	class:jrtplib::RTPSessionParams
+ntoread	lib/libevent/http-internal.h	/^	int ntoread;$/;"	m	struct:evhttp_request
 ntptime_lsw	lib/jrtplib/rtpstructs.h	/^	uint32_t ntptime_lsw;$/;"	m	struct:jrtplib::RTCPSenderReport
 ntptime_msw	lib/jrtplib/rtpstructs.h	/^	uint32_t ntptime_msw;$/;"	m	struct:jrtplib::RTCPSenderReport
 ntptimestamp	lib/jrtplib/rtpsourcedata.h	/^	RTPNTPTime ntptimestamp;$/;"	m	class:jrtplib::RTCPSenderReportInfo
@@ -1570,11 +2205,16 @@ numnewpackets	lib/jrtplib/rtpsourcedata.h	/^	uint32_t numnewpackets;$/;"	m	class
 numpackets	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t numpackets;$/;"	m	class:jrtplib::RTPPacketBuilder
 numpayloadbytes	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t numpayloadbytes;$/;"	m	class:jrtplib::RTPPacketBuilder
 octetcount	lib/jrtplib/rtpstructs.h	/^	uint32_t octetcount;$/;"	m	struct:jrtplib::RTCPSenderReport
+off	lib/libevent/event.h	/^	size_t off;$/;"	m	struct:evbuffer
 openLog	client/ClientSvr.cpp	/^int ClientSvr::openLog(const Section & sec)$/;"	f	class:ClientSvr
 operator +=	lib/jrtplib/rtptimeutilities.h	/^inline RTPTime &RTPTime::operator+=(const RTPTime &t)$/;"	f	class:jrtplib::RTPTime
 operator -=	lib/jrtplib/rtptimeutilities.h	/^inline RTPTime &RTPTime::operator-=(const RTPTime &t)$/;"	f	class:jrtplib::RTPTime
 operator <	lib/jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator<(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
 operator <=	lib/jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator<=(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
+operator =	proto/IM.Base.pb.h	/^  inline UserInfo& operator=(const UserInfo& from) {$/;"	f	class:IM::Base::UserInfo
+operator =	proto/IM.Register.pb.h	/^  inline IMRegisterReq& operator=(const IMRegisterReq& from) {$/;"	f	class:IM::Register::IMRegisterReq
+operator =	proto/IM.Register.pb.h	/^  inline IMRegisterRes& operator=(const IMRegisterRes& from) {$/;"	f	class:IM::Register::IMRegisterRes
+operator =	proto/IM.Test.pb.h	/^  inline TestMsg& operator=(const TestMsg& from) {$/;"	f	class:IM::Test::TestMsg
 operator ==	lib/jrtplib/rtpipv4destination.h	/^	bool operator==(const RTPIPv4Destination &src) const					$/;"	f	class:jrtplib::RTPIPv4Destination
 operator ==	lib/jrtplib/rtpipv6destination.h	/^	bool operator==(const RTPIPv6Destination &src) const				$/;"	f	class:jrtplib::RTPIPv6Destination
 operator >	lib/jrtplib/rtptimeutilities.h	/^inline bool RTPTime::operator>(const RTPTime &t) const$/;"	f	class:jrtplib::RTPTime
@@ -1583,6 +2223,11 @@ operator delete	lib/jrtplib/rtpmemorymanager.h	/^inline void operator delete(voi
 operator delete[]	lib/jrtplib/rtpmemorymanager.h	/^inline void operator delete[](void *buffer, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
 operator new	lib/jrtplib/rtpmemorymanager.h	/^inline void *operator new(size_t numbytes, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
 operator new[]	lib/jrtplib/rtpmemorymanager.h	/^inline void *operator new[](size_t numbytes, jrtplib::RTPMemoryManager *mgr, int memtype)$/;"	f
+orig_buffer	lib/libevent/event.h	/^	u_char *orig_buffer;$/;"	m	struct:evbuffer
+output	lib/libevent/event.h	/^	struct evbuffer *output;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::evbuffer
+output_buffer	lib/libevent/http-internal.h	/^	struct evbuffer *output_buffer;	\/* outgoing post or data *\/$/;"	m	struct:evhttp_request	typeref:struct:evhttp_request::evbuffer
+output_buffer	lib/libevent/http-internal.h	/^	struct evbuffer *output_buffer;$/;"	m	struct:evhttp_connection	typeref:struct:evhttp_connection::evbuffer
+output_headers	lib/libevent/http-internal.h	/^	struct evkeyvalq *output_headers;$/;"	m	struct:evhttp_request	typeref:struct:evhttp_request::evkeyvalq
 owncollision	lib/jrtplib/rtpsessionsources.h	/^	bool owncollision;$/;"	m	class:jrtplib::RTPSessionSources
 owndata	lib/jrtplib/rtpsources.h	/^	RTPInternalSourceData *owndata;$/;"	m	class:jrtplib::RTPSources
 ownsdesinfo	lib/jrtplib/rtcppacketbuilder.h	/^	RTCPSDESInfoInternal ownsdesinfo;$/;"	m	class:jrtplib::RTCPPacketBuilder
@@ -1612,13 +2257,16 @@ padding	lib/jrtplib/rtpstructs.h	/^	uint8_t padding:1;$/;"	m	struct:jrtplib::RTP
 params	client/AudioSession.h	/^        snd_pcm_hw_params_t * params;        $/;"	m	class:AudioTrans
 params	lib/testlib/rtpAudio.cpp	/^        snd_pcm_hw_params_t *params;$/;"	m	class:AudioSession	file:
 parser_file	common/configParser.cpp	/^ConfigParser :: parser_file(const std::string &file)$/;"	f	class:ConfigParser
+password	proto/IM.Register.pb.cc	/^ const ::std::string& IMRegisterReq::password() const {$/;"	f	class:IM::Register::IMRegisterReq
+password	proto/IM.Register.pb.h	/^inline const ::std::string& IMRegisterReq::password() const {$/;"	f	class:IM::Register::IMRegisterReq
+password_	proto/IM.Register.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr password_;$/;"	m	class:IM::Register::IMRegisterReq
 payload	lib/jrtplib/rtppacket.h	/^	uint8_t *packet,*payload;$/;"	m	class:jrtplib::RTPPacket
 payloadlength	lib/jrtplib/rtppacket.h	/^	size_t packetlength,payloadlength;$/;"	m	class:jrtplib::RTPPacket
 payloadtype	lib/jrtplib/rtppacket.h	/^	uint8_t payloadtype;$/;"	m	class:jrtplib::RTPPacket
 payloadtype	lib/jrtplib/rtpstructs.h	/^	uint8_t payloadtype:7;$/;"	m	struct:jrtplib::RTPHeader
 pbyemembers	lib/jrtplib/rtcpscheduler.h	/^	int byemembers,pbyemembers;$/;"	m	class:jrtplib::RTCPScheduler
 pemail	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
-playBuffer	client/AudioSession.h	/^        void * playBuffer;$/;"	m	class:AudioTrans
+playBuffer	client/AudioSession.h	/^        void * playBuffer; $/;"	m	class:AudioTrans
 playBuffer	lib/testlib/rtpAudio.cpp	/^        void * playBuffer;  $/;"	m	class:AudioSession	file:
 playParams	client/AudioSession.h	/^        AudioParams  playParams;$/;"	m	class:AudioTrans
 playSize	client/AudioSession.h	/^        int  playSize;$/;"	m	class:AudioTrans
@@ -1630,6 +2278,7 @@ pollthread	lib/jrtplib/rtpsession.h	/^	RTPPollThread *pollthread;$/;"	m	class:jr
 port	lib/jrtplib/rtpbyteaddress.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPByteAddress
 port	lib/jrtplib/rtpipv4address.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPIPv4Address
 port	lib/jrtplib/rtpipv6address.h	/^	uint16_t port;$/;"	m	class:jrtplib::RTPIPv6Address
+port	lib/libevent/http-internal.h	/^	u_short port;$/;"	m	struct:evhttp_connection
 portbase	lib/jrtplib/rtpudpv4transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv4TransmissionParams
 portbase	lib/jrtplib/rtpudpv4transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 portbase	lib/jrtplib/rtpudpv6transmitter.h	/^	uint16_t portbase;$/;"	m	class:jrtplib::RTPUDPv6TransmissionParams
@@ -1656,22 +2305,46 @@ probationtype	lib/jrtplib/rtpsources.h	/^	ProbationType probationtype;$/;"	m	cla
 processedinrtcp	lib/jrtplib/rtpsourcedata.h	/^	bool processedinrtcp;$/;"	m	class:jrtplib::RTPSourceData
 processingsdes	lib/jrtplib/rtcppacketbuilder.h	/^	bool processingsdes;$/;"	m	class:jrtplib::RTCPPacketBuilder
 produce_log	common/asynLog.cpp	/^Log :: produce_log(int event, const char * fmt, va_list args)$/;"	f	class:Log
+protobuf	proto/IM.Base.pb.h	/^namespace protobuf {$/;"	n	namespace:google
+protobuf_AddDesc_IM_2eBase_2eproto	proto/IM.Base.pb.cc	/^void protobuf_AddDesc_IM_2eBase_2eproto() {$/;"	f	namespace:IM::Base
+protobuf_AddDesc_IM_2eRegister_2eproto	proto/IM.Register.pb.cc	/^void protobuf_AddDesc_IM_2eRegister_2eproto() {$/;"	f	namespace:IM::Register
+protobuf_AddDesc_IM_2eTest_2eproto	proto/IM.Test.pb.cc	/^void protobuf_AddDesc_IM_2eTest_2eproto() {$/;"	f	namespace:IM::Test
+protobuf_AssignDesc_IM_2eBase_2eproto	proto/IM.Base.pb.cc	/^void protobuf_AssignDesc_IM_2eBase_2eproto() {$/;"	f	namespace:IM::Base
+protobuf_AssignDesc_IM_2eRegister_2eproto	proto/IM.Register.pb.cc	/^void protobuf_AssignDesc_IM_2eRegister_2eproto() {$/;"	f	namespace:IM::Register
+protobuf_AssignDesc_IM_2eTest_2eproto	proto/IM.Test.pb.cc	/^void protobuf_AssignDesc_IM_2eTest_2eproto() {$/;"	f	namespace:IM::Test
+protobuf_AssignDescriptorsOnce	proto/IM.Base.pb.cc	/^inline void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:IM::Base::__anon16
+protobuf_AssignDescriptorsOnce	proto/IM.Register.pb.cc	/^inline void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:IM::Register::__anon10
+protobuf_AssignDescriptorsOnce	proto/IM.Test.pb.cc	/^inline void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:IM::Test::__anon13
+protobuf_RegisterTypes	proto/IM.Base.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:IM::Base::__anon16
+protobuf_RegisterTypes	proto/IM.Register.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:IM::Register::__anon10
+protobuf_RegisterTypes	proto/IM.Test.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:IM::Test::__anon13
+protobuf_ShutdownFile_IM_2eBase_2eproto	proto/IM.Base.pb.cc	/^void protobuf_ShutdownFile_IM_2eBase_2eproto() {$/;"	f	namespace:IM::Base
+protobuf_ShutdownFile_IM_2eRegister_2eproto	proto/IM.Register.pb.cc	/^void protobuf_ShutdownFile_IM_2eRegister_2eproto() {$/;"	f	namespace:IM::Register
+protobuf_ShutdownFile_IM_2eTest_2eproto	proto/IM.Test.pb.cc	/^void protobuf_ShutdownFile_IM_2eTest_2eproto() {$/;"	f	namespace:IM::Test
 protocol	lib/jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionInfo
 protocol	lib/jrtplib/rtptransmitter.h	/^	RTPTransmitter::TransmissionProtocol protocol;$/;"	m	class:jrtplib::RTPTransmissionParams
 ptool	lib/jrtplib/rtcppacketbuilder.h	/^		bool pname,pemail,plocation,pphone,ptool,pnote;$/;"	m	class:jrtplib::RTCPPacketBuilder::RTCPSDESInfoInternal
+punch_flag	common/IMProto.h	/^    uint16_t punch_flag;$/;"	m	struct:__anon2
 ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:InitAudioCmd
 ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:RunAudioCmd
 ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:StopAudioCmd
+ract	client/ClientCmd.h	/^        LineTalkReactor * ract;$/;"	m	class:TestCmd
 rate	client/AudioSession.h	/^    unsigned int rate;$/;"	m	struct:AudioParams
 rate	lib/testlib/rtpAudio.cpp	/^        unsigned int rate;$/;"	m	class:AudioSession	file:
 rawpacketlist	lib/jrtplib/rtpexternaltransmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPExternalTransmitter
 rawpacketlist	lib/jrtplib/rtpudpv4transmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 rawpacketlist	lib/jrtplib/rtpudpv6transmitter.h	/^	std::list<RTPRawPacket*> rawpacketlist;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 readLineOnce	client/workThread.cpp	/^int ReadLineUserInput::readLineOnce()$/;"	f	class:ReadLineUserInput
+readSvrRes	client/LineTalkReactor.cpp	/^int LineTalkReactor::readSvrRes()$/;"	f	class:LineTalkReactor
 read_to_ms	common/net.cpp	/^read_to_ms(int fd, void * ptr, size_t nbytes, int msec)$/;"	f
 readable_to	common/net.cpp	/^readable_to(int fd, int msec)$/;"	f
+readcb	lib/libevent/event.h	/^	evbuffercb readcb;$/;"	m	struct:bufferevent
 readn	common/net.cpp	/^readn(int fd, void *usrbuf, size_t n)$/;"	f
+reason	proto/IM.Register.pb.cc	/^ const ::std::string& IMRegisterRes::reason() const {$/;"	f	class:IM::Register::IMRegisterRes
+reason	proto/IM.Register.pb.h	/^inline const ::std::string& IMRegisterRes::reason() const {$/;"	f	class:IM::Register::IMRegisterRes
+reason_	proto/IM.Register.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr reason_;$/;"	m	class:IM::Register::IMRegisterRes
 reasonoffset	lib/jrtplib/rtcpbyepacket.h	/^	size_t reasonoffset;$/;"	m	class:jrtplib::RTCPBYEPacket
+recalc	lib/libevent/event.h	/^	int (*recalc)(struct event_base *, void *, int);$/;"	m	struct:eventop
 receivedbye	lib/jrtplib/rtpsourcedata.h	/^	bool receivedbye;$/;"	m	class:jrtplib::RTPSourceData
 receivemode	lib/jrtplib/rtpsessionparams.h	/^	RTPTransmitter::ReceiveMode receivemode;$/;"	m	class:jrtplib::RTPSessionParams
 receivemode	lib/jrtplib/rtpudpv4transmitter.h	/^	RTPTransmitter::ReceiveMode receivemode;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
@@ -1684,9 +2357,24 @@ recordGetSize	client/AudioSession.h	/^        int  recordGetSize;$/;"	m	class:Au
 recordParams	client/AudioSession.h	/^        AudioParams  recordParams;$/;"	m	class:AudioTrans
 recvn_to_ms	common/net.cpp	/^recvn_to_ms(int fd, void *ptr, size_t nbytes, int msecs)$/;"	f
 recvtime	lib/jrtplib/rtpcollisionlist.h	/^		RTPTime recvtime;$/;"	m	class:jrtplib::RTPCollisionList::AddressAndTime
+release_buf	proto/IM.Test.pb.cc	/^ ::std::string* TestMsg::release_buf() {$/;"	f	class:IM::Test::TestMsg
+release_buf	proto/IM.Test.pb.h	/^inline ::std::string* TestMsg::release_buf() {$/;"	f	class:IM::Test::TestMsg
+release_name	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterReq::release_name() {$/;"	f	class:IM::Register::IMRegisterReq
+release_name	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterReq::release_name() {$/;"	f	class:IM::Register::IMRegisterReq
+release_password	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterReq::release_password() {$/;"	f	class:IM::Register::IMRegisterReq
+release_password	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterReq::release_password() {$/;"	f	class:IM::Register::IMRegisterReq
+release_reason	proto/IM.Register.pb.cc	/^ ::std::string* IMRegisterRes::release_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+release_reason	proto/IM.Register.pb.h	/^inline ::std::string* IMRegisterRes::release_reason() {$/;"	f	class:IM::Register::IMRegisterRes
+release_user_name	proto/IM.Base.pb.cc	/^ ::std::string* UserInfo::release_user_name() {$/;"	f	class:IM::Base::UserInfo
+release_user_name	proto/IM.Base.pb.h	/^inline ::std::string* UserInfo::release_user_name() {$/;"	f	class:IM::Base::UserInfo
+remote_host	lib/libevent/http-internal.h	/^	char *remote_host;$/;"	m	struct:evhttp_request
+remote_port	lib/libevent/http-internal.h	/^	u_short remote_port;$/;"	m	struct:evhttp_request
 report	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	Report report;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder
 reportblocks	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<Buffer> reportblocks;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::Report
+requests	lib/libevent/http-internal.h	/^	TAILQ_HEAD(evcon_requestq, evhttp_request) requests;$/;"	m	struct:evhttp_connection
 resolvehostname	lib/jrtplib/rtpsessionparams.h	/^	bool resolvehostname;$/;"	m	class:jrtplib::RTPSessionParams
+response_code	lib/libevent/http-internal.h	/^	int response_code;		\/* HTTP Response code *\/$/;"	m	struct:evhttp_request
+response_code_line	lib/libevent/http-internal.h	/^	char *response_code_line;	\/* Readable response *\/$/;"	m	struct:evhttp_request
 rtcpaddr	lib/jrtplib/rtpipv4destination.h	/^	struct sockaddr_in rtcpaddr;$/;"	m	class:jrtplib::RTPIPv4Destination	typeref:struct:jrtplib::RTPIPv4Destination::sockaddr_in
 rtcpaddr	lib/jrtplib/rtpipv6destination.h	/^	struct sockaddr_in6 rtcpaddr;$/;"	m	class:jrtplib::RTPIPv6Destination	typeref:struct:jrtplib::RTPIPv6Destination::sockaddr_in6
 rtcpaddr	lib/jrtplib/rtpsourcedata.h	/^	RTPAddress *rtpaddr,*rtcpaddr;$/;"	m	class:jrtplib::RTPSourceData
@@ -1733,6 +2421,9 @@ rtptimestamp	lib/jrtplib/rtpstructs.h	/^	uint32_t rtptimestamp;$/;"	m	struct:jrt
 rtptrans	lib/jrtplib/rtpsession.h	/^	RTPTransmitter *rtptrans;$/;"	m	class:jrtplib::RTPSession
 run	client/ClientSvr.cpp	/^int ClientSvr::run()$/;"	f	class:ClientSvr
 run	client/LineTalkReactor.cpp	/^LineTalkReactor::run()$/;"	f	class:LineTalkReactor
+run	client/Parser.h	/^        const std::string run;$/;"	m	class:UserDataParser
+run	server/appsvr/appreactor.cpp	/^NetReactor::run()$/;"	f	class:NetReactor
+run	server/netsvr/netReactor.cpp	/^NetReactor::run()$/;"	f	class:NetReactor
 savedextseqnr	lib/jrtplib/rtpsourcedata.h	/^	uint32_t savedextseqnr;$/;"	m	class:jrtplib::RTPSourceStats
 scan	common/configParser.cpp	/^ConfigParser :: scan() const$/;"	f	class:ConfigParser
 scan	common/configParser.cpp	/^Section :: scan() const$/;"	f	class:Section
@@ -1744,7 +2435,7 @@ sdesid	lib/jrtplib/rtpstructs.h	/^	uint8_t sdesid;$/;"	m	struct:jrtplib::RTCPSDE
 sdesit	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *>::const_iterator sdesit;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 sdessources	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		std::list<SDESSource *> sdessources;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDES
 sec	lib/jrtplib/rtptimeutilities.h	/^	uint32_t sec,microsec;$/;"	m	class:jrtplib::RTPTime
-sendBuffer	client/AudioSession.h	/^        void * sendBuffer;$/;"	m	class:AudioTrans
+sendBuffer	client/AudioSession.h	/^        std::unique_ptr<char[]> sendBuffer;$/;"	m	class:AudioTrans
 sendBuffer	lib/testlib/rtpAudio.cpp	/^        void * sendBuffer;$/;"	m	class:AudioSession	file:
 sendbyenow	lib/jrtplib/rtcpscheduler.h	/^	bool sendbyenow;$/;"	m	class:jrtplib::RTCPScheduler
 sender	lib/jrtplib/rtpexternaltransmitter.h	/^	RTPExternalSender *sender;$/;"	m	class:jrtplib::RTPExternalTransmissionParams
@@ -1771,21 +2462,82 @@ set	common/configParser.h	/^    inline void set(const std::string &sectionName, 
 setAudioRecvThread	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioRecvThread(WorkerThread * t)$/;"	f	class:LineTalkReactor
 setAudioSendThread	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioSendThread(WorkerThread * t)$/;"	f	class:LineTalkReactor
 setAudioSession	client/LineTalkReactor.cpp	/^LineTalkReactor::setAudioSession(Trans * t)$/;"	f	class:LineTalkReactor
+setAudioStatus	client/LineTalkReactor.h	/^        virtual int setAudioStatus(int s) {_audioStatus = s;}$/;"	f	class:LineTalkReactor
 setBuffSize	client/workThread.h	/^        void setBuffSize(int size)$/;"	f	class:ReadLineUserInput
 setClient	client/LineTalkReactor.cpp	/^LineTalkReactor::setClient(ClientSvr * cs)$/;"	f	class:LineTalkReactor
 setClient	client/workThread.h	/^        void setClient(ClientSvr * cli)$/;"	f	class:ReadLineUserInput
 setExtendInfo	client/AudioSession.cpp	/^int AudioTrans::setExtendInfo(void *) {return 0;}$/;"	f	class:AudioTrans
+setInstance	server/appsvr/StragyModel.h	/^        static void * setInstance(UserModel * ins)$/;"	f	class:UserStragy
+set_allocated_buf	proto/IM.Test.pb.cc	/^ void TestMsg::set_allocated_buf(::std::string* buf) {$/;"	f	class:IM::Test::TestMsg
+set_allocated_buf	proto/IM.Test.pb.h	/^inline void TestMsg::set_allocated_buf(::std::string* buf) {$/;"	f	class:IM::Test::TestMsg
+set_allocated_name	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_allocated_name(::std::string* name) {$/;"	f	class:IM::Register::IMRegisterReq
+set_allocated_name	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_allocated_name(::std::string* name) {$/;"	f	class:IM::Register::IMRegisterReq
+set_allocated_password	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_allocated_password(::std::string* password) {$/;"	f	class:IM::Register::IMRegisterReq
+set_allocated_password	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_allocated_password(::std::string* password) {$/;"	f	class:IM::Register::IMRegisterReq
+set_allocated_reason	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_allocated_reason(::std::string* reason) {$/;"	f	class:IM::Register::IMRegisterRes
+set_allocated_reason	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_allocated_reason(::std::string* reason) {$/;"	f	class:IM::Register::IMRegisterRes
+set_allocated_user_name	proto/IM.Base.pb.cc	/^ void UserInfo::set_allocated_user_name(::std::string* user_name) {$/;"	f	class:IM::Base::UserInfo
+set_allocated_user_name	proto/IM.Base.pb.h	/^inline void UserInfo::set_allocated_user_name(::std::string* user_name) {$/;"	f	class:IM::Base::UserInfo
+set_buf	proto/IM.Test.pb.cc	/^ void TestMsg::set_buf(const ::std::string& value) {$/;"	f	class:IM::Test::TestMsg
+set_buf	proto/IM.Test.pb.cc	/^ void TestMsg::set_buf(const char* value) {$/;"	f	class:IM::Test::TestMsg
+set_buf	proto/IM.Test.pb.cc	/^ void TestMsg::set_buf(const char* value, size_t size) {$/;"	f	class:IM::Test::TestMsg
+set_buf	proto/IM.Test.pb.h	/^inline void TestMsg::set_buf(const ::std::string& value) {$/;"	f	class:IM::Test::TestMsg
+set_buf	proto/IM.Test.pb.h	/^inline void TestMsg::set_buf(const char* value) {$/;"	f	class:IM::Test::TestMsg
+set_buf	proto/IM.Test.pb.h	/^inline void TestMsg::set_buf(const char* value, size_t size) {$/;"	f	class:IM::Test::TestMsg
 set_clc_fd	common/net.cpp	/^set_clc_fd(int fd, int flags)$/;"	f
+set_created	proto/IM.Base.pb.cc	/^ void UserInfo::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_created	proto/IM.Base.pb.h	/^inline void UserInfo::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_created	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_created	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_created	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_created	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_created(::google::protobuf::uint32 value) {$/;"	f	class:IM::Register::IMRegisterRes
 set_fd	common/net.cpp	/^set_fd(int fd, int flags)$/;"	f
 set_fd_block	common/net.cpp	/^set_fd_block(int fd)$/;"	f
 set_fd_noblock	common/net.cpp	/^set_fd_noblock(int fd)$/;"	f
 set_file	common/asynLog.h	/^    static void set_file(FILE * file)$/;"	f	class:Log
+set_id	proto/IM.Test.pb.cc	/^ void TestMsg::set_id(::google::protobuf::uint32 value) {$/;"	f	class:IM::Test::TestMsg
+set_id	proto/IM.Test.pb.h	/^inline void TestMsg::set_id(::google::protobuf::uint32 value) {$/;"	f	class:IM::Test::TestMsg
 set_level	common/asynLog.h	/^    static void set_level(int level)$/;"	f	class:Log
 set_linger	common/net.cpp	/^set_linger(int fd, int val)$/;"	f
+set_name	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_name(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_name	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_name(const char* value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_name	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_name(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterReq
+set_name	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_name(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_name	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_name(const char* value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_name	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_name(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_password(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_password(const char* value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.cc	/^ void IMRegisterReq::set_password(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_password(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_password(const char* value) {$/;"	f	class:IM::Register::IMRegisterReq
+set_password	proto/IM.Register.pb.h	/^inline void IMRegisterReq::set_password(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterReq
+set_reason	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_reason(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_reason	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_reason(const char* value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_reason	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_reason(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterRes
+set_reason	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_reason(const ::std::string& value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_reason	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_reason(const char* value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_reason	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_reason(const char* value, size_t size) {$/;"	f	class:IM::Register::IMRegisterRes
 set_status	common/asynLog.h	/^    static void set_status(int status)$/;"	f	class:Log
-set_tcp_sockaddr	common/net.cpp	/^set_tcp_sockaddr(char * addr, int port, $/;"	f
+set_status	proto/IM.Register.pb.cc	/^ void IMRegisterRes::set_status(::IM::Base::ResultType value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_status	proto/IM.Register.pb.h	/^inline void IMRegisterRes::set_status(::IM::Base::ResultType value) {$/;"	f	class:IM::Register::IMRegisterRes
+set_tcp_sockaddr	common/net.cpp	/^set_tcp_sockaddr(const char * addr, int port, $/;"	f
+set_user_id	proto/IM.Base.pb.cc	/^ void UserInfo::set_user_id(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_user_id	proto/IM.Base.pb.h	/^inline void UserInfo::set_user_id(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_user_lastlog	proto/IM.Base.pb.cc	/^ void UserInfo::set_user_lastlog(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_user_lastlog	proto/IM.Base.pb.h	/^inline void UserInfo::set_user_lastlog(::google::protobuf::uint32 value) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.cc	/^ void UserInfo::set_user_name(const ::std::string& value) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.cc	/^ void UserInfo::set_user_name(const char* value) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.cc	/^ void UserInfo::set_user_name(const char* value, size_t size) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.h	/^inline void UserInfo::set_user_name(const ::std::string& value) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.h	/^inline void UserInfo::set_user_name(const char* value) {$/;"	f	class:IM::Base::UserInfo
+set_user_name	proto/IM.Base.pb.h	/^inline void UserInfo::set_user_name(const char* value, size_t size) {$/;"	f	class:IM::Base::UserInfo
 signal	common/lock.h	/^        inline void signal() $/;"	f	class:MCondition
 signalAll	common/lock.h	/^        inline void signalAll() $/;"	f	class:MCondition
+signal_add	lib/libevent/event.h	179;"	d
+signal_del	lib/libevent/event.h	182;"	d
+signal_initialized	lib/libevent/event.h	184;"	d
+signal_pending	lib/libevent/event.h	183;"	d
+signal_set	lib/libevent/event.h	180;"	d
 sourcelist	lib/jrtplib/rtpsources.h	/^	RTPKeyHashTable<const uint32_t,RTPInternalSourceData*,RTPSources_GetHashIndex,RTPSOURCES_HASHSIZE> sourcelist;$/;"	m	class:jrtplib::RTPSources
 sources	lib/jrtplib/rtcppacketbuilder.h	/^	RTPSources &sources;$/;"	m	class:jrtplib::RTCPPacketBuilder
 sources	lib/jrtplib/rtcpscheduler.h	/^	RTPSources &sources;$/;"	m	class:jrtplib::RTCPScheduler
@@ -1799,9 +2551,19 @@ ssrc	lib/jrtplib/rtpstructs.h	/^	uint32_t ssrc; \/\/ Identifies about which SSRC
 ssrc	lib/jrtplib/rtpstructs.h	/^	uint32_t ssrc;$/;"	m	struct:jrtplib::RTPHeader
 ssrc	lib/jrtplib/rtpstructs.h	/^	uint32_t ssrc;$/;"	m	struct:jrtplib::RTPSourceIdentifier
 state	lib/jrtplib/rtprandomrand48.h	/^	uint64_t state;$/;"	m	class:jrtplib::RTPRandomRand48
+state	lib/libevent/http-internal.h	/^	enum evhttp_connection_state state;$/;"	m	struct:evhttp_connection	typeref:enum:evhttp_connection::evhttp_connection_state
+static_descriptor_initializer_IM_2eBase_2eproto_	proto/IM.Base.pb.cc	/^} static_descriptor_initializer_IM_2eBase_2eproto_;$/;"	m	namespace:IM::Base	typeref:struct:IM::Base::StaticDescriptorInitializer_IM_2eBase_2eproto	file:
+static_descriptor_initializer_IM_2eRegister_2eproto_	proto/IM.Register.pb.cc	/^} static_descriptor_initializer_IM_2eRegister_2eproto_;$/;"	m	namespace:IM::Register	typeref:struct:IM::Register::StaticDescriptorInitializer_IM_2eRegister_2eproto	file:
+static_descriptor_initializer_IM_2eTest_2eproto_	proto/IM.Test.pb.cc	/^} static_descriptor_initializer_IM_2eTest_2eproto_;$/;"	m	namespace:IM::Test	typeref:struct:IM::Test::StaticDescriptorInitializer_IM_2eTest_2eproto	file:
 stats	lib/jrtplib/rtpsourcedata.h	/^	RTPSourceStats stats;$/;"	m	class:jrtplib::RTPSourceData
 status	client/LineTalkReactor.cpp	/^LineTalkReactor::status()$/;"	f	class:LineTalkReactor
+status	proto/IM.Register.pb.cc	/^ ::IM::Base::ResultType IMRegisterRes::status() const {$/;"	f	class:IM::Register::IMRegisterRes
+status	proto/IM.Register.pb.h	/^inline ::IM::Base::ResultType IMRegisterRes::status() const {$/;"	f	class:IM::Register::IMRegisterRes
+status	server/appsvr/appreactor.cpp	/^NetReactor::status()$/;"	f	class:NetReactor
+status	server/netsvr/netReactor.cpp	/^NetReactor::status()$/;"	f	class:NetReactor
+status_	proto/IM.Register.pb.h	/^  int status_;$/;"	m	class:IM::Register::IMRegisterRes
 stop	client/ClientSvr.cpp	/^int ClientSvr::stop()$/;"	f	class:ClientSvr
+stop	client/Parser.h	/^        const std::string stop;$/;"	m	class:UserDataParser
 stop	common/asynLog.h	/^    static void stop()$/;"	f	class:Log
 stop	lib/jrtplib/rtppollthread.h	/^	bool stop;$/;"	m	class:jrtplib::RTPPollThread
 stopmutex	lib/jrtplib/rtppollthread.h	/^	jthread::JMutex stopmutex;$/;"	m	class:jrtplib::RTPPollThread
@@ -1812,18 +2574,28 @@ supportsmulticasting	lib/jrtplib/rtpudpv4transmitter.h	/^	bool supportsmulticast
 supportsmulticasting	lib/jrtplib/rtpudpv6transmitter.h	/^	bool supportsmulticasting;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 table	lib/jrtplib/rtphashtable.h	/^	HashElement *table[hashsize];$/;"	m	class:jrtplib::RTPHashTable
 table	lib/jrtplib/rtpkeyhashtable.h	/^	HashElement *table[hashsize];$/;"	m	class:jrtplib::RTPKeyHashTable
+test	client/Parser.h	/^        const std::string test;$/;"	m	class:UserDataParser
 testLocalAudio	lib/testlib/rtpAudio.cpp	/^        void testLocalAudio()$/;"	f	class:AudioSession
 testNetAudio	lib/testlib/rtpAudio.cpp	/^void testNetAudio(AudioSession & sess)$/;"	f
 threadsafe	lib/jrtplib/rtpexternaltransmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPExternalTransmitter
 threadsafe	lib/jrtplib/rtpudpv4transmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 threadsafe	lib/jrtplib/rtpudpv6transmitter.h	/^	int threadsafe;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
+timeout_add	lib/libevent/event.h	173;"	d
+timeout_del	lib/libevent/event.h	175;"	d
+timeout_initialized	lib/libevent/event.h	177;"	d
+timeout_pending	lib/libevent/event.h	176;"	d
+timeout_read	lib/libevent/event.h	/^	int timeout_read;	\/* in seconds *\/$/;"	m	struct:bufferevent
+timeout_set	lib/libevent/event.h	174;"	d
+timeout_write	lib/libevent/event.h	/^	int timeout_write;	\/* in seconds *\/$/;"	m	struct:bufferevent
 timestamp	lib/jrtplib/rtppacket.h	/^	uint32_t extseqnr,timestamp,ssrc;$/;"	m	class:jrtplib::RTPPacket
 timestamp	lib/jrtplib/rtppacketbuilder.h	/^	uint32_t timestamp;$/;"	m	class:jrtplib::RTPPacketBuilder
 timestamp	lib/jrtplib/rtpstructs.h	/^	uint32_t timestamp;$/;"	m	struct:jrtplib::RTPHeader
 timestampunit	lib/jrtplib/rtcppacketbuilder.h	/^	double timestampunit;$/;"	m	class:jrtplib::RTCPPacketBuilder
 timestampunit	lib/jrtplib/rtpsourcedata.h	/^	double timestampunit;$/;"	m	class:jrtplib::RTPSourceData
+timetree	lib/libevent/event-internal.h	/^	RB_HEAD(event_tree, event) timetree;$/;"	m	struct:event_base
 totalcount	lib/jrtplib/rtpsources.h	/^	int totalcount;$/;"	m	class:jrtplib::RTPSources
 totalitemsize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^		size_t totalitemsize;$/;"	m	class:jrtplib::RTCPCompoundPacketBuilder::SDESSource
+totallen	lib/libevent/event.h	/^	size_t totallen;$/;"	m	struct:evbuffer
 transmissiondelay	lib/jrtplib/rtcppacketbuilder.h	/^	RTPTime prevbuildtime,transmissiondelay;$/;"	m	class:jrtplib::RTCPPacketBuilder
 transmitter	lib/jrtplib/rtpexternaltransmitter.h	/^	RTPExternalTransmitter *transmitter;$/;"	m	class:jrtplib::RTPExternalPacketInjecter
 transmitter	lib/jrtplib/rtppollthread.h	/^	RTPTransmitter *transmitter;$/;"	m	class:jrtplib::RTPPollThread
@@ -1831,6 +2603,9 @@ transparams	client/AudioSession.h	/^        RTPUDPv4TransmissionParams  transpar
 transparams	lib/testlib/rtpAudio.cpp	/^        RTPUDPv4TransmissionParams  transparams;$/;"	m	class:AudioSession	file:
 trylock	common/lock.h	/^        inline int trylock() $/;"	f	class:MLock
 trylock	common/lock.h	/^        inline int trylock() $/;"	f	class:SpinLock
+type	lib/libevent/http-internal.h	/^	enum evhttp_cmd_type type;$/;"	m	struct:evhttp_request	typeref:enum:evhttp_request::evhttp_cmd_type
+u_char	lib/libevent/event.h	/^typedef unsigned char u_char;$/;"	t
+u_char	lib/libevent/evhttp.h	/^typedef unsigned char u_char;$/;"	t
 uint16_t	lib/jrtplib/rtptypes_win.h	/^typedef unsigned short uint16_t;$/;"	t
 uint32_t	lib/jrtplib/rtptypes_win.h	/^typedef unsigned int uint32_t;$/;"	t
 uint64_t	lib/jrtplib/rtptypes_win.h	/^typedef unsigned __int64 uint64_t;$/;"	t
@@ -1840,13 +2615,25 @@ unknownsize	lib/jrtplib/rtcpcompoundpacketbuilder.h	/^	size_t unknownsize;$/;"	m
 unlock	common/lock.h	/^        inline int unlock() $/;"	f	class:MLock
 unlock	common/lock.h	/^        inline int unlock() $/;"	f	class:SpinLock
 unlock	common/singleton.h	/^        void unlock()$/;"	f	class:MutexLock
+uri	lib/libevent/http-internal.h	/^	char *uri;			\/* uri after HTTP request was parsed *\/$/;"	m	struct:evhttp_request
 useSR_BYEifpossible	lib/jrtplib/rtpsession.h	/^	bool useSR_BYEifpossible;$/;"	m	class:jrtplib::RTPSession
 usehalfatstartup	lib/jrtplib/rtcpscheduler.h	/^	bool usehalfatstartup;$/;"	m	class:jrtplib::RTCPSchedulerParams
 usehalfatstartup	lib/jrtplib/rtpsessionparams.h	/^	bool usehalfatstartup;$/;"	m	class:jrtplib::RTPSessionParams
 usepollthread	lib/jrtplib/rtpsessionparams.h	/^	bool usepollthread;$/;"	m	class:jrtplib::RTPSessionParams
 usepredefinedssrc	lib/jrtplib/rtpsessionparams.h	/^	bool usepredefinedssrc;$/;"	m	class:jrtplib::RTPSessionParams
+user_id	common/IMProto.h	/^    uint32_t user_id;$/;"	m	struct:__anon2
+user_id	proto/IM.Base.pb.cc	/^ ::google::protobuf::uint32 UserInfo::user_id() const {$/;"	f	class:IM::Base::UserInfo
+user_id	proto/IM.Base.pb.h	/^inline ::google::protobuf::uint32 UserInfo::user_id() const {$/;"	f	class:IM::Base::UserInfo
+user_id_	proto/IM.Base.pb.h	/^  ::google::protobuf::uint32 user_id_;$/;"	m	class:IM::Base::UserInfo
+user_lastlog	proto/IM.Base.pb.cc	/^ ::google::protobuf::uint32 UserInfo::user_lastlog() const {$/;"	f	class:IM::Base::UserInfo
+user_lastlog	proto/IM.Base.pb.h	/^inline ::google::protobuf::uint32 UserInfo::user_lastlog() const {$/;"	f	class:IM::Base::UserInfo
+user_lastlog_	proto/IM.Base.pb.h	/^  ::google::protobuf::uint32 user_lastlog_;$/;"	m	class:IM::Base::UserInfo
+user_name	proto/IM.Base.pb.cc	/^ const ::std::string& UserInfo::user_name() const {$/;"	f	class:IM::Base::UserInfo
+user_name	proto/IM.Base.pb.h	/^inline const ::std::string& UserInfo::user_name() const {$/;"	f	class:IM::Base::UserInfo
+user_name_	proto/IM.Base.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr user_name_;$/;"	m	class:IM::Base::UserInfo
 usingpollthread	lib/jrtplib/rtpsession.h	/^	bool usingpollthread;$/;"	m	class:jrtplib::RTPSession
 validated	lib/jrtplib/rtpsourcedata.h	/^	bool validated;$/;"	m	class:jrtplib::RTPSourceData
+value	lib/libevent/event.h	/^	char *value;$/;"	m	struct:evkeyval
 version	lib/jrtplib/rtpstructs.h	/^	uint8_t version:2;$/;"	m	struct:jrtplib::RTCPCommonHeader
 version	lib/jrtplib/rtpstructs.h	/^	uint8_t version:2;$/;"	m	struct:jrtplib::RTPHeader
 wait	common/lock.h	/^        inline int wait(const timeval *tv) $/;"	f	class:MCondition
@@ -1857,7 +2644,11 @@ waitmutex	lib/jrtplib/rtpexternaltransmitter.h	/^	jthread::JMutex mainmutex,wait
 waitmutex	lib/jrtplib/rtpudpv4transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv4Transmitter
 waitmutex	lib/jrtplib/rtpudpv6transmitter.h	/^	jthread::JMutex mainmutex,waitmutex;$/;"	m	class:jrtplib::RTPUDPv6Transmitter
 waits	common/lock.h	/^        inline size_t waits() { return _waits; }$/;"	f	class:MCondition
+what	lib/libevent/http-internal.h	/^	char *what;$/;"	m	struct:evhttp_cb
+wm_read	lib/libevent/event.h	/^	struct event_watermark wm_read;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event_watermark
+wm_write	lib/libevent/event.h	/^	struct event_watermark wm_write;$/;"	m	struct:bufferevent	typeref:struct:bufferevent::event_watermark
 write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
+writecb	lib/libevent/event.h	/^	evbuffercb writecb;$/;"	m	struct:bufferevent
 ~AudioGetSendThread	client/AudioThread.h	/^        virtual ~AudioGetSendThread() {};$/;"	f	class:AudioGetSendThread
 ~AudioSession	client/AudioSession.h	/^        virtual ~AudioSession() {};$/;"	f	class:AudioSession
 ~AudioSession	lib/testlib/rtpAudio.cpp	/^        virtual ~AudioSession() {};$/;"	f	class:AudioSession
@@ -1868,12 +2659,17 @@ write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
 ~ClientSvr	client/ClientSvr.cpp	/^ClientSvr::~ClientSvr()$/;"	f	class:ClientSvr
 ~ConfigParser	common/configParser.h	/^        virtual ~ConfigParser(){}$/;"	f	class:ConfigParser
 ~DataParser	interface/dataParse.h	/^        virtual ~DataParser() {};$/;"	f	class:DataParser
+~IMRegisterReq	proto/IM.Register.pb.cc	/^IMRegisterReq::~IMRegisterReq() {$/;"	f	class:IM::Register::IMRegisterReq
+~IMRegisterRes	proto/IM.Register.pb.cc	/^IMRegisterRes::~IMRegisterRes() {$/;"	f	class:IM::Register::IMRegisterRes
 ~IReactor	interface/ireactor.h	/^        virtual ~IReactor() {};$/;"	f	class:IReactor
+~ImProto	common/IMProto.h	/^        virtual ~ImProto() {}$/;"	f	class:ImProto
 ~InitAudioCmd	client/ClientCmd.h	/^        virtual ~InitAudioCmd() {};$/;"	f	class:InitAudioCmd
 ~LineTalkReactor	client/LineTalkReactor.cpp	/^LineTalkReactor::~LineTalkReactor()$/;"	f	class:LineTalkReactor
 ~MCondition	common/lock.h	/^        ~MCondition() $/;"	f	class:MCondition
 ~MLock	common/lock.h	/^        inline ~MLock() $/;"	f	class:MLock
 ~MutexLock	common/singleton.h	/^        ~MutexLock()$/;"	f	class:MutexLock
+~NetReactor	server/appsvr/appreactor.cpp	/^NetReactor::~NetReactor()$/;"	f	class:NetReactor
+~NetReactor	server/netsvr/netReactor.cpp	/^NetReactor::~NetReactor()$/;"	f	class:NetReactor
 ~RTCPAPPPacket	lib/jrtplib/rtcpapppacket.h	/^	~RTCPAPPPacket()							{ }$/;"	f	class:jrtplib::RTCPAPPPacket
 ~RTCPBYEPacket	lib/jrtplib/rtcpbyepacket.h	/^	~RTCPBYEPacket()							{ }$/;"	f	class:jrtplib::RTCPBYEPacket
 ~RTCPPacket	lib/jrtplib/rtcppacket.h	/^	virtual ~RTCPPacket()								{ }	$/;"	f	class:jrtplib::RTCPPacket
@@ -1911,6 +2707,10 @@ write_log	common/asynLog.cpp	/^Log :: write_log(void *)$/;"	f	class:Log
 ~StopAudioCmd	client/ClientCmd.h	/^        virtual ~StopAudioCmd() {};$/;"	f	class:StopAudioCmd
 ~SvrDataParser	client/Parser.h	/^        virtual ~SvrDataParser() {};$/;"	f	class:SvrDataParser
 ~TestCmd	client/ClientCmd.h	/^        virtual ~TestCmd() {};$/;"	f	class:TestCmd
+~TestMsg	proto/IM.Test.pb.cc	/^TestMsg::~TestMsg() {$/;"	f	class:IM::Test::TestMsg
 ~Trans	interface/trans.h	/^        virtual ~Trans() {};$/;"	f	class:Trans
-~UserDataParser	client/Parser.h	/^        virtual ~UserDataParser() {};$/;"	f	class:UserDataParser
+~Uncopyable	common/util.h	/^        ~Uncopyable() {}$/;"	f	class:Uncopyable
+~UserDataParser	client/Parser.h	/^        virtual ~UserDataParser() $/;"	f	class:UserDataParser
+~UserInfo	proto/IM.Base.pb.cc	/^UserInfo::~UserInfo() {$/;"	f	class:IM::Base::UserInfo
+~UserStragy	server/appsvr/StragyModel.h	/^        ~UserStragy() {};$/;"	f	class:UserStragy
 ~WorkerThread	interface/thread.cpp	/^WorkerThread::~WorkerThread()$/;"	f	class:WorkerThread

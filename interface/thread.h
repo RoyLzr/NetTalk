@@ -7,10 +7,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "../common/lock.h"
+#include "../common/util.h"
 
 using namespace std;
 
-class WorkerThread 
+class WorkerThread : public Uncopyable
 {
     public:
     enum

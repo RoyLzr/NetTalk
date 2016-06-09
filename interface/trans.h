@@ -2,6 +2,7 @@
 #define   __TRANS_H_
 
 #include <string>
+#include "../common/util.h"
 
 
 class Trans

@@ -5,17 +5,37 @@
 
 int TestCmd::callback()
 {
+    char * test = (char *)malloc(41);
+    memset(test, '\0', 41);
+    for(int i = 0; i < 40; i++)
+        test[i] = '1';
+    string buf = test;
+    string res;
+    IM::Test::TestMsg msg;
+    msg.set_id(1);
+    msg.set_buf(std::move(buf));
+    msg.SerializeToString(&res);
+
     ImPheader_t head;
-    head.length = 40;
+    head.length = res.size();
     head.command_id = 5;
     head.punch_flag = 0;
     head.user_id    = 0;
-    char * test = (char *)malloc(head.length);
-    for(int i = 0; i < head.length; i++)
-        test[i] = '1';
-            
-    send(ract->getSvrFd(), (char *)&head, sizeof(head), MSG_WAITALL);            
-    send(ract->getSvrFd(), test, head.length,  MSG_WAITALL);            
+
+    struct msghdr sData;
+    memset(&sData, 0, sizeof(sData));
+    struct iovec  ve[2];
+    ve[0].iov_base = (void *)&head;
+    ve[0].iov_len  = sizeof(head);
+    ve[1].iov_base = (void *)res.c_str();
+    ve[1].iov_len  = head.length;
+
+    sData.msg_iov = ve;
+    sData.msg_iovlen = 2;
+    //send(ract->getSvrFd(), (char *)&head, sizeof(head), MSG_WAITALL);           
+    //send(ract->getSvrFd(), res.c_str(), head.length,  MSG_WAITALL);            
+    sendmsg(ract->getSvrFd(), &sData, MSG_WAITALL);
+    //writev(ract->getSvrFd(), ve, 2);
 
     free(test);
 }
@@ -91,20 +111,27 @@ StopAudioCmd::callback()
     int res;
     void * pRes;
     
+    
     if((res=pthread_timedjoin_np(sendWork->GetThreadId(),&pRes,&ts))==ETIMEDOUT)
     {
         Log::WARN("Try join sendThread error, will try again");
-        CMD * stopCmd = new StopAudioCmd(ract);
-        ract->Signal(stopCmd);
+        std::unique_ptr<CMD> stopCmd(new StopAudioCmd(ract));
+        ract->Signal(std::move(stopCmd));
         return 0;
     }
+    
+
     pthread_join(recvWork->GetThreadId(), &pRes);
 
     ract->clearAudio();
     Log::NOTICE("USER STOP AUDIO");
-    ract->setAudioStatus(LineTalkReactor::AUDIORUN);
+    ract->setAudioStatus(LineTalkReactor::AUDIOSTOP);
 
     return 0;
 }
 
+int RegReqCmd::callback()
+{
+    
+}
 

@@ -8,6 +8,8 @@
 #include "AudioSession.h"
 #include "AudioThread.h"
 #include "../common/IMProto.h"
+#include "../proto/IM.Test.pb.h"
+#include <memory>
 
 
 class LineTalkReactor;
@@ -74,7 +76,21 @@ class StopAudioCmd : public CMD
 };
 
 
+class RegReqCmd : public CMD
+{
+    public:
+        RegReqCmd(LineTalkReactor *r, const char * data):ract(r),
+                                                         cmdData(data)
+        {};
+        
+        virtual ~RegReqCmd() {};
 
+        virtual int callback();
+
+    private:
+        LineTalkReactor * ract;
+        const char      * cmdData;
+};
 
 
 #endif
