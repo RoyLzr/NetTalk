@@ -163,6 +163,26 @@ inline bool ResultType_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<ResultType>(
     ResultType_descriptor(), name, value);
 }
+enum Util {
+  UTIL_KEEP_ALIVE = 0,
+  Util_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Util_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool Util_IsValid(int value);
+const Util Util_MIN = UTIL_KEEP_ALIVE;
+const Util Util_MAX = UTIL_KEEP_ALIVE;
+const int Util_ARRAYSIZE = Util_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Util_descriptor();
+inline const ::std::string& Util_Name(Util value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Util_descriptor(), value);
+}
+inline bool Util_Parse(
+    const ::std::string& name, Util* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Util>(
+    Util_descriptor(), name, value);
+}
 // ===================================================================
 
 class UserInfo : public ::google::protobuf::Message {
@@ -396,6 +416,11 @@ template <> struct is_proto_enum< ::IM::Base::ResultType> : ::google::protobuf::
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::ResultType>() {
   return ::IM::Base::ResultType_descriptor();
+}
+template <> struct is_proto_enum< ::IM::Base::Util> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::Util>() {
+  return ::IM::Base::Util_descriptor();
 }
 
 }  // namespace protobuf

@@ -7,7 +7,7 @@ int main()
     const Section & NetSec = Singleton<ConfigParser>::instance()->get("NetSvr");
     
     Log::init("./run.log");
-    Log::set_level(1);
+    Log::set_level(0);
     Log::NOTICE("LOG INIT SUCCES");
     
     NetReactor svr(NetSec);

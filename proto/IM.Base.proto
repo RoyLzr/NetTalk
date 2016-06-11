@@ -42,7 +42,8 @@ enum SessionCmdID
 
 enum ResultType
 {
-    RESULT_LOGIN_SUCC  = 0;
+    NONERES            = 0;
+    RESULT_LOGIN_SUCC  = 8;
     RESULT_LOGIN_FAIL  = 1;
     RESULT_BUDDY_SUCC  = 2;
     RESULT_BUDDY_FAIL  = 3;
@@ -52,6 +53,11 @@ enum ResultType
     RESULT_REGISTER_FAIL = 7;
 }
 
+enum Util
+{
+    NONEUTL         = 0;
+    UTIL_KEEP_ALIVE = 0x0501;
+}
 
 message UserInfo
 {

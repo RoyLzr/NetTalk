@@ -114,7 +114,12 @@ LineTalkReactor::run()
         if((res=select(FD_SETSIZE, &fdset, 0, 0, &tv))<=0) 
         {
             if(res == 0)
+            {
                 Log::NOTICE("User input nothing %d s", sec);
+                std::unique_ptr<CMD> cmd(new KeepAliveCmd(this));
+                Signal(std::move(cmd));
+                continue;  
+            }
             else
                 Log::WARN("Core Reactor Select Error %s", strerror(errno));
         }

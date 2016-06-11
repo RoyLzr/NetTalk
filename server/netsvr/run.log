@@ -1,6 +1,15 @@
-[NOTICE] 06-09 14:51:31  LOG INIT SUCCES
-[NOTICE] 06-09 14:51:31  Listen Port 1025
-[NOTICE] 06-09 14:51:33  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-09 14:51:40  Client close connection connfd: 8
-[NOTICE] 06-09 15:02:48  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
-[NOTICE] 06-09 15:03:09  Client close connection connfd: 8
+[NOTICE] 06-12 01:07:49  LOG INIT SUCCES
+[NOTICE] 06-12 01:07:49  Listen Port 1025
+[NOTICE] 06-12 01:07:57  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
+[DEBUG]  06-12 01:07:58  User first attack netSVr, is alloc to appSvr 8 
+[NOTICE] 06-12 01:08:06  Client close connection connfd: 8
+[NOTICE] 06-12 01:08:17  ACCEPT Connect SUCC, connfd : 8, UserIP : 127.0.0.1
+[DEBUG]  06-12 01:08:18  User first attack netSVr, is alloc to appSvr 8 
+[DEBUG]  06-12 01:08:28  RECV Client keep alive packet
+[DEBUG]  06-12 01:08:37  RECV Client keep alive packet
+[DEBUG]  06-12 01:08:42  RECV Client keep alive packet
+[DEBUG]  06-12 01:08:47  RECV Client keep alive packet
+[DEBUG]  06-12 01:08:52  RECV Client keep alive packet
+[DEBUG]  06-12 01:08:57  RECV Client keep alive packet
+[DEBUG]  06-12 01:09:02  RECV Client keep alive packet
+[DEBUG]  06-12 01:09:07  RECV Client keep alive packet

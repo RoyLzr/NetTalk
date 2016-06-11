@@ -35,11 +35,21 @@ int TestCmd::callback()
     //send(ract->getSvrFd(), (char *)&head, sizeof(head), MSG_WAITALL);           
     //send(ract->getSvrFd(), res.c_str(), head.length,  MSG_WAITALL);            
     sendmsg(ract->getSvrFd(), &sData, MSG_WAITALL);
+    printf("data length %d\n", head.length);
     //writev(ract->getSvrFd(), ve, 2);
 
     free(test);
 }
 
+int KeepAliveCmd::callback()
+{
+    ImPheader_t head;
+    head.length = 0;
+    head.command_id = IM::Base::UTIL_KEEP_ALIVE;
+    head.user_id    = 0;
+    send(ract->getSvrFd(), (char *)&head, sizeof(head), MSG_WAITALL);
+
+}
 
 int 
 InitAudioCmd::callback()

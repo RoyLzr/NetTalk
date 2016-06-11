@@ -1,5 +1,5 @@
 #include "IMProto.h"
-int ImProto::_headerlen = 0;
+int ImProto::_headerlen = sizeof(ImPheader_t);
 
 ImProto::ImProto()
 {
@@ -49,7 +49,8 @@ int ImProto::InitByHeaderAddBuf(void * buf, int len)
                          _imHeader.punch_flag);
     */
 
-    _buf.assign((char *)buf, buflen);
+    if(buflen > 0)
+        _buf.assign((char *)buf, buflen);
     
     return 1;    
 } 

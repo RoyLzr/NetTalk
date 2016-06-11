@@ -9,6 +9,7 @@
 #include "AudioThread.h"
 #include "../common/IMProto.h"
 #include "../proto/IM.Test.pb.h"
+#include "../proto/IM.Base.pb.h"
 #include <memory>
 
 
@@ -91,6 +92,24 @@ class RegReqCmd : public CMD
         LineTalkReactor * ract;
         const char      * cmdData;
 };
+
+class KeepAliveCmd : public CMD
+{
+    public:
+        KeepAliveCmd(LineTalkReactor * r):ract(r)
+        {};
+
+        virtual ~KeepAliveCmd() {};
+        
+        virtual int callback();
+
+    private:
+        LineTalkReactor * ract;
+};
+
+
+
+
 
 
 #endif

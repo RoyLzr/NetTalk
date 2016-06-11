@@ -30,6 +30,7 @@ const ::google::protobuf::EnumDescriptor* LoginCmdID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* BuddyCmdID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* SessionCmdID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ResultType_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* Util_descriptor_ = NULL;
 
 }  // namespace
 
@@ -63,6 +64,7 @@ void protobuf_AssignDesc_IM_2eBase_2eproto() {
   BuddyCmdID_descriptor_ = file->enum_type(2);
   SessionCmdID_descriptor_ = file->enum_type(3);
   ResultType_descriptor_ = file->enum_type(4);
+  Util_descriptor_ = file->enum_type(5);
 }
 
 namespace {
@@ -115,7 +117,8 @@ void protobuf_AddDesc_IM_2eBase_2eproto() {
     "BUDDY_SUCC\020\002\022\025\n\021RESULT_BUDDY_FAIL\020\003\022\027\n\023R"
     "ESULT_SESSION_SUCC\020\004\022\027\n\023RESULT_SESSION_F"
     "AIL\020\005\022\030\n\024RESULT_REGISTER_SUCC\020\006\022\030\n\024RESUL"
-    "T_REGISTER_FAIL\020\007b\006proto3", 905);
+    "T_REGISTER_FAIL\020\007*\033\n\004Util\022\023\n\017UTIL_KEEP_A"
+    "LIVE\020\000b\006proto3", 934);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "IM.Base.proto", &protobuf_RegisterTypes);
   UserInfo::default_instance_ = new UserInfo();
@@ -211,6 +214,19 @@ bool ResultType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* Util_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Util_descriptor_;
+}
+bool Util_IsValid(int value) {
+  switch(value) {
+    case 0:
       return true;
     default:
       return false;

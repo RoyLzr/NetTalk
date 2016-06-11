@@ -1,5 +1,11 @@
-svr: configParser.o net.o asynLog.o  thread.o netReactor.o main.o
-	g++ -o svr configParser.o net.o thread.o netReactor.o main.o asynLog.o  -lpthread /usr/lib/libevent.a
+svr: configParser.o netConn.o IMProto.o net.o asynLog.o  thread.o netReactor.o main.o
+	g++ -o svr configParser.o netConn.o IMProto.o net.o thread.o netReactor.o main.o asynLog.o  -lpthread /usr/lib/libevent.a
+
+
+netConn.o:netConn.cpp
+	g++ -std=c++11 -g -c netConn.cpp
+IMProto.o:../../common/IMProto.cpp
+	g++ -std=c++11 -g -c ../../common/IMProto.cpp
 
 thread.o: ../../interface/thread.cpp
 	g++  -std=c++11 -g -c ../../interface/thread.cpp

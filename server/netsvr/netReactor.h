@@ -4,13 +4,18 @@
 #include "../../interface/ireactor.h"
 #include "../../common/net.h"
 #include "../../common/asynLog.h"
+#include "../../common/IMProto.h"
+#include "../../proto/IM.Base.pb.h"
 #include <event.h>
 #include <vector>
 #include <string>
 
 #define MINWRITEDATA 0
 
-class NetReactor
+static int maxConnected = 500000;
+
+
+class NetReactor : public IReactor
 {
     public:
         NetReactor(const Section &sec);
@@ -37,6 +42,14 @@ class NetReactor
         {
             return _maxConnected;
         }
+        int getReadTo()
+        {
+            return _readTimeout;
+        }
+        int getWriteTo()
+        {
+            return _writeTimeout;
+        }
         
         event getListenEv()
         {
@@ -54,6 +67,8 @@ class NetReactor
         int                   _port;
         std::vector<string>   _logicIP;
         int                   _maxConnected;
+        int                   _readTimeout;
+        int                   _writeTimeout;
 };
 
 
