@@ -145,3 +145,39 @@ int RegReqCmd::callback()
     
 }
 
+int LogInputCmd::callback()
+{
+    vector<string> logInInfo = split(cmd, ":");
+    if(logInInfo.size() !=2)
+    {
+        printf("Input LogIN Invalid name:password\n");
+        ract->setUserStatus(LineTalkReactor::UNUSE);
+        return 0;
+    }
+    /* dele \n */
+    logInInfo[1].pop_back();
+    printf("test name:%s pass:%s\n", logInInfo[0].c_str(),
+                                  logInInfo[1].c_str());
+    
+    IM::Log::IMLogInReq req;
+    string reqData;
+    req.set_name(std::move(logInInfo[0]));    
+    req.set_password(std::move(logInInfo[1]));
+    req.SerializeToString(&reqData);
+    
+    ImPheader_t head;
+    head.length = reqData.size();
+    head.command_id = IM::Base::CID_LOGIN_REQ_USERLOGIN;
+    head.punch_flag = 0;
+    head.user_id    = 0;
+
+    int res = sendProto(ract->getSvrFd(),
+                        (void *)&head, 
+                        sizeof(head),
+                        (void *)reqData.c_str(),
+                        reqData.size());
+    printf("test send login all data %d\n", res);   
+    return 0; 
+
+}
+

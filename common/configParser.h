@@ -17,6 +17,8 @@
 #include <map>
 #include <iostream>
 #include <fstream>
+#include <list>
+#include <string>
 #include "singleton.h"
 
 class ConfigParser;
@@ -31,6 +33,9 @@ class Section
              items[key] = val;    
         }
         void scan() const;
+
+        std::list<std::string> getKeys() const;
+       
     private:
         std::map<std::string, std::string> items;
 };

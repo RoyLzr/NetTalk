@@ -1,5 +1,8 @@
-test: configParser.o IMProto.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o main.o IM.Test.pb.o IM.Base.pb.o Parser.o
-	g++ -o test configParser.o IMProto.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o  IM.Test.pb.o IM.Base.pb.o Parser.o ../lib/jrtplib/libjrtp.a -lpthread -lasound `pkg-config --cflags --libs protobuf`
+test: configParser.o IMProto.o net.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o main.o IM.Test.pb.o IM.Base.pb.o IM.Log.pb.o Parser.o
+	g++ -o test configParser.o IMProto.o net.o main.o asynLog.o thread.o ClientSvr.o workThread.o LineTalkReactor.o ClientCmd.o AudioThread.o AudioSession.o  IM.Test.pb.o IM.Base.pb.o IM.Log.pb.o Parser.o ../lib/jrtplib/libjrtp.a -lpthread -lasound `pkg-config --cflags --libs protobuf`
+
+IM.Log.pb.o:../proto/IM.Log.pb.cc
+	g++ -std=c++11 -g -c ../proto/IM.Log.pb.cc
 
 Parser.o:../client/Parser.cpp
 	g++ -std=c++11 -g -c ../client/Parser.cpp
@@ -49,4 +52,5 @@ clean:
 	rm -rf *.o
 	rm -rf core*
 	rm -rf test
+	rm -rf *.log
 

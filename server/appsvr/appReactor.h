@@ -1,31 +1,25 @@
-#ifndef  _APPREACTOR_H_
-#define  _APPREACTOR_H_
+#ifndef  _NETSVR_H_
+#define  _NETSVR_H_
 
 #include "../../interface/ireactor.h"
 #include "../../common/net.h"
 #include "../../common/asynLog.h"
-#include "../../common/lock.h"
+#include "../../common/IMProto.h"
+#include "../../proto/IM.Base.pb.h"
 #include <event.h>
 #include <vector>
-#include <map>
+#include <string>
 
 #define MINWRITEDATA 0
 
-/* use for record user addr and user login status*/
-/* only online user exists in this map */
-typedef map<string, string> UserAddrMap_t;
+static int maxConnected = 500000;
 
-struct MutexBufferEvent
-{
-    bufferevent * bev;
-    MLock         _writeLock; 
-};
 
-class APPReactor
+class NetReactor : public IReactor
 {
     public:
-        APPReactor(const Section &sec);
-        virtual ~APPReactor();
+        NetReactor(const Section &sec);
+        virtual ~NetReactor();
     public:
         
         virtual int extCmd(const std::string ) {};
@@ -48,6 +42,14 @@ class APPReactor
         {
             return _maxConnected;
         }
+        int getReadTo()
+        {
+            return _readTimeout;
+        }
+        int getWriteTo()
+        {
+            return _writeTimeout;
+        }
         
         event getListenEv()
         {
@@ -57,12 +59,16 @@ class APPReactor
     protected:
         
         struct event          _listener;
+        struct bufferevent ** _fdPool;
         int                   _listenFd;
         int                   _status;
-       
+        std::vector<string>   _fdUserName;
+                                
         int                   _port;
+        std::vector<string>   _logicIP;
         int                   _maxConnected;
-        int                   _threadNum;
+        int                   _readTimeout;
+        int                   _writeTimeout;
 };
 
 

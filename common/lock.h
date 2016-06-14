@@ -114,6 +114,19 @@ class MCondition
             return ret;
         }
 
+        inline int wait()
+        {
+            pthread_cond_wait(&_cond, &_lock);
+        }
+        inline int lock()
+        {
+            pthread_mutex_lock(&_lock);
+        }
+        inline int unlock()
+        {
+            pthread_mutex_unlock(&_lock);
+        }
+
         inline void signal() 
         {
             pthread_cond_signal(&_cond);
@@ -132,6 +145,7 @@ class MCondition
         pthread_mutex_t & _lock;
         size_t _waits;
 };
+
 
 #endif 
 

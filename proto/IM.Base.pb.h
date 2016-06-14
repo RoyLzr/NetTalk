@@ -137,7 +137,8 @@ inline bool SessionCmdID_Parse(
     SessionCmdID_descriptor(), name, value);
 }
 enum ResultType {
-  RESULT_LOGIN_SUCC = 0,
+  NONERES = 0,
+  RESULT_LOGIN_SUCC = 8,
   RESULT_LOGIN_FAIL = 1,
   RESULT_BUDDY_SUCC = 2,
   RESULT_BUDDY_FAIL = 3,
@@ -149,8 +150,8 @@ enum ResultType {
   ResultType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool ResultType_IsValid(int value);
-const ResultType ResultType_MIN = RESULT_LOGIN_SUCC;
-const ResultType ResultType_MAX = RESULT_REGISTER_FAIL;
+const ResultType ResultType_MIN = NONERES;
+const ResultType ResultType_MAX = RESULT_LOGIN_SUCC;
 const int ResultType_ARRAYSIZE = ResultType_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* ResultType_descriptor();
@@ -164,12 +165,13 @@ inline bool ResultType_Parse(
     ResultType_descriptor(), name, value);
 }
 enum Util {
-  UTIL_KEEP_ALIVE = 0,
+  NONEUTL = 0,
+  UTIL_KEEP_ALIVE = 1281,
   Util_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Util_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Util_IsValid(int value);
-const Util Util_MIN = UTIL_KEEP_ALIVE;
+const Util Util_MIN = NONEUTL;
 const Util Util_MAX = UTIL_KEEP_ALIVE;
 const int Util_ARRAYSIZE = Util_MAX + 1;
 
@@ -182,6 +184,28 @@ inline bool Util_Parse(
     const ::std::string& name, Util* value) {
   return ::google::protobuf::internal::ParseNamedEnum<Util>(
     Util_descriptor(), name, value);
+}
+enum UserStatus {
+  NONEUSE = 0,
+  USER_ONLINE = 1537,
+  USER_OFFLINE = 1538,
+  UserStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  UserStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool UserStatus_IsValid(int value);
+const UserStatus UserStatus_MIN = NONEUSE;
+const UserStatus UserStatus_MAX = USER_OFFLINE;
+const int UserStatus_ARRAYSIZE = UserStatus_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* UserStatus_descriptor();
+inline const ::std::string& UserStatus_Name(UserStatus value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    UserStatus_descriptor(), value);
+}
+inline bool UserStatus_Parse(
+    const ::std::string& name, UserStatus* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<UserStatus>(
+    UserStatus_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -258,17 +282,11 @@ class UserInfo : public ::google::protobuf::Message {
   ::std::string* release_user_name();
   void set_allocated_user_name(::std::string* user_name);
 
-  // optional uint32 created = 3;
-  void clear_created();
-  static const int kCreatedFieldNumber = 3;
-  ::google::protobuf::uint32 created() const;
-  void set_created(::google::protobuf::uint32 value);
-
-  // optional uint32 user_lastlog = 4;
-  void clear_user_lastlog();
-  static const int kUserLastlogFieldNumber = 4;
-  ::google::protobuf::uint32 user_lastlog() const;
-  void set_user_lastlog(::google::protobuf::uint32 value);
+  // optional .IM.Base.UserStatus status = 3;
+  void clear_status();
+  static const int kStatusFieldNumber = 3;
+  ::IM::Base::UserStatus status() const;
+  void set_status(::IM::Base::UserStatus value);
 
   // @@protoc_insertion_point(class_scope:IM.Base.UserInfo)
  private:
@@ -277,8 +295,7 @@ class UserInfo : public ::google::protobuf::Message {
   bool _is_default_instance_;
   ::google::protobuf::internal::ArenaStringPtr user_name_;
   ::google::protobuf::uint32 user_id_;
-  ::google::protobuf::uint32 created_;
-  ::google::protobuf::uint32 user_lastlog_;
+  int status_;
   mutable int _cached_size_;
   friend void  protobuf_AddDesc_IM_2eBase_2eproto();
   friend void protobuf_AssignDesc_IM_2eBase_2eproto();
@@ -353,32 +370,18 @@ inline void UserInfo::set_allocated_user_name(::std::string* user_name) {
   // @@protoc_insertion_point(field_set_allocated:IM.Base.UserInfo.user_name)
 }
 
-// optional uint32 created = 3;
-inline void UserInfo::clear_created() {
-  created_ = 0u;
+// optional .IM.Base.UserStatus status = 3;
+inline void UserInfo::clear_status() {
+  status_ = 0;
 }
-inline ::google::protobuf::uint32 UserInfo::created() const {
-  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.created)
-  return created_;
+inline ::IM::Base::UserStatus UserInfo::status() const {
+  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.status)
+  return static_cast< ::IM::Base::UserStatus >(status_);
 }
-inline void UserInfo::set_created(::google::protobuf::uint32 value) {
+inline void UserInfo::set_status(::IM::Base::UserStatus value) {
   
-  created_ = value;
-  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.created)
-}
-
-// optional uint32 user_lastlog = 4;
-inline void UserInfo::clear_user_lastlog() {
-  user_lastlog_ = 0u;
-}
-inline ::google::protobuf::uint32 UserInfo::user_lastlog() const {
-  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.user_lastlog)
-  return user_lastlog_;
-}
-inline void UserInfo::set_user_lastlog(::google::protobuf::uint32 value) {
-  
-  user_lastlog_ = value;
-  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.user_lastlog)
+  status_ = value;
+  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.status)
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
@@ -421,6 +424,11 @@ template <> struct is_proto_enum< ::IM::Base::Util> : ::google::protobuf::intern
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::Util>() {
   return ::IM::Base::Util_descriptor();
+}
+template <> struct is_proto_enum< ::IM::Base::UserStatus> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::IM::Base::UserStatus>() {
+  return ::IM::Base::UserStatus_descriptor();
 }
 
 }  // namespace protobuf

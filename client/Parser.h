@@ -3,6 +3,7 @@
 
 #include "../interface/dataParse.h"
 #include "../interface/cmdWrap.h"
+#include "../proto/IM.Log.pb.h"
 #include "ClientCmd.h"
 #include <string>
 #include <memory>
@@ -33,7 +34,8 @@ class UserDataParser : public DataParser
                          run("run\n"),
                          stop("stop\n"),
                          test("test\n"),
-                         Register("register\n") 
+                         Register("register\n"), 
+                         login("login\n") 
         {};
 
         virtual ~UserDataParser() 
@@ -51,6 +53,7 @@ class UserDataParser : public DataParser
         const std::string stop;
         const std::string test;
         const std::string Register;
+        const std::string login;
 
 };
 

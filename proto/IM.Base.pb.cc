@@ -31,6 +31,7 @@ const ::google::protobuf::EnumDescriptor* BuddyCmdID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* SessionCmdID_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ResultType_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* Util_descriptor_ = NULL;
+const ::google::protobuf::EnumDescriptor* UserStatus_descriptor_ = NULL;
 
 }  // namespace
 
@@ -42,11 +43,10 @@ void protobuf_AssignDesc_IM_2eBase_2eproto() {
       "IM.Base.proto");
   GOOGLE_CHECK(file != NULL);
   UserInfo_descriptor_ = file->message_type(0);
-  static const int UserInfo_offsets_[4] = {
+  static const int UserInfo_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfo, user_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfo, user_name_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfo, created_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfo, user_lastlog_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(UserInfo, status_),
   };
   UserInfo_reflection_ =
     ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
@@ -65,6 +65,7 @@ void protobuf_AssignDesc_IM_2eBase_2eproto() {
   SessionCmdID_descriptor_ = file->enum_type(3);
   ResultType_descriptor_ = file->enum_type(4);
   Util_descriptor_ = file->enum_type(5);
+  UserStatus_descriptor_ = file->enum_type(6);
 }
 
 namespace {
@@ -95,30 +96,32 @@ void protobuf_AddDesc_IM_2eBase_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rIM.Base.proto\022\007IM.Base\"U\n\010UserInfo\022\017\n\007"
-    "user_id\030\001 \001(\r\022\021\n\tuser_name\030\002 \001(\t\022\017\n\007crea"
-    "ted\030\003 \001(\r\022\024\n\014user_lastlog\030\004 \001(\r*J\n\rRegis"
-    "terCmdID\022\013\n\007NONEREG\020\000\022\025\n\020CID_REGISTER_RE"
-    "Q\020\201\010\022\025\n\020CID_REGISTER_RES\020\202\010*\223\001\n\nLoginCmd"
-    "ID\022\013\n\007NONELOG\020\000\022\034\n\027CID_LOGIN_REQ_USERLOG"
-    "IN\020\201\002\022\034\n\027CID_LOGIN_RES_USERLOGIN\020\202\002\022\035\n\030C"
-    "ID_LOGIN_REQ_USERLOGOUT\020\203\002\022\035\n\030CID_LOGIN_"
-    "RES_USERLOGOUT\020\204\002*\317\001\n\nBuddyCmdID\022\r\n\tNONE"
-    "BUDDY\020\000\022\034\n\027CID_BUDDY_REQ_USER_LIST\020\201\004\022\034\n"
-    "\027CID_BUDDY_RES_USER_LIST\020\202\004\022\035\n\030CID_BUDDY"
-    "_REQ_BUILD_USER\020\203\004\022\035\n\030CID_BUDDY_RES_BUIL"
-    "D_USER\020\204\004\022\033\n\026CID_BUDDY_REQ_DEL_USER\020\205\004\022\033"
-    "\n\026CID_BUDDY_RES_DEL_USER\020\206\004*\212\001\n\014SessionC"
-    "mdID\022\014\n\010NONESESS\020\000\022\032\n\025CID_SESSION_REQ_BU"
-    "ILD\020\201\006\022\032\n\025CID_SESSION_RES_BUILD\020\202\006\022\031\n\024CI"
-    "D_SESSION_REQ_STOP\020\203\006\022\031\n\024CID_SESSION_RES"
-    "_STOP\020\204\006*\316\001\n\nResultType\022\025\n\021RESULT_LOGIN_"
-    "SUCC\020\000\022\025\n\021RESULT_LOGIN_FAIL\020\001\022\025\n\021RESULT_"
-    "BUDDY_SUCC\020\002\022\025\n\021RESULT_BUDDY_FAIL\020\003\022\027\n\023R"
-    "ESULT_SESSION_SUCC\020\004\022\027\n\023RESULT_SESSION_F"
-    "AIL\020\005\022\030\n\024RESULT_REGISTER_SUCC\020\006\022\030\n\024RESUL"
-    "T_REGISTER_FAIL\020\007*\033\n\004Util\022\023\n\017UTIL_KEEP_A"
-    "LIVE\020\000b\006proto3", 934);
+    "\n\rIM.Base.proto\022\007IM.Base\"S\n\010UserInfo\022\017\n\007"
+    "user_id\030\001 \001(\r\022\021\n\tuser_name\030\002 \001(\t\022#\n\006stat"
+    "us\030\003 \001(\0162\023.IM.Base.UserStatus*J\n\rRegiste"
+    "rCmdID\022\013\n\007NONEREG\020\000\022\025\n\020CID_REGISTER_REQ\020"
+    "\201\010\022\025\n\020CID_REGISTER_RES\020\202\010*\223\001\n\nLoginCmdID"
+    "\022\013\n\007NONELOG\020\000\022\034\n\027CID_LOGIN_REQ_USERLOGIN"
+    "\020\201\002\022\034\n\027CID_LOGIN_RES_USERLOGIN\020\202\002\022\035\n\030CID"
+    "_LOGIN_REQ_USERLOGOUT\020\203\002\022\035\n\030CID_LOGIN_RE"
+    "S_USERLOGOUT\020\204\002*\317\001\n\nBuddyCmdID\022\r\n\tNONEBU"
+    "DDY\020\000\022\034\n\027CID_BUDDY_REQ_USER_LIST\020\201\004\022\034\n\027C"
+    "ID_BUDDY_RES_USER_LIST\020\202\004\022\035\n\030CID_BUDDY_R"
+    "EQ_BUILD_USER\020\203\004\022\035\n\030CID_BUDDY_RES_BUILD_"
+    "USER\020\204\004\022\033\n\026CID_BUDDY_REQ_DEL_USER\020\205\004\022\033\n\026"
+    "CID_BUDDY_RES_DEL_USER\020\206\004*\212\001\n\014SessionCmd"
+    "ID\022\014\n\010NONESESS\020\000\022\032\n\025CID_SESSION_REQ_BUIL"
+    "D\020\201\006\022\032\n\025CID_SESSION_RES_BUILD\020\202\006\022\031\n\024CID_"
+    "SESSION_REQ_STOP\020\203\006\022\031\n\024CID_SESSION_RES_S"
+    "TOP\020\204\006*\333\001\n\nResultType\022\013\n\007NONERES\020\000\022\025\n\021RE"
+    "SULT_LOGIN_SUCC\020\010\022\025\n\021RESULT_LOGIN_FAIL\020\001"
+    "\022\025\n\021RESULT_BUDDY_SUCC\020\002\022\025\n\021RESULT_BUDDY_"
+    "FAIL\020\003\022\027\n\023RESULT_SESSION_SUCC\020\004\022\027\n\023RESUL"
+    "T_SESSION_FAIL\020\005\022\030\n\024RESULT_REGISTER_SUCC"
+    "\020\006\022\030\n\024RESULT_REGISTER_FAIL\020\007*)\n\004Util\022\013\n\007"
+    "NONEUTL\020\000\022\024\n\017UTIL_KEEP_ALIVE\020\201\n*>\n\nUserS"
+    "tatus\022\013\n\007NONEUSE\020\000\022\020\n\013USER_ONLINE\020\201\014\022\021\n\014"
+    "USER_OFFLINE\020\202\014b\006proto3", 1023);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "IM.Base.proto", &protobuf_RegisterTypes);
   UserInfo::default_instance_ = new UserInfo();
@@ -214,6 +217,7 @@ bool ResultType_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;
@@ -227,6 +231,22 @@ const ::google::protobuf::EnumDescriptor* Util_descriptor() {
 bool Util_IsValid(int value) {
   switch(value) {
     case 0:
+    case 1281:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* UserStatus_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return UserStatus_descriptor_;
+}
+bool UserStatus_IsValid(int value) {
+  switch(value) {
+    case 0:
+    case 1537:
+    case 1538:
       return true;
     default:
       return false;
@@ -249,8 +269,7 @@ static void MergeFromFail(int line) {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UserInfo::kUserIdFieldNumber;
 const int UserInfo::kUserNameFieldNumber;
-const int UserInfo::kCreatedFieldNumber;
-const int UserInfo::kUserLastlogFieldNumber;
+const int UserInfo::kStatusFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UserInfo::UserInfo()
@@ -277,8 +296,7 @@ void UserInfo::SharedCtor() {
   _cached_size_ = 0;
   user_id_ = 0u;
   user_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  created_ = 0u;
-  user_lastlog_ = 0u;
+  status_ = 0;
 }
 
 UserInfo::~UserInfo() {
@@ -335,7 +353,7 @@ void UserInfo::Clear() {
            ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
 } while (0)
 
-  ZR_(user_id_, user_lastlog_);
+  ZR_(user_id_, status_);
   user_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 
 #undef ZR_HELPER_
@@ -380,33 +398,19 @@ bool UserInfo::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_created;
+        if (input->ExpectTag(24)) goto parse_status;
         break;
       }
 
-      // optional uint32 created = 3;
+      // optional .IM.Base.UserStatus status = 3;
       case 3: {
         if (tag == 24) {
-         parse_created:
+         parse_status:
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &created_)));
-
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(32)) goto parse_user_lastlog;
-        break;
-      }
-
-      // optional uint32 user_lastlog = 4;
-      case 4: {
-        if (tag == 32) {
-         parse_user_lastlog:
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &user_lastlog_)));
-
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_status(static_cast< ::IM::Base::UserStatus >(value));
         } else {
           goto handle_unusual;
         }
@@ -453,14 +457,10 @@ void UserInfo::SerializeWithCachedSizes(
       2, this->user_name(), output);
   }
 
-  // optional uint32 created = 3;
-  if (this->created() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->created(), output);
-  }
-
-  // optional uint32 user_lastlog = 4;
-  if (this->user_lastlog() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->user_lastlog(), output);
+  // optional .IM.Base.UserStatus status = 3;
+  if (this->status() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->status(), output);
   }
 
   // @@protoc_insertion_point(serialize_end:IM.Base.UserInfo)
@@ -485,14 +485,10 @@ void UserInfo::SerializeWithCachedSizes(
         2, this->user_name(), target);
   }
 
-  // optional uint32 created = 3;
-  if (this->created() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->created(), target);
-  }
-
-  // optional uint32 user_lastlog = 4;
-  if (this->user_lastlog() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->user_lastlog(), target);
+  // optional .IM.Base.UserStatus status = 3;
+  if (this->status() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->status(), target);
   }
 
   // @@protoc_insertion_point(serialize_to_array_end:IM.Base.UserInfo)
@@ -517,18 +513,10 @@ int UserInfo::ByteSize() const {
         this->user_name());
   }
 
-  // optional uint32 created = 3;
-  if (this->created() != 0) {
+  // optional .IM.Base.UserStatus status = 3;
+  if (this->status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->created());
-  }
-
-  // optional uint32 user_lastlog = 4;
-  if (this->user_lastlog() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->user_lastlog());
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->status());
   }
 
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
@@ -562,11 +550,8 @@ void UserInfo::MergeFrom(const UserInfo& from) {
 
     user_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.user_name_);
   }
-  if (from.created() != 0) {
-    set_created(from.created());
-  }
-  if (from.user_lastlog() != 0) {
-    set_user_lastlog(from.user_lastlog());
+  if (from.status() != 0) {
+    set_status(from.status());
   }
 }
 
@@ -596,8 +581,7 @@ void UserInfo::Swap(UserInfo* other) {
 void UserInfo::InternalSwap(UserInfo* other) {
   std::swap(user_id_, other->user_id_);
   user_name_.Swap(&other->user_name_);
-  std::swap(created_, other->created_);
-  std::swap(user_lastlog_, other->user_lastlog_);
+  std::swap(status_, other->status_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   std::swap(_cached_size_, other->_cached_size_);
 }
@@ -671,32 +655,18 @@ void UserInfo::clear_user_name() {
   // @@protoc_insertion_point(field_set_allocated:IM.Base.UserInfo.user_name)
 }
 
-// optional uint32 created = 3;
-void UserInfo::clear_created() {
-  created_ = 0u;
+// optional .IM.Base.UserStatus status = 3;
+void UserInfo::clear_status() {
+  status_ = 0;
 }
- ::google::protobuf::uint32 UserInfo::created() const {
-  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.created)
-  return created_;
+ ::IM::Base::UserStatus UserInfo::status() const {
+  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.status)
+  return static_cast< ::IM::Base::UserStatus >(status_);
 }
- void UserInfo::set_created(::google::protobuf::uint32 value) {
+ void UserInfo::set_status(::IM::Base::UserStatus value) {
   
-  created_ = value;
-  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.created)
-}
-
-// optional uint32 user_lastlog = 4;
-void UserInfo::clear_user_lastlog() {
-  user_lastlog_ = 0u;
-}
- ::google::protobuf::uint32 UserInfo::user_lastlog() const {
-  // @@protoc_insertion_point(field_get:IM.Base.UserInfo.user_lastlog)
-  return user_lastlog_;
-}
- void UserInfo::set_user_lastlog(::google::protobuf::uint32 value) {
-  
-  user_lastlog_ = value;
-  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.user_lastlog)
+  status_ = value;
+  // @@protoc_insertion_point(field_set:IM.Base.UserInfo.status)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

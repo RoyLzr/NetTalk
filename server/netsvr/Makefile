@@ -29,4 +29,5 @@ clean:
 	rm -rf *.o
 	rm -rf core*
 	rm -rf svr
+	rm -rf *.log
 

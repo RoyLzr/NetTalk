@@ -12,6 +12,10 @@
 #define __NET_H__
 
 #include <stdio.h>
+#include <string>
+#include <sstream>
+#include <iostream>
+#include <fstream>
 #include <unistd.h>
 #include <netdb.h>
 #include <string.h>
@@ -141,7 +145,21 @@ find_line(char * req, int end, char label);
 int
 readn(int fd, void *usrbuf, size_t n);
 
+int
+sendProto(int,
+          void *, 
+          int, 
+          void * , 
+          int );
+
+
 void
 move_forward(char * req, int start, int end);
+
+std::string int2string(uint32_t user_id);
+
+std::vector<std::string> 
+split(std::string s, std::string sep);
+
 
 #endif

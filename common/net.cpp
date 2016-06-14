@@ -577,6 +577,27 @@ set_linger(int fd, int val)
 }
 
 int
+sendProto(int fd,
+          void * head, 
+          int hsize, 
+          void * data, 
+          int dsize)
+{
+    struct msghdr sData;
+    memset(&sData, 0, sizeof(sData));
+    struct iovec  ve[2];
+    ve[0].iov_base = head;
+    ve[0].iov_len  = hsize;
+    ve[1].iov_base = data;
+    ve[1].iov_len  = dsize;
+
+    sData.msg_iov = ve;
+    sData.msg_iovlen = 2;
+    
+    return sendmsg(fd, &sData, MSG_WAITALL);
+}
+
+int
 find_line(char * req, int end, char label)
 {
     for(int i = 0; i < end; i++)
@@ -597,3 +618,40 @@ move_forward(char * req, int start, int end)
     return;
 }
 
+
+string int2string(uint32_t user_id)
+{
+    std::stringstream ss;
+    ss << user_id;
+    return ss.str();
+}
+
+
+std::vector<std::string> 
+split(std::string s, std::string sep)
+{
+    std::vector<std::string> result;
+    if(s.empty())
+        return result;
+
+    std::string::size_type start = s.find_first_not_of(sep);
+    std::string::size_type common = 0;
+    while(start != std::string::npos)
+    {
+        string tmp;
+        common = s.find(sep, start);
+        if( common != std::string::npos)
+        {
+            tmp = s.substr(start, common - start);
+            start = common + sep.size();
+        }
+        else
+        {
+            tmp = s.substr(start);
+            start = common;
+        }
+        if(!tmp.empty()) 
+            result.push_back(tmp); 
+    }
+    return result;
+}

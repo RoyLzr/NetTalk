@@ -59,12 +59,19 @@ enum Util
     UTIL_KEEP_ALIVE = 0x0501;
 }
 
+enum UserStatus
+{
+    NONEUSE            = 0;
+    USER_ONLINE        = 0x0601;
+    USER_OFFLINE       = 0x0602;
+}
+
+
 message UserInfo
 {
     uint32 user_id      = 1;
     string user_name    = 2;
-    uint32 created      = 3;
-    uint32 user_lastlog = 4; 
+    UserStatus status   = 3;
 }
 
 

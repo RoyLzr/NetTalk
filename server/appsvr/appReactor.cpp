@@ -1,4 +1,5 @@
-#include "netReactor.h"
+#include "appReactor.h"
+#include "appConn.h"
 
 void ReactorAccept(int listenFd, short listenEv, void * arg)
 {
@@ -27,13 +28,13 @@ void ReactorAccept(int listenFd, short listenEv, void * arg)
         close(connfd);
         return;
     }
-    
-    if(pool[connfd] != NULL)
+   
+    NetConnManager * cMag = NetConnManager::getInstance();  
+
+    if(cMag->IsUserConnExist(connfd))
     {
         Log::ERROR("assign a working fd, connfd : %d, will clean it", 
                    connfd);
-        bufferevent_free(pool[connfd]);
-        pool[connfd] = NULL;
     }
 
     struct bufferevent * bev;
@@ -43,12 +44,19 @@ void ReactorAccept(int listenFd, short listenEv, void * arg)
                           NULL, 
                           EvErrorCallback, 
                           nrc);
+    //bev->timeout_read = nrc->getReadTo();
+    //bev->timeout_write = nrc->getWriteTo();
     
     bev->timeout_read = 1800;
-    bev->timeout_write = 1800;
-
+    bev->timeout_write = 1800; 
     bufferevent_enable(bev, EV_READ|EV_WRITE);    
-    pool[connfd] = bev;
+
+
+    std::unique_ptr<Iconn> con(new UserConn(nrc, bev)); 
+    cMag->setConn(connfd, std::move(con));
+
+    /* use for test */
+    //cMag->addAppConnFd(connfd); 
 
     Log::NOTICE("ACCEPT Connect SUCC, connfd : %d, UserIP : %s", connfd, peer_ip); 
 }
@@ -56,18 +64,15 @@ void ReactorAccept(int listenFd, short listenEv, void * arg)
 void EvReadCallback(struct bufferevent * bev, void * arg)
 {
     NetReactor * nrc = (NetReactor *)arg;
-    struct bufferevent ** pool;
-    pool = nrc->getFdPool();
+    int connfd = (bev->ev_read).ev_fd;
+    NetConnManager * cMag = NetConnManager::getInstance();
+    Iconn * conn =  cMag->getConn(connfd);
+    if(conn != NULL) 
+        conn->OnRead(NULL, 0);
+    else
+        Log::ERROR("buffer %d conn not exists match userconn", connfd);
 
-    if(nrc->isStop())
-    {
-        int connfd = (bev->ev_read).ev_fd;
-        bufferevent_free(bev);
-        pool[connfd] = NULL;
-    }
-    struct evbuffer * input = bev->input;
-    if(EVBUFFER_LENGTH(input) > MINWRITEDATA)
-        bufferevent_write_buffer(bev, input); 
+    return;
 }
 
 void EvWriteCallback(struct bufferevent * bev,void * arg)
@@ -81,33 +86,28 @@ void EvErrorCallback(struct bufferevent * bev,
 {
     int connfd = (bev->ev_read).ev_fd;
     NetReactor * nrc = (NetReactor *)arg;
-    struct bufferevent ** pool;
-    pool = nrc->getFdPool();
-    
+    NetConnManager * cmag = NetConnManager::getInstance();
+
     if(error & EVBUFFER_EOF)
     {
         Log::NOTICE("Client close connection connfd: %d", connfd);
-        if(pool[connfd] != NULL)
-        {
-            bufferevent_free(pool[connfd]);
-            pool[connfd] = NULL;
-        }
+        if(cmag->IsUserConnExist(connfd))
+            cmag->delConn(connfd);
         close(connfd);
     }
     else if(error & EVBUFFER_ERROR)
     {
         Log::WARN("connection error connfd: %d error: ", connfd, strerror(errno));
-        if(pool[connfd] != NULL)
-        {
-            bufferevent_free(pool[connfd]);
-            pool[connfd] = NULL;
-        }
+        if(cmag->IsUserConnExist(connfd))
+            cmag->delConn(connfd);
         close(connfd);
     }
     else if(error & EVBUFFER_TIMEOUT)
     {
         Log::WARN("connection Timeout connfd: %d", connfd);
-        shutdown(connfd, SHUT_WR);
+        if(cmag->IsUserConnExist(connfd))
+            cmag->delConn(connfd);
+        close(connfd);
     }
     return ;
 }
@@ -120,38 +120,21 @@ NetReactor::NetReactor(const Section &sec)
     _status = IReactor::NONE;
     _port = (int)atoi((sec.get("listenPort").c_str()));
     _maxConnected = (int)atoi((sec.get("maxConnect").c_str()));
-    _logicIP.push_back(sec.get("logicSvr")); 
+    maxConnected  = _maxConnected;
+    _logicIP.push_back(sec.get("logicSvr"));
+    _readTimeout = ((int)atoi(sec.get("readTimeout").c_str())); 
+    _writeTimeout = ((int)atoi(sec.get("writeTimeout").c_str())); 
 }
 
 
 NetReactor::~NetReactor()
-{
-    if(_fdPool == NULL)
-        return;
-
-    for(int i = 0; i <_maxConnected; i++)
-        if(_fdPool[i] != NULL)
-        {
-            bufferevent_free(_fdPool[i]);
-            _fdPool[i] = NULL;
-        }
-    
-    free(_fdPool);
-}
+{}
 
 int 
 NetReactor::NetReactor::init()
 {
     event_init();
-    _fdPool = (struct bufferevent **) malloc(_maxConnected * 
-                             sizeof(struct bufferevent *));
 
-    for(int i = 0; i < _maxConnected; i++)
-        _fdPool[i] = NULL;
-
-    if(_fdPool == NULL) 
-        return -1;
-   
     Log::NOTICE("Listen Port %d", _port);
 
     _listenFd = net_tcplisten(_port, 100);
@@ -159,6 +142,7 @@ NetReactor::NetReactor::init()
 
     event_set(&_listener, _listenFd, EV_READ|EV_PERSIST, ReactorAccept, this);
     event_add(&_listener, NULL);
+
 }
 
 int
@@ -187,3 +171,4 @@ NetReactor::status()
 {
     return _status;
 }
+

@@ -8,8 +8,16 @@ std::unique_ptr<CMD> UserDataParser::Parser(const std::string data,
     std::unique_ptr<CMD> res;
     LineTalkReactor * arg = (LineTalkReactor *)args;
     int ust = arg->getUserStatus();
-    if(ust == LineTalkReactor::USERREGINPUT)
+    if(ust == LineTalkReactor::USERLOGINPUT)
     {
+        std::unique_ptr<CMD> cmd(new LogInputCmd(arg, data));
+        res = std::move(cmd);
+        arg->setUserStatus(LineTalkReactor::USERLOGING);
+        return res;
+    }
+    else if(ust == LineTalkReactor::USERLOGING)
+    {
+        printf("Client is Logging can not excute other cmd\n");
         return res;
     }
 
@@ -38,6 +46,11 @@ std::unique_ptr<CMD> UserDataParser::Parser(const std::string data,
         arg->setUserStatus(LineTalkReactor::USERREGINPUT);
         printf("please input name and password, split by:\nexamples lili:123123\n");
 
+    }
+    else if(!strcmp(login.c_str(), data.c_str()))
+    {
+        arg->setUserStatus(LineTalkReactor::USERLOGINPUT);
+        printf("please input name and password, split by:\nexamples lili:123123\n");
     }
     else
     {

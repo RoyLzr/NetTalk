@@ -14,6 +14,19 @@ Section :: get(const std::string key) const
 } 
 
 
+
+std::list<std::string>
+Section::getKeys() const
+{
+    std::list<std::string> res;
+    std::map<std::string, std::string>::const_iterator it;
+    for( it = items.begin(); it != items.end(); it++)
+    {
+        res.push_back(it->first);
+    }
+    return res;
+}
+
 bool 
 ConfigParser :: parser_file(const std::string &file)
 {

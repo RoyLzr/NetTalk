@@ -1,0 +1,16 @@
+syntax="proto3";
+package IM.Log;
+import "IM.Base.proto";
+
+message IMLogInReq
+{
+    string name    = 1;
+    string password =  2;
+}
+
+
+message IMLogRes
+{
+    IM.Base.ResultType logRes = 1;
+    repeated IM.Base.UserInfo friend = 2;
+}

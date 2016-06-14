@@ -1,11 +1,11 @@
-#include "netConn.h"
+#include "appConn.h"
 
 NetConnManager * NetConnManager::_connManager = NULL;
 
 bool
 UserConn::CheckSetUserId(int userId)
 {
-    if(_userId < 0)
+    if(_userId <= 0)
     {
         if(userId>0)
             _userId = userId;
@@ -35,7 +35,7 @@ NetConnManager::getAppConnFd()
 int 
 UserConn::OnRead(void * data, int len)
 {
-    printf("Read data from userConn\n");
+    printf("Read data from NETSVR\n");
     if(data != NULL)
         return -1;
     struct evbuffer * input = _bev->input;
@@ -54,41 +54,25 @@ UserConn::OnRead(void * data, int len)
                                   input->off,
                                   &validLen))
     {
-        if(IsKeepAlivePacket(input->buffer))
-        {
-            Log::DEBUG("RECV Client keep alive packet");
-            evbuffer_drain(input, ImProto::_headerlen);
-            return 0;
-        }
         
         int userid = ((ImPheader_t *)input->buffer)->user_id;
-        ((ImPheader_t *)input->buffer)->punch_flag = connfd;
         validLen += ImProto::_headerlen;
         
-        //printf("write = %d buff=%d\n" ,validLen,input->off);
-        
-        if(_appFd < 0)
-        {
-            _appFd = cMag->getAppConnFd();
-            Log::DEBUG("User first attack netSVr, is alloc to appSvr %d ", _appFd);
-        } 
-        
-        Iconn * appConn = cMag->getConn(_appFd);
-        appConn->OnWrite(input->buffer, validLen);
-        evbuffer_drain(input, validLen);
-      
-        if(!CheckSetUserId(userid))
-        {
-            Log::NOTICE("This Conn change User, new userid %d", userid);
-            ImPheader_t head;
-            head.length = 0;
-            head.command_id = IM::Base::CID_LOGIN_REQ_USERLOGOUT;
-            head.punch_flag = connfd;
-            head.user_id    = _userId;
-            appConn->OnWrite((void *)&head, sizeof(head)); 
+       /*use for test */
+        ImProto data;
+        data.InitByHeaderAddBuf((void *)input->buffer,
+                                validLen);
 
-            _userId = userid;
+        IM::Log::IMLogInReq req;
+        if(!req.ParseFromString(*(data.GetBuffer())))
+        {
+            Log::ERROR("Parse content data error");
         }
+
+        std::cout << req.name() << std::endl;
+        std::cout << req.password() << std::endl;  
+           
+        evbuffer_drain(input, validLen);
     }
     return 0; 
 }

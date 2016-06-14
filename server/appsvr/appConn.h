@@ -4,7 +4,8 @@
 
 #include "../../interface/iconn.h"
 #include "../../proto/IM.Base.pb.h"
-#include "netReactor.h"
+#include "../../proto/IM.Log.pb.h"
+#include "appReactor.h"
 #include <memory>
 
 

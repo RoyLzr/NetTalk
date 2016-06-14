@@ -10,7 +10,14 @@
 #include "../common/IMProto.h"
 #include "../proto/IM.Test.pb.h"
 #include "../proto/IM.Base.pb.h"
+#include "../proto/IM.Log.pb.h"
 #include <memory>
+#include <stdlib.h>
+#include <stdio.h>
+
+
+using std::string;
+using std::vector;
 
 
 class LineTalkReactor;
@@ -108,8 +115,18 @@ class KeepAliveCmd : public CMD
 };
 
 
-
-
+class LogInputCmd : public CMD
+{
+    public:
+        LogInputCmd(LineTalkReactor * r, const string data):ract(r),
+                                                            cmd(data)
+        {};
+        virtual ~LogInputCmd() {};
+        virtual int callback();
+    private:
+        LineTalkReactor * ract;
+        const std::string cmd;
+};
 
 
 #endif
