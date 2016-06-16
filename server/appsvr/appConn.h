@@ -5,34 +5,29 @@
 #include "../../interface/iconn.h"
 #include "../../proto/IM.Base.pb.h"
 #include "../../proto/IM.Log.pb.h"
+#include "model/RelationModel.h"
+#include "model/UserModel.h"
 #include "appReactor.h"
 #include <memory>
 
 
 using namespace std;
 
-class UserConn : public Iconn
+class NetConn : public Iconn
 {
     public:
-        UserConn(NetReactor *r,
+        NetConn(AppReactor *r,
                  struct bufferevent * b) : _ract(r),
-                                           _userId(-1),
-                                           _bev(b),
-                                           _appFd(-1)
+                                           _bev(b)
         {};
 
         virtual int OnRead(void *, int);
 
         virtual int OnWrite(void *, int);
         
-        virtual bool IsKeepAlivePacket(void *);
-
-        virtual bool CheckSetUserId(int userId);
-
-        virtual void setAppFd(int fd) {_appFd = fd;} 
-
-        int getUserId() {return _userId;}
-        virtual ~UserConn() 
+        virtual int DelayWrite(void *, int);
+        
+        virtual ~NetConn() 
         {
             if(!_bev)
                 bufferevent_free(_bev);
@@ -41,30 +36,17 @@ class UserConn : public Iconn
 
     protected:
 
-        NetReactor          *   _ract;
-        int                     _userId;
-        int                     _appFd;
+        AppReactor          *   _ract;
         struct bufferevent  *   _bev;
 };
 
-class AppConn : public UserConn
+
+class AppConnManager
 {
     public:
-        AppConn(NetReactor *r,
-                struct bufferevent *b) : UserConn(r,b)
-        {};
-        virtual int OnRead(void *, int);
-
-        virtual int OnWrite(void *, int);
-};
-
-
-class NetConnManager
-{
-    public:
-        virtual ~NetConnManager() {};
+        virtual ~AppConnManager() {};
        
-        static NetConnManager * getInstance();
+        static AppConnManager * getInstance();
 
         Iconn * getConn(int );
         
@@ -75,15 +57,8 @@ class NetConnManager
         void  upConn(int , unique_ptr<Iconn>);  
         
         int  setConn(int , unique_ptr<Iconn>);  
-
-        int getAppConnFd();
         
-        int addAppConnFd(int fd)
-        {
-            _appConnIdx.push_back(fd);
-        }
-        
-        bool IsUserConnExist(int idx)
+        bool IsConnExist(int idx)
         {
             if(_connPool[idx])
                 return true;
@@ -91,10 +66,9 @@ class NetConnManager
         }
 
     private:
-        NetConnManager() {};
+        AppConnManager() {};
         vector<unique_ptr<Iconn> > _connPool;
-        vector<int>                _appConnIdx;
-        static NetConnManager * _connManager; 
+        static AppConnManager * _connManager; 
 };
 
 

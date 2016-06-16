@@ -205,7 +205,7 @@ int AudioTrans::ShowLocalData(void * data, int len)
                 playBuffer = pack->GetPayloadData();
                 playSize   = pack->GetPayloadLength();
                 
-                printf("play %d\n", playSize);
+                printf("Recv data from RTP will play size%d\n", playSize);
 
                 int prc = snd_pcm_writei(handlePlay, 
                                   playBuffer,

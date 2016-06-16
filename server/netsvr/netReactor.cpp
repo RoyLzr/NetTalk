@@ -88,23 +88,26 @@ void EvErrorCallback(struct bufferevent * bev,
     if(error & EVBUFFER_EOF)
     {
         Log::NOTICE("Client close connection connfd: %d", connfd);
-        printf("Client close connection connfd\n");
+        printf("Client close connection connfd %d\n", connfd);
         if(cmag->IsUserConnExist(connfd))
-            cmag->delConn(connfd);
+            if(cmag->delConn(connfd) > 0)
+                return;
         close(connfd);
     }
     else if(error & EVBUFFER_ERROR)
     {
         Log::WARN("connection error connfd: %d error: ", connfd, strerror(errno));
         if(cmag->IsUserConnExist(connfd))
-            cmag->delConn(connfd);
+            if(cmag->delConn(connfd)>0)
+                return;
         close(connfd);
     }
     else if(error & EVBUFFER_TIMEOUT)
     {
         Log::WARN("connection Timeout connfd: %d", connfd);
         if(cmag->IsUserConnExist(connfd))
-            cmag->delConn(connfd);
+            if(cmag->delConn(connfd)>0)
+                return;
         close(connfd);
     }
     return ;
@@ -176,8 +179,12 @@ NetReactor::NetReactor::init()
         return -1;
     }
     vector<int> fdVec;
+    vector<struct sockaddr_in> fdAddr;
     fdVec.push_back(appFd1);
     fdVec.push_back(appFd2);
+    fdAddr.push_back(svr_address1);
+    fdAddr.push_back(svr_address2);
+
     for(int i = 0; i < fdVec.size(); i++)
     {
         printf("init conn  %d %d \n", fdVec[0],fdVec[1]);
@@ -192,7 +199,7 @@ NetReactor::NetReactor::init()
         bufferevent_enable(bev, EV_READ|EV_WRITE);
 
         
-        std::unique_ptr<Iconn> con(new AppConn(this, bev)); 
+        std::unique_ptr<Iconn> con(new AppConn(this, bev, appSvrIp, 1090)); 
         cMag->setConn(fdVec[i], std::move(con));
         cMag->addAppConnFd(fdVec[i]); 
     }

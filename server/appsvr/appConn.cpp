@@ -1,45 +1,29 @@
 #include "appConn.h"
+#include "appTask.h"
 
-NetConnManager * NetConnManager::_connManager = NULL;
+AppConnManager * AppConnManager::_connManager = NULL;
 
-bool
-UserConn::CheckSetUserId(int userId)
+void testAppTaskHandle(ImProto * p, uint32_t connfd)
 {
-    if(_userId <= 0)
+    IM::Log::IMLogInReq req;
+    if(!req.ParseFromString(*(p->GetBuffer())))
     {
-        if(userId>0)
-            _userId = userId;
+        Log::ERROR("Parse content data error");
     }
-    else
-    {
-        if(userId != _userId)
-            return false;    
-    }
-    return true;
-}
 
-int
-NetConnManager::getAppConnFd()
-{
-    if(_appConnIdx.size() == 0)
-        return -1;
-    static int flag = -1;
-    if(flag == _appConnIdx.size())
-        flag = 0;
-    else
-        flag++;
-    return _appConnIdx[flag];
-}
+    std::cout << req.name() << std::endl;
+    std::cout << req.password() << std::endl;  
 
+}
 
 int 
-UserConn::OnRead(void * data, int len)
+NetConn::OnRead(void * data, int len)
 {
     printf("Read data from NETSVR\n");
     if(data != NULL)
         return -1;
     struct evbuffer * input = _bev->input;
-    NetConnManager * cMag = NetConnManager::getInstance();
+    AppConnManager * cMag = AppConnManager::getInstance();
     int connfd = (_bev->ev_read).ev_fd; 
 
     if(_ract->isStop())
@@ -57,21 +41,13 @@ UserConn::OnRead(void * data, int len)
         
         int userid = ((ImPheader_t *)input->buffer)->user_id;
         validLen += ImProto::_headerlen;
+        /*use for test */
         
-       /*use for test */
-        ImProto data;
-        data.InitByHeaderAddBuf((void *)input->buffer,
-                                validLen);
-
-        IM::Log::IMLogInReq req;
-        if(!req.ParseFromString(*(data.GetBuffer())))
-        {
-            Log::ERROR("Parse content data error");
-        }
-
-        std::cout << req.name() << std::endl;
-        std::cout << req.password() << std::endl;  
-           
+        unique_ptr<Itask> task(new AppTask(connfd,
+                                           _ract,
+                                           (void*)input->buffer,
+                                           validLen));     
+        _ract->post(std::move(task));
         evbuffer_drain(input, validLen);
     }
     return 0; 
@@ -79,34 +55,67 @@ UserConn::OnRead(void * data, int len)
 
 
 int
-UserConn::OnWrite(void * data, int len)
+NetConn::OnWrite(void * data, int len)
 {
     printf("write data to user conn\n");
-    bufferevent_write(_bev,
-                     (char *)data,
-                     len);
+    if(data == NULL && (_bev->output)->off > 0)
+    {
+        int res = write((_bev->ev_read).ev_fd,
+                        (char *)(_bev->output)->buffer,
+                        (_bev->output)->off);
+        if(res > 0)
+            evbuffer_drain(_bev->output, res);
+
+        if((_bev->output)->off > 0)
+        {
+            struct timeval tv, *ptv = NULL;
+            if(_bev->timeout_write)
+            {
+                tv.tv_sec = _bev->timeout_write;
+                tv.tv_usec = 0;
+                ptv = &tv;
+            }
+            event_add(&_bev->ev_write, ptv);
+        }
+        else
+        {
+            printf("user once send success\n");
+            return 0;
+        }
+    }
+    else
+        bufferevent_write(_bev,(char *)data,len);
+
     return 0;
 }
 
-NetConnManager *
-NetConnManager::getInstance()
+int 
+NetConn::DelayWrite(void * data, int len)
+{
+    struct evbuffer * output = _bev->output;
+    evbuffer_add(output, data, len);
+    return 0;
+}
+
+AppConnManager *
+AppConnManager::getInstance()
 {
     if(!_connManager)
     {
-        _connManager = new NetConnManager();
+        _connManager = new AppConnManager();
         _connManager->init(); 
     }
     return _connManager;
 }
 
 void 
-NetConnManager::init()
+AppConnManager::init()
 {
     _connPool.resize(maxConnected);
 }
 
 Iconn * 
-NetConnManager::getConn(int idx)
+AppConnManager::getConn(int idx)
 {
     Iconn * res = NULL;
     if(!_connPool[idx])
@@ -120,7 +129,7 @@ NetConnManager::getConn(int idx)
 }
 
 int 
-NetConnManager::delConn(int idx)
+AppConnManager::delConn(int idx)
 {
     if(!_connPool[idx])
     {
@@ -132,14 +141,14 @@ NetConnManager::delConn(int idx)
 }
 
 void
-NetConnManager::upConn(int idx, unique_ptr<Iconn> up)
+AppConnManager::upConn(int idx, unique_ptr<Iconn> up)
 {
     _connPool[idx] = std::move(up);
     return;
 }
 
 int
-NetConnManager::setConn(int idx, unique_ptr<Iconn> up)
+AppConnManager::setConn(int idx, unique_ptr<Iconn> up)
 {
     if(_connPool[idx])
     {
@@ -148,91 +157,4 @@ NetConnManager::setConn(int idx, unique_ptr<Iconn> up)
     _connPool[idx] = std::move(up);
     return 0;
 }
-
-bool
-UserConn::IsKeepAlivePacket(void * imhead)
-{
-    if(((ImPheader_t *)imhead)->length == 0&&
-      ((ImPheader_t *)imhead)->command_id==IM::Base::UTIL_KEEP_ALIVE) 
-        return true;
-    return false;
-}
-
-int
-AppConn::OnRead(void * data, int len)
-{
-
-    printf("read data from appConn\n");
-
-    if(data != NULL)
-        return -1;
-    struct evbuffer * input = _bev->input;
-    NetConnManager * cMag = NetConnManager::getInstance();
-
-    if(_ract->isStop())
-    {
-        bufferevent_free(_bev);
-        _bev = NULL;
-        return 0; 
-    }
-
-    int validLen = 0;
-    while(ImProto::IsProtoValid(input->buffer,
-                              input->off,
-                              &validLen))
-    {
-    
-        int userid = ((ImPheader_t *)input->buffer)->user_id;
-        validLen += ImProto::_headerlen;
-        int userFd = ((ImPheader_t *)input->buffer)->punch_flag;
-        int sendCloseFlag = 0;
-        UserConn * userConn = NULL;
-
-        if(!cMag->IsUserConnExist(userFd))
-        {
-            Log::WARN("User conn %d has benn closed", userFd);
-            sendCloseFlag = 1;
-        }
-        else
-        {
-            userConn = (UserConn *)cMag->getConn(userFd);
-            if(userConn->getUserId() != userid && userid>0) 
-            {
-                sendCloseFlag = 1;
-                Log::WARN("AppSvr req userId error");
-            }
-        }
-
-        if(!sendCloseFlag)
-        {
-            userConn->OnWrite(input->buffer, validLen);
-            evbuffer_drain(input, validLen);
-        }
-        else
-        {
-            Log::NOTICE("This Conn closed, close userid %d", userid);
-            
-            ImPheader_t head;
-            head.length = 0;
-            head.command_id = IM::Base::CID_LOGIN_REQ_USERLOGOUT;
-            head.punch_flag = userFd;
-            head.user_id    = userid;
-            
-            OnWrite((void *)&head, sizeof(head)); 
-        }
-
-    }
-    return 0;
-}
-
-int 
-AppConn::OnWrite(void * data, int len)
-{
-    printf("write data to appConn\n");
-    bufferevent_write(_bev,
-                     (char *)data,
-                      len);
-    return 0;
-}
-
 

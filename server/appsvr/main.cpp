@@ -10,7 +10,7 @@ int main()
     Log::set_level(1);
     Log::NOTICE("LOG INIT SUCCES");
     
-    NetReactor svr(NetSec);
+    AppReactor svr(NetSec);
     svr.init();
     svr.run();
 

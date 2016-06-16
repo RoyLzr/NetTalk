@@ -179,5 +179,7 @@ Log :: produce_log(int event, const char * fmt, va_list args)
     log_buffer.push(std::move(tmp));
     if(log_buffer.size() == 1)
         pthread_cond_signal(&log_cond);
+    else
+        pthread_cond_broadcast(&log_cond);
     pthread_mutex_unlock(&log_mutex);
 }

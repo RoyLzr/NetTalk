@@ -32,11 +32,14 @@ public:
     static CUserModel* getInstance();
     ~CUserModel();
     
-    bool getUser(uint32_t nUserId, DBUserInfo_t& cUser);
+    bool getUserById(uint32_t nUserId, DBUserInfo_t& cUser);
+    bool getUserByName(string , DBUserInfo_t& cUser);
     bool insertUser(DBUserInfo_t &cUser);
 
 private:
     CUserModel();
+    bool internalQuery(string &sql, DBUserInfo_t &cUser);
+
 private:
     static CUserModel* m_pInstance;
 };

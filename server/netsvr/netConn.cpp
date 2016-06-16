@@ -24,13 +24,16 @@ NetConnManager::getAppConnFd()
     if(_appConnIdx.size() == 0)
         return -1;
     static int flag = -1;
-    if(flag == _appConnIdx.size())
-        flag = 0;
+    if(flag < _appConnIdx.size()-1)
+        flag ++;
     else
-        flag++;
+        flag = 0;
     return _appConnIdx[flag];
 }
 
+
+
+/* userID control transfer, APPSVR send data to control userID */
 
 int 
 UserConn::OnRead(void * data, int len)
@@ -39,6 +42,7 @@ UserConn::OnRead(void * data, int len)
     if(data != NULL)
         return -1;
     struct evbuffer * input = _bev->input;
+    struct evbuffer * output = _bev->output;
     NetConnManager * cMag = NetConnManager::getInstance();
     int connfd = (_bev->ev_read).ev_fd; 
 
@@ -49,11 +53,20 @@ UserConn::OnRead(void * data, int len)
         return 0; 
     }
 
+    if(_appFd < 0)
+    {
+        _appFd = cMag->getAppConnFd();
+        Log::DEBUG("User first attack netSVr, is alloc to appSvr %d ", _appFd);
+    } 
+    Iconn * appConn = cMag->getConn(_appFd);
+
     int validLen = 0;
+    int dealNum = 0;
     while(ImProto::IsProtoValid(input->buffer,
                                   input->off,
                                   &validLen))
     {
+        dealNum++;
         if(IsKeepAlivePacket(input->buffer))
         {
             Log::DEBUG("RECV Client keep alive packet");
@@ -66,41 +79,56 @@ UserConn::OnRead(void * data, int len)
         validLen += ImProto::_headerlen;
         
         //printf("write = %d buff=%d\n" ,validLen,input->off);
-        
-        if(_appFd < 0)
-        {
-            _appFd = cMag->getAppConnFd();
-            Log::DEBUG("User first attack netSVr, is alloc to appSvr %d ", _appFd);
-        } 
-        
-        Iconn * appConn = cMag->getConn(_appFd);
-        appConn->OnWrite(input->buffer, validLen);
+          
+        appConn->DelayWrite(input->buffer, validLen);
         evbuffer_drain(input, validLen);
       
-        if(!CheckSetUserId(userid))
-        {
-            Log::NOTICE("This Conn change User, new userid %d", userid);
-            ImPheader_t head;
-            head.length = 0;
-            head.command_id = IM::Base::CID_LOGIN_REQ_USERLOGOUT;
-            head.punch_flag = connfd;
-            head.user_id    = _userId;
-            appConn->OnWrite((void *)&head, sizeof(head)); 
-
-            _userId = userid;
-        }
     }
+    if(dealNum > 0)
+        appConn->OnWrite(NULL, 0);
+
     return 0; 
 }
 
+int
+UserConn::DelayWrite(void *data, int len)
+{
+    struct evbuffer * output = _bev->output;
+    evbuffer_add(output, data, len);
+}
 
 int
 UserConn::OnWrite(void * data, int len)
 {
     printf("write data to user conn\n");
-    bufferevent_write(_bev,
-                     (char *)data,
-                     len);
+    if(data == NULL && (_bev->output)->off > 0)
+    {
+        int res = write((_bev->ev_read).ev_fd,
+                        (char *)(_bev->output)->buffer,
+                        (_bev->output)->off);
+        if(res > 0)
+            evbuffer_drain(_bev->output, res);
+
+        if((_bev->output)->off > 0)
+        {
+            struct timeval tv, *ptv = NULL;
+            if(_bev->timeout_write)
+            {
+                tv.tv_sec = _bev->timeout_write;
+                tv.tv_usec = 0;
+                ptv = &tv;
+            }
+            event_add(&_bev->ev_write, ptv);
+        }
+        else
+        {
+            printf("user once send success\n");
+            return 0;
+        }
+    }
+    else
+        bufferevent_write(_bev,(char *)data,len);
+
     return 0;
 }
 
@@ -143,6 +171,8 @@ NetConnManager::delConn(int idx)
         Log::WARN("want del %d conn, but it is empty");
         return -1;
     }
+    if(_connPool[idx]->release() > 0)
+        return 1;
     _connPool[idx].reset();
     return 0;
 }
@@ -174,6 +204,12 @@ UserConn::IsKeepAlivePacket(void * imhead)
     return false;
 }
 
+void 
+AppConn::SendLogOutToApp()
+{
+    return;
+}
+
 int
 AppConn::OnRead(void * data, int len)
 {
@@ -193,6 +229,8 @@ AppConn::OnRead(void * data, int len)
     }
 
     int validLen = 0;
+    int dealUserNum = 0;
+    int dealAppNum = 0;
     while(ImProto::IsProtoValid(input->buffer,
                               input->off,
                               &validLen))
@@ -212,43 +250,121 @@ AppConn::OnRead(void * data, int len)
         else
         {
             userConn = (UserConn *)cMag->getConn(userFd);
-            if(userConn->getUserId() != userid && userid>0) 
-            {
-                sendCloseFlag = 1;
-                Log::WARN("AppSvr req userId error");
-            }
         }
 
         if(!sendCloseFlag)
         {
-            userConn->OnWrite(input->buffer, validLen);
+            /* flag need OnWrite */
+            userConn->DelayWrite(input->buffer, validLen);
+            userConn->OnWrite(NULL, 0);
             evbuffer_drain(input, validLen);
         }
         else
         {
             Log::NOTICE("This Conn closed, close userid %d", userid);
-            
+            /*flag need app OnWrite*/
+            dealAppNum++; 
             ImPheader_t head;
             head.length = 0;
             head.command_id = IM::Base::CID_LOGIN_REQ_USERLOGOUT;
             head.punch_flag = userFd;
             head.user_id    = userid;
             
-            OnWrite((void *)&head, sizeof(head)); 
+            DelayWrite((void *)&head, sizeof(head)); 
         }
 
     }
+    if(dealAppNum > 0)
+        OnWrite(NULL, 0);
+    
     return 0;
 }
 
-int 
+
+int
+AppConn::DelayWrite(void *data, int len)
+{
+    struct evbuffer * output = _bev->output;
+    evbuffer_add(output, data, len);
+}
+
+int
 AppConn::OnWrite(void * data, int len)
 {
-    printf("write data to appConn\n");
-    bufferevent_write(_bev,
-                     (char *)data,
-                      len);
+    printf("write data to appSVR conn\n");
+    if(data == NULL && (_bev->output)->off > 0)
+    {
+        int res = write((_bev->ev_read).ev_fd,
+                        (char *)(_bev->output)->buffer,
+                        (_bev->output)->off);
+        if(res > 0)
+            evbuffer_drain(_bev->output, res);
+
+        if((_bev->output)->off > 0)
+        {
+            struct timeval tv, *ptv = NULL;
+            if(_bev->timeout_write)
+            {
+                tv.tv_sec = _bev->timeout_write;
+                tv.tv_usec = 0;
+                ptv = &tv;
+            }
+            event_add(&_bev->ev_write, ptv);
+        }
+        else
+        {
+            printf("send to app once success\n");
+            return 0;
+        }
+    }
+    else
+        bufferevent_write(_bev,(char *)data,len);
+
     return 0;
 }
 
+int
+AppConn::release()
+{
+    int fd = (_bev->ev_read).ev_fd;
+    close(fd);
+    int reFd = socket(AF_INET, SOCK_STREAM, 0);
+    fd = dup2(reFd, fd);
+   
+    struct sockaddr_in appAddress;
+    set_tcp_sockaddr(_ip.c_str(),
+                     _port,
+                     &appAddress); 
+
+    std::cout << _ip <<std::endl;
+    std::cout << _port << std::endl;
+
+    printf("begin try to reconnected %d\n", fd);
+    int res = net_connect_to_ms(fd,
+                               (struct sockaddr *)&appAddress,
+                                sizeof(appAddress),
+                               1000, 1); 
+    if(res < 0)
+    {
+       printf("FAIL try to reconnect appSvr fail %s\n", strerror(errno));
+       NetConnManager * cmag = NetConnManager::getInstance();
+       cmag->eraseAppConn(fd);
+
+       return 0;
+    }
+
+    /*fresh  bufferevent*/
+    bufferevent_free(_bev);
+    _bev = bufferevent_new(fd,
+                           EvReadCallback,
+                           NULL,
+                           EvErrorCallback,
+                           _ract);
+    
+    _bev->timeout_read = 1800;
+    _bev->timeout_write = 1800;
+    bufferevent_enable(_bev, EV_READ|EV_WRITE); 
+    printf("reconnect appSvr succ %d\n", res);
+    return 1; 
+}
 

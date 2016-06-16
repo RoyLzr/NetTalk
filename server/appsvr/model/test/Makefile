@@ -1,6 +1,8 @@
-svr: configParser.o UserModel.o net.o asynLog.o  main.o MySqlConn.o
-	g++ -o svr UserModel.o MySqlConn.o configParser.o net.o  main.o asynLog.o  -lpthread /usr/lib/libevent.a /usr/lib64/mysql/libmysqlclient.a -ldl
+svr: configParser.o RelationModel.o UserModel.o net.o asynLog.o  main.o MySqlConn.o
+	g++ -o svr UserModel.o RelationModel.o MySqlConn.o configParser.o net.o  main.o asynLog.o  -lpthread /usr/lib/libevent.a /usr/lib64/mysql/libmysqlclient.a -ldl
 
+RelationModel.o:../RelationModel.cpp
+	g++ -std=c++11 -g -c ../RelationModel.cpp
 
 UserModel.o: ../UserModel.cpp
 	g++ -std=c++11 -g -c ../UserModel.cpp

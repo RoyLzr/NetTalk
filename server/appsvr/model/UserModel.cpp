@@ -23,15 +23,20 @@ CUserModel* CUserModel::getInstance()
     return m_pInstance;
 }
 
-bool CUserModel::getUser(uint32_t nUserId, DBUserInfo_t &cUser)
+bool CUserModel::getUserById(uint32_t nUserId, DBUserInfo_t &cUser)
+{
+    string strSql = "select * from IMUser where id="+int2string(nUserId);
+    return internalQuery(strSql, cUser);
+}
+
+bool CUserModel::internalQuery(string &sql, DBUserInfo_t &cUser)
 {
     bool bRet = false;
     CDBManager* pDBManager = CDBManager::getInstance();
     CDBConn* pDBConn = pDBManager->GetDBConn("slave");
     if (pDBConn)
     {
-        string strSql = "select * from IMUser where id="+int2string(nUserId);
-        CResultSet* pResultSet = pDBConn->ExecuteQuery(strSql.c_str());
+        CResultSet* pResultSet = pDBConn->ExecuteQuery(sql.c_str());
         if(pResultSet)
         {
             while (pResultSet->Next())
@@ -48,7 +53,7 @@ bool CUserModel::getUser(uint32_t nUserId, DBUserInfo_t &cUser)
         }
         else
         {
-            printf("no result set for sql:%s", strSql.c_str());
+            printf("no result set for sql:%s", sql.c_str());
         }
         pDBManager->RelDBConn(pDBConn);
     }
@@ -59,6 +64,11 @@ bool CUserModel::getUser(uint32_t nUserId, DBUserInfo_t &cUser)
     return bRet;
 }
 
+bool CUserModel::getUserByName(string strName, DBUserInfo_t& cUser)
+{
+    string strSql = "select * from IMUser where name=\'"+strName+"\'";
+    return internalQuery(strSql, cUser);
+}
 
 
 bool CUserModel::insertUser(DBUserInfo_t &cUser)
